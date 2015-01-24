@@ -1,5 +1,8 @@
 var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')();
+var beep    = require('beepbeep');
+var colors  = require('colors');
+
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 
@@ -30,6 +33,11 @@ gulp.task('html', function() {
 
 gulp.task('css', function() {
     return gulp.src(glob.css)
+    .pipe(plugins.plumber(function () {
+        beep();
+        console.log('[stylus]'.bold.magenta + ' There was an issue compiling Stylus\n'.bold.red);
+        this.emit('end');
+    }))
     .pipe(plugins.stylus())
     .pipe(gulp.dest(dest))
     .pipe(reload({stream:true}));
