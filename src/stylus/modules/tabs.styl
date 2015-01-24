@@ -13,6 +13,7 @@
     display flex
     flex-grow 1
     height HEIGHT
+    width auto !important
 }
 
 .tabs--tab:first-of-type {
@@ -44,11 +45,11 @@
 // visibility
 
 .tabs--tab__0:checked ~ .tabs--section {
-    display flex
+    display block
 }
 
-for num in (1...5) {
+for num in (1...10) {
     .tabs--tab__{num}:checked ~ .tabs--section__{num} {
-        display flex
+        display block
     }
 }

@@ -1,19 +1,27 @@
-FONT_SIZE = 0.7rem
-LINE_HEIGHT = 1.2em
+// math constants
+GOLDEN_RATIO = 1.6180339887498948482
+HIGH = 9999999999999999
 
+// basic sizing
+HEIGHT = 2rem
+PAD = HEIGHT / GOLDEN_RATIO
+FONT_SIZE = 1rem
+LINE_HEIGHT = GOLDEN_RATIO
+RADIUS = HEIGHT / 10
+
+// colors
 BLUE = rgb(86,180,233)
 GOLD = #E0A32A
 DARK = #46454A
 LIGHT = #DCDCDE
 BG = #E9EFF2
 PALE = #EAFFEF
-DARK_GRAY = #666666
+DARK_GRAY = rgb(72,70,75)
+FADED_GRAY = alpha(DARK_GRAY, 0.7)
 
-PAD = 1rem
-HEIGHT = 2rem
-
+// text
 FONT = Helvetica, Arial, sans-serif
 
-BORDER = 1px solid rgba(0, 0, 0, 0.05)
-
-RADIUS = 0.2rem
+// borders
+BORDER_COLOR = alpha(black, 0.1)
+BORDER = 1px solid BORDER_COLOR

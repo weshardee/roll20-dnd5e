@@ -1,0 +1,71 @@
+grid-border()
+    &::after
+        border 0 solid BORDER_COLOR
+        content " "
+        position absolute
+        top 0
+        right 0
+        left 0
+        bottom 0
+        pointer-events none
+        {block}
+
+.grid {
+    align-items stretch
+    display flex
+    position relative // for borders
+}
+
+.grid--pad {
+    margin-left - PAD
+}
+
+/* grid items */
+
+.grid > * {
+    flex 1
+    position relative // for borders
+}
+
+.grid--pad > * {
+    padding-bottom PAD
+    padding-left PAD
+}
+
+.grid--split > *
+    +grid-border()
+        border-bottom-width 1px
+        border-right-width 1px
+
+.grid--split > :first-child {
+}
+
+// alternate colors
+
+.grid--sub {
+    background-color alpha(DARK_GRAY, 0.9)
+    color white
+}
+
+// sizes
+
+.grid__cell--1 {
+    flex none
+    width 100%
+}
+
+for max in (2...13) {
+    for span in (1...max) {
+        .grid__cell--{span}-{max} {
+            flex none
+            width (span / max) * 100%
+        }
+    }
+}
+
+// content alignment
+.grid__cell {
+    display flex
+    flex-direction column
+
+}

@@ -11,19 +11,28 @@ var dest = 'web/';
 
 var glob = {
     html: src + '*.hbs',
-    partials: src + 'partials/*.hbs',
+    templatePartials: src + 'partials/*.hbs',
+    templateData: src + 'data/*.{js,json}',
     stylusPartials: src + 'stylus/**/*.styl',
     css: src + '*.styl'
 };
 
 var hbOptions = {
-    partials: [glob.partials]
+    data: glob.templateData,
+    partials: [glob.templatePartials]
 };
 
 // TODO: maybe break tasks up with gulp-load
 
 gulp.task('html', function() {
     return gulp.src(glob.html)
+    .pipe(plugins.plumber(function (e) {
+        beep();
+        console.log('[hb]'.bold.magenta + ' There was an issue compiling Handlebars:\n'.bold.red);
+        console.log(e);
+        console.log('');
+        this.emit('end');
+    }))
     .pipe(plugins.frontMatter())
     .pipe(plugins.hb(hbOptions))
     .pipe(plugins.ext.replace('html'))
@@ -33,9 +42,11 @@ gulp.task('html', function() {
 
 gulp.task('css', function() {
     return gulp.src(glob.css)
-    .pipe(plugins.plumber(function () {
+    .pipe(plugins.plumber(function (e) {
         beep();
-        console.log('[stylus]'.bold.magenta + ' There was an issue compiling Stylus\n'.bold.red);
+        console.log('[stylus]'.bold.magenta + ' There was an issue compiling Stylus:\n'.bold.red);
+        console.log(e);
+        console.log('');
         this.emit('end');
     }))
     .pipe(plugins.stylus())
@@ -46,7 +57,7 @@ gulp.task('css', function() {
 gulp.task('build', ['html', 'css']);
 
 gulp.task('watch', ['build'], function() {
-    gulp.watch([glob.html, glob.partials], ['html']);
+    gulp.watch([glob.html, glob.templatePartials], ['html']);
     gulp.watch([glob.css, glob.stylusPartials], ['css']);
 });
 

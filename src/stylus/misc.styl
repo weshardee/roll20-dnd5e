@@ -228,16 +228,6 @@
     color: rgba(0,0,0,0.5);
 }
 
-.label > input {
-    margin-bottom: -1rem;
-    padding-bottom: 0.7rem !important;
-    height: 2.7rem !important;
-}
-
-.label > br {
-    display: none;
-}
-
 .sheet-small-note {
     display: flex;
     background: #ffffff;
@@ -264,11 +254,6 @@
     /* border-bottom-width: 0; */
 }
 
-.sheet-section-spellbook .repitem .sheet-spacer + .label {
-    width: 3rem;
-    flex-grow: 1;
-}
-
 /* headers */
 
 .sheet-spell-header,
@@ -288,15 +273,21 @@
     color: #ffffff;
 }
 
-h4 + .sheet-sub-header,
-h4 + * > .sheet-sub-header {
+h1 + .sheet-sub-header,
+h1 + * > .sheet-sub-header {
     margin-top: 0; /* hug the main panel header */
     border-radius: 0;
 }
 
 /* extra in-row headers */
 
-.sheet-section-spellbook .repitem .label, .sheet-section-spellbook .sheet-sub-header ~ .row:not(.sheet-sub-header) > :first-child:not(.grid__cell--1-2), .sheet-inventory-row-number, .sheet-section-inventory .grid__cell--1-4.sheet-margin-top.label, .sheet-section-armour .grid__cell--1-5.sheet-padl.sheet-padr.sheet-margin-top.label, .sheet-section-core .grid__cell--1-4.sheet-margin-top.label, .sheet-section-class .grid__cell--1-8.sheet-center.sheet-margin-top {
+.sheet-section-spellbook .repitem .label,
+.sheet-section-spellbook .sheet-sub-header ~ .row:not(.sheet-sub-header) > :first-child:not(.grid__cell--1-2),
+.sheet-inventory-row-number,
+.sheet-section-inventory .grid__cell--1-4.sheet-margin-top.label,
+.sheet-section-armour .grid__cell--1-5.sheet-padl.sheet-padr.sheet-margin-top.label,
+.sheet-section-core .grid__cell--1-4.sheet-margin-top.label,
+.sheet-section-class .grid__cell--1-8.sheet-center.sheet-margin-top {
     background-color: #fafafa;
     border-bottom-width: 1px;
     border-right-width: 1px;
@@ -743,22 +734,8 @@ span.sheet-inventorytab {
 
 }
 
-.charsheet h4 {
-    display: flex;
-    align-self: stretch;
-    border-top-left-radius: 2rem;
-    background-color: rgb(72,70,75);
-    color: #ffffff;
-    border-radius: 0.2rem;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-    font-weight: normal;
-    font-size: 0.8rem;
-    margin-top:  1rem;
-    width: 100%;
-}
 
-.row + .row > * > h4, .charsheet h4:nth-child(n+3) {
+.row + .row > * > h1, .charsheet h1:nth-child(n+3) {
     margin-top: 1rem;
 }
 
