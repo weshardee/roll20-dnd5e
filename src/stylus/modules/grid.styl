@@ -35,9 +35,10 @@ grid-border()
 .grid--split > *
     +grid-border()
         border-bottom-width 1px
-        border-right-width 1px
+        border-left-width 1px
 
-.grid--split > :first-child {
+.grid--split > :last-child::after {
+    border-right-width 1px
 }
 
 // alternate colors
