@@ -8,7 +8,7 @@ var dest = 'web/';
 
 var glob = {
     html: src + '*.hbs',
-    partials: src + '**/*.css',
+    partials: src + 'partials/*.hbs',
     css: src + '*.css'
 };
 
