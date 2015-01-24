@@ -9,7 +9,8 @@ var dest = 'web/';
 var glob = {
     html: src + '*.hbs',
     partials: src + 'partials/*.hbs',
-    css: src + '*.css'
+    stylusPartials: src + 'stylus/**/*.styl',
+    css: src + '*.styl'
 };
 
 var hbOptions = {
@@ -29,6 +30,7 @@ gulp.task('html', function() {
 
 gulp.task('css', function() {
     return gulp.src(glob.css)
+    .pipe(plugins.stylus())
     .pipe(gulp.dest(dest))
     .pipe(reload({stream:true}));
 });
@@ -36,8 +38,8 @@ gulp.task('css', function() {
 gulp.task('build', ['html', 'css']);
 
 gulp.task('watch', ['build'], function() {
-    gulp.watch(glob.html, ['html']);
-    gulp.watch(glob.css, ['css']);
+    gulp.watch([glob.html, glob.partials], ['html']);
+    gulp.watch([glob.css, glob.stylusPartials], ['css']);
 });
 
 gulp.task('browser-sync', ['watch'], function() {

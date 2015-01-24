@@ -27,6 +27,7 @@
     "gulp-front-matter": "^1.2.1",
     "gulp-hb": "^1.0.1",
     "gulp-load-plugins": "^0.8.0",
+    "gulp-stylus": "^2.0.0",
     "gulp-watch": "^4.1.0"
   }
 }

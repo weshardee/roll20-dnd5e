@@ -1,0 +1,60 @@
+/* maximize button */
+.dialog-maxbtn
+    box-sizing border-box
+    position absolute
+    top 0
+    right 0
+    margin:0.5rem
+    padding 0.7rem
+    border 1px solid #ddd
+    background-color #ffffff
+    font-size 0
+    width 0
+    height 0
+    cursor pointer
+    border-radius 0.2rem
+    z-index 9999999999999
+
+.dialog-maxbtn::before,
+.dialog-maxbtn::after
+    position absolute
+    width 0
+    height 0
+    border 1em solid #aaa
+    box-shadow 0 0 0 1em #fff, inset 0 0 0 1em #fff
+    padding 1.5em
+    content " "
+    font-size 0.1rem
+    margin 3.5em
+
+.dialog-maxbtn::before
+    top 0
+    right 0
+
+.dialog-maxbtn::after
+    bottom 0
+    left 0
+
+.has-maxed-dialog > *
+    display none
+
+.ui-dialog-max
+    z-index 9999999999999 !important
+    overflow visible
+
+.ui-dialog-max .charsheet
+    position fixed !important
+    top 0
+    right 0
+    left 0
+    height  auto !important
+    bottom 0 !important
+    z-index 1
+    overflow auto
+    display block !important
+
+.ui-dialog-max .dialog-maxbtn
+    position fixed
+
+.ui-dialog-max .ui-resizable-handle
+    display none

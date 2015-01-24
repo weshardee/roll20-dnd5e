@@ -1,0 +1,13 @@
+.sheet--bd {
+    flex-direction row // for alignment of tabs
+}
+
+.sheet--bd__pc,
+.sheet--bd__npc {
+    display none
+}
+
+.sheet--is-npc:checked ~ .sheet--bd__npc,
+.sheet--is-npc:not(:checked) ~ .sheet--bd__pc {
+    display block
+}

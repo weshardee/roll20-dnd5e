@@ -1,0 +1,24 @@
+/* sheet type button */
+
+.sheet--is-npc {
+    -webkit-appearance none
+    align-items center
+    background-color BLUE
+    border-radius RADIUS
+    color white
+    display flex
+    height HEIGHT
+    margin-bottom PAD
+}
+
+.sheet--is-npc:checked {
+    background-color PALE
+}
+
+.sheet--is-npc::after {
+    content "Player Sheet"
+}
+
+.sheet--is-npc:checked::after {
+    content "NPC Sheet"
+}
