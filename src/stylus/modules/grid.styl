@@ -33,6 +33,7 @@ grid-border()
     padding (PAD / 2)
 
 .grid--split > *
+    background-color white
     +grid-border()
         border-bottom-width 1px
         border-left-width 1px
@@ -45,7 +46,7 @@ grid-border()
 .grid--sub {
     background-color alpha(DARK_GRAY, 0.9)
     color white
-    font-size FONT_SIZE / GOLDEN_RATIO
+    font-size FONT_SIZE_SM
     min-height HEIGHT
 }
 

@@ -1,0 +1,24 @@
+.toggle
+    -webkit-appearance none
+    display flex
+    flex 1
+    color white
+    cursor pointer
+    position relative
+    z-index 0
+    font-size 13px
+    text-align center
+    align-items center
+    background #eaffef
+    color #666
+    z-index HIGH
+
+.toggle:checked
+    background #E0A32A
+    color #fff
+
+.toggle::before
+    content "No"
+
+.toggle:checked::before
+    content "Yes"

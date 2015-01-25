@@ -8,39 +8,39 @@
 
     <div class="grid__cell">
         <!-- bonuses row 2 -->
-        <div class="grid">
+        <div class="grid grid--pad">
 
             <div class="grid__cell">
-                <div class="hdg">Melee</div>
-                <div class="grid">
-                    <div class="grid__cell grid__cell--3-13">
-                        <label class="label">
-                            Attack Rolls
-                            <input class="field" type="text" id="attr_global_melee_attack_bonus" name="attr_global_melee_attack_bonus" value="0">
+                <h2 class="hdg hdg--2">Melee</h2>
+                <div class="grid grid--split">
+                    <div class="grid__cell">
+                        <label class="field">
+                            <span class="field__label">Attack Rolls</span>
+                            <input class="field__field" type="text" id="attr_global_melee_attack_bonus" name="attr_global_melee_attack_bonus" value="0">
                         </label>
                     </div>
-                    <div class="grid__cell grid__cell--3-13">
-                        <label class="label">
-                            Damage Rolls
-                            <input class="field" type="text" id="attr_global_melee_damage_bonus" name="attr_global_melee_damage_bonus" value="0">
+                    <div class="grid__cell">
+                        <label class="field">
+                            <span class="field__label">Damage Rolls</span>
+                            <input class="field__field" type="text" id="attr_global_melee_damage_bonus" name="attr_global_melee_damage_bonus" value="0">
                         </label>
                     </div>
                 </div>
             </div>
 
             <div class="grid__cell">
-                <h1 class="hdg">Ranged</h1>
-                <div class="grid">
-                    <div class="grid__cell grid__cell--3-13">
-                        <label class="label">
-                            Attack Rolls
-                            <input class="field" type="text" id="attr_global_ranged_attack_bonus" name="attr_global_ranged_attack_bonus" value="0">
+                <h2 class="hdg hdg--2">Ranged</h2>
+                <div class="grid grid--split">
+                    <div class="grid__cell">
+                        <label class="field">
+                            <span class="field__label">Attack Rolls</span>
+                            <input class="field__field" type="text" id="attr_global_ranged_attack_bonus" name="attr_global_ranged_attack_bonus" value="0">
                         </label>
                     </div>
-                    <div class="grid__cell grid__cell--3-13">
-                        <label class="label">
-                            Damage Rolls
-                            <input class="field" type="text" id="attr_global_ranged_damage_bonus" name="attr_global_ranged_damage_bonus" value="0">
+                    <div class="grid__cell">
+                        <label class="field">
+                            <span class="field__label">Damage Rolls</span>
+                            <input class="field__field" type="text" id="attr_global_ranged_damage_bonus" name="attr_global_ranged_damage_bonus" value="0">
                         </label>
                     </div>
                 </div>
@@ -50,47 +50,46 @@
 
     <div class="grid__cell">
         <!-- bonuses row 3 -->
-        <h1 class="hdg"> Spellcasting </h1>
+        <h2 class="hdg hdg--2"> Spellcasting </h2>
 
-        <div class="grid">
-            <div class="grid__cell grid__cell--1-3">
-                <input class="field" type="text" id="attr_global_spell_attack_bonus" name="attr_global_spell_attack_bonus" value="0">
-                <label class="label">
-                    Attack Rolls
+        <div class="grid grid--split">
+            <div class="grid__cell">
+                <label class="field">
+                    <span class="field__label">Attack Rolls</span>
+                    <input class="field__field" type="text" id="attr_global_spell_attack_bonus" name="attr_global_spell_attack_bonus" value="0">
                 </label>
             </div>
-            <div class="grid__cell grid__cell--1-3">
-                <input class="field" type="text" id="attr_global_spell_damage_bonus" name="attr_global_spell_damage_bonus" value="0">
-                <label class="label">
-                    Damage Rolls
+            <div class="grid__cell">
+                <label class="field">
+                    <span class="field__label">Damage Rolls</span>
+                    <input class="field__field" type="text" id="attr_global_spell_damage_bonus" name="attr_global_spell_damage_bonus" value="0">
                 </label>
             </div>
-            <div class="grid__cell grid__cell--1-3">
-                <input class="field" type="text" id="attr_global_spell_dc_bonus" name="attr_global_spell_dc_bonus" value="0" step="1">
-                <label class="label">
-                    Save DC
+            <div class="grid__cell">
+                <label class="field">
+                    <span class="field__label">Save DC</span>
+                    <input class="field__field" type="text" id="attr_global_spell_dc_bonus" name="attr_global_spell_dc_bonus" value="0" step="1">
                 </label>
             </div>
         </div>
     </div>
     <div class="grid__cell">
         <!-- bonuses row 4 -->
-        <h1 class="hdg"> Saves and skill checks </h1>
+        <h2 class="hdg hdg--2"> Saves and skill checks </h2>
 
-        <label class="label">
-            Ability/Skill Checks
-        </label>
-        <div class="grid">
-            <div class="grid__cell grid__cell--1-2">
-                <input class="field" type="text" id="attr_global_saving_bonus" name="attr_global_saving_bonus" value="0">
-                <label class="label">
-                    Saving thows
+        <div class="grid grid--split">
+            <div class="grid__cell">
+                <label class="field">
+                    <span class="field__label">Saving thows</span>
+                    <input class="field__field" type="text" id="attr_global_saving_bonus" name="attr_global_saving_bonus" value="0">
                 </label>
             </div>
-            <div class="grid__cell grid__cell--1-2">
-                <label class="label">
-                    Ability/Skill Checks
-                    <input class="field" type="text" id="attr_global_check_bonus" name="attr_global_check_bonus" value="0">
+            <div class="grid__cell">
+                <label class="field">
+                    <span class="field__label">Ability/Skill Checks</span>
+                    <input class="field__field" type="text" id="attr_global_check_bonus" name="attr_global_check_bonus" value="0">
                 </label>
             </div>
         </div>
+    </div>
+</div>

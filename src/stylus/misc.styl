@@ -337,42 +337,6 @@ h1 + * > .sheet-sub-header {
     transition: opacity 0.5s linear 0s;
 }
 
-.charsheet .sheet-inspiration,
-.charsheet .sheet-inspiration-tab {
-    display: flex;
-    width: 100%;
-    height: 4rem !important;
-    color: white;
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    font-size: 13px;
-    text-align: center;
-    align-items: center;
-    background: #eaffef;
-    color: #666;
-    height: 4rem;
-    border-right-width:1px;
-}
-
-.charsheet .sheet-inspiration {
-    opacity: 0; /* hide */
-    z-index: 1; /* sit over label */
-    margin-bottom: -4rem !important; /* pull label underneath */
-}
-
-.charsheet :checked + .sheet-inspiration-tab {
-    background: #E0A32A;
-    color: #fff;
-}
-
-.charsheet .sheet-inspiration-tab::before {
-    content: "No";
-}
-
-.charsheet :checked + .sheet-inspiration-tab::before {
-    content: "Yes"
-}
 
 .charsheet .sheet-inspiration-label {
     text-align: center;

@@ -1,7 +1,8 @@
 FIELD_LABEL_LAYER = 1
 FIELD_FIELD_LAYER = 0
 
-FIELD_LABEL_HEIGHT = 1rem
+FIELD_LABEL_HEIGHT = PAD
+FIELD_LABEL_FONT_SIZE = FONT_SIZE_SM
 FIELD_LABEL_OVERLAP = FIELD_LABEL_HEIGHT * 0.7
 
 .field
@@ -10,14 +11,16 @@ FIELD_LABEL_OVERLAP = FIELD_LABEL_HEIGHT * 0.7
     flex-direction column
     flex 1
     position relative
+    background-color white
 
-.field[disabled]
+.field[disabled],
+.field--disabled
     background-color PALE
     cursor not-allowed
 
 .field__label
     bottom 0
-    font-size (FIELD_LABEL_HEIGHT / LINE_HEIGHT)
+    font-size FIELD_LABEL_FONT_SIZE
     left 0
     position absolute
     right 0
@@ -30,3 +33,4 @@ FIELD_LABEL_OVERLAP = FIELD_LABEL_HEIGHT * 0.7
     padding-bottom FIELD_LABEL_OVERLAP
     z-index FIELD_FIELD_LAYER
     border-radius inherit
+    background-color transparent
