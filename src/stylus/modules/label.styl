@@ -1,10 +1,12 @@
-.label {
+.label
+    align-items center
+    background-color white
     display flex
     flex 1
+    flex-direction column-reverse
     font-size (FONT_SIZE/GOLDEN_RATIO)
     text-align center
-    align-items center
-}
+    color LIGHT_GRAY
 
 .label--tall
     min-height HEIGHT
@@ -13,3 +15,6 @@
     background-color FADED_GRAY
     color white
     text-transform uppercase
+
+.label--title
+    border-radius RADIUS

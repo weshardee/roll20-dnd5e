@@ -10,42 +10,43 @@ grid-border()
         pointer-events none
         {block}
 
-.grid {
+.grid
     align-items stretch
     display flex
     position relative // for borders
-}
+    min-height HEIGHT
 
-.grid--pad {
-    margin-left - PAD
-}
+.grid--pad
+    margin (- PAD / 2)
+
+.grid--col
+    flex-direction column
 
 /* grid items */
 
-.grid > * {
+.grid > *
     flex 1
     position relative // for borders
-}
 
-.grid--pad > * {
-    padding-bottom PAD
-    padding-left PAD
-}
+.grid--pad > *
+    border-radius RADIUS
+    padding (PAD / 2)
 
 .grid--split > *
     +grid-border()
         border-bottom-width 1px
         border-left-width 1px
 
-.grid--split > :last-child::after {
+.grid--split > :last-child::after
     border-right-width 1px
-}
 
 // alternate colors
 
 .grid--sub {
     background-color alpha(DARK_GRAY, 0.9)
     color white
+    font-size FONT_SIZE / GOLDEN_RATIO
+    min-height HEIGHT
 }
 
 // sizes
@@ -65,8 +66,6 @@ for max in (2...13) {
 }
 
 // content alignment
-.grid__cell {
+.grid__cell
     display flex
     flex-direction column
-
-}

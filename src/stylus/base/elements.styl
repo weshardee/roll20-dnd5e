@@ -8,7 +8,12 @@
 
 .sheet input {
     width 100%
+    flex 1
 }
 
 :focus
+    border-color BLUE
     z-index HIGH
+
+[type=number]
+    padding-left 12px // match width of counter on right to center the value visually

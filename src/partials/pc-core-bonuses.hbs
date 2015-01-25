@@ -1,0 +1,96 @@
+<div class="grid grid--col grid--pad">
+
+    <div class="grid__cell">
+        <!-- bonuses row 1 -->
+        <h1 class="hdg">Bonuses/Penalties <i class="sheet-pictos">3</i></h1>
+        <p class="sheet-small-note">Use this to apply bonuses (or penalties) to all rolls of the specified type rolled using the sheet's macros.</p>
+    </div>
+
+    <div class="grid__cell">
+        <!-- bonuses row 2 -->
+        <div class="grid">
+
+            <div class="grid__cell">
+                <div class="hdg">Melee</div>
+                <div class="grid">
+                    <div class="grid__cell grid__cell--3-13">
+                        <label class="label">
+                            Attack Rolls
+                            <input class="field" type="text" id="attr_global_melee_attack_bonus" name="attr_global_melee_attack_bonus" value="0">
+                        </label>
+                    </div>
+                    <div class="grid__cell grid__cell--3-13">
+                        <label class="label">
+                            Damage Rolls
+                            <input class="field" type="text" id="attr_global_melee_damage_bonus" name="attr_global_melee_damage_bonus" value="0">
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid__cell">
+                <h1 class="hdg">Ranged</h1>
+                <div class="grid">
+                    <div class="grid__cell grid__cell--3-13">
+                        <label class="label">
+                            Attack Rolls
+                            <input class="field" type="text" id="attr_global_ranged_attack_bonus" name="attr_global_ranged_attack_bonus" value="0">
+                        </label>
+                    </div>
+                    <div class="grid__cell grid__cell--3-13">
+                        <label class="label">
+                            Damage Rolls
+                            <input class="field" type="text" id="attr_global_ranged_damage_bonus" name="attr_global_ranged_damage_bonus" value="0">
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid__cell">
+        <!-- bonuses row 3 -->
+        <h1 class="hdg"> Spellcasting </h1>
+
+        <div class="grid">
+            <div class="grid__cell grid__cell--1-3">
+                <input class="field" type="text" id="attr_global_spell_attack_bonus" name="attr_global_spell_attack_bonus" value="0">
+                <label class="label">
+                    Attack Rolls
+                </label>
+            </div>
+            <div class="grid__cell grid__cell--1-3">
+                <input class="field" type="text" id="attr_global_spell_damage_bonus" name="attr_global_spell_damage_bonus" value="0">
+                <label class="label">
+                    Damage Rolls
+                </label>
+            </div>
+            <div class="grid__cell grid__cell--1-3">
+                <input class="field" type="text" id="attr_global_spell_dc_bonus" name="attr_global_spell_dc_bonus" value="0" step="1">
+                <label class="label">
+                    Save DC
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="grid__cell">
+        <!-- bonuses row 4 -->
+        <h1 class="hdg"> Saves and skill checks </h1>
+
+        <label class="label">
+            Ability/Skill Checks
+        </label>
+        <div class="grid">
+            <div class="grid__cell grid__cell--1-2">
+                <input class="field" type="text" id="attr_global_saving_bonus" name="attr_global_saving_bonus" value="0">
+                <label class="label">
+                    Saving thows
+                </label>
+            </div>
+            <div class="grid__cell grid__cell--1-2">
+                <label class="label">
+                    Ability/Skill Checks
+                    <input class="field" type="text" id="attr_global_check_bonus" name="attr_global_check_bonus" value="0">
+                </label>
+            </div>
+        </div>
