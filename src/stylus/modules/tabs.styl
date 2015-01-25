@@ -1,11 +1,11 @@
-.tabs {
+.sheet .tabs {
     display flex
     flex-direction row
     flex-wrap wrap
 }
 
 // tabs for sections
-.tabs--tab {
+.sheet .tabs--tab {
     -webkit-appearance none
     align-items center
     background BLUE
@@ -16,27 +16,27 @@
     width auto !important
 }
 
-.tabs--tab:first-of-type {
+.sheet .tabs--tab:first-of-type {
     border-bottom-left-radius RADIUS
     border-top-left-radius RADIUS
 }
 
-.tabs--tab:last-of-type {
+.sheet .tabs--tab:last-of-type {
     border-bottom-right-radius RADIUS
     border-top-right-radius RADIUS
 }
 
-.tabs--tab:checked {
+.sheet .tabs--tab:checked {
     background-color GOLD
 }
 
-.tabs--tab::after {
+.sheet .tabs--tab::after {
     content attr(title)
 }
 
 // sections
 
-.tabs--section {
+.sheet .tabs--section {
     display none
     margin-top PAD
     width 100% // in a flex wrap area
@@ -44,12 +44,12 @@
 
 // visibility
 
-.tabs--tab__0:checked ~ .tabs--section {
+.sheet .tabs--tab__0:checked ~ .tabs--section {
     display block
 }
 
 for num in (1...10) {
-    .tabs--tab__{num}:checked ~ .tabs--section__{num} {
+    .sheet .tabs--tab__{num}:checked ~ .tabs--section__{num} {
         display block
     }
 }

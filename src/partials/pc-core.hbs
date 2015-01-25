@@ -33,16 +33,16 @@
                         <div class="label label--core-stat">{{abbr}}</div>
                     </div>
                     <div class="grid__cell grid__cell--1-6">
-                        <input class="field field--naked" type="number" id="attr_{{name}}" name="attr_{{name}}" min="1" step="1">
+                        <input class="field" type="number" id="attr_{{name}}" name="attr_{{name}}" min="1" step="1">
                     </div>
                     <div class="grid__cell grid__cell--1-6">
-                        <input class="field field--naked" type="number" id="attr_{{name}}_mod" name="attr_{{name}}_mod" value="(floor((@\{{{name}}\}-10)/2))" disabled>
+                        <input class="field" type="number" id="attr_{{name}}_mod" name="attr_{{name}}_mod" value="(floor((@\{{{name}}\}-10)/2))" disabled>
                     </div>
                     <div class="grid__cell grid__cell--1-6">
-                        <input class="field field--naked" type="checkbox" id="attr_{{name}}_save_prof" name="attr_{{name}}_save_prof" value="@{PB}" >
+                        <input class="tick" type="checkbox" id="attr_{{name}}_save_prof" name="attr_{{name}}_save_prof" value="@{PB}" >
                     </div>
                     <div class="grid__cell grid__cell--1-6">
-                        <input class="field field--naked" type="number" id="attr_{{name}}_save_mod" name="attr_{{name}}_save_mod" value="@\{{{name}}_mod} + @\{{{name}}_save_prof}" disabled="disabled">
+                        <input class="field" type="number" id="attr_{{name}}_save_mod" name="attr_{{name}}_save_mod" value="@\{{{name}}_mod} + @\{{{name}}_save_prof}" disabled="disabled">
                     </div>
                     <div class="grid__cell grid__cell--1-6">
                         <button type="roll" class="roll" id="roll_Strength_Save" name="roll_Strength_Save" value="/em attempts a saving throw\n\n{{abbr}} save :[[1d20 + @\{{{name}}_save_mod} [Stat Mod and Proficiency] + (@{global_saving_bonus}) [Active Save Bonus] ]] | [[1d20 + @{ {{name}}_save_mod } [Stat Mod and Proficiency] + (@{global_saving_bonus}) [Active Save Bonus] ]]">Save</button>
@@ -112,13 +112,13 @@
                                 <div class="grid grid--split">
                                     <div class="grid__cell grid__cell--1-2">
                                         <label class="field field--disabled">
-                                            <span class="field__label">AC (worn armour)</span>
+                                            <span class="field__label">AC (armour on)</span>
                                             <input class="field__field" type="number" id="attr_AC" name="attr_AC" value="@{AC_calc}" disabled="disabled" >
                                         </label>
                                     </div>
                                     <div class="grid__cell grid__cell--1-2">
                                         <label class="field field--disabled">
-                                            <span class="field__label">AC (no armour)</span>
+                                            <span class="field__label">AC (armour off)</span>
                                             <input class="field__field" type="number" id="attr_AC_no_armour" name="attr_AC_no_armour" value="@{AC_no_armour_calc}" disabled="disabled">
                                         </label>
                                     </div>

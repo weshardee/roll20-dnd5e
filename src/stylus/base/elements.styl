@@ -1,18 +1,13 @@
 .sheet img
     max-width 100%
 
-.sheet table
-    border-collapse collapse
 
-.sheet input
-    width 100%
-
-:focus
-    border-color BLUE
+.sheet :focus
+    border-color BLUE !important
     z-index HIGH
 
-[type=number]
+.sheet [type=number]
     padding-left 12px // match width of counter on right to center the value visually
 
-[disabled]
+.sheet [disabled]
     cursor not-allowed

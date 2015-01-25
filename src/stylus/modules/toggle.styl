@@ -1,4 +1,4 @@
-.toggle
+.sheet .toggle
     -webkit-appearance none
     display flex
     flex 1
@@ -12,13 +12,14 @@
     background #eaffef
     color #666
     z-index HIGH
+    margin 0 // override base.css
 
-.toggle:checked
+.sheet .toggle:checked
     background #E0A32A
     color #fff
 
-.toggle::before
+.sheet .toggle::before
     content "No"
 
-.toggle:checked::before
+.sheet .toggle:checked::before
     content "Yes"

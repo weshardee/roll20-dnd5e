@@ -1,3 +1,15 @@
 .roll
+    -webkit-font-smoothing auto // make the icon appear thicker
+    background #E0A32A
+    color #fff
+    cursor pointer
     flex 1
-    border 0
+    font-size 0 // show only icon
+
+.roll:hover
+    opacity 0.9
+
+.roll:before
+    content: "t";
+    font-family: "dicefontd20"; // set up in roll20's css
+    font-size FONT_SIZE * 1.4 // reset icon size

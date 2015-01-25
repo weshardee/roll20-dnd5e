@@ -1,6 +1,6 @@
 /* sheet type button */
 
-.sheet--is-npc {
+.sheet .sheet--is-npc {
     -webkit-appearance none
     align-items center
     background-color BLUE
@@ -8,16 +8,19 @@
     color white
     display flex
     height HEIGHT
+    margin 0 // override base.css
+    width 100%
 }
 
-.sheet--is-npc:checked {
+.sheet .sheet--is-npc:checked {
     background-color PALE
+    color DARK_GRAY
 }
 
-.sheet--is-npc::after {
+.sheet .sheet--is-npc::after {
     content "Player Sheet"
 }
 
-.sheet--is-npc:checked::after {
+.sheet .sheet--is-npc:checked::after {
     content "NPC Sheet"
 }
