@@ -11,7 +11,7 @@ var dest = 'web/';
 
 var glob = {
     jade: src + '*.jade',
-    templatePartials: src + 'partials/*.hbs',
+    jadePartials: src + 'includes/*.*',
     templateData: src + 'data/*.{js,json}',
     stylusPartials: src + 'stylus/**/*.styl',
     css: src + '*.styl'
@@ -55,7 +55,7 @@ gulp.task('css', function() {
 gulp.task('build', ['html', 'css']);
 
 gulp.task('watch', ['build'], function() {
-    gulp.watch([glob.html, glob.templatePartials], ['html']);
+    gulp.watch([glob.jade, glob.jadePartials], ['html']);
     gulp.watch([glob.css, glob.stylusPartials], ['css']);
 });
 
