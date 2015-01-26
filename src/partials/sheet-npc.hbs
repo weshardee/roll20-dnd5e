@@ -7,7 +7,7 @@
     <div class="grid__cell grid__cell--1-3 sheet-center"><button type="roll" class="sheet-roll" id="roll_NPC_Traits" name="roll_NPC_Traits" value="/w GM @{character_name} Traits :\n/w GM Damage Resistance : @{npc_damage_resistance}\n/w GM Damage Vulnerability : @{npc_damage_vulnerability}\n/w GM Damage Immunity : @{npc_damage_immunity}\n/w GM Condition Immunity : @{npc_condition_immunity}\n/w GM Other Traits : @{npc_traits}">NPC Traits</button></div>
 
     <div class="grid__cell grid__cell--1-3">
-        <div class="grid sheet-padr">
+        <div class="grid">
             <div class="grid__cell grid__cell--1-3 label sheet-center" title="Only enter additional bonuses to initiative here. Your Dex mod is already included in the macro button"><input class="sheet-underlined sheet-center" type="number" id="attr_npc_initiative" name="attr_npc_initiative" value="0" step="1"><br/>Initiative Bonus</div>
             <div class="grid__cell grid__cell--1-3 label sheet-center"><input class="sheet-underlined" type="number" id="attr_npc_initiative_overall" name="attr_npc_initiative_overall" value="@{npc_dexterity_mod} + @{npc_initiative}" disabled="disabled"><br/>Total</div>
             <div class="grid__cell grid__cell--1-3 sheet-center"><button type="roll" class="sheet-roll" id="roll_NPC_Initiative" name="roll_NPC_Initiative" value="/w GM @{selected|token_name} rolls a [[1d20 + @{selected|npc_initiative_overall} [Initiative Mod] &{tracker}]] for initiative!">Initiative</button></div>
@@ -21,9 +21,9 @@
 
 <div class="grid">
 
-    <div class="grid__cell grid__cell--1-2 sheet-padr sheet-margin-top">
+    <div class="grid__cell grid__cell--1-2 sheet-margin-top">
 
-        <div class="grid sheet-sub-header">
+        <div class="grid grid--sub">
             <div class="grid__cell grid__cell--1-6 sheet-center label">Score</div>
             <div class="grid__cell grid__cell--1-6 sheet-center label">&nbsp;</div>
             <div class="grid__cell grid__cell--1-6 sheet-center label">Mod</div>
@@ -90,9 +90,9 @@
 
     <div class="grid__cell grid__cell--1-2">
 
-        <div class="grid sheet-sub-header">
+        <div class="grid grid--sub">
             <div class="grid__cell grid__cell--1-3 sheet-center label">Size</div>
-            <div class="grid__cell grid__cell--1-3 sheet-center label sheet-padr">Type/Race</div>
+            <div class="grid__cell grid__cell--1-3 sheet-center label">Type/Race</div>
             <div class="grid__cell grid__cell--1-3 sheet-center label sheet-padl">Alignment</div>
         </div>
 
@@ -102,31 +102,31 @@
             <div class="grid__cell grid__cell--1-3 sheet-center"><input class="sheet-center" type="text" id="attr_npc_alignment" name="attr_npc_alignment"></div>
         </div>
 
-        <div class="grid sheet-sub-header">
+        <div class="grid grid--sub">
             <div class="grid__cell grid__cell--1-3 sheet-center label">AC</div>
-            <div class="grid__cell grid__cell--2-3 sheet-center label sheet-padr">AC note</div>
+            <div class="grid__cell grid__cell--2-3 sheet-center label">AC note</div>
         </div>
 
         <div class="grid sheet-padb">
             <div class="grid__cell grid__cell--1-3 sheet-center"><input class="sheet-center" type="number" id="attr_npc_AC" name="attr_npc_AC" step="1" value="10"></div>
-            <div class="grid__cell grid__cell--2-3 sheet-center sheet-padr"><input class="sheet-center" type="text" id="attr_npc_AC_note" name="attr_npc_AC_note"></div>
+            <div class="grid__cell grid__cell--2-3 sheet-center"><input class="sheet-center" type="text" id="attr_npc_AC_note" name="attr_npc_AC_note"></div>
         </div>
 
-        <div class="grid sheet-sub-header">
+        <div class="grid grid--sub">
             <div class="grid__cell grid__cell--1-4 sheet-center label">Current HP</div>
-            <div class="grid__cell grid__cell--1-4 sheet-center label sheet-padr">Max HP</div>
-            <div class="grid__cell grid__cell--1-4 sheet-center label sheet-padl sheet-padr">Temp HP</div>
+            <div class="grid__cell grid__cell--1-4 sheet-center label">Max HP</div>
+            <div class="grid__cell grid__cell--1-4 sheet-center label sheet-padl">Temp HP</div>
             <div class="grid__cell grid__cell--1-4 sheet-center label sheet-padl">HP Hit Dice</div>
         </div>
 
         <div class="grid sheet-padb">
             <div class="grid__cell grid__cell--1-4 sheet-center"><input class="sheet-center" type="number" id="attr_npc_HP" name="attr_npc_HP" step="1" value="1"></div>
-            <div class="grid__cell grid__cell--1-4 sheet-center sheet-padr"><input class="sheet-center" type="number" id="attr_npc_HP_max" name="attr_npc_HP_max" min="1" step="1" value="1"></div>
-            <div class="grid__cell grid__cell--1-4 sheet-center sheet-padl sheet-border-left sheet-padr sheet-border-right"><input class="sheet-center" type="number" id="attr_npc_temp_HP" name="attr_npc_temp_HP" value="0" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--1-4 sheet-center"><input class="sheet-center" type="number" id="attr_npc_HP_max" name="attr_npc_HP_max" min="1" step="1" value="1"></div>
+            <div class="grid__cell grid__cell--1-4 sheet-center sheet-padl sheet-border-left sheet-border-right"><input class="sheet-center" type="number" id="attr_npc_temp_HP" name="attr_npc_temp_HP" value="0" min="0" step="1"></div>
             <div class="grid__cell grid__cell--1-4 sheet-center sheet-padl"><input class="sheet-center" type="text" id="attr_npc_HP_hit_dice" name="attr_npc_HP_hit_dice"></div>
         </div>
 
-        <div class="grid sheet-sub-header">
+        <div class="grid grid--sub">
             <div class="grid__cell grid__cell--1-4 sheet-center label">Speed</div>
             <div class="grid__cell grid__cell--1-4 sheet-center label">Fly</div>
             <div class="grid__cell grid__cell--1-4 sheet-center label">Climb</div>
@@ -144,7 +144,7 @@
 
     <div class="grid__cell grid__cell--1">
 
-        <div class="grid sheet-sub-header">
+        <div class="grid grid--sub">
             <div class="grid__cell grid__cell--1-4 sheet-center label">Challenge</div>
             <div class="grid__cell grid__cell--1-4 sheet-center label">XP</div>
             <div class="grid__cell grid__cell--1-4 sheet-center label">Senses</div>
@@ -166,7 +166,7 @@
 
 <h1 class="hdg">Traits/Background</h1>
 
-<div class="grid sheet-sub-header">
+<div class="grid grid--sub">
     <div class="grid__cell grid__cell--1-2 sheet-center label">Damage Resistance</div>
     <div class="grid__cell grid__cell--1-2 sheet-center label">Damage Vulnerability</div>
 </div>
@@ -176,7 +176,7 @@
     <div class="grid__cell grid__cell--1-2 sheet-center"><input class="sheet-center" type="text" id="attr_npc_damage_vulnerability" name="attr_npc_damage_vulnerability" value="None"></div>
 </div>
 
-<div class="grid sheet-sub-header">
+<div class="grid grid--sub">
     <div class="grid__cell grid__cell--1-2 sheet-center label">Damage Immunity</div>
     <div class="grid__cell grid__cell--1-2 sheet-center label">Condition Immunity</div>
 </div>
@@ -187,7 +187,7 @@
 
 </div>
 
-<div class="grid sheet-sub-header">
+<div class="grid grid--sub">
     <div class="grid__cell grid__cell--1 sheet-center label">Traits</div>
 </div>
 
@@ -203,9 +203,9 @@
 
 <div class="grid">
 
-    <div class="grid__cell grid__cell--1-2 sheet-padr">
+    <div class="grid__cell grid__cell--1-2">
 
-        <div class="grid sheet-sub-header">
+        <div class="grid grid--sub">
             <div class="grid__cell grid__cell--1-12 sheet-center label">&nbsp;</div>
             <div class="grid__cell grid__cell--1-2 label sheet-center">Skill</div>
             <div class="grid__cell grid__cell--1-8 sheet-center label">Bonus</div>
@@ -291,7 +291,7 @@
 
     <div class="grid__cell grid__cell--1-2">
 
-        <div class="grid sheet-sub-header">
+        <div class="grid grid--sub">
             <div class="grid__cell grid__cell--1-12 sheet-center label">&nbsp;</div>
             <div class="grid__cell grid__cell--1-2 label sheet-center">Skill</div>
             <div class="grid__cell grid__cell--1-8 sheet-center label">Bonus</div>
@@ -379,9 +379,9 @@
 
 <div class="grid">
 
-    <div class="grid__cell grid__cell--1-2 sheet-padr">
+    <div class="grid__cell grid__cell--1-2">
 
-        <div class="grid sheet-sub-header">
+        <div class="grid grid--sub">
             <div class="grid__cell grid__cell--1-7 sheet-center label">&nbsp;</div>
             <div class="grid__cell grid__cell--4-7 label sheet-center">Unskilled check</div>
             <div class="grid__cell grid__cell--1-7 sheet-center label">Bonus</div>
@@ -415,7 +415,7 @@
 
     <div class="grid__cell grid__cell--1-2">
 
-        <div class="grid sheet-sub-header">
+        <div class="grid grid--sub">
             <div class="grid__cell grid__cell--1-7 sheet-center label">&nbsp;</div>
             <div class="grid__cell grid__cell--4-7 label sheet-center">Unskilled Check</div>
             <div class="grid__cell grid__cell--1-7 sheet-center label">Bonus</div>
@@ -449,7 +449,7 @@
 
 <p class="sheet-small-note">The multiattack field below will be displayed in the macro output of any action with the Multiattack? drop down set to Yes.  GM/DM's can use any of the macros below as token actions by creating a token ability and simply adding "%{selected|NPCActionX}" (without the quotes) to it, where X is the row number of the action you want to be available as a token action.</p>
 
-<div class="grid sheet-sub-header">
+<div class="grid grid--sub">
     <div class="grid__cell grid__cell--1 sheet-center label">Multiattack</div>
 </div>
 

@@ -8,12 +8,12 @@
 
 <!-- BEGIN AUTO GENERATED WEAPON SECTION -->
 <h1 class="hdg">Melee Weapons <i class="sheet-pictos">D</i></h1>
-<div class="grid sheet-sub-header">
+<div class="grid grid--sub">
     <div class="grid__cell grid__cell--1-24 sheet-center label sheet-vert-bottom">Prof?</div>
     <div class="grid__cell grid__cell--1-6 sheet-center label sheet-vert-bottom">Weapon</div>
     <div class="grid__cell grid__cell--1-8 sheet-center label sheet-vert-bottom">Wielded</div>
     <div class="grid__cell grid__cell--1-12 sheet-center label sheet-vert-bottom">Finesse?</div>
-    <div class="grid__cell grid__cell--1-12 sheet-center label sheet-vert-bottom sheet-padr">Magic Bonus</div>
+    <div class="grid__cell grid__cell--1-12 sheet-center label sheet-vert-bottom">Magic Bonus</div>
     <div class="grid__cell grid__cell--1-24 sheet-center label sheet-vert-bottom">To<br/>Hit</div>
     <div class="grid__cell grid__cell--1-12 sheet-center label sheet-vert-bottom">Attack</div>
     <div class="grid__cell grid__cell--1-12 sheet-center label sheet-vert-bottom">Damage Dice</div>
@@ -38,7 +38,7 @@
             <option value="@{finesse_mod}">Yes</option>
         </select>
     </div>
-    <div class="grid__cell grid__cell--1-12 sheet-padr" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" id="attr_meleemagic1" name="attr_meleemagic1" value="0" step="1"></div>
+    <div class="grid__cell grid__cell--1-12" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" id="attr_meleemagic1" name="attr_meleemagic1" value="0" step="1"></div>
     <div class="grid__cell grid__cell--1-24"><input type="number" id="attr_meleetohit1" name="attr_meleetohit1" value="@{meleeattackstat1} + @{pbmelee1} + @{meleemagic1}" disabled="disabled"></div>
     <div class="grid__cell grid__cell--1-12 sheet-center"><button type="roll" class="sheet-roll" id="roll_MeleeAttack1" name="roll_MeleeAttack1" value="/em uses @{meleeweaponname1} to attack\n\n[[1d20 + @{meleetohit1} [To Hit] + (@{global_melee_attack_bonus}) [Active Melee Attack Bonus] ]] | [[1d20 + @{meleetohit1} [To Hit] + (@{global_melee_attack_bonus}) [Active Melee Attack Bonus] ]] vs AC" >Attack</button></div>
     <div class="grid__cell grid__cell--1-12" title="Only enter the base damage roll here without any bonuses from stats or other sources"><input class="sheet-center" type="text" id="attr_meleedmg1" name="attr_meleedmg1"></div>
@@ -65,7 +65,7 @@
             <option value="@{finesse_mod}">Yes</option>
         </select>
     </div>
-    <div class="grid__cell grid__cell--1-12 sheet-padr" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" id="attr_meleemagic2" name="attr_meleemagic2" value="0" step="1"></div>
+    <div class="grid__cell grid__cell--1-12" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" id="attr_meleemagic2" name="attr_meleemagic2" value="0" step="1"></div>
     <div class="grid__cell grid__cell--1-24"><input type="number" id="attr_meleetohit2" name="attr_meleetohit2" value="@{meleeattackstat2} + @{pbmelee2} + @{meleemagic2}" disabled="disabled"></div>
     <div class="grid__cell grid__cell--1-12 sheet-center"><button type="roll" class="sheet-roll" id="roll_MeleeAttack2" name="roll_MeleeAttack2" value="/em uses @{meleeweaponname2} to attack\n\n[[1d20 + @{meleetohit2} [To Hit] + (@{global_melee_attack_bonus}) [Active Melee Attack Bonus] ]] | [[1d20 + @{meleetohit2} [To Hit] + (@{global_melee_attack_bonus}) [Active Melee Attack Bonus] ]] vs AC" >Attack</button></div>
     <div class="grid__cell grid__cell--1-12" title="Only enter the base damage roll here without any bonuses from stats or other sources"><input class="sheet-center" type="text" id="attr_meleedmg2" name="attr_meleedmg2"></div>
@@ -92,7 +92,7 @@
             <option value="@{finesse_mod}">Yes</option>
         </select>
     </div>
-    <div class="grid__cell grid__cell--1-12 sheet-padr" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" id="attr_meleemagic3" name="attr_meleemagic3" value="0" step="1"></div>
+    <div class="grid__cell grid__cell--1-12" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" id="attr_meleemagic3" name="attr_meleemagic3" value="0" step="1"></div>
     <div class="grid__cell grid__cell--1-24"><input type="number" id="attr_meleetohit3" name="attr_meleetohit3" value="@{meleeattackstat3} + @{pbmelee3} + @{meleemagic3}" disabled="disabled"></div>
     <div class="grid__cell grid__cell--1-12 sheet-center"><button type="roll" class="sheet-roll" id="roll_MeleeAttack3" name="roll_MeleeAttack3" value="/em uses @{meleeweaponname3} to attack\n\n[[1d20 + @{meleetohit3} [To Hit] + (@{global_melee_attack_bonus}) [Active Melee Attack Bonus] ]] | [[1d20 + @{meleetohit3} [To Hit] + (@{global_melee_attack_bonus}) [Active Melee Attack Bonus] ]] vs AC" >Attack</button></div>
     <div class="grid__cell grid__cell--1-12" title="Only enter the base damage roll here without any bonuses from stats or other sources"><input class="sheet-center" type="text" id="attr_meleedmg3" name="attr_meleedmg3"></div>
@@ -119,7 +119,7 @@
             <option value="@{finesse_mod}">Yes</option>
         </select>
     </div>
-    <div class="grid__cell grid__cell--1-12 sheet-padr" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" id="attr_meleemagic4" name="attr_meleemagic4" value="0" step="1"></div>
+    <div class="grid__cell grid__cell--1-12" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" id="attr_meleemagic4" name="attr_meleemagic4" value="0" step="1"></div>
     <div class="grid__cell grid__cell--1-24"><input type="number" id="attr_meleetohit4" name="attr_meleetohit4" value="@{meleeattackstat4} + @{pbmelee4} + @{meleemagic4}" disabled="disabled"></div>
     <div class="grid__cell grid__cell--1-12 sheet-center"><button type="roll" class="sheet-roll" id="roll_MeleeAttack4" name="roll_MeleeAttack4" value="/em uses @{meleeweaponname4} to attack\n\n[[1d20 + @{meleetohit4} [To Hit] + (@{global_melee_attack_bonus}) [Active Melee Attack Bonus] ]] | [[1d20 + @{meleetohit4} [To Hit] + (@{global_melee_attack_bonus}) [Active Melee Attack Bonus] ]] vs AC" >Attack</button></div>
     <div class="grid__cell grid__cell--1-12" title="Only enter the base damage roll here without any bonuses from stats or other sources"><input class="sheet-center" type="text" id="attr_meleedmg4" name="attr_meleedmg4"></div>
@@ -146,7 +146,7 @@
             <option value="@{finesse_mod}">Yes</option>
         </select>
     </div>
-    <div class="grid__cell grid__cell--1-12 sheet-padr" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" id="attr_meleemagic5" name="attr_meleemagic5" value="0" step="1"></div>
+    <div class="grid__cell grid__cell--1-12" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" id="attr_meleemagic5" name="attr_meleemagic5" value="0" step="1"></div>
     <div class="grid__cell grid__cell--1-24"><input type="number" id="attr_meleetohit5" name="attr_meleetohit5" value="@{meleeattackstat5} + @{pbmelee5} + @{meleemagic5}" disabled="disabled"></div>
     <div class="grid__cell grid__cell--1-12 sheet-center"><button type="roll" class="sheet-roll" id="roll_MeleeAttack5" name="roll_MeleeAttack5" value="/em uses @{meleeweaponname5} to attack\n\n[[1d20 + @{meleetohit5} [To Hit] + (@{global_melee_attack_bonus}) [Active Melee Attack Bonus] ]] | [[1d20 + @{meleetohit5} [To Hit] + (@{global_melee_attack_bonus}) [Active Melee Attack Bonus] ]] vs AC" >Attack</button></div>
     <div class="grid__cell grid__cell--1-12" title="Only enter the base damage roll here without any bonuses from stats or other sources"><input class="sheet-center" type="text" id="attr_meleedmg5" name="attr_meleedmg5"></div>
@@ -173,7 +173,7 @@
             <option value="@{finesse_mod}">Yes</option>
         </select>
     </div>
-    <div class="grid__cell grid__cell--1-12 sheet-padr" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" id="attr_meleemagic6" name="attr_meleemagic6" value="0" step="1"></div>
+    <div class="grid__cell grid__cell--1-12" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" id="attr_meleemagic6" name="attr_meleemagic6" value="0" step="1"></div>
     <div class="grid__cell grid__cell--1-24"><input type="number" id="attr_meleetohit6" name="attr_meleetohit6" value="@{meleeattackstat6} + @{pbmelee6} + @{meleemagic6}" disabled="disabled"></div>
     <div class="grid__cell grid__cell--1-12 sheet-center"><button type="roll" class="sheet-roll" id="roll_MeleeAttack6" name="roll_MeleeAttack6" value="/em uses @{meleeweaponname6} to attack\n\n[[1d20 + @{meleetohit6} [To Hit] + (@{global_melee_attack_bonus}) [Active Melee Attack Bonus] ]] | [[1d20 + @{meleetohit6} [To Hit] + (@{global_melee_attack_bonus}) [Active Melee Attack Bonus] ]] vs AC" >Attack</button></div>
     <div class="grid__cell grid__cell--1-12" title="Only enter the base damage roll here without any bonuses from stats or other sources"><input class="sheet-center" type="text" id="attr_meleedmg6" name="attr_meleedmg6"></div>
@@ -183,12 +183,12 @@
 </div>
 <!-- END melee weapon row -->
 <h1 class="hdg">Ranged Weapons <i class="sheet-pictos">e</i></h1>
-<div class="grid sheet-sub-header">
+<div class="grid grid--sub">
     <div class="grid__cell grid__cell--1-24 sheet-center label sheet-vert-bottom">Prof?</div>
     <div class="grid__cell grid__cell--1-12 sheet-center label sheet-vert-bottom">Ammo</div>
     <div class="grid__cell grid__cell--1-6 sheet-center label sheet-vert-bottom">Weapon (range)</div>
     <div class="grid__cell grid__cell--1-8 sheet-center label sheet-vert-bottom">Type</div>
-    <div class="grid__cell grid__cell--1-12 sheet-center label sheet-vert-bottom sheet-padr">Magic Bonus</div>
+    <div class="grid__cell grid__cell--1-12 sheet-center label sheet-vert-bottom">Magic Bonus</div>
     <div class="grid__cell grid__cell--1-24 sheet-center label sheet-vert-bottom">To<br/>Hit</div>
     <div class="grid__cell grid__cell--1-12 sheet-center label sheet-vert-bottom">Attack</div>
     <div class="grid__cell grid__cell--1-12 sheet-center label sheet-vert-bottom">Damage Dice</div>
@@ -208,7 +208,7 @@
             <option value="@{finesse_mod}">Thrown(finesse)</option>
         </select>
     </div>
-    <div class="grid__cell grid__cell--1-12 sheet-padr" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" id="attr_rangedmagic1" name="attr_rangedmagic1" value="0" step="1"></div>
+    <div class="grid__cell grid__cell--1-12" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" id="attr_rangedmagic1" name="attr_rangedmagic1" value="0" step="1"></div>
     <div class="grid__cell grid__cell--1-24"><input type="number" id="attr_rangedtohit1" name="attr_rangedtohit1" value="@{rangedtype1} + @{pbranged1} + @{rangedmagic1}" disabled="disabled"></div>
     <div class="grid__cell grid__cell--1-12 sheet-center"><button type="roll" class="sheet-roll" id="roll_RangedAttack1" name="roll_RangedAttack1" value="/em uses @{rangedweaponname1} to attack\n\n[[1d20 + @{rangedtohit1} [To Hit] + (@{global_ranged_attack_bonus}) [Active Ranged Attack Bonus] ]] | [[1d20 + @{rangedtohit1} [To Hit] + (@{global_ranged_attack_bonus}) [Active Ranged Attack Bonus] ]] vs AC" >Attack</button></div>
     <div class="grid__cell grid__cell--1-12" title="Only enter the base damage roll here without any bonuses from stats or other sources"><input class="sheet-center" type="text" id="attr_rangeddmg1" name="attr_rangeddmg1"></div>
@@ -229,7 +229,7 @@
             <option value="@{finesse_mod}">Thrown(finesse)</option>
         </select>
     </div>
-    <div class="grid__cell grid__cell--1-12 sheet-padr" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" id="attr_rangedmagic2" name="attr_rangedmagic2" value="0" step="1"></div>
+    <div class="grid__cell grid__cell--1-12" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" id="attr_rangedmagic2" name="attr_rangedmagic2" value="0" step="1"></div>
     <div class="grid__cell grid__cell--1-24"><input type="number" id="attr_rangedtohit2" name="attr_rangedtohit2" value="@{rangedtype2} + @{pbranged2} + @{rangedmagic2}" disabled="disabled"></div>
     <div class="grid__cell grid__cell--1-12 sheet-center"><button type="roll" class="sheet-roll" id="roll_RangedAttack2" name="roll_RangedAttack2" value="/em uses @{rangedweaponname2} to attack\n\n[[1d20 + @{rangedtohit2} [To Hit] + (@{global_ranged_attack_bonus}) [Active Ranged Attack Bonus] ]] | [[1d20 + @{rangedtohit2} [To Hit] + (@{global_ranged_attack_bonus}) [Active Ranged Attack Bonus] ]] vs AC" >Attack</button></div>
     <div class="grid__cell grid__cell--1-12" title="Only enter the base damage roll here without any bonuses from stats or other sources"><input class="sheet-center" type="text" id="attr_rangeddmg2" name="attr_rangeddmg2"></div>
@@ -250,7 +250,7 @@
             <option value="@{finesse_mod}">Thrown(finesse)</option>
         </select>
     </div>
-    <div class="grid__cell grid__cell--1-12 sheet-padr" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" id="attr_rangedmagic3" name="attr_rangedmagic3" value="0" step="1"></div>
+    <div class="grid__cell grid__cell--1-12" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" id="attr_rangedmagic3" name="attr_rangedmagic3" value="0" step="1"></div>
     <div class="grid__cell grid__cell--1-24"><input type="number" id="attr_rangedtohit3" name="attr_rangedtohit3" value="@{rangedtype3} + @{pbranged3} + @{rangedmagic3}" disabled="disabled"></div>
     <div class="grid__cell grid__cell--1-12 sheet-center"><button type="roll" class="sheet-roll" id="roll_RangedAttack3" name="roll_RangedAttack3" value="/em uses @{rangedweaponname3} to attack\n\n[[1d20 + @{rangedtohit3} [To Hit] + (@{global_ranged_attack_bonus}) [Active Ranged Attack Bonus] ]] | [[1d20 + @{rangedtohit3} [To Hit] + (@{global_ranged_attack_bonus}) [Active Ranged Attack Bonus] ]] vs AC" >Attack</button></div>
     <div class="grid__cell grid__cell--1-12" title="Only enter the base damage roll here without any bonuses from stats or other sources"><input class="sheet-center" type="text" id="attr_rangeddmg3" name="attr_rangeddmg3"></div>
@@ -271,7 +271,7 @@
             <option value="@{finesse_mod}">Thrown(finesse)</option>
         </select>
     </div>
-    <div class="grid__cell grid__cell--1-12 sheet-padr" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" id="attr_rangedmagic4" name="attr_rangedmagic4" value="0" step="1"></div>
+    <div class="grid__cell grid__cell--1-12" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" id="attr_rangedmagic4" name="attr_rangedmagic4" value="0" step="1"></div>
     <div class="grid__cell grid__cell--1-24"><input type="number" id="attr_rangedtohit4" name="attr_rangedtohit4" value="@{rangedtype4} + @{pbranged4} + @{rangedmagic4}" disabled="disabled"></div>
     <div class="grid__cell grid__cell--1-12 sheet-center"><button type="roll" class="sheet-roll" id="roll_RangedAttack4" name="roll_RangedAttack4" value="/em uses @{rangedweaponname4} to attack\n\n[[1d20 + @{rangedtohit4} [To Hit] + (@{global_ranged_attack_bonus}) [Active Ranged Attack Bonus] ]] | [[1d20 + @{rangedtohit4} [To Hit] + (@{global_ranged_attack_bonus}) [Active Ranged Attack Bonus] ]] vs AC" >Attack</button></div>
     <div class="grid__cell grid__cell--1-12" title="Only enter the base damage roll here without any bonuses from stats or other sources"><input class="sheet-center" type="text" id="attr_rangeddmg4" name="attr_rangeddmg4"></div>
@@ -292,7 +292,7 @@
             <option value="@{finesse_mod}">Thrown(finesse)</option>
         </select>
     </div>
-    <div class="grid__cell grid__cell--1-12 sheet-padr" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" id="attr_rangedmagic5" name="attr_rangedmagic5" value="0" step="1"></div>
+    <div class="grid__cell grid__cell--1-12" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" id="attr_rangedmagic5" name="attr_rangedmagic5" value="0" step="1"></div>
     <div class="grid__cell grid__cell--1-24"><input type="number" id="attr_rangedtohit5" name="attr_rangedtohit5" value="@{rangedtype5} + @{pbranged5} + @{rangedmagic5}" disabled="disabled"></div>
     <div class="grid__cell grid__cell--1-12 sheet-center"><button type="roll" class="sheet-roll" id="roll_RangedAttack5" name="roll_RangedAttack5" value="/em uses @{rangedweaponname5} to attack\n\n[[1d20 + @{rangedtohit5} [To Hit] + (@{global_ranged_attack_bonus}) [Active Ranged Attack Bonus] ]] | [[1d20 + @{rangedtohit5} [To Hit] + (@{global_ranged_attack_bonus}) [Active Ranged Attack Bonus] ]] vs AC" >Attack</button></div>
     <div class="grid__cell grid__cell--1-12" title="Only enter the base damage roll here without any bonuses from stats or other sources"><input class="sheet-center" type="text" id="attr_rangeddmg5" name="attr_rangeddmg5"></div>
@@ -313,7 +313,7 @@
             <option value="@{finesse_mod}">Thrown(finesse)</option>
         </select>
     </div>
-    <div class="grid__cell grid__cell--1-12 sheet-padr" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" id="attr_rangedmagic6" name="attr_rangedmagic6" value="0" step="1"></div>
+    <div class="grid__cell grid__cell--1-12" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" id="attr_rangedmagic6" name="attr_rangedmagic6" value="0" step="1"></div>
     <div class="grid__cell grid__cell--1-24"><input type="number" id="attr_rangedtohit6" name="attr_rangedtohit6" value="@{rangedtype6} + @{pbranged6} + @{rangedmagic6}" disabled="disabled"></div>
     <div class="grid__cell grid__cell--1-12 sheet-center"><button type="roll" class="sheet-roll" id="roll_RangedAttack6" name="roll_RangedAttack6" value="/em uses @{rangedweaponname6} to attack\n\n[[1d20 + @{rangedtohit6} [To Hit] + (@{global_ranged_attack_bonus}) [Active Ranged Attack Bonus] ]] | [[1d20 + @{rangedtohit6} [To Hit] + (@{global_ranged_attack_bonus}) [Active Ranged Attack Bonus] ]] vs AC" >Attack</button></div>
     <div class="grid__cell grid__cell--1-12" title="Only enter the base damage roll here without any bonuses from stats or other sources"><input class="sheet-center" type="text" id="attr_rangeddmg6" name="attr_rangeddmg6"></div>

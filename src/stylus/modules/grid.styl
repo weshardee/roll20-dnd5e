@@ -11,6 +11,7 @@ grid-border()
         {block}
 
 .grid
+    min-width 100%
     align-items stretch
     display flex
     position relative // for borders
@@ -18,6 +19,7 @@ grid-border()
 
 .grid--pad
     margin (- PAD / 2)
+    min-width calc(100% - @margin)
 
 .grid--col
     flex-direction column

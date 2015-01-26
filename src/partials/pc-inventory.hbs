@@ -1,11 +1,11 @@
 <div class="grid">
 
-    <div class="grid__cell grid__cell--1-2 sheet-padr">
+    <div class="grid__cell grid__cell--1-2">
 
         <h1 class="hdg">Coin Carried <i class="sheet-pictos">h</i></h1>
         <p class="sheet-small-note">Total = value of all coins converted to GP</p>
 
-        <div class="grid sheet-sub-header">
+        <div class="grid grid--sub">
             <div class="grid__cell grid__cell--1-6 sheet-center label">CP</div>
             <div class="grid__cell grid__cell--1-6 sheet-center label">SP</div>
             <div class="grid__cell grid__cell--1-6 sheet-center label">EP</div>
@@ -30,11 +30,11 @@
         <h1 class="hdg">Weight <i class="sheet-pictos">a</i></h1>
         <p class="sheet-small-note">All weights in lbs.</p>
 
-        <div class="grid sheet-sub-header">
+        <div class="grid grid--sub">
             <div class="grid__cell grid__cell--1-8 sheet-center label">Inventory</div>
             <div class="grid__cell grid__cell--1-8 sheet-center label">Coin</div>
             <div class="grid__cell grid__cell--1-8 sheet-center label">Other</div>
-            <div class="grid__cell grid__cell--5-24 sheet-center label sheet-padr">Total</div>
+            <div class="grid__cell grid__cell--5-24 sheet-center label">Total</div>
             <div class="grid__cell grid__cell--5-24 sheet-center label">Carrying Max</div>
             <div class="grid__cell grid__cell--5-24 sheet-center label">Push/Drag/Lift</div>
         </div>
@@ -43,7 +43,7 @@
             <div class="grid__cell grid__cell--1-8 sheet-center"><input type="number" id="attr_inventory_weight" name="attr_inventory_weight" value="@{inventory_weight_calc}" disabled="disabled"></div>
             <div class="grid__cell grid__cell--1-8 sheet-center"><input type="number" id="attr_coin_weight" name="attr_coin_weight" value="((@{CP} + @{SP} + @{EP} + @{GP} + @{PP}) / 50)" disabled="disabled"></div>
             <div class="grid__cell grid__cell--1-8 sheet-center"><input type="number" id="attr_other_weight" name="attr_other_weight" value="0" min="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--5-24 sheet-center sheet-padr"><input type="number" id="attr_total_weight" name="attr_total_weight" value="@{inventory_weight} + @{coin_weight} + @{other_weight}" disabled="disabled"></div>
+            <div class="grid__cell grid__cell--5-24 sheet-center"><input type="number" id="attr_total_weight" name="attr_total_weight" value="@{inventory_weight} + @{coin_weight} + @{other_weight}" disabled="disabled"></div>
             <div class="grid__cell grid__cell--5-24 sheet-center"><input type="number" id="attr_total_weight_max" name="attr_total_weight_max" title="The maximum total weight your character can carry" value="@{strength}*15" disabled="disabled"></div>
             <div class="grid__cell grid__cell--5-24 sheet-center"><input type="number" id="attr_max_push_drag_lift" name="attr_max_push_drag_lift" title="This is the maximum weight you can push/drag/lift.  If the weight you are pushing/dragging/carrying exceeds your maximum carrying capacity then your speed drops to 5 feet" value="@{strength}*30" disabled="disabled"></div>
         </div>
@@ -84,7 +84,7 @@
 <!-- BEGIN new inventory page -->
 <div class="sheet-inventory-page1">
 
-    <div class="grid sheet-sub-header">
+    <div class="grid grid--sub">
         <div class="grid__cell grid__cell--1-15 sheet-center label">Row #</div>
         <div class="grid__cell grid__cell--1-15 sheet-center label">Carried?</div>
         <div class="grid__cell grid__cell--1-15 sheet-center label">Qty</div>
@@ -256,7 +256,7 @@
 <!-- END inventory page -->            <!-- BEGIN new inventory page -->
 <div class="sheet-inventory-page2">
 
-    <div class="grid sheet-sub-header">
+    <div class="grid grid--sub">
         <div class="grid__cell grid__cell--1-15 sheet-center label">Row #</div>
         <div class="grid__cell grid__cell--1-15 sheet-center label">Carried?</div>
         <div class="grid__cell grid__cell--1-15 sheet-center label">Qty</div>
@@ -428,7 +428,7 @@
 <!-- END inventory page -->            <!-- BEGIN new inventory page -->
 <div class="sheet-inventory-page3">
 
-    <div class="grid sheet-sub-header">
+    <div class="grid grid--sub">
         <div class="grid__cell grid__cell--1-15 sheet-center label">Row #</div>
         <div class="grid__cell grid__cell--1-15 sheet-center label">Carried?</div>
         <div class="grid__cell grid__cell--1-15 sheet-center label">Qty</div>
@@ -600,7 +600,7 @@
 <!-- END inventory page -->            <!-- BEGIN new inventory page -->
 <div class="sheet-inventory-page4">
 
-    <div class="grid sheet-sub-header">
+    <div class="grid grid--sub">
         <div class="grid__cell grid__cell--1-15 sheet-center label">Row #</div>
         <div class="grid__cell grid__cell--1-15 sheet-center label">Carried?</div>
         <div class="grid__cell grid__cell--1-15 sheet-center label">Qty</div>
