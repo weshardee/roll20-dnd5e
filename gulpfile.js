@@ -10,7 +10,7 @@ var src = 'src/';
 var dest = 'web/';
 
 var glob = {
-    html: src + '*.hbs',
+    jade: src + '*.jade',
     templatePartials: src + 'partials/*.hbs',
     templateData: src + 'data/*.{js,json}',
     stylusPartials: src + 'stylus/**/*.styl',
@@ -25,17 +25,15 @@ var hbOptions = {
 // TODO: maybe break tasks up with gulp-load
 
 gulp.task('html', function() {
-    return gulp.src(glob.html)
+    return gulp.src(glob.jade)
     .pipe(plugins.plumber(function (e) {
         beep();
-        console.log('[hb]'.bold.magenta + ' There was an issue compiling Handlebars:\n'.bold.red);
+        console.log('[hb]'.bold.magenta + ' There was an issue compiling html:\n'.bold.red);
         console.log(e);
         console.log('');
         this.emit('end');
     }))
-    .pipe(plugins.frontMatter())
-    .pipe(plugins.hb(hbOptions))
-    .pipe(plugins.ext.replace('html'))
+    .pipe(plugins.jade())
     .pipe(gulp.dest(dest))
     .pipe(reload({stream:true}));
 });
