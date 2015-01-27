@@ -1,10 +1,29 @@
-.sheet
-    input.sheet--is-npc(
-        type="checkbox"
-        id="attr_is_npc"
-        name="attr_is_npc"
-        value="1"
+mixin tick(name, value)
+    input.sheet-tick(
+        type='checkbox' 
+        name=name
+        value=value || '1'
     )
-    .sheet--hd {{> sheet-hd }}
-    .sheet--bd.sheet--bd__pc {{> sheet-pc }}
-    .sheet--bd.sheet--bd__npc {{> sheet-npc }}
+    
+mixin roll(name, value)
+    button.roll(
+        type='roll' 
+        name=name
+        value=value || '[[1d20]]'
+    )
+
+.sheet-wrapper
+    .sheet-main
+        input.sheet-main--is-npc(
+            type="checkbox"
+            id="attr_is_npc"
+            name="attr_is_npc"
+            value="1"
+        )
+        .sheet-main--hd 
+            include sheet-hd
+        .sheet-main--bd.sheet--bd__pc 
+            include sheet-pc
+        .sheet-main--bd.sheet--bd__npc
+            //- include sheet-npc
+ 

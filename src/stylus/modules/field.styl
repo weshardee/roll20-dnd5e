@@ -7,7 +7,7 @@ FIELD_LABEL_HEIGHT = PAD
 FIELD_LABEL_FONT_SIZE = FONT_SIZE_SM
 FIELD_LABEL_OVERLAP = FIELD_LABEL_HEIGHT * 0.7
 
-.field
+.sheet-field
     border-radius inherit
     display flex
     flex-direction column
@@ -15,16 +15,16 @@ FIELD_LABEL_OVERLAP = FIELD_LABEL_HEIGHT * 0.7
     position relative
     background-color white
 
-.field[disabled],
-.field--disabled
+.sheet-field[disabled],
+.sheet-field--disabled
     background-color PALE
     cursor not-allowed
 
-.field--blue,
-.field--blue[disabled]
+.sheet-field--blue,
+.sheet-field--blue[disabled]
     background-color BRIGHT_PALE_BLUE
 
-.field__label
+.sheet-field__label
     bottom 0
     color FADED_GRAY
     font-size FIELD_LABEL_FONT_SIZE
@@ -34,7 +34,7 @@ FIELD_LABEL_OVERLAP = FIELD_LABEL_HEIGHT * 0.7
     z-index FIELD_LABEL_LAYER
     height FIELD_LABEL_HEIGHT
 
-.field__field
+.sheet-field__field
     flex 1
     height FIELD_HEIGHT
     padding-bottom FIELD_LABEL_OVERLAP

@@ -10,42 +10,42 @@ grid-border()
         pointer-events none
         {block}
 
-.grid
+.sheet-grid
     min-width 100%
     align-items stretch
     display flex
     position relative // for borders
     min-height HEIGHT
 
-.grid--pad
+.sheet-grid--pad
     margin (- PAD / 2)
     min-width calc(100% - @margin)
 
-.grid--col
+.sheet-grid--col
     flex-direction column
 
 /* grid items */
 
-.grid > *
+.sheet-grid > *
     flex 1
     position relative // for borders
 
-.grid--pad > *
+.sheet-grid--pad > *
     border-radius RADIUS
     padding (PAD / 2)
 
-.grid--split > *
+.sheet-grid--split > *
     background-color white
     +grid-border()
         border-bottom-width 1px
         border-left-width 1px
 
-.grid--split > :last-child::after
+.sheet-grid--split > :last-child::after
     border-right-width 1px
 
 // alternate colors
 
-.grid--sub {
+.sheet-grid--sub {
     background-color alpha(DARK_GRAY, 0.9)
     color white
     font-size FONT_SIZE_SM
@@ -54,14 +54,14 @@ grid-border()
 
 // sizes
 
-.grid__cell--1 {
+.sheet-grid__cell--1 {
     flex none
     width 100%
 }
 
 for max in (2...13) {
     for span in (1...max) {
-        .grid__cell--{span}-{max} {
+        .sheet-grid__cell--{span}-{max} {
             flex none
             width (span / max) * 100%
         }
@@ -69,6 +69,6 @@ for max in (2...13) {
 }
 
 // content alignment
-.grid__cell
+.sheet-grid__cell
     display flex
     flex-direction column

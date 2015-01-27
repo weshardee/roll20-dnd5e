@@ -2,6 +2,8 @@ var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')();
 var beep    = require('beepbeep');
 var colors  = require('colors');
+var fs  = require('fs');
+var path = require('path');
 
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
@@ -12,14 +14,9 @@ var dest = 'web/';
 var glob = {
     jade: src + '*.jade',
     jadePartials: src + 'includes/*.*',
-    templateData: src + 'data/*.{js,json}',
+    templateData: src + 'data/skills.json',
     stylusPartials: src + 'stylus/**/*.styl',
     css: src + '*.styl'
-};
-
-var hbOptions = {
-    data: glob.templateData,
-    partials: [glob.templatePartials]
 };
 
 // TODO: maybe break tasks up with gulp-load
@@ -33,7 +30,9 @@ gulp.task('html', function() {
         console.log('');
         this.emit('end');
     }))
-    .pipe(plugins.jade())
+    .pipe(plugins.jade({
+        data: require('./data')
+    }))
     .pipe(gulp.dest(dest))
     .pipe(reload({stream:true}));
 });
