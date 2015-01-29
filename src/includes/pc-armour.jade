@@ -9,9 +9,9 @@
     </div>
 
     <div class="grid sheet-padb">
-        <div class="grid__cell grid__cell--1-5 label sheet-center"><input class="sheet-underlined" type="number" id="attr_AC_calc" name="attr_AC_calc" value="@{armouractive1}+@{armouractive2}+@{armouractive3}+@{armouractive4}+@{armouractive5}+@{armouractive6}+@{armouractive7}+@{armouractive8}+@{armouractive9}+@{armouractive10}" disabled="disabled" ><br/>AC (worn armour)</div>
-        <div class="grid__cell grid__cell--1-5 label sheet-center"><input class="sheet-underlined" type="number" id="attr_AC_no_armour_calc" name="attr_AC_no_armour_calc" value="10+@{dexterity_mod}+floor(@{unarmoured_class_bonus})+@{armouractiveunarmoured1}+@{armouractiveunarmoured2}+@{armouractiveunarmoured3}+@{armouractiveunarmoured4}+@{armouractiveunarmoured5}+@{armouractiveunarmoured6}+@{armouractiveunarmoured7}+@{armouractiveunarmoured8}+@{armouractiveunarmoured9}+@{armouractiveunarmoured10}" disabled="disabled"><br/>AC (unarmoured)</div>
-        <div class="grid__cell grid__cell--1-5 sheet-padl sheet-margin-top label sheet-center">Unarmoured bonus : </div>
+        <div class="grid__cell grid__cell--1-5"><input class="sheet-underlined" type="number" id="attr_AC_calc" name="attr_AC_calc" value="@{armouractive1}+@{armouractive2}+@{armouractive3}+@{armouractive4}+@{armouractive5}+@{armouractive6}+@{armouractive7}+@{armouractive8}+@{armouractive9}+@{armouractive10}" disabled="disabled" ><br/>AC (worn armour)</div>
+        <div class="grid__cell grid__cell--1-5"><input class="sheet-underlined" type="number" id="attr_AC_no_armour_calc" name="attr_AC_no_armour_calc" value="10+@{dexterity_mod}+floor(@{unarmoured_class_bonus})+@{armouractiveunarmoured1}+@{armouractiveunarmoured2}+@{armouractiveunarmoured3}+@{armouractiveunarmoured4}+@{armouractiveunarmoured5}+@{armouractiveunarmoured6}+@{armouractiveunarmoured7}+@{armouractiveunarmoured8}+@{armouractiveunarmoured9}+@{armouractiveunarmoured10}" disabled="disabled"><br/>AC (unarmoured)</div>
+        <div class="grid__cell grid__cell--1-5 sheet-padl sheet-margin-top">Unarmoured bonus : </div>
         <div class="grid__cell grid__cell--2-5">
             <select id="attr_unarmoured_class_bonus" name="attr_unarmoured_class_bonus">
                 <option value="(0 + 0.001)" selected="selected">None</option>

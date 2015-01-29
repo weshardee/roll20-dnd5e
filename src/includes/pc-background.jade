@@ -1,54 +1,128 @@
-<h1 class="hdg">Appearance, Vision, Languages and Alignment <i class="sheet-pictos">U</i></h1>
-<div class="grid">
-    <div class="grid__cell-1-7 label sheet-center"><input class="sheet-underlined sheet-center" type="text" id="attr_gender" name="attr_gender"><br/>Gender</div>
-    <div class="grid__cell-1-7 label sheet-center"><input class="sheet-underlined sheet-center" type="number" id="attr_age" name="attr_age"><br/>Age</div>
-    <div class="grid__cell-1-7 label sheet-center"><input class="sheet-underlined sheet-center" type="text" id="attr_height" name="attr_height"><br/>Height</div>
-    <div class="grid__cell-1-7 label sheet-center"><input class="sheet-underlined sheet-center" type="text" id="attr_weight" name="attr_weight"><br/>Weight</div>
-    <div class="grid__cell-1-7 label sheet-center"><input class="sheet-underlined sheet-center" type="text" id="attr_eyes" name="attr_eyes"><br/>Eyes</div>
-    <div class="grid__cell-1-7 label sheet-center"><input class="sheet-underlined sheet-center" type="text" id="attr_hair" name="attr_hair"><br/>Hair</div>
-    <div class="grid__cell-1-7 label sheet-center"><input class="sheet-underlined sheet-center" type="text" id="attr_size" name="attr_size"><br/>Size</div>
-</div>
+.sheet-grid.sheet-grid--pad.sheet-grid--col
+    .sheet-grid__cell
 
-<div class="grid sheet-padb">
-    <div class="grid__cell-1-6 label sheet-center"><input class="sheet-underlined sheet-center" type="text" id="attr_vision" name="attr_vision"><br/>Vision</div>
-    <div class="grid__cell-2-3 label sheet-center"><input class="sheet-underlined sheet-center" type="text" id="attr_prolanguages" name="attr_prolanguages"><br/>Known Languages</div>
-    <div class="grid__cell-1-6 label sheet-center"><input class="sheet-underlined sheet-center" type="text" id="attr_alignment" name="attr_alignment"><br/>Alignment</div>
-</div>
+        h1.hdg Appearance, Vision, Languages and Alignment 
+            i.sheet-pictos U
 
-<h1 class="hdg">Background, Traits, Ideals, Bonds and Flaws <i class="sheet-pictos">g</i></h1>
-<div class="grid grid--sub">
-    <div class="grid__cell-1-3 sheet-center label">Background</div>
-    <div class="grid__cell-1-3 sheet-center label">Racial Traits</div>
-    <div class="grid__cell-1-3 sheet-center label">Personality Traits</div>
-</div>
+        .sheet-grid.sheet-grid--split
+            .sheet-grid__cell 
+                label.sheet-field
+                    .sheet-field__label Gender
+                    input.sheet-field_field(
+                        type="text" 
+                        name="attr_gender"
+                    )
+            .sheet-grid__cell 
+                label.sheet-field
+                    .sheet-field__label Age
+                    input.sheet-field_field(
+                        type="number" 
+                        name="attr_age"
+                    )
+            .sheet-grid__cell 
+                label.sheet-field
+                    .sheet-field__label Height
+                    input.sheet-field_field(
+                        type="text" 
+                        name="attr_height"
+                    )
+            .sheet-grid__cell 
+                label.sheet-field
+                    .sheet-field__label Weight
+                    input.sheet-field_field(
+                        type="text" 
+                        name="attr_weight"
+                    )
+            .sheet-grid__cell 
+                label.sheet-field
+                    .sheet-field__label Eyes
+                    input.sheet-field_field(
+                        type="text" 
+                        name="attr_eyes"
+                    )
+            .sheet-grid__cell 
+                label.sheet-field
+                    .sheet-field__label Hair
+                    input.sheet-field_field(
+                        type="text" 
+                        name="attr_hair"
+                    )
+            .sheet-grid__cell 
+                label.sheet-field
+                    .sheet-field__label Size
+                    input.sheet-field__field(
+                        type="text" 
+                        name="attr_size"
+                    ) 
 
-<div class="grid">
-    <div class="grid__cell-1-3"><textarea id="attr_background" name="attr_background"></textarea></div>
-    <div class="grid__cell-1-3"><textarea id="attr_racial_traits" name="attr_racial_traits"></textarea></div>
-    <div class="grid__cell-1-3"><textarea id="attr_personality_traits" name="attr_personality_traits"></textarea></div>
-</div>
+        .sheet-grid.sheet-grid--split
+            .sheet-grid__cell.sheet-grid__cell-1-6
+                label.sheet-field
+                    .sheet-field__label Vision
+                    input.sheet-field__field(
+                        type="text"
+                        name="attr_vision"
+                    )
+            .sheet-grid__cell.sheet-grid__cell-2-3
+                label.sheet-field
+                    .sheet-field__label Known Languages
+                    input.sheet-field__field(
+                        type="text"
+                        name="attr_prolanguages"
+                    )
+            .sheet-grid__cell.sheet-grid__cell-1-6
+                label.sheet-field
+                    .sheet-field__label Alignment
+                    input.sheet-field__field(
+                        type="text"
+                        name="attr_alignment"
+                    )
 
-<div class="grid grid--sub">
-    <div class="grid__cell-1-3 sheet-center label">Ideals</div>
-    <div class="grid__cell-1-3 sheet-center label">Bonds</div>
-    <div class="grid__cell-1-3 sheet-center label">Flaws</div>
-</div>
+    .sheet-grid__cell
+        h1.hdg Background, Traits, Ideals, Bonds and Flaws 
+            i.sheet-pictos g
+        .sheet-grid.sheet-grid--sub 
+            .sheet-grid__cell Background
+            .sheet-grid__cell Racial Traits
+            .sheet-grid__cell Personality Traits
 
-<div class="grid">
-    <div class="grid__cell-1-3"><textarea id="attr_ideals" name="attr_ideals"></textarea></div>
-    <div class="grid__cell-1-3"><textarea id="attr_bonds" name="attr_bonds"></textarea></div>
-    <div class="grid__cell-1-3"><textarea id="attr_flaws" name="attr_flaws"></textarea></div>
-</div>
+        .sheet-grid.sheet-grid--split
+            .sheet-grid__cell 
+                textarea(name="attr_background")
+            .sheet-grid__cell 
+                textarea(name="attr_racial_traits")
+            .sheet-grid__cell 
+                textarea(name="attr_personality_traits")
 
-<h1 class="hdg">Equipment Proficiencies <i class="sheet-pictos">x</i></h1>
-<div class="grid grid--sub">
-    <div class="grid__cell-1-3 sheet-center label">Armour Proficiencies</div>
-    <div class="grid__cell-1-3 sheet-center label">Weapon Proficiencies</div>
-    <div class="grid__cell-1-3 sheet-center label">Tool Proficiencies</div>
-</div>
 
-<div class="grid">
-    <div class="grid__cell-1-3"><textarea id="attr_pro_armour" name="attr_pro_armour"></textarea></div>
-    <div class="grid__cell-1-3"><textarea id="attr_pro_weapons" name="attr_pro_weapons"></textarea></div>
-    <div class="grid__cell-1-3"><textarea id="attr_pro_tools" name="attr_pro_tools"></textarea></div>
-</div>
+        .sheet-grid.sheet-grid--sub 
+            .sheet-grid__cell Ideals
+            .sheet-grid__cell Bonds
+            .sheet-grid__cell Flaws
+
+
+        .sheet-grid.sheet-grid--split
+            .sheet-grid__cell 
+                textarea(name="attr_ideals")
+            .sheet-grid__cell 
+                textarea(name="attr_bonds")
+            .sheet-grid__cell 
+                textarea(name="attr_flaws")
+
+    .sheet-grid__cell
+
+        h1.hdg Equipment Proficiencies 
+            i.sheet-pictos x
+        .sheet-grid.sheet-grid--sub 
+            .sheet-grid__cell Armour Proficiencies
+            .sheet-grid__cell Weapon Proficiencies
+            .sheet-grid__cell Tool Proficiencies
+
+
+        .sheet-grid.sheet-grid--split
+            .sheet-grid__cell 
+                textarea(name="attr_pro_armour")
+            .sheet-grid__cell 
+                textarea(name="attr_pro_weapons")
+            .sheet-grid__cell 
+                textarea(name="attr_pro_tools")
