@@ -47,6 +47,7 @@ gulp.task('css', function() {
         this.emit('end');
     }))
     .pipe(plugins.stylus())
+    .pipe(plugins.autoprefixer())
     .pipe(gulp.dest(dest))
     .pipe(reload({stream:true}));
 });
