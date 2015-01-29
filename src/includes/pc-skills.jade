@@ -7,16 +7,44 @@ mixin skills-hdg()
             .sheet-grid__cell Bonus
             .sheet-grid__cell Total
             .sheet-grid__cell Pass
+            
+mixin custom-skills-hdg()
+    .hdg.hdg--2
+        .sheet-grid.sheet-grid--sub
+            .sheet-grid__cell &nbsp;
+            .sheet-grid__cell.sheet-grid__cell--3-10 Skill
+            .sheet-grid__cell.sheet-grid__cell--2-10 Stat
+            .sheet-grid__cell.sheet-grid__cell--2-10 Proficient
+            .sheet-grid__cell Bonus
+            .sheet-grid__cell Total
 
+mixin other-skills-hdg()
+    .hdg.hdg--2
+        .sheet-grid.sheet-grid--sub
+            .sheet-grid__cell &nbsp;
+            .sheet-grid__cell.sheet-grid__cell--3-10 Other
+            .sheet-grid__cell.sheet-grid__cell--3-10 Proficient
+            .sheet-grid__cell Bonus
+            .sheet-grid__cell Total
+
+mixin skill-proficiency-options()
+    option(value="0") No
+    option(value="floor(@{PB} / 2)") Jack of all trades
+    option(value="@{PB}") Yes
+    option(value="(2*@{PB})") Expertise
+
+
+- var numColumns = 2
 - var numSkills = skills.length
-- var numSkillsInChunk = numSkills / 2
-- var skillsGroups = [skills.slice(0, numSkillsInChunk), skills.slice(numSkillsInChunk + 1)]
+- var numSkillsInChunk = numSkills / numColumns
+- var skillsGroups = [skills.slice(0, numSkillsInChunk), skills.slice(numSkillsInChunk)]
 
 .sheet-grid.sheet-grid--pad.sheet-grid--col
     .sheet-grid__cell
         h1.hdg Skills 
             i.sheet-pictos x
     
+    //- standard skills
     .sheet-grid__cell
         .sheet-grid.sheet-grid--pad
             each skills in skillsGroups
@@ -30,10 +58,7 @@ mixin skills-hdg()
                                 .sheet-label #{skill.name} (#{skill.attr})
                             .sheet-grid__cell.sheet-grid__cell--3-10
                                 select( name="attr_#{skill.id}_prof_exp" )
-                                    option(value="0") No
-                                    option(value="floor(@{PB} / 2)") Jack of all trades
-                                    option(value="@{PB}") Yes
-                                    option(value="(2*@{PB})") Expertise
+                                    +skill-proficiency-options()
                             .sheet-grid__cell
                                 input(
                                     type="number"
@@ -55,332 +80,55 @@ mixin skills-hdg()
                                     value="10 + @{ #{skill.id} }" 
                                     disabled
                                 )
-        //- 
-        //-     .sheet-grid__cell.sheet-grid__cell--1-2
-        //- 
-        //-         .sheet-grid.sheet-grid--sub">
-        //-             .sheet-grid__cell sheet-center label">&nbsp;
-        //-             .sheet-grid__cell.sheet-grid__cell--3-10 label">Skill
-        //-             .sheet-grid__cell.sheet-grid__cell--3-10 sheet-center label">Proficient
-        //-             .sheet-grid__cell sheet-center label">Bonus
-        //-             .sheet-grid__cell sheet-center label">Total
-        //-             .sheet-grid__cell sheet-offset-1-24 sheet-center label">Pass
-        //-         
-        //- 
-        //-         .sheet-grid.sheet-grid--split
-        //-             .sheet-grid__cell
-        //-                 +roll('roll_Medicine_Check" name="roll_Medicine_Check" value="/em makes an ability check\n\nWIS (Medicine) check :\n[[1d20 + @{medicine} [Proficiency + Wisdom Mod + Expertise + Misc] + (@{global_check_bonus}) [Ability Check Bonus] ]] | [[1d20 + @{medicine} [Proficiency + Wisdom Mod + Expertise + Misc] + (@{global_check_bonus}) [Ability Check Bonus] ]]'
-        //-             
-        //-             .sheet-grid__cell.sheet-grid__cell--3-10 sheet-skill-name">Medicine (Wis)
-        //-             .sheet-grid__cell.sheet-grid__cell--3-10">
-        //-                 select id="attr_medicine_prof_exp" name="attr_medicine_prof_exp">
-        //-                     option(value="0">No
-        //-                     option(value="floor(@{PB} / 2)">Jack of all trades
-        //-                     option(value="@{PB}">Yes
-        //-                     option(value="(2*@{PB})">Expertise
-        //-                 
-        //-             
-        //-             .sheet-grid__cell<input type="number" id="attr_medicine_bonus" name="attr_medicine_bonus" value="0" step="1"/>
-        //-             .sheet-grid__cell<input type="number" id="attr_medicine" name="attr_medicine" value="@{medicine_prof_exp}+@{wisdom_mod}+@{medicine_bonus}" disabled="disabled">
-        //-             .sheet-grid__cell sheet-offset-1-24"><input type="number".sheet-passive-skill-score" id="attr_passive_medicine" name="attr_passive_medicine" value="10 + @{medicine}" disabled="disabled">
-        //-         
-        //- 
-        //-         .sheet-grid.sheet-grid--split
-        //-             .sheet-grid__cell
-        //-                 +roll('roll_Nature_Check" name="roll_Nature_Check" value="/em makes an ability check\n\nINT (Nature) check :\n[[1d20 + @{nature} [Proficiency + Intelligence Mod + Expertise + Misc] + (@{global_check_bonus}) [Ability Check Bonus] ]] | [[1d20 + @{nature} [Proficiency + Intelligence Mod + Expertise + Misc] + (@{global_check_bonus}) [Ability Check Bonus] ]]'
-        //-             
-        //-             .sheet-grid__cell.sheet-grid__cell--3-10 sheet-skill-name">Nature (Int)
-        //-             .sheet-grid__cell.sheet-grid__cell--3-10">
-        //-                 select id="attr_nature_prof_exp" name="attr_nature_prof_exp">
-        //-                     option(value="0">No
-        //-                     option(value="floor(@{PB} / 2)">Jack of all trades
-        //-                     option(value="@{PB}">Yes
-        //-                     option(value="(2*@{PB})">Expertise
-        //-                 
-        //-             
-        //-             .sheet-grid__cell<input type="number" id="attr_nature_bonus" name="attr_nature_bonus" value="0" step="1"/>
-        //-             .sheet-grid__cell<input type="number" id="attr_nature" name="attr_nature" value="@{nature_prof_exp}+@{intelligence_mod}+@{nature_bonus}" disabled="disabled">
-        //-             .sheet-grid__cell sheet-offset-1-24"><input type="number".sheet-passive-skill-score" id="attr_passive_nature" name="attr_passive_nature" value="10 + @{nature}" disabled="disabled">
-        //-         
-        //- 
-        //-         .sheet-grid.sheet-grid--split
-        //-             .sheet-grid__cell
-        //-                 +roll('roll_Perception_Check" name="roll_Perception_Check" value="/em makes an ability check\n\nWIS (Perception) check :\n[[1d20 + @{perception} [Proficiency + Wisdom Mod + Expertise + Misc] + (@{global_check_bonus}) [Ability Check Bonus] ]] | [[1d20 + @{perception} [Proficiency + Wisdom Mod + Expertise + Misc] + (@{global_check_bonus}) [Ability Check Bonus] ]]'
-        //-             
-        //-             .sheet-grid__cell.sheet-grid__cell--3-10 sheet-skill-name">Perception (Wis)
-        //-             .sheet-grid__cell.sheet-grid__cell--3-10">
-        //-                 select id="attr_perception_prof_exp" name="attr_perception_prof_exp">
-        //-                     option(value="0">No
-        //-                     option(value="floor(@{PB} / 2)">Jack of all trades
-        //-                     option(value="@{PB}">Yes
-        //-                     option(value="(2*@{PB})">Expertise
-        //-                 
-        //-             
-        //-             .sheet-grid__cell<input type="number" id="attr_perception_bonus" name="attr_perception_bonus" value="0" step="1"/>
-        //-             .sheet-grid__cell<input type="number" id="attr_perception" name="attr_perception" value="@{perception_prof_exp}+@{wisdom_mod}+@{perception_bonus}" disabled="disabled">
-        //-             .sheet-grid__cell sheet-offset-1-24"><input type="number".sheet-passive-skill-score" id="attr_passive_perception" name="attr_passive_perception" value="10 + @{perception}" disabled="disabled">
-        //-         
-        //- 
-        //-         .sheet-grid.sheet-grid--split
-        //-             .sheet-grid__cell
-        //-                 +roll('roll_Performance_Check" name="roll_Performance_Check" value="/em makes an ability check\n\nCHA (Performance) check :\n[[1d20 + @{performance} [Proficiency + Charisma Mod + Expertise + Misc] + (@{global_check_bonus}) [Ability Check Bonus] ]] | [[1d20 + @{performance} [Proficiency + Charisma Mod + Expertise + Misc] + (@{global_check_bonus}) [Ability Check Bonus] ]]'
-        //-             
-        //-             .sheet-grid__cell.sheet-grid__cell--3-10 sheet-skill-name">Performance (Cha)
-        //-             .sheet-grid__cell.sheet-grid__cell--3-10">
-        //-                 select id="attr_performance_prof_exp" name="attr_performance_prof_exp">
-        //-                     option(value="0">No
-        //-                     option(value="floor(@{PB} / 2)">Jack of all trades
-        //-                     option(value="@{PB}">Yes
-        //-                     option(value="(2*@{PB})">Expertise
-        //-                 
-        //-             
-        //-             .sheet-grid__cell<input type="number" id="attr_performance_bonus" name="attr_performance_bonus" value="0" step="1"/>
-        //-             .sheet-grid__cell<input type="number" id="attr_performance" name="attr_performance" value="@{performance_prof_exp}+@{charisma_mod}+@{performance_bonus}" disabled="disabled">
-        //-             .sheet-grid__cell sheet-offset-1-24"><input type="number".sheet-passive-skill-score" id="attr_passive_performance" name="attr_passive_performance" value="10 + @{performance}" disabled="disabled">
-        //-         
-        //- 
-        //-         .sheet-grid.sheet-grid--split
-        //-             .sheet-grid__cell
-        //-                 +roll('roll_Persuasion_Check" name="roll_Persuasion_Check" value="/em makes an ability check\n\nCHA (Persuasion) check :\n[[1d20 + @{persuasion} [Proficiency + Charisma Mod + Expertise + Misc] + (@{global_check_bonus}) [Ability Check Bonus] ]] | [[1d20 + @{persuasion} [Proficiency + Charisma Mod + Expertise + Misc] + (@{global_check_bonus}) [Ability Check Bonus] ]]'
-        //-             
-        //-             .sheet-grid__cell.sheet-grid__cell--3-10 sheet-skill-name">Persuasion (Cha)
-        //-             .sheet-grid__cell.sheet-grid__cell--3-10">
-        //-                 select id="attr_persuasion_prof_exp" name="attr_persuasion_prof_exp">
-        //-                     option(value="0">No
-        //-                     option(value="floor(@{PB} / 2)">Jack of all trades
-        //-                     option(value="@{PB}">Yes
-        //-                     option(value="(2*@{PB})">Expertise
-        //-                 
-        //-             
-        //-             .sheet-grid__cell<input type="number" id="attr_persuasion_bonus" name="attr_persuasion_bonus" value="0" step="1"/>
-        //-             .sheet-grid__cell<input type="number" id="attr_persuasion" name="attr_persuasion" value="@{persuasion_prof_exp}+@{charisma_mod}+@{persuasion_bonus}" disabled="disabled">
-        //-             .sheet-grid__cell sheet-offset-1-24"><input type="number".sheet-passive-skill-score" id="attr_passive_persuasion" name="attr_passive_persuasion" value="10 + @{persuasion}" disabled="disabled">
-        //-         
-        //- 
-        //-         .sheet-grid.sheet-grid--split
-        //-             .sheet-grid__cell
-        //-                 +roll('roll_Religion_Check" name="roll_Religion_Check" value="/em makes an ability check\n\nINT (Religion) check :\n[[1d20 + @{religion} [Proficiency + Intelligence Mod + Expertise + Misc] + (@{global_check_bonus}) [Ability Check Bonus] ]] | [[1d20 + @{religion} [Proficiency + Intelligence Mod + Expertise + Misc] + (@{global_check_bonus}) [Ability Check Bonus] ]]'
-        //-             
-        //-             .sheet-grid__cell.sheet-grid__cell--3-10 sheet-skill-name">Religion (Int)
-        //-             .sheet-grid__cell.sheet-grid__cell--3-10">
-        //-                 select id="attr_religion_prof_exp" name="attr_religion_prof_exp">
-        //-                     option(value="0">No
-        //-                     option(value="floor(@{PB} / 2)">Jack of all trades
-        //-                     option(value="@{PB}">Yes
-        //-                     option(value="(2*@{PB})">Expertise
-        //-                 
-        //-             
-        //-             .sheet-grid__cell<input type="number" id="attr_religion_bonus" name="attr_religion_bonus" value="0" step="1"/>
-        //-             .sheet-grid__cell<input type="number" id="attr_religion" name="attr_religion" value="@{religion_prof_exp}+@{intelligence_mod}+@{religion_bonus}" disabled="disabled">
-        //-             .sheet-grid__cell sheet-offset-1-24"><input type="number".sheet-passive-skill-score" id="attr_passive_religion" name="attr_passive_religion" value="10 + @{religion}" disabled="disabled">
-        //-         
-        //- 
-        //-         .sheet-grid.sheet-grid--split
-        //-             .sheet-grid__cell
-        //-                 +roll('roll_SleightOfHand_Check" name="roll_SleightOfHand_Check" value="/em makes an ability check\n\nDEX (Sleight of Hand) check :\n[[1d20 + @{sleightofhand} [Proficiency + Dexterity Mod + Expertise + Misc] + (@{global_check_bonus}) [Ability Check Bonus] ]] | [[1d20 + @{sleightofhand} [Proficiency + Dexterity Mod + Expertise + Misc] + (@{global_check_bonus}) [Ability Check Bonus] ]]'
-        //-             
-        //-             .sheet-grid__cell.sheet-grid__cell--3-10 sheet-skill-name">Sleight of Hand (Dex)
-        //-             .sheet-grid__cell.sheet-grid__cell--3-10">
-        //-                 select id="attr_sleightofhand_prof_exp" name="attr_sleightofhand_prof_exp">
-        //-                     option(value="0">No
-        //-                     option(value="floor(@{PB} / 2)">Jack of all trades
-        //-                     option(value="@{PB}">Yes
-        //-                     option(value="(2*@{PB})">Expertise
-        //-                 
-        //-             
-        //-             .sheet-grid__cell<input type="number" id="attr_sleightofhand_bonus" name="attr_sleightofhand_bonus" value="0" step="1"/>
-        //-             .sheet-grid__cell<input type="number" id="attr_sleightofhand" name="attr_sleightofhand" value="@{sleightofhand_prof_exp}+@{dexterity_mod}+@{sleightofhand_bonus}" disabled="disabled">
-        //-             .sheet-grid__cell sheet-offset-1-24"><input type="number".sheet-passive-skill-score" id="attr_passive_sleightofhand" name="attr_passive_sleightofhand" value="10 + @{sleightofhand}" disabled="disabled">
-        //-         
-        //- 
-        //-         .sheet-grid.sheet-grid--split
-        //-             .sheet-grid__cell
-        //-                 +roll('roll_Stealth_Check" name="roll_Stealth_Check" value="/em makes an ability check\n\nDEX (Stealth) check :\n[[1d20 + @{stealth} [Proficiency + Dexterity Mod + Expertise + Misc] + (@{global_check_bonus}) [Ability Check Bonus] ]] | [[1d20 + @{stealth} [Proficiency + Dexterity Mod + Expertise + Misc] + (@{global_check_bonus}) [Ability Check Bonus] ]]'
-        //-             
-        //-             .sheet-grid__cell.sheet-grid__cell--3-10 sheet-skill-name">Stealth (Dex)
-        //-             .sheet-grid__cell.sheet-grid__cell--3-10">
-        //-                 select id="attr_stealth_prof_exp" name="attr_stealth_prof_exp">
-        //-                     option(value="0">No
-        //-                     option(value="floor(@{PB} / 2)">Jack of all trades
-        //-                     option(value="@{PB}">Yes
-        //-                     option(value="(2*@{PB})">Expertise
-        //-                 
-        //-             
-        //-             .sheet-grid__cell<input type="number" id="attr_stealth_bonus" name="attr_stealth_bonus" value="0" step="1"/>
-        //-             .sheet-grid__cell<input type="number" id="attr_stealth" name="attr_stealth" value="@{stealth_prof_exp}+@{dexterity_mod}+@{stealth_bonus}" disabled="disabled">
-        //-             .sheet-grid__cell sheet-offset-1-24"><input type="number".sheet-passive-skill-score" id="attr_passive_stealth" name="attr_passive_stealth" value="10 + @{stealth}" disabled="disabled">
-        //-         
-        //- 
-        //-         .sheet-grid.sheet-grid--split
-        //-             .sheet-grid__cell
-        //-                 +roll('roll_Survival_Check" name="roll_Survival_Check" value="/em makes an ability check\n\nWIS (Survival) check :\n[[1d20 + @{survival} [Proficiency + Wisdom Mod + Expertise + Misc] + (@{global_check_bonus}) [Ability Check Bonus] ]] | [[1d20 + @{survival} [Proficiency + Wisdom Mod + Expertise + Misc] + (@{global_check_bonus}) [Ability Check Bonus] ]]'
-        //-             
-        //-             .sheet-grid__cell.sheet-grid__cell--3-10 sheet-skill-name">Survival (Wis)
-        //-             .sheet-grid__cell.sheet-grid__cell--3-10">
-        //-                 select id="attr_survival_prof_exp" name="attr_survival_prof_exp">
-        //-                     option(value="0">No
-        //-                     option(value="floor(@{PB} / 2)">Jack of all trades
-        //-                     option(value="@{PB}">Yes
-        //-                     option(value="(2*@{PB})">Expertise
-        //-                 
-        //-             
-        //-             .sheet-grid__cell<input type="number" id="attr_survival_bonus" name="attr_survival_bonus" value="0" step="1"/>
-        //-             .sheet-grid__cell<input type="number" id="attr_survival" name="attr_survival" value="@{survival_prof_exp}+@{wisdom_mod}+@{survival_bonus}" disabled="disabled">
-        //-             .sheet-grid__cell sheet-offset-1-24"><input type="number".sheet-passive-skill-score" id="attr_passive_survival" name="attr_passive_survival" value="10 + @{survival}" disabled="disabled">
-        //-         
-        //- 
-        //-     
-        //- 
-        //- 
-        //- 
-        //- <hr />
-        //- 
-        //- .sheet-grid">
-        //- 
-        //-     .sheet-grid__cell.sheet-grid__cell--1-2
-        //- 
-        //-         .sheet-grid.sheet-grid--sub">
-        //-             .sheet-grid__cell sheet-center label">&nbsp;
-        //-             .sheet-grid__cell.sheet-grid__cell--3-10 label sheet-center">Skill
-        //-             .sheet-grid__cell.sheet-grid__cell--1-6 label sheet-center">Stat
-        //-             .sheet-grid__cell.sheet-grid__cell--5-24 sheet-center label">Proficient
-        //-             .sheet-grid__cell sheet-center label">Bonus
-        //-             .sheet-grid__cell sheet-center label">Total
-        //-         
-        //- 
-        //-         .sheet-grid.sheet-grid--split
-        //-             .sheet-grid__cell
-        //-                 +roll('roll_Custom_Skill_1" name="roll_Custom_Skill_1" value="/em makes an ability check\n\n@{custom_skill_1_name} check :\n[[1d20 + @{custom_skill_1} [Proficiency + Stat Mod + Expertise + Misc] + (@{global_check_bonus}) [Ability Check Bonus] ]] | [[1d20 + @{custom_skill_1} [Proficiency + Stat Mod + Expertise + Misc] + (@{global_check_bonus}) [Ability Check Bonus] ]]'
-        //-             
-        //-             .sheet-grid__cell.sheet-grid__cell--3-10"><input type="text".sheet-center" id="attr_custom_skill_1_name" name="attr_custom_skill_1_name" value="Custom 1">
-        //-             .sheet-grid__cell.sheet-grid__cell--1-6 label sheet-center">
-        //-                 select id="attr_custom_skill_1_mod" name="attr_custom_skill_1_mod">
-        //-                     option(value="0">None
-        //-                     option(value="@{strength_mod}">STR
-        //-                     option(value="@{dexterity_mod}">DEX
-        //-                     option(value="@{constitution_mod}">CON
-        //-                     option(value="@{intelligence_mod}">INT
-        //-                     option(value="@{wisdom_mod}">WIS
-        //-                     option(value="@{charisma_mod}">CHA
-        //-                 
-        //-             
-        //-             .sheet-grid__cell.sheet-grid__cell--5-24">
-        //-                 select id="attr_custom_skill_1_prof_exp" name="attr_custom_skill_1_prof_exp">
-        //-                     option(value="0">No
-        //-                     option(value="floor(@{PB} / 2)">Jack of all trades
-        //-                     option(value="@{PB}">Yes
-        //-                     option(value="(2*@{PB})">Expertise
-        //-                 
-        //-             
-        //-             .sheet-grid__cell<input type="number" id="attr_custom_skill_1_bonus" name="attr_custom_skill_1_bonus" value="0" step="1"/>
-        //-             .sheet-grid__cell<input type="number" id="attr_custom_skill_1" name="attr_custom_skill_1" value="@{custom_skill_1_prof_exp}+@{custom_skill_1_mod}+@{custom_skill_1_bonus}" disabled="disabled">
-        //-         
-        //- 
-        //-         .sheet-grid.sheet-grid--split
-        //-             .sheet-grid__cell
-        //-                 +roll('roll_Custom_Skill_2" name="roll_Custom_Skill_2" value="/em makes an ability check\n\n@{custom_skill_2_name} check :\n[[1d20 + @{custom_skill_2} [Proficiency + Stat Mod + Expertise + Misc] + (@{global_check_bonus}) [Ability Check Bonus] ]] | [[1d20 + @{custom_skill_2} [Proficiency + Stat Mod + Expertise + Misc] + (@{global_check_bonus}) [Ability Check Bonus] ]]'
-        //-             
-        //-             .sheet-grid__cell.sheet-grid__cell--3-10"><input type="text".sheet-center" id="attr_custom_skill_2_name" name="attr_custom_skill_2_name" value="Custom 2
-        //-             .sheet-grid__cell.sheet-grid__cell--1-6 label sheet-center">
-        //-                 select id="attr_custom_skill_2_mod" name="attr_custom_skill_2_mod">
-        //-                     option(value="0">None
-        //-                     option(value="@{strength_mod}">STR
-        //-                     option(value="@{dexterity_mod}">DEX
-        //-                     option(value="@{constitution_mod}">CON
-        //-                     option(value="@{intelligence_mod}">INT
-        //-                     option(value="@{wisdom_mod}">WIS
-        //-                     option(value="@{charisma_mod}">CHA
-        //-                 
-        //-             
-        //-             .sheet-grid__cell.sheet-grid__cell--5-24">
-        //-                 select id="attr_custom_skill_2_prof_exp" name="attr_custom_skill_2_prof_exp">
-        //-                     option(value="0">No
-        //-                     option(value="floor(@{PB} / 2)">Jack of all trades
-        //-                     option(value="@{PB}">Yes
-        //-                     option(value="(2*@{PB})">Expertise
-        //-                 
-        //-             
-        //-             .sheet-grid__cell<input type="number" id="attr_custom_skill_2_bonus" name="attr_custom_skill_2_bonus" value="0" step="1"/>
-        //-             .sheet-grid__cell<input type="number" id="attr_custom_skill_2" name="attr_custom_skill_2" value="@{custom_skill_2_prof_exp}+@{custom_skill_2_mod}+@{custom_skill_2_bonus}" disabled="disabled">
-        //-         
-        //- 
-        //-     
-        //- 
-        //-     .sheet-grid__cell.sheet-grid__cell--1-2
-        //- 
-        //-         .sheet-grid.sheet-grid--sub">
-        //-             .sheet-grid__cell sheet-center label">&nbsp;
-        //-             .sheet-grid__cell.sheet-grid__cell--3-10 label sheet-center">Skill
-        //-             .sheet-grid__cell.sheet-grid__cell--1-6 label sheet-center">Stat
-        //-             .sheet-grid__cell.sheet-grid__cell--5-24 sheet-center label">Proficient
-        //-             .sheet-grid__cell sheet-center label">Bonus
-        //-             .sheet-grid__cell sheet-center label">Total
-        //-         
-        //- 
-        //-         .sheet-grid.sheet-grid--split
-        //-             .sheet-grid__cell
-        //-                 +roll('roll_Custom_Skill_3" name="roll_Custom_Skill_3" value="/em makes an ability check\n\n@{custom_skill_3_name} check :\n[[1d20 + @{custom_skill_3} [Proficiency + Stat Mod + Expertise + Misc] + (@{global_check_bonus}) [Ability Check Bonus] ]] | [[1d20 + @{custom_skill_3} [Proficiency + Stat Mod + Expertise + Misc] + (@{global_check_bonus}) [Ability Check Bonus] ]]'
-        //-             
-        //-             .sheet-grid__cell.sheet-grid__cell--3-10"><input type="text".sheet-center" id="attr_custom_skill_3_name" name="attr_custom_skill_3_name" value="Custom 3">
-        //-             .sheet-grid__cell.sheet-grid__cell--1-6 label sheet-center">
-        //-                 select id="attr_custom_skill_3_mod" name="attr_custom_skill_3_mod">
-        //-                     option(value="0">None
-        //-                     option(value="@{strength_mod}">STR
-        //-                     option(value="@{dexterity_mod}">DEX
-        //-                     option(value="@{constitution_mod}">CON
-        //-                     option(value="@{intelligence_mod}">INT
-        //-                     option(value="@{wisdom_mod}">WIS
-        //-                     option(value="@{charisma_mod}">CHA
-        //-                 
-        //-             
-        //-             .sheet-grid__cell.sheet-grid__cell--5-24">
-        //-                 select id="attr_custom_skill_3_prof_exp" name="attr_custom_skill_3_prof_exp">
-        //-                     option(value="0">No
-        //-                     option(value="floor(@{PB} / 2)">Jack of all trades
-        //-                     option(value="@{PB}">Yes
-        //-                     option(value="(2*@{PB})">Expertise
-        //-                 
-        //-             
-        //-             .sheet-grid__cell<input type="number" id="attr_custom_skill_3_bonus" name="attr_custom_skill_3_bonus" value="0" step="1"/>
-        //-             .sheet-grid__cell<input type="number" id="attr_custom_skill_3" name="attr_custom_skill_3" value="@{custom_skill_3_prof_exp}+@{custom_skill_3_mod}+@{custom_skill_3_bonus}" disabled="disabled">
-        //-         
-        //- 
-        //-         .sheet-grid.sheet-grid--split
-        //-             .sheet-grid__cell
-        //-                 +roll('roll_Custom_Skill_4" name="roll_Custom_Skill_4" value="/em makes an ability check\n\n@{custom_skill_4_name} check :\n[[1d20 + @{custom_skill_4} [Proficiency + Stat Mod + Expertise + Misc] + (@{global_check_bonus}) [Ability Check Bonus] ]] | [[1d20 + @{custom_skill_4} [Proficiency + Stat Mod + Expertise + Misc] + (@{global_check_bonus}) [Ability Check Bonus] ]]'
-        //-             
-        //-             .sheet-grid__cell.sheet-grid__cell--3-10"><input type="text".sheet-center" id="attr_custom_skill_4_name" name="attr_custom_skill_4_name" value="Custom 4">
-        //-             .sheet-grid__cell.sheet-grid__cell--1-6 label sheet-center">
-        //-                 select id="attr_custom_skill_4_mod" name="attr_custom_skill_4_mod">
-        //-                     option(value="0">None
-        //-                     option(value="@{strength_mod}">STR
-        //-                     option(value="@{dexterity_mod}">DEX
-        //-                     option(value="@{constitution_mod}">CON
-        //-                     option(value="@{intelligence_mod}">INT
-        //-                     option(value="@{wisdom_mod}">WIS
-        //-                     option(value="@{charisma_mod}">CHA
-        //-                 
-        //-             
-        //-             .sheet-grid__cell.sheet-grid__cell--5-24">
-        //-                 select id="attr_custom_skill_4_prof_exp" name="attr_custom_skill_4_prof_exp">
-        //-                     option(value="0">No
-        //-                     option(value="floor(@{PB} / 2)">Jack of all trades
-        //-                     option(value="@{PB}">Yes
-        //-                     option(value="(2*@{PB})">Expertise
-        //-                 
-        //-             
-        //-             .sheet-grid__cell
-        //-                 input type="number" id="attr_custom_skill_4_bonus" name="attr_custom_skill_4_bonus" value="0" step="1"/>
-        //-             .sheet-grid__cell
-        //-                 input type="number" id="attr_custom_skill_4" name="attr_custom_skill_4" value="@{custom_skill_4_prof_exp}+@{custom_skill_4_mod}+@{custom_skill_4_bonus}" disabled="disabled">
-        //-         
-        //- 
-        //-     
-        //- 
-        //- 
-        //- 
-        //- <hr/>
-        //- 
+                                
+    //- custom skills
+    .sheet-grid__cell
+        .sheet-grid.sheet-grid--pad
+
+            - var numCustomSkills = 4
+            - var customSkillsPerColumn = numCustomSkills / numColumns
+            - var col = 0
+            - var i = 0
+            while col++ <= 2
+                .sheet-grid__cell
+                    +custom-skills-hdg()
+                    - console.log(i)
+                    while(i++ <= 4)
+                        .sheet-grid.sheet-grid--split
+                        
+                            .sheet-grid__cell
+                                +roll("roll_Custom_Skill_#{i}", '/em makes an ability check\n\n@{custom_skill_#{i}_name} check :\n[[1d20 + @{custom_skill_#{i}} [Proficiency + Stat Mod + Expertise + Misc] + (@{global_check_bonus}) [Ability Check Bonus] ]]')
+                            .sheet-grid__cell.sheet-grid__cell--3-10
+                                input.sheet-field(
+                                    type="text" 
+                                    name="attr_custom_skill_#{i}_name" 
+                                    value="Custom #{i}"
+                                )
+                            .sheet-grid__cell.sheet-grid__cell--2-10
+                                select(
+                                    name="attr_custom_skill_#{i}_mod"
+                                ) 
+                                    option(value="0") None
+                                    each ability in abilities
+                                        option(value="@{#{ability.name}_mod}") #{ability.abbr}
+                            .sheet-grid__cell.sheet-grid__cell--2-10
+                                select(name="attr_custom_skill_1_prof_exp")
+                                    +skill-proficiency-options()
+                            .sheet-grid__cell
+                                input.sheet-field(
+                                    type="number" 
+                                    name="attr_custom_skill_#{i}_bonus" 
+                                    value="0" 
+                                    step="1"
+                                ) 
+                            .sheet-grid__cell
+                                input.sheet-field(
+                                    type="number"
+                                    name="attr_custom_skill_#{i}" 
+                                    value="@{custom_skill_#{i}_prof_exp}+@{custom_skill_#{i}_mod}+@{custom_skill_#{i}_bonus}" 
+                                    disabled
+                                )                
+        
         //- .sheet-grid">
         //- 
         //-     .sheet-grid__cell.sheet-grid__cell--1-2

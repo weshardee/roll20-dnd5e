@@ -5,9 +5,25 @@
     border 1px solid BLUE !important
     z-index HIGH
 
+.sheet-wrapper input
+    flex 1
+
 .sheet-wrapper [type=number]
     padding-left 12px // match width of counter on right to center the value visually
     border 1px solid transparent // for focus override
 
 .sheet-wrapper [disabled]
     cursor not-allowed
+
+.sheet-wrapper select
+    margin 0
+    -webkit-appearance: none
+    padding-left (PAD/3*2)
+    background-image url("data:image/png;base64,R0lGODlhDwAUAIABAAAAAP///yH5BAEAAAEALAAAAAAPABQAAAIXjI+py+0Po5wH2HsXzmw//lHiSJZmUAAAOw==")
+    background-position right (PAD/2) center
+    background-repeat no-repeat
+
+.sheet-wrapper input[type=number]:disabled::-webkit-inner-spin-button,
+.sheet-wrapper input[type=number]:disabled::-webkit-outer-spin-button
+    -webkit-appearance: none;
+    margin: 0;

@@ -60,9 +60,9 @@
                     .sheet-grid__cell 
                         h1.hdg 
                             = 'Hit Points'
-                            i.sheet-pictos k
+                            i..sheet-pictos k
                             = 'and Speed'
-                            i.sheet-pictos 1
+                            i..sheet-pictos 1
 
                         .sheet-grid.sheet-grid--split 
                             .sheet-grid__cell 
@@ -104,7 +104,7 @@
                         .sheet-grid.sheet-grid--pad 
                             .sheet-grid__cell 
                                 h1.hdg Initiative
-                                    i.sheet-pictos t
+                                    i..sheet-pictos t
                                 .sheet-grid.sheet-grid--split 
                                     .sheet-grid__cell
                                         label.sheet-field(
@@ -132,7 +132,7 @@
                                         
                             .sheet-grid__cell
                                 h1.hdg Armour Class 
-                                    i.sheet-pictos-three b
+                                    i..sheet-pictos-three b
                                 .sheet-grid.sheet-grid--split 
                                     .sheet-grid__cell.sheet-grid__cell--1-2 
                                         label.sheet-field.sheet-field--disabled 
@@ -154,7 +154,7 @@
                                             )
                     .sheet-grid__cell 
                         h1.hdg Level and Experience
-                            i.sheet-pictos-three d
+                            i..sheet-pictos-three d
                         .sheet-grid.sheet-grid--split 
                             .sheet-grid__cell.sheet-grid__cell--1-4
                                 label.sheet-field.sheet-field--disabled(
@@ -315,13 +315,13 @@
                                 )
                     .sheet-grid__cell 
                         h1.hdg Other
-                            i.sheet-pictos o
+                            i..sheet-pictos o
                         .sheet-grid.sheet-grid--sub 
                             .sheet-grid__cell.sheet-grid__cell--1-5 Inspiration?
                             .sheet-grid__cell.sheet-grid__cell--4-5 Death Saving Throws
                         .sheet-grid 
                             .sheet-grid__cell.sheet-grid__cell--1-5 
-                                input.toggle(
+                                input.sheet-toggle(
                                     type='checkbox' 
                                     name='attr_inspiration' 
                                     value='1'

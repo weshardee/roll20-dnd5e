@@ -1,0 +1,20 @@
+.sheet-main {
+    box-sizing border-box
+    padding PAD
+    color DARK_GRAY
+    background-color PALE_BLUE
+    font-size FONT_SIZE
+    overflow auto
+    max-height 100%
+}
+
+.sheet-main::after
+    content " "
+    height PAD
+
+.sheet-main > * + * {
+    margin-top PAD
+}
+
+@import 'main--is-npc'
+@import 'main--bd'
