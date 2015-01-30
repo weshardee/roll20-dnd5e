@@ -1,6 +1,6 @@
 <h1 class="hdg">NPC/Monster Sheet <i class="sheet-pictos">F</i></h1>
 
-<p class="sheet-small-note">This page of the character sheet is intended for use by GM/DM's only.  All the macros on this page send their output only to the GM via a private whisper/tell.  GM/DM's should be sure to make sure any data entered into larger text fields is all on one line as any line breaks will cause data after it to be sent to public chat.  GM/DM's can workaround this by adding "/w GM " just after each line break (without the quotes) to ensure the output only goes to them. </p>
+<p class="sheet-note">This page of the character sheet is intended for use by GM/DM's only.  All the macros on this page send their output only to the GM via a private whisper/tell.  GM/DM's should be sure to make sure any data entered into larger text fields is all on one line as any line breaks will cause data after it to be sent to public chat.  GM/DM's can workaround this by adding "/w GM " just after each line break (without the quotes) to ensure the output only goes to them. </p>
 
 <div class="grid">
     <div class="grid__cell grid__cell--1-3 sheet-center"><button type="roll" class="sheet-roll" id="roll_NPC_Core_Stats" name="roll_NPC_Core_Stats" value="/w GM Stat block for @{character_name}\n/w GM STR @{npc_strength} [[@{npc_strength_mod}]]\n/w GM DEX @{npc_dexterity} [[@{npc_dexterity_mod}]]\n/w GM CON @{npc_constitution} [[@{npc_constitution_mod}]]\n/w GM INT @{npc_intelligence} [[@{npc_intelligence_mod}]]\n/w GM WIS @{npc_wisdom} [[@{npc_wisdom_mod}]]\n/w GM CHA @{npc_charisma} [[@{npc_charisma_mod}]]">NPC Core Stats</button></div>
@@ -447,7 +447,7 @@
 
 <h1 class="hdg">Actions</h1>
 
-<p class="sheet-small-note">The multiattack field below will be displayed in the macro output of any action with the Multiattack? drop down set to Yes.  GM/DM's can use any of the macros below as token actions by creating a token ability and simply adding "%{selected|NPCActionX}" (without the quotes) to it, where X is the row number of the action you want to be available as a token action.</p>
+<p class="sheet-note">The multiattack field below will be displayed in the macro output of any action with the Multiattack? drop down set to Yes.  GM/DM's can use any of the macros below as token actions by creating a token ability and simply adding "%{selected|NPCActionX}" (without the quotes) to it, where X is the row number of the action you want to be available as a token action.</p>
 
 <div class="grid grid--sub">
     <div class="grid__cell grid__cell--1 sheet-center label">Multiattack</div>

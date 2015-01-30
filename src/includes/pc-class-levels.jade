@@ -1,0 +1,23 @@
+.sheet-grid.sheet-grid--sub
+    .sheet-grid__cell Class Levels
+
+- var i = 0
+- var row = 1
+- var numClassesPerRow = 4
+
+while i < classes.length
+    .sheet-grid.sheet-grid--split
+        while i < row * numClassesPerRow
+            - var pcClass = classes[i]
+            .sheet-grid__cell 
+                .sheet-label #{pcClass}
+            .sheet-grid__cell 
+                input(
+                    type="number" 
+                    name="attr_#{pcClass}_level" 
+                    value="0" 
+                    min="0" 
+                    step="1"
+                )
+            - i++
+    - row++

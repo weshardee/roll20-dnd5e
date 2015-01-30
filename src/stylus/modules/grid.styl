@@ -45,12 +45,13 @@ grid-border()
 
 // alternate colors
 
-.sheet-grid--sub {
+.sheet-grid--sub
     background-color alpha(DARK_GRAY, 0.9)
     color white
     font-size FONT_SIZE_SM
     min-height HEIGHT
-}
+    +grid-border()
+        border-bottom-width 1px
 
 // sizes
 
@@ -72,3 +73,6 @@ for max in (2...13) {
 .sheet-grid__cell
     display flex
     flex-direction column
+
+.sheet-grid__cell--align-top
+    justify-content flex-start
