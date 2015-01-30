@@ -17,22 +17,21 @@ grid-border()
     position relative // for borders
     min-height HEIGHT
 
-.sheet-grid--pad
-    margin (- PAD / 2)
-    min-width calc(100% - @margin)
 
 .sheet-grid--col
     flex-direction column
 
-/* grid items */
+// space between cells
 
-.sheet-grid > *
-    flex 1
-    position relative // for borders
+.sheet-grid--pad
+    margin (- PAD / 2)
+    min-width calc(100% - @margin)
 
 .sheet-grid--pad > *
     border-radius RADIUS
     padding (PAD / 2)
+
+// dividers between cells
 
 .sheet-grid--split > *
     background-color white
@@ -53,14 +52,23 @@ grid-border()
     +grid-border()
         border-bottom-width 1px
 
+// grid items
+
+.sheet-grid__cell
+    flex 1
+    position relative // for borders
+
 // sizes
 
-.sheet-grid__cell--1 {
-    flex none
-    width 100%
-}
+.sheet-grid__cell--sm
+    max-width PAD * 3
 
-for max in (2...13) {
+for grow in (1...10)
+    .sheet-grid__cell--{grow}
+        flex (grow)
+
+
+for max in (2...25) {
     for span in (1...max) {
         .sheet-grid__cell--{span}-{max} {
             flex none

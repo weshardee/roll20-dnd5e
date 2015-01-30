@@ -15,12 +15,12 @@
         </div>
 
         <div class="grid">
-            <div class="grid__cell grid__cell--1-6" title="Copper Pieces"><input type="number" id="attr_cp" name="attr_cp" value="0" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--1-6" title="Silver Pieces"><input type="number" id="attr_sp" name="attr_sp" value="0" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--1-6" title="Electrum Pieces"><input type="number" id="attr_ep" name="attr_ep" value="0" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--1-6" title="Gold Pieces"><input type="number" id="attr_gp" name="attr_gp" value="0" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--1-6" title="Platinum Pieces"><input type="number" id="attr_pp" name="attr_pp" value="0" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--1-6" title="Total (in Gold Pieces)"><input type="number" id="attr_money_total_gp" name="attr_money_total_gp" value="(@{cp} / 100) + (@{sp} / 10) + (@{ep} / 2) + @{gp} + (@{pp} * 10) " disabled="disabled"></div>
+            <div class="grid__cell grid__cell--1-6" title="Copper Pieces"><input type="number" name="attr_cp" value="0" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--1-6" title="Silver Pieces"><input type="number" name="attr_sp" value="0" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--1-6" title="Electrum Pieces"><input type="number" name="attr_ep" value="0" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--1-6" title="Gold Pieces"><input type="number" name="attr_gp" value="0" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--1-6" title="Platinum Pieces"><input type="number" name="attr_pp" value="0" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--1-6" title="Total (in Gold Pieces)"><input type="number" name="attr_money_total_gp" value="(@{cp} / 100) + (@{sp} / 10) + (@{ep} / 2) + @{gp} + (@{pp} * 10) " disabled></div>
         </div>
 
     </div>
@@ -40,12 +40,12 @@
         </div>
 
         <div class="grid">
-            <div class="grid__cell grid__cell--1-8 sheet-center"><input type="number" id="attr_inventory_weight" name="attr_inventory_weight" value="@{inventory_weight_calc}" disabled="disabled"></div>
-            <div class="grid__cell grid__cell--1-8 sheet-center"><input type="number" id="attr_coin_weight" name="attr_coin_weight" value="((@{CP} + @{SP} + @{EP} + @{GP} + @{PP}) / 50)" disabled="disabled"></div>
-            <div class="grid__cell grid__cell--1-8 sheet-center"><input type="number" id="attr_other_weight" name="attr_other_weight" value="0" min="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--5-24 sheet-center"><input type="number" id="attr_total_weight" name="attr_total_weight" value="@{inventory_weight} + @{coin_weight} + @{other_weight}" disabled="disabled"></div>
-            <div class="grid__cell grid__cell--5-24 sheet-center"><input type="number" id="attr_total_weight_max" name="attr_total_weight_max" title="The maximum total weight your character can carry" value="@{strength}*15" disabled="disabled"></div>
-            <div class="grid__cell grid__cell--5-24 sheet-center"><input type="number" id="attr_max_push_drag_lift" name="attr_max_push_drag_lift" title="This is the maximum weight you can push/drag/lift.  If the weight you are pushing/dragging/carrying exceeds your maximum carrying capacity then your speed drops to 5 feet" value="@{strength}*30" disabled="disabled"></div>
+            <div class="grid__cell grid__cell--1-8 sheet-center"><input type="number" name="attr_inventory_weight" value="@{inventory_weight_calc}" disabled></div>
+            <div class="grid__cell grid__cell--1-8 sheet-center"><input type="number" name="attr_coin_weight" value="((@{CP} + @{SP} + @{EP} + @{GP} + @{PP}) / 50)" disabled></div>
+            <div class="grid__cell grid__cell--1-8 sheet-center"><input type="number" name="attr_other_weight" value="0" min="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--5-24 sheet-center"><input type="number" name="attr_total_weight" value="@{inventory_weight} + @{coin_weight} + @{other_weight}" disabled></div>
+            <div class="grid__cell grid__cell--5-24 sheet-center"><input type="number" name="attr_total_weight_max" title="The maximum total weight your character can carry" value="@{strength}*15" disabled></div>
+            <div class="grid__cell grid__cell--5-24 sheet-center"><input type="number" name="attr_max_push_drag_lift" title="This is the maximum weight you can push/drag/lift.  If the weight you are pushing/dragging/carrying exceeds your maximum carrying capacity then your speed drops to 5 feet" value="@{strength}*30" disabled></div>
         </div>
 
     </div>
@@ -59,22 +59,22 @@
 <div class="grid sheet-margin-bottom">
     <div class="grid__cell grid__cell--1-4 sheet-margin-top label">Weight entered in each row below is : </div>
     <div class="grid__cell grid__cell--1-2">
-        <select id="attr_weight_unit_setting" name="attr_weight_unit_setting">
+        <select name="attr_weight_unit_setting">
             <option value="0" selected="selected">The total weight of the row (ignoring quantity)</option>
             <option value="1">Weight per single item of the row (total weight of the row = quantity * weight)</option>
         </select>
     </div>
 </div>
 
-<input type="radio" id="attr_inventorytab" name="attr_inventorytab" class="sheet-inventorytab sheet-inventorytab1" value="1" title="Page 1" checked="checked"/>
+<input type="radio" name="attr_inventorytab" class="sheet-inventorytab sheet-inventorytab1" value="1" title="Page 1" checked="checked"/>
 <span class="sheet-inventorytab sheet-inventorytab1">Page 1</span>
-<input type="radio" id="attr_inventorytab" name="attr_inventorytab" class="sheet-inventorytab sheet-inventorytab2" value="2" title="Page 2"/>
+<input type="radio" name="attr_inventorytab" class="sheet-inventorytab sheet-inventorytab2" value="2" title="Page 2"/>
 <span class="sheet-inventorytab sheet-inventorytab2">Page 2</span>
-<input type="radio" id="attr_inventorytab" name="attr_inventorytab" class="sheet-inventorytab sheet-inventorytab3" value="3" title="Page 3"/>
+<input type="radio" name="attr_inventorytab" class="sheet-inventorytab sheet-inventorytab3" value="3" title="Page 3"/>
 <span class="sheet-inventorytab sheet-inventorytab3">Page 3</span>
-<input type="radio" id="attr_inventorytab" name="attr_inventorytab" class="sheet-inventorytab sheet-inventorytab4" value="4" title="Page 4"/>
+<input type="radio" name="attr_inventorytab" class="sheet-inventorytab sheet-inventorytab4" value="4" title="Page 4"/>
 <span class="sheet-inventorytab sheet-inventorytab4">Page 4</span>
-<input type="radio" id="attr_inventorytab" name="attr_inventorytab" class="sheet-inventorytab sheet-inventorytab99" value="99" title="Show All"/>
+<input type="radio" name="attr_inventorytab" class="sheet-inventorytab sheet-inventorytab99" value="99" title="Show All"/>
 <span class="sheet-inventorytab sheet-inventorytab99">Show All</span>
 <span class="sheet-spacer"></span>
 
@@ -98,11 +98,11 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">1</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried1" name="attr_inventorycarried1" value="@{inventoryweight1}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty1" name="attr_inventoryqty1" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname1" name="attr_inventoryname1"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight1" name="attr_inventoryweight1" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription1" name="attr_inventorydescription1"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried1" value="@{inventoryweight1}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty1" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname1"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight1" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription1"></div>
         </div>
 
     </div>
@@ -114,11 +114,11 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">2</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried2" name="attr_inventorycarried2" value="@{inventoryweight2}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty2" name="attr_inventoryqty2" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname2" name="attr_inventoryname2"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight2" name="attr_inventoryweight2" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription2" name="attr_inventorydescription2"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried2" value="@{inventoryweight2}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty2" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname2"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight2" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription2"></div>
         </div>
 
     </div>
@@ -130,11 +130,11 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">3</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried3" name="attr_inventorycarried3" value="@{inventoryweight3}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty3" name="attr_inventoryqty3" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname3" name="attr_inventoryname3"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight3" name="attr_inventoryweight3" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription3" name="attr_inventorydescription3"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried3" value="@{inventoryweight3}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty3" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname3"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight3" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription3"></div>
         </div>
 
     </div>
@@ -146,11 +146,11 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">4</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried4" name="attr_inventorycarried4" value="@{inventoryweight4}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty4" name="attr_inventoryqty4" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname4" name="attr_inventoryname4"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight4" name="attr_inventoryweight4" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription4" name="attr_inventorydescription4"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried4" value="@{inventoryweight4}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty4" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname4"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight4" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription4"></div>
         </div>
 
     </div>
@@ -162,11 +162,11 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">5</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried5" name="attr_inventorycarried5" value="@{inventoryweight5}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty5" name="attr_inventoryqty5" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname5" name="attr_inventoryname5"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight5" name="attr_inventoryweight5" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription5" name="attr_inventorydescription5"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried5" value="@{inventoryweight5}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty5" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname5"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight5" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription5"></div>
         </div>
 
     </div>
@@ -178,11 +178,11 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">6</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried6" name="attr_inventorycarried6" value="@{inventoryweight6}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty6" name="attr_inventoryqty6" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname6" name="attr_inventoryname6"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight6" name="attr_inventoryweight6" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription6" name="attr_inventorydescription6"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried6" value="@{inventoryweight6}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty6" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname6"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight6" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription6"></div>
         </div>
 
     </div>
@@ -194,11 +194,11 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">7</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried7" name="attr_inventorycarried7" value="@{inventoryweight7}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty7" name="attr_inventoryqty7" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname7" name="attr_inventoryname7"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight7" name="attr_inventoryweight7" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription7" name="attr_inventorydescription7"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried7" value="@{inventoryweight7}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty7" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname7"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight7" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription7"></div>
         </div>
 
     </div>
@@ -210,11 +210,11 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">8</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried8" name="attr_inventorycarried8" value="@{inventoryweight8}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty8" name="attr_inventoryqty8" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname8" name="attr_inventoryname8"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight8" name="attr_inventoryweight8" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription8" name="attr_inventorydescription8"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried8" value="@{inventoryweight8}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty8" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname8"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight8" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription8"></div>
         </div>
 
     </div>
@@ -226,11 +226,11 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">9</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried9" name="attr_inventorycarried9" value="@{inventoryweight9}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty9" name="attr_inventoryqty9" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname9" name="attr_inventoryname9"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight9" name="attr_inventoryweight9" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription9" name="attr_inventorydescription9"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried9" value="@{inventoryweight9}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty9" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname9"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight9" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription9"></div>
         </div>
 
     </div>
@@ -242,11 +242,11 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">10</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried10" name="attr_inventorycarried10" value="@{inventoryweight10}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty10" name="attr_inventoryqty10" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname10" name="attr_inventoryname10"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight10" name="attr_inventoryweight10" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription10" name="attr_inventorydescription10"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried10" value="@{inventoryweight10}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty10" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname10"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight10" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription10"></div>
         </div>
 
     </div>
@@ -270,11 +270,11 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">11</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried11" name="attr_inventorycarried11" value="@{inventoryweight11}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty11" name="attr_inventoryqty11" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname11" name="attr_inventoryname11"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight11" name="attr_inventoryweight11" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription11" name="attr_inventorydescription11"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried11" value="@{inventoryweight11}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty11" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname11"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight11" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription11"></div>
         </div>
 
     </div>
@@ -286,11 +286,11 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">12</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried12" name="attr_inventorycarried12" value="@{inventoryweight12}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty12" name="attr_inventoryqty12" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname12" name="attr_inventoryname12"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight12" name="attr_inventoryweight12" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription12" name="attr_inventorydescription12"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried12" value="@{inventoryweight12}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty12" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname12"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight12" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription12"></div>
         </div>
 
     </div>
@@ -302,11 +302,11 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">13</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried13" name="attr_inventorycarried13" value="@{inventoryweight13}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty13" name="attr_inventoryqty13" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname13" name="attr_inventoryname13"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight13" name="attr_inventoryweight13" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription13" name="attr_inventorydescription13"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried13" value="@{inventoryweight13}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty13" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname13"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight13" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription13"></div>
         </div>
 
     </div>
@@ -318,11 +318,11 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">14</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried14" name="attr_inventorycarried14" value="@{inventoryweight14}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty14" name="attr_inventoryqty14" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname14" name="attr_inventoryname14"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight14" name="attr_inventoryweight14" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription14" name="attr_inventorydescription14"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried14" value="@{inventoryweight14}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty14" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname14"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight14" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription14"></div>
         </div>
 
     </div>
@@ -334,11 +334,11 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">15</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried15" name="attr_inventorycarried15" value="@{inventoryweight15}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty15" name="attr_inventoryqty15" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname15" name="attr_inventoryname15"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight15" name="attr_inventoryweight15" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription15" name="attr_inventorydescription15"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried15" value="@{inventoryweight15}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty15" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname15"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight15" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription15"></div>
         </div>
 
     </div>
@@ -350,11 +350,11 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">16</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried16" name="attr_inventorycarried16" value="@{inventoryweight16}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty16" name="attr_inventoryqty16" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname16" name="attr_inventoryname16"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight16" name="attr_inventoryweight16" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription16" name="attr_inventorydescription16"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried16" value="@{inventoryweight16}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty16" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname16"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight16" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription16"></div>
         </div>
 
     </div>
@@ -366,11 +366,11 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">17</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried17" name="attr_inventorycarried17" value="@{inventoryweight17}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty17" name="attr_inventoryqty17" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname17" name="attr_inventoryname17"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight17" name="attr_inventoryweight17" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription17" name="attr_inventorydescription17"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried17" value="@{inventoryweight17}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty17" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname17"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight17" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription17"></div>
         </div>
 
     </div>
@@ -382,11 +382,11 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">18</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried18" name="attr_inventorycarried18" value="@{inventoryweight18}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty18" name="attr_inventoryqty18" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname18" name="attr_inventoryname18"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight18" name="attr_inventoryweight18" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription18" name="attr_inventorydescription18"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried18" value="@{inventoryweight18}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty18" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname18"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight18" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription18"></div>
         </div>
 
     </div>
@@ -398,11 +398,11 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">19</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried19" name="attr_inventorycarried19" value="@{inventoryweight19}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty19" name="attr_inventoryqty19" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname19" name="attr_inventoryname19"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight19" name="attr_inventoryweight19" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription19" name="attr_inventorydescription19"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried19" value="@{inventoryweight19}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty19" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname19"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight19" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription19"></div>
         </div>
 
     </div>
@@ -414,11 +414,11 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">20</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried20" name="attr_inventorycarried20" value="@{inventoryweight20}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty20" name="attr_inventoryqty20" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname20" name="attr_inventoryname20"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight20" name="attr_inventoryweight20" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription20" name="attr_inventorydescription20"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried20" value="@{inventoryweight20}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty20" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname20"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight20" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription20"></div>
         </div>
 
     </div>
@@ -442,11 +442,11 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">21</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried21" name="attr_inventorycarried21" value="@{inventoryweight21}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty21" name="attr_inventoryqty21" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname21" name="attr_inventoryname21"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight21" name="attr_inventoryweight21" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription21" name="attr_inventorydescription21"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried21" value="@{inventoryweight21}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty21" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname21"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight21" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription21"></div>
         </div>
 
     </div>
@@ -458,11 +458,11 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">22</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried22" name="attr_inventorycarried22" value="@{inventoryweight22}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty22" name="attr_inventoryqty22" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname22" name="attr_inventoryname22"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight22" name="attr_inventoryweight22" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription22" name="attr_inventorydescription22"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried22" value="@{inventoryweight22}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty22" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname22"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight22" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription22"></div>
         </div>
 
     </div>
@@ -474,11 +474,11 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">23</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried23" name="attr_inventorycarried23" value="@{inventoryweight23}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty23" name="attr_inventoryqty23" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname23" name="attr_inventoryname23"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight23" name="attr_inventoryweight23" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription23" name="attr_inventorydescription23"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried23" value="@{inventoryweight23}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty23" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname23"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight23" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription23"></div>
         </div>
 
     </div>
@@ -490,11 +490,11 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">24</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried24" name="attr_inventorycarried24" value="@{inventoryweight24}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty24" name="attr_inventoryqty24" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname24" name="attr_inventoryname24"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight24" name="attr_inventoryweight24" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription24" name="attr_inventorydescription24"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried24" value="@{inventoryweight24}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty24" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname24"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight24" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription24"></div>
         </div>
 
     </div>
@@ -506,11 +506,11 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">25</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried25" name="attr_inventorycarried25" value="@{inventoryweight25}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty25" name="attr_inventoryqty25" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname25" name="attr_inventoryname25"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight25" name="attr_inventoryweight25" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription25" name="attr_inventorydescription25"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried25" value="@{inventoryweight25}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty25" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname25"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight25" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription25"></div>
         </div>
 
     </div>
@@ -522,11 +522,11 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">26</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried26" name="attr_inventorycarried26" value="@{inventoryweight26}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty26" name="attr_inventoryqty26" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname26" name="attr_inventoryname26"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight26" name="attr_inventoryweight26" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription26" name="attr_inventorydescription26"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried26" value="@{inventoryweight26}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty26" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname26"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight26" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription26"></div>
         </div>
 
     </div>
@@ -538,11 +538,11 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">27</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried27" name="attr_inventorycarried27" value="@{inventoryweight27}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty27" name="attr_inventoryqty27" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname27" name="attr_inventoryname27"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight27" name="attr_inventoryweight27" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription27" name="attr_inventorydescription27"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried27" value="@{inventoryweight27}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty27" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname27"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight27" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription27"></div>
         </div>
 
     </div>
@@ -554,11 +554,11 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">28</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried28" name="attr_inventorycarried28" value="@{inventoryweight28}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty28" name="attr_inventoryqty28" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname28" name="attr_inventoryname28"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight28" name="attr_inventoryweight28" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription28" name="attr_inventorydescription28"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried28" value="@{inventoryweight28}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty28" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname28"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight28" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription28"></div>
         </div>
 
     </div>
@@ -570,11 +570,11 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">29</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried29" name="attr_inventorycarried29" value="@{inventoryweight29}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty29" name="attr_inventoryqty29" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname29" name="attr_inventoryname29"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight29" name="attr_inventoryweight29" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription29" name="attr_inventorydescription29"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried29" value="@{inventoryweight29}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty29" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname29"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight29" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription29"></div>
         </div>
 
     </div>
@@ -586,11 +586,11 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">30</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried30" name="attr_inventorycarried30" value="@{inventoryweight30}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty30" name="attr_inventoryqty30" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname30" name="attr_inventoryname30"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight30" name="attr_inventoryweight30" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription30" name="attr_inventorydescription30"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried30" value="@{inventoryweight30}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty30" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname30"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight30" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription30"></div>
         </div>
 
     </div>
@@ -614,11 +614,11 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">31</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried31" name="attr_inventorycarried31" value="@{inventoryweight31}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty31" name="attr_inventoryqty31" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname31" name="attr_inventoryname31"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight31" name="attr_inventoryweight31" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription31" name="attr_inventorydescription31"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried31" value="@{inventoryweight31}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty31" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname31"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight31" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription31"></div>
         </div>
 
     </div>
@@ -630,11 +630,11 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">32</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried32" name="attr_inventorycarried32" value="@{inventoryweight32}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty32" name="attr_inventoryqty32" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname32" name="attr_inventoryname32"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight32" name="attr_inventoryweight32" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription32" name="attr_inventorydescription32"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried32" value="@{inventoryweight32}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty32" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname32"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight32" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription32"></div>
         </div>
 
     </div>
@@ -646,11 +646,11 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">33</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried33" name="attr_inventorycarried33" value="@{inventoryweight33}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty33" name="attr_inventoryqty33" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname33" name="attr_inventoryname33"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight33" name="attr_inventoryweight33" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription33" name="attr_inventorydescription33"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried33" value="@{inventoryweight33}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty33" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname33"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight33" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription33"></div>
         </div>
 
     </div>
@@ -662,11 +662,11 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">34</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried34" name="attr_inventorycarried34" value="@{inventoryweight34}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty34" name="attr_inventoryqty34" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname34" name="attr_inventoryname34"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight34" name="attr_inventoryweight34" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription34" name="attr_inventorydescription34"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried34" value="@{inventoryweight34}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty34" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname34"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight34" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription34"></div>
         </div>
 
     </div>
@@ -678,11 +678,11 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">35</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried35" name="attr_inventorycarried35" value="@{inventoryweight35}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty35" name="attr_inventoryqty35" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname35" name="attr_inventoryname35"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight35" name="attr_inventoryweight35" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription35" name="attr_inventorydescription35"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried35" value="@{inventoryweight35}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty35" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname35"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight35" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription35"></div>
         </div>
 
     </div>
@@ -694,11 +694,11 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">36</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried36" name="attr_inventorycarried36" value="@{inventoryweight36}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty36" name="attr_inventoryqty36" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname36" name="attr_inventoryname36"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight36" name="attr_inventoryweight36" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription36" name="attr_inventorydescription36"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried36" value="@{inventoryweight36}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty36" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname36"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight36" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription36"></div>
         </div>
 
     </div>
@@ -710,11 +710,11 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">37</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried37" name="attr_inventorycarried37" value="@{inventoryweight37}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty37" name="attr_inventoryqty37" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname37" name="attr_inventoryname37"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight37" name="attr_inventoryweight37" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription37" name="attr_inventorydescription37"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried37" value="@{inventoryweight37}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty37" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname37"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight37" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription37"></div>
         </div>
 
     </div>
@@ -726,11 +726,11 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">38</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried38" name="attr_inventorycarried38" value="@{inventoryweight38}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty38" name="attr_inventoryqty38" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname38" name="attr_inventoryname38"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight38" name="attr_inventoryweight38" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription38" name="attr_inventorydescription38"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried38" value="@{inventoryweight38}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty38" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname38"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight38" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription38"></div>
         </div>
 
     </div>
@@ -742,11 +742,11 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">39</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried39" name="attr_inventorycarried39" value="@{inventoryweight39}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty39" name="attr_inventoryqty39" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname39" name="attr_inventoryname39"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight39" name="attr_inventoryweight39" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription39" name="attr_inventorydescription39"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried39" value="@{inventoryweight39}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty39" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname39"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight39" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription39"></div>
         </div>
 
     </div>
@@ -758,23 +758,23 @@
 
         <div class="grid sheet-grey-row">
             <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-inventory-row-number">40</div>
-            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" id="attr_inventorycarried40" name="attr_inventorycarried40" value="@{inventoryweight40}" checked="checked" /></div>
-            <div class="grid__cell grid__cell--1-15"><input type="number" id="attr_inventoryqty40" name="attr_inventoryqty40" value="1" min="0" step="1"></div>
-            <div class="grid__cell grid__cell--4-15"><input type="text" id="attr_inventoryname40" name="attr_inventoryname40"></div>
-            <div class="grid__cell grid__cell--2-15"><input type="number" id="attr_inventoryweight40" name="attr_inventoryweight40" value="0" step="0.01"></div>
-            <div class="grid__cell grid__cell--6-15"><input type="text" id="attr_inventorydescription40" name="attr_inventorydescription40"></div>
+            <div class="grid__cell grid__cell--1-15 sheet-vert-middle sheet-checkbox-row"><input class="tick" type="checkbox" name="attr_inventorycarried40" value="@{inventoryweight40}" checked="checked" /></div>
+            <div class="grid__cell grid__cell--1-15"><input type="number" name="attr_inventoryqty40" value="1" min="0" step="1"></div>
+            <div class="grid__cell grid__cell--4-15"><input type="text" name="attr_inventoryname40"></div>
+            <div class="grid__cell grid__cell--2-15"><input type="number" name="attr_inventoryweight40" value="0" step="0.01"></div>
+            <div class="grid__cell grid__cell--6-15"><input type="text" name="attr_inventorydescription40"></div>
         </div>
 
     </div>
 
     <!-- END inventory row -->
 </div>
-<!-- END inventory page --><input type="hidden" id="attr_inventory_weight_calc" name="attr_inventory_weight_calc" value="(@{inventorycarried1} + (((@{inventoryqty1} - 1) * @{inventorycarried1}) * @{weight_unit_setting}) + @{inventorycarried2} + (((@{inventoryqty2} - 1) * @{inventorycarried2}) * @{weight_unit_setting}) + @{inventorycarried3} + (((@{inventoryqty3} - 1) * @{inventorycarried3}) * @{weight_unit_setting}) + @{inventorycarried4} + (((@{inventoryqty4} - 1) * @{inventorycarried4}) * @{weight_unit_setting}) + @{inventorycarried5} + (((@{inventoryqty5} - 1) * @{inventorycarried5}) * @{weight_unit_setting}) + @{inventorycarried6} + (((@{inventoryqty6} - 1) * @{inventorycarried6}) * @{weight_unit_setting}) + @{inventorycarried7} + (((@{inventoryqty7} - 1) * @{inventorycarried7}) * @{weight_unit_setting}) + @{inventorycarried8} + (((@{inventoryqty8} - 1) * @{inventorycarried8}) * @{weight_unit_setting}) + @{inventorycarried9} + (((@{inventoryqty9} - 1) * @{inventorycarried9}) * @{weight_unit_setting}) + @{inventorycarried10} + (((@{inventoryqty10} - 1) * @{inventorycarried10}) * @{weight_unit_setting}) + @{inventorycarried11} + (((@{inventoryqty11} - 1) * @{inventorycarried11}) * @{weight_unit_setting}) + @{inventorycarried12} + (((@{inventoryqty12} - 1) * @{inventorycarried12}) * @{weight_unit_setting}) + @{inventorycarried13} + (((@{inventoryqty13} - 1) * @{inventorycarried13}) * @{weight_unit_setting}) + @{inventorycarried14} + (((@{inventoryqty14} - 1) * @{inventorycarried14}) * @{weight_unit_setting}) + @{inventorycarried15} + (((@{inventoryqty15} - 1) * @{inventorycarried15}) * @{weight_unit_setting}) + @{inventorycarried16} + (((@{inventoryqty16} - 1) * @{inventorycarried16}) * @{weight_unit_setting}) + @{inventorycarried17} + (((@{inventoryqty17} - 1) * @{inventorycarried17}) * @{weight_unit_setting}) + @{inventorycarried18} + (((@{inventoryqty18} - 1) * @{inventorycarried18}) * @{weight_unit_setting}) + @{inventorycarried19} + (((@{inventoryqty19} - 1) * @{inventorycarried19}) * @{weight_unit_setting}) + @{inventorycarried20} + (((@{inventoryqty20} - 1) * @{inventorycarried20}) * @{weight_unit_setting}) + @{inventorycarried21} + (((@{inventoryqty21} - 1) * @{inventorycarried21}) * @{weight_unit_setting}) + @{inventorycarried22} + (((@{inventoryqty22} - 1) * @{inventorycarried22}) * @{weight_unit_setting}) + @{inventorycarried23} + (((@{inventoryqty23} - 1) * @{inventorycarried23}) * @{weight_unit_setting}) + @{inventorycarried24} + (((@{inventoryqty24} - 1) * @{inventorycarried24}) * @{weight_unit_setting}) + @{inventorycarried25} + (((@{inventoryqty25} - 1) * @{inventorycarried25}) * @{weight_unit_setting}) + @{inventorycarried26} + (((@{inventoryqty26} - 1) * @{inventorycarried26}) * @{weight_unit_setting}) + @{inventorycarried27} + (((@{inventoryqty27} - 1) * @{inventorycarried27}) * @{weight_unit_setting}) + @{inventorycarried28} + (((@{inventoryqty28} - 1) * @{inventorycarried28}) * @{weight_unit_setting}) + @{inventorycarried29} + (((@{inventoryqty29} - 1) * @{inventorycarried29}) * @{weight_unit_setting}) + @{inventorycarried30} + (((@{inventoryqty30} - 1) * @{inventorycarried30}) * @{weight_unit_setting}) + @{inventorycarried31} + (((@{inventoryqty31} - 1) * @{inventorycarried31}) * @{weight_unit_setting}) + @{inventorycarried32} + (((@{inventoryqty32} - 1) * @{inventorycarried32}) * @{weight_unit_setting}) + @{inventorycarried33} + (((@{inventoryqty33} - 1) * @{inventorycarried33}) * @{weight_unit_setting}) + @{inventorycarried34} + (((@{inventoryqty34} - 1) * @{inventorycarried34}) * @{weight_unit_setting}) + @{inventorycarried35} + (((@{inventoryqty35} - 1) * @{inventorycarried35}) * @{weight_unit_setting}) + @{inventorycarried36} + (((@{inventoryqty36} - 1) * @{inventorycarried36}) * @{weight_unit_setting}) + @{inventorycarried37} + (((@{inventoryqty37} - 1) * @{inventorycarried37}) * @{weight_unit_setting}) + @{inventorycarried38} + (((@{inventoryqty38} - 1) * @{inventorycarried38}) * @{weight_unit_setting}) + @{inventorycarried39} + (((@{inventoryqty39} - 1) * @{inventorycarried39}) * @{weight_unit_setting}) + @{inventorycarried40} + (((@{inventoryqty40} - 1) * @{inventorycarried40}) * @{weight_unit_setting}))" />
+<!-- END inventory page --><input type="hidden" name="attr_inventory_weight_calc" value="(@{inventorycarried1} + (((@{inventoryqty1} - 1) * @{inventorycarried1}) * @{weight_unit_setting}) + @{inventorycarried2} + (((@{inventoryqty2} - 1) * @{inventorycarried2}) * @{weight_unit_setting}) + @{inventorycarried3} + (((@{inventoryqty3} - 1) * @{inventorycarried3}) * @{weight_unit_setting}) + @{inventorycarried4} + (((@{inventoryqty4} - 1) * @{inventorycarried4}) * @{weight_unit_setting}) + @{inventorycarried5} + (((@{inventoryqty5} - 1) * @{inventorycarried5}) * @{weight_unit_setting}) + @{inventorycarried6} + (((@{inventoryqty6} - 1) * @{inventorycarried6}) * @{weight_unit_setting}) + @{inventorycarried7} + (((@{inventoryqty7} - 1) * @{inventorycarried7}) * @{weight_unit_setting}) + @{inventorycarried8} + (((@{inventoryqty8} - 1) * @{inventorycarried8}) * @{weight_unit_setting}) + @{inventorycarried9} + (((@{inventoryqty9} - 1) * @{inventorycarried9}) * @{weight_unit_setting}) + @{inventorycarried10} + (((@{inventoryqty10} - 1) * @{inventorycarried10}) * @{weight_unit_setting}) + @{inventorycarried11} + (((@{inventoryqty11} - 1) * @{inventorycarried11}) * @{weight_unit_setting}) + @{inventorycarried12} + (((@{inventoryqty12} - 1) * @{inventorycarried12}) * @{weight_unit_setting}) + @{inventorycarried13} + (((@{inventoryqty13} - 1) * @{inventorycarried13}) * @{weight_unit_setting}) + @{inventorycarried14} + (((@{inventoryqty14} - 1) * @{inventorycarried14}) * @{weight_unit_setting}) + @{inventorycarried15} + (((@{inventoryqty15} - 1) * @{inventorycarried15}) * @{weight_unit_setting}) + @{inventorycarried16} + (((@{inventoryqty16} - 1) * @{inventorycarried16}) * @{weight_unit_setting}) + @{inventorycarried17} + (((@{inventoryqty17} - 1) * @{inventorycarried17}) * @{weight_unit_setting}) + @{inventorycarried18} + (((@{inventoryqty18} - 1) * @{inventorycarried18}) * @{weight_unit_setting}) + @{inventorycarried19} + (((@{inventoryqty19} - 1) * @{inventorycarried19}) * @{weight_unit_setting}) + @{inventorycarried20} + (((@{inventoryqty20} - 1) * @{inventorycarried20}) * @{weight_unit_setting}) + @{inventorycarried21} + (((@{inventoryqty21} - 1) * @{inventorycarried21}) * @{weight_unit_setting}) + @{inventorycarried22} + (((@{inventoryqty22} - 1) * @{inventorycarried22}) * @{weight_unit_setting}) + @{inventorycarried23} + (((@{inventoryqty23} - 1) * @{inventorycarried23}) * @{weight_unit_setting}) + @{inventorycarried24} + (((@{inventoryqty24} - 1) * @{inventorycarried24}) * @{weight_unit_setting}) + @{inventorycarried25} + (((@{inventoryqty25} - 1) * @{inventorycarried25}) * @{weight_unit_setting}) + @{inventorycarried26} + (((@{inventoryqty26} - 1) * @{inventorycarried26}) * @{weight_unit_setting}) + @{inventorycarried27} + (((@{inventoryqty27} - 1) * @{inventorycarried27}) * @{weight_unit_setting}) + @{inventorycarried28} + (((@{inventoryqty28} - 1) * @{inventorycarried28}) * @{weight_unit_setting}) + @{inventorycarried29} + (((@{inventoryqty29} - 1) * @{inventorycarried29}) * @{weight_unit_setting}) + @{inventorycarried30} + (((@{inventoryqty30} - 1) * @{inventorycarried30}) * @{weight_unit_setting}) + @{inventorycarried31} + (((@{inventoryqty31} - 1) * @{inventorycarried31}) * @{weight_unit_setting}) + @{inventorycarried32} + (((@{inventoryqty32} - 1) * @{inventorycarried32}) * @{weight_unit_setting}) + @{inventorycarried33} + (((@{inventoryqty33} - 1) * @{inventorycarried33}) * @{weight_unit_setting}) + @{inventorycarried34} + (((@{inventoryqty34} - 1) * @{inventorycarried34}) * @{weight_unit_setting}) + @{inventorycarried35} + (((@{inventoryqty35} - 1) * @{inventorycarried35}) * @{weight_unit_setting}) + @{inventorycarried36} + (((@{inventoryqty36} - 1) * @{inventorycarried36}) * @{weight_unit_setting}) + @{inventorycarried37} + (((@{inventoryqty37} - 1) * @{inventorycarried37}) * @{weight_unit_setting}) + @{inventorycarried38} + (((@{inventoryqty38} - 1) * @{inventorycarried38}) * @{weight_unit_setting}) + @{inventorycarried39} + (((@{inventoryqty39} - 1) * @{inventorycarried39}) * @{weight_unit_setting}) + @{inventorycarried40} + (((@{inventoryqty40} - 1) * @{inventorycarried40}) * @{weight_unit_setting}))" />
 
 <!-- END AUTO GENERATED CONTENT -->
 
 <hr/>
 <h1 class="hdg">Treasure/Loot/Inventory Notes <i class="sheet-pictos">W</i></h1>
-<textarea id="attr_notes" name="attr_notes"></textarea>
+<textarea name="attr_notes"></textarea>
 
 <hr/>

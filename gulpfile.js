@@ -26,7 +26,7 @@ gulp.task('html', function() {
     .pipe(plugins.plumber(function (e) {
         beep();
         console.log('[hb]'.bold.magenta + ' There was an issue compiling html:\n'.bold.red);
-        console.log(e);
+        console.log(e.message);
         console.log('');
         this.emit('end');
     }))
@@ -42,7 +42,7 @@ gulp.task('css', function() {
     .pipe(plugins.plumber(function (e) {
         beep();
         console.log('[stylus]'.bold.magenta + ' There was an issue compiling Stylus:\n'.bold.red);
-        console.log(e);
+        console.log(e.message);
         console.log('');
         this.emit('end');
     }))
