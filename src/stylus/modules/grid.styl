@@ -56,6 +56,11 @@ grid-border()
 .sheet-grid__cell
     flex 1
     position relative // for borders
+    display flex
+    flex-direction column
+
+.sheet-grid--pad > *
+    justify-content flex-start
 
 // sizes
 
@@ -75,11 +80,3 @@ for max in (2...25) {
         }
     }
 }
-
-// content alignment
-.sheet-grid__cell
-    display flex
-    flex-direction column
-
-.sheet-grid__cell--align-top
-    justify-content flex-start

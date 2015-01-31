@@ -1,0 +1,23 @@
+.sheet-grid.sheet-grid--sub 
+    .sheet-grid__cell Spell Slots 
+.sheet-grid.sheet-grid--sub 
+    .sheet-grid__cell Level 
+    .sheet-grid__cell Used 
+    .sheet-grid__cell Max 
+ 
+for i in [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    .sheet-grid.sheet-grid--split
+        .sheet-grid__cell 
+            .sheet-label=i 
+        .sheet-grid__cell 
+            input(
+                type="number" 
+                name="attr_spell_slots_l#{i}" 
+                value="0"
+            )
+        .sheet-grid__cell 
+            input(
+                type="number" 
+                name="attr_spell_slots_l#{i}_max" 
+                value="0"
+            )

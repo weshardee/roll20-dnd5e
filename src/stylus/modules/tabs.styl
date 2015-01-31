@@ -4,7 +4,7 @@
     flex-wrap wrap
 
 // tabs for sections
-.sheet-tabs--tab
+.sheet-tabs__tab
     -webkit-appearance none
     align-items center
     background-color BLUE
@@ -16,35 +16,39 @@
     width auto !important
     margin 0 !important
 
-.sheet-tabs--tab:hover
+.sheet-tabs__tab:hover
     background-color alpha(BLUE, 0.85)
 
-.sheet-tabs--tab:first-of-type
+.sheet-tabs__tab:first-of-type
     border-bottom-left-radius RADIUS
     border-top-left-radius RADIUS
 
-.sheet-tabs--tab:last-of-type
+.sheet-tabs__tab:last-of-type
     border-bottom-right-radius RADIUS
     border-top-right-radius RADIUS
 
-.sheet-tabs--tab:checked
+.sheet-tabs__tab:checked
     background-color GOLD
 
-.sheet-tabs--tab::after
+.sheet-tabs__tab::after
     content attr(title)
 
 // sections
 
-.sheet-tabs--section
+.sheet-tabs__section
     display none
     margin-top PAD
     width 100% // in a flex wrap area
 
 // visibility
 
-.sheet-tabs--tab__0:checked ~ .sheet-tabs--section
+.sheet-tabs__tab--0:checked ~ .sheet-tabs__section
     display block
 
 for num in (1...10)
-    .sheet-tabs--tab__{num}:checked ~ .sheet-tabs--section__{num}
+    .sheet-tabs__tab--{num}:checked ~ .sheet-tabs__section--{num}
         display block
+
+.sheet-tabs__tab--0:checked ~ .sheet-tabs__section,
+.sheet-tabs__tab--99:checked ~ .sheet-tabs__section
+    display block
