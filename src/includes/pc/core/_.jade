@@ -1,0 +1,33 @@
+.sheet-grid.sheet-grid--pad.sheet-grid--col
+    .sheet-grid__cell 
+        // top section
+        .sheet-grid.sheet-grid--pad 
+
+            .sheet-grid__cell
+                include stats
+
+            .sheet-grid__cell     
+                .sheet-grid.sheet-grid--col.sheet-grid--pad 
+                    .sheet-grid__cell 
+                        include hp
+                    .sheet-grid__cell 
+                        .sheet-grid.sheet-grid--pad 
+                            .sheet-grid__cell 
+                                include initiative
+                            .sheet-grid__cell
+                                include ac
+
+                    .sheet-grid__cell 
+                        include level
+                        
+    .sheet-grid__cell 
+        // bottom section
+        .sheet-grid.sheet-grid--pad 
+            .sheet-grid__cell.sheet-grid__cell--5-12
+                include bonuses
+            .sheet-grid__cell.sheet-grid__cell--7-12 
+                .sheet-grid.sheet-grid--pad.sheet-grid--col 
+                    .sheet-grid__cell 
+                        include hd
+                    .sheet-grid__cell 
+                        include other

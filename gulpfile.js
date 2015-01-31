@@ -13,7 +13,7 @@ var dest = 'web/';
 
 var glob = {
     jade: src + '*.jade',
-    jadePartials: src + 'includes/*.*',
+    jadePartials: src + 'includes/**/*.jade',
     templateData: src + 'data/skills.json',
     stylusPartials: src + 'stylus/**/*.styl',
     css: src + '*.styl'

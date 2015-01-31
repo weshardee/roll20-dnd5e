@@ -1,0 +1,345 @@
+
+
+    .sheet-grid 
+
+        .sheet-grid__cell.sheet-grid__cell--1 
+            h1.hdg Armour Class i.sheet-pictos sheet-pictos--three b  
+            p.sheet-note Add any equipment, effects or items here that give a benefit to your Armour Class (AC).  This includes armour, shields and any magical items or spells.  Use the checkboxes to indicate whether each row is is worn/equipped (meaning it applies to your normal AC score) and whether the row also provides a benefit to your unarmoured AC score (such as magical items or in some cases a shield).  If you have a class feature that also boosts your unarmoured AC then select that here too. 
+         
+     
+
+    .sheet-grid sheet-padb 
+        .sheet-grid__cell.sheet-grid__cell--1-5 input(class="sheet-underlined" type="number" name="attr_AC_calc" value="@{armouractive1}+@{armouractive2}+@{armouractive3}+@{armouractive4}+@{armouractive5}+@{armouractive6}+@{armouractive7}+@{armouractive8}+@{armouractive9}+@{armouractive10}" disabled ><br) AC (worn armour) 
+        .sheet-grid__cell.sheet-grid__cell--1-5 input(class="sheet-underlined" type="number" name="attr_AC_no_armour_calc" value="10+@{dexterity_mod}+floor(@{unarmoured_class_bonus})+@{armouractiveunarmoured1}+@{armouractiveunarmoured2}+@{armouractiveunarmoured3}+@{armouractiveunarmoured4}+@{armouractiveunarmoured5}+@{armouractiveunarmoured6}+@{armouractiveunarmoured7}+@{armouractiveunarmoured8}+@{armouractiveunarmoured9}+@{armouractiveunarmoured10}" disabled><br) AC (unarmoured) 
+        .sheet-grid__cell.sheet-grid__cell--1-5 Unarmoured bonus :  
+        .sheet-grid__cell.sheet-grid__cell--2-5 
+            <select name="attr_unarmoured_class_bonus 
+                <option value="(0 + 0.001)" selected="selected None 
+                <option value="(@{constitution_mod} + 0.002) Barbarian's unarmoured defense 
+                <option value="(@{wisdom_mod} + 0.003) Monk's unarmoured defense 
+                <option value="(3 + 0.004) Draconic Resilience (Sorceror subclass) 
+             
+         
+     
+
+
+    .sheet-grid 
+
+        .sheet-grid__cell.sheet-grid__cell--1 
+
+            .sheet-grid.sheet-grid--sub 
+                .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center label sheet-vert-bottom Worn? 
+                .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center label sheet-vert-bottom Unarmoured? 
+                .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center label sheet-vert-bottom Name 
+                .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center label sheet-vert-bottom Base AC 
+                .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center label sheet-vert-bottom Armour Type 
+                .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center label sheet-vert-bottom Magic Bonus 
+                .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center label sheet-vert-bottom Total AC 
+                .sheet-grid__cell.sheet-grid__cell--1-8 sheet-center label sheet-vert-bottom Stealth Pen? 
+                .sheet-grid__cell.sheet-grid__cell--1-8 sheet-center label sheet-vert-bottom -10ft to speed? 
+             
+
+
+            .sheet-grid 
+                .sheet-grid__cell.sheet-grid__cell--1-12 sheet-vert-middle sheet-checkbox-row input(class="tick" type="checkbox" name="attr_armouractive1" value="@{armourtotalAC1}" checked="checked"  
+                .sheet-grid__cell.sheet-grid__cell--1-12 sheet-vert-middle sheet-checkbox-row input(class="tick" type="checkbox" name="attr_armouractiveunarmoured1" value="@{armourtotalAC1}"  
+                .sheet-grid__cell.sheet-grid__cell--1-6 input(type="text" name="attr_amourname1  
+                .sheet-grid__cell.sheet-grid__cell--1-12 input(type="number" name="attr_armourACbase1" value="0" step="1  
+                .sheet-grid__cell.sheet-grid__cell--1-6 
+                    <select name="attr_armourtype1 
+                        <option value="0.001" selected="selected n/a 
+                        <option value="@{dexterity_mod} + 0.002 Light 
+                        <option value="(ceil((@{dexterity_mod}-1)/1e10)*2 - floor((@{dexterity_mod}-2)/1e10)*@{dexterity_mod}) + 0.003 Medium 
+                        <option value="0.004 Heavy 
+                     
+                 
+                .sheet-grid__cell.sheet-grid__cell--1-12 input(type="number" name="attr_armourmagicbonus1" value="0" step="1  
+                .sheet-grid__cell.sheet-grid__cell--1-12 input(type="number" name="attr_armourtotalAC1" value="@{armourACbase1}+floor(@{armourtype1})+@{armourmagicbonus1}" disabled> 
+                .sheet-grid__cell.sheet-grid__cell--1-8 
+                    <select name="attr_armourstealthpen1 
+                        <option value="No Penalty" selected="selected None 
+                        <option value="Disadvantage on Stealth Disadvantage 
+                     
+                 
+                .sheet-grid__cell.sheet-grid__cell--1-8 
+                    <select name="attr_armourspeedpen1 
+                        <option value="No" selected="selected No 
+                        <option value="If STR &lt; 13 If STR &lt; 13 
+                        <option value="If STR &lt; 15 If STR &lt; 15 
+                     
+                 
+             
+
+            .sheet-grid 
+                .sheet-grid__cell.sheet-grid__cell--1-12 sheet-vert-middle sheet-checkbox-row input(class="tick" type="checkbox" name="attr_armouractive2" value="@{armourtotalAC2}" checked="checked"  
+                .sheet-grid__cell.sheet-grid__cell--1-12 sheet-vert-middle sheet-checkbox-row input(class="tick" type="checkbox" name="attr_armouractiveunarmoured2" value="@{armourtotalAC2}"  
+                .sheet-grid__cell.sheet-grid__cell--1-6 input(type="text" name="attr_amourname2  
+                .sheet-grid__cell.sheet-grid__cell--1-12 input(type="number" name="attr_armourACbase2" value="0" step="1  
+                .sheet-grid__cell.sheet-grid__cell--1-6 
+                    <select name="attr_armourtype2 
+                        <option value="0.001" selected="selected n/a 
+                        <option value="@{dexterity_mod} + 0.002 Light 
+                        <option value="(ceil((@{dexterity_mod}-1)/1e10)*2 - floor((@{dexterity_mod}-2)/1e10)*@{dexterity_mod}) + 0.003 Medium 
+                        <option value="0.004 Heavy 
+                     
+                 
+                .sheet-grid__cell.sheet-grid__cell--1-12 input(type="number" name="attr_armourmagicbonus2" value="0" step="1  
+                .sheet-grid__cell.sheet-grid__cell--1-12 input(type="number" name="attr_armourtotalAC2" value="@{armourACbase2}+floor(@{armourtype2})+@{armourmagicbonus2}" disabled> 
+                .sheet-grid__cell.sheet-grid__cell--1-8 
+                    <select name="attr_armourstealthpen2 
+                        <option value="No Penalty" selected="selected None 
+                        <option value="Disadvantage on Stealth Disadvantage 
+                     
+                 
+                .sheet-grid__cell.sheet-grid__cell--1-8 
+                    <select name="attr_armourspeedpen2 
+                        <option value="No" selected="selected No 
+                        <option value="If STR &lt; 13 If STR &lt; 13 
+                        <option value="If STR &lt; 15 If STR &lt; 15 
+                     
+                 
+             
+
+            .sheet-grid 
+                .sheet-grid__cell.sheet-grid__cell--1-12 sheet-vert-middle sheet-checkbox-row input(class="tick" type="checkbox" name="attr_armouractive3" value="@{armourtotalAC3}" checked="checked"  
+                .sheet-grid__cell.sheet-grid__cell--1-12 sheet-vert-middle sheet-checkbox-row input(class="tick" type="checkbox" name="attr_armouractiveunarmoured3" value="@{armourtotalAC3}"  
+                .sheet-grid__cell.sheet-grid__cell--1-6 input(type="text" name="attr_amourname3  
+                .sheet-grid__cell.sheet-grid__cell--1-12 input(type="number" name="attr_armourACbase3" value="0" step="1  
+                .sheet-grid__cell.sheet-grid__cell--1-6 
+                    <select name="attr_armourtype3 
+                        <option value="0.001" selected="selected n/a 
+                        <option value="@{dexterity_mod} + 0.002 Light 
+                        <option value="(ceil((@{dexterity_mod}-1)/1e10)*2 - floor((@{dexterity_mod}-2)/1e10)*@{dexterity_mod}) + 0.003 Medium 
+                        <option value="0.004 Heavy 
+                     
+                 
+                .sheet-grid__cell.sheet-grid__cell--1-12 input(type="number" name="attr_armourmagicbonus3" value="0" step="1  
+                .sheet-grid__cell.sheet-grid__cell--1-12 input(type="number" name="attr_armourtotalAC3" value="@{armourACbase3}+floor(@{armourtype3})+@{armourmagicbonus3}" disabled> 
+                .sheet-grid__cell.sheet-grid__cell--1-8 
+                    <select name="attr_armourstealthpen3 
+                        <option value="No Penalty" selected="selected None 
+                        <option value="Disadvantage on Stealth Disadvantage 
+                     
+                 
+                .sheet-grid__cell.sheet-grid__cell--1-8 
+                    <select name="attr_armourspeedpen3 
+                        <option value="No" selected="selected No 
+                        <option value="If STR &lt; 13 If STR &lt; 13 
+                        <option value="If STR &lt; 15 If STR &lt; 15 
+                     
+                 
+             
+
+            .sheet-grid 
+                .sheet-grid__cell.sheet-grid__cell--1-12 sheet-vert-middle sheet-checkbox-row input(class="tick" type="checkbox" name="attr_armouractive4" value="@{armourtotalAC4}" checked="checked"  
+                .sheet-grid__cell.sheet-grid__cell--1-12 sheet-vert-middle sheet-checkbox-row input(class="tick" type="checkbox" name="attr_armouractiveunarmoured4" value="@{armourtotalAC4}"  
+                .sheet-grid__cell.sheet-grid__cell--1-6 input(type="text" name="attr_amourname4  
+                .sheet-grid__cell.sheet-grid__cell--1-12 input(type="number" name="attr_armourACbase4" value="0" step="1  
+                .sheet-grid__cell.sheet-grid__cell--1-6 
+                    <select name="attr_armourtype4 
+                        <option value="0.001" selected="selected n/a 
+                        <option value="@{dexterity_mod} + 0.002 Light 
+                        <option value="(ceil((@{dexterity_mod}-1)/1e10)*2 - floor((@{dexterity_mod}-2)/1e10)*@{dexterity_mod}) + 0.003 Medium 
+                        <option value="0.004 Heavy 
+                     
+                 
+                .sheet-grid__cell.sheet-grid__cell--1-12 input(type="number" name="attr_armourmagicbonus4" value="0" step="1  
+                .sheet-grid__cell.sheet-grid__cell--1-12 input(type="number" name="attr_armourtotalAC4" value="@{armourACbase4}+floor(@{armourtype4})+@{armourmagicbonus4}" disabled> 
+                .sheet-grid__cell.sheet-grid__cell--1-8 
+                    <select name="attr_armourstealthpen4 
+                        <option value="No Penalty" selected="selected None 
+                        <option value="Disadvantage on Stealth Disadvantage 
+                     
+                 
+                .sheet-grid__cell.sheet-grid__cell--1-8 
+                    <select name="attr_armourspeedpen4 
+                        <option value="No" selected="selected No 
+                        <option value="If STR &lt; 13 If STR &lt; 13 
+                        <option value="If STR &lt; 15 If STR &lt; 15 
+                     
+                 
+             
+
+            .sheet-grid 
+                .sheet-grid__cell.sheet-grid__cell--1-12 sheet-vert-middle sheet-checkbox-row input(class="tick" type="checkbox" name="attr_armouractive5" value="@{armourtotalAC5}" checked="checked"  
+                .sheet-grid__cell.sheet-grid__cell--1-12 sheet-vert-middle sheet-checkbox-row input(class="tick" type="checkbox" name="attr_armouractiveunarmoured5" value="@{armourtotalAC5}"  
+                .sheet-grid__cell.sheet-grid__cell--1-6 input(type="text" name="attr_amourname5  
+                .sheet-grid__cell.sheet-grid__cell--1-12 input(type="number" name="attr_armourACbase5" value="0" step="1  
+                .sheet-grid__cell.sheet-grid__cell--1-6 
+                    <select name="attr_armourtype5 
+                        <option value="0.001" selected="selected n/a 
+                        <option value="@{dexterity_mod} + 0.002 Light 
+                        <option value="(ceil((@{dexterity_mod}-1)/1e10)*2 - floor((@{dexterity_mod}-2)/1e10)*@{dexterity_mod}) + 0.003 Medium 
+                        <option value="0.004 Heavy 
+                     
+                 
+                .sheet-grid__cell.sheet-grid__cell--1-12 input(type="number" name="attr_armourmagicbonus5" value="0" step="1  
+                .sheet-grid__cell.sheet-grid__cell--1-12 input(type="number" name="attr_armourtotalAC5" value="@{armourACbase5}+floor(@{armourtype5})+@{armourmagicbonus5}" disabled> 
+                .sheet-grid__cell.sheet-grid__cell--1-8 
+                    <select name="attr_armourstealthpen5 
+                        <option value="No Penalty" selected="selected None 
+                        <option value="Disadvantage on Stealth Disadvantage 
+                     
+                 
+                .sheet-grid__cell.sheet-grid__cell--1-8 
+                    <select name="attr_armourspeedpen5 
+                        <option value="No" selected="selected No 
+                        <option value="If STR &lt; 13 If STR &lt; 13 
+                        <option value="If STR &lt; 15 If STR &lt; 15 
+                     
+                 
+             
+
+            .sheet-grid 
+                .sheet-grid__cell.sheet-grid__cell--1-12 sheet-vert-middle sheet-checkbox-row input(class="tick" type="checkbox" name="attr_armouractive6" value="@{armourtotalAC6}" checked="checked"  
+                .sheet-grid__cell.sheet-grid__cell--1-12 sheet-vert-middle sheet-checkbox-row input(class="tick" type="checkbox" name="attr_armouractiveunarmoured6" value="@{armourtotalAC6}"  
+                .sheet-grid__cell.sheet-grid__cell--1-6 input(type="text" name="attr_amourname6  
+                .sheet-grid__cell.sheet-grid__cell--1-12 input(type="number" name="attr_armourACbase6" value="0" step="1  
+                .sheet-grid__cell.sheet-grid__cell--1-6 
+                    <select name="attr_armourtype6 
+                        <option value="0.001" selected="selected n/a 
+                        <option value="@{dexterity_mod} + 0.002 Light 
+                        <option value="(ceil((@{dexterity_mod}-1)/1e10)*2 - floor((@{dexterity_mod}-2)/1e10)*@{dexterity_mod}) + 0.003 Medium 
+                        <option value="0.004 Heavy 
+                     
+                 
+                .sheet-grid__cell.sheet-grid__cell--1-12 input(type="number" name="attr_armourmagicbonus6" value="0" step="1  
+                .sheet-grid__cell.sheet-grid__cell--1-12 input(type="number" name="attr_armourtotalAC6" value="@{armourACbase6}+floor(@{armourtype6})+@{armourmagicbonus6}" disabled> 
+                .sheet-grid__cell.sheet-grid__cell--1-8 
+                    <select name="attr_armourstealthpen6 
+                        <option value="No Penalty" selected="selected None 
+                        <option value="Disadvantage on Stealth Disadvantage 
+                     
+                 
+                .sheet-grid__cell.sheet-grid__cell--1-8 
+                    <select name="attr_armourspeedpen6 
+                        <option value="No" selected="selected No 
+                        <option value="If STR &lt; 13 If STR &lt; 13 
+                        <option value="If STR &lt; 15 If STR &lt; 15 
+                     
+                 
+             
+
+            .sheet-grid 
+                .sheet-grid__cell.sheet-grid__cell--1-12 sheet-vert-middle sheet-checkbox-row input(class="tick" type="checkbox" name="attr_armouractive7" value="@{armourtotalAC7}" checked="checked"  
+                .sheet-grid__cell.sheet-grid__cell--1-12 sheet-vert-middle sheet-checkbox-row input(class="tick" type="checkbox" name="attr_armouractiveunarmoured7" value="@{armourtotalAC7}"  
+                .sheet-grid__cell.sheet-grid__cell--1-6 input(type="text" name="attr_amourname7  
+                .sheet-grid__cell.sheet-grid__cell--1-12 input(type="number" name="attr_armourACbase7" value="0" step="1  
+                .sheet-grid__cell.sheet-grid__cell--1-6 
+                    <select name="attr_armourtype7 
+                        <option value="0.001" selected="selected n/a 
+                        <option value="@{dexterity_mod} + 0.002 Light 
+                        <option value="(ceil((@{dexterity_mod}-1)/1e10)*2 - floor((@{dexterity_mod}-2)/1e10)*@{dexterity_mod}) + 0.003 Medium 
+                        <option value="0.004 Heavy 
+                     
+                 
+                .sheet-grid__cell.sheet-grid__cell--1-12 input(type="number" name="attr_armourmagicbonus7" value="0" step="1  
+                .sheet-grid__cell.sheet-grid__cell--1-12 input(type="number" name="attr_armourtotalAC7" value="@{armourACbase7}+floor(@{armourtype7})+@{armourmagicbonus7}" disabled> 
+                .sheet-grid__cell.sheet-grid__cell--1-8 
+                    <select name="attr_armourstealthpen7 
+                        <option value="No Penalty" selected="selected None 
+                        <option value="Disadvantage on Stealth Disadvantage 
+                     
+                 
+                .sheet-grid__cell.sheet-grid__cell--1-8 
+                    <select name="attr_armourspeedpen7 
+                        <option value="No" selected="selected No 
+                        <option value="If STR &lt; 13 If STR &lt; 13 
+                        <option value="If STR &lt; 15 If STR &lt; 15 
+                     
+                 
+             
+
+            .sheet-grid 
+                .sheet-grid__cell.sheet-grid__cell--1-12 sheet-vert-middle sheet-checkbox-row input(class="tick" type="checkbox" name="attr_armouractive8" value="@{armourtotalAC8}" checked="checked"  
+                .sheet-grid__cell.sheet-grid__cell--1-12 sheet-vert-middle sheet-checkbox-row input(class="tick" type="checkbox" name="attr_armouractiveunarmoured8" value="@{armourtotalAC8}"  
+                .sheet-grid__cell.sheet-grid__cell--1-6 input(type="text" name="attr_amourname8  
+                .sheet-grid__cell.sheet-grid__cell--1-12 input(type="number" name="attr_armourACbase8" value="0" step="1  
+                .sheet-grid__cell.sheet-grid__cell--1-6 
+                    <select name="attr_armourtype8 
+                        <option value="0.001" selected="selected n/a 
+                        <option value="@{dexterity_mod} + 0.002 Light 
+                        <option value="(ceil((@{dexterity_mod}-1)/1e10)*2 - floor((@{dexterity_mod}-2)/1e10)*@{dexterity_mod}) + 0.003 Medium 
+                        <option value="0.004 Heavy 
+                     
+                 
+                .sheet-grid__cell.sheet-grid__cell--1-12 input(type="number" name="attr_armourmagicbonus8" value="0" step="1  
+                .sheet-grid__cell.sheet-grid__cell--1-12 input(type="number" name="attr_armourtotalAC8" value="@{armourACbase8}+floor(@{armourtype8})+@{armourmagicbonus8}" disabled> 
+                .sheet-grid__cell.sheet-grid__cell--1-8 
+                    <select name="attr_armourstealthpen8 
+                        <option value="No Penalty" selected="selected None 
+                        <option value="Disadvantage on Stealth Disadvantage 
+                     
+                 
+                .sheet-grid__cell.sheet-grid__cell--1-8 
+                    <select name="attr_armourspeedpen8 
+                        <option value="No" selected="selected No 
+                        <option value="If STR &lt; 13 If STR &lt; 13 
+                        <option value="If STR &lt; 15 If STR &lt; 15 
+                     
+                 
+             
+
+            .sheet-grid 
+                .sheet-grid__cell.sheet-grid__cell--1-12 sheet-vert-middle sheet-checkbox-row input(class="tick" type="checkbox" name="attr_armouractive9" value="@{armourtotalAC9}" checked="checked"  
+                .sheet-grid__cell.sheet-grid__cell--1-12 sheet-vert-middle sheet-checkbox-row input(class="tick" type="checkbox" name="attr_armouractiveunarmoured9" value="@{armourtotalAC9}"  
+                .sheet-grid__cell.sheet-grid__cell--1-6 input(type="text" name="attr_amourname9  
+                .sheet-grid__cell.sheet-grid__cell--1-12 input(type="number" name="attr_armourACbase9" value="0" step="1  
+                .sheet-grid__cell.sheet-grid__cell--1-6 
+                    <select name="attr_armourtype9 
+                        <option value="0.001" selected="selected n/a 
+                        <option value="@{dexterity_mod} + 0.002 Light 
+                        <option value="(ceil((@{dexterity_mod}-1)/1e10)*2 - floor((@{dexterity_mod}-2)/1e10)*@{dexterity_mod}) + 0.003 Medium 
+                        <option value="0.004 Heavy 
+                     
+                 
+                .sheet-grid__cell.sheet-grid__cell--1-12 input(type="number" name="attr_armourmagicbonus9" value="0" step="1  
+                .sheet-grid__cell.sheet-grid__cell--1-12 input(type="number" name="attr_armourtotalAC9" value="@{armourACbase9}+floor(@{armourtype9})+@{armourmagicbonus9}" disabled> 
+                .sheet-grid__cell.sheet-grid__cell--1-8 
+                    <select name="attr_armourstealthpen9 
+                        <option value="No Penalty" selected="selected None 
+                        <option value="Disadvantage on Stealth Disadvantage 
+                     
+                 
+                .sheet-grid__cell.sheet-grid__cell--1-8 
+                    <select name="attr_armourspeedpen9 
+                        <option value="No" selected="selected No 
+                        <option value="If STR &lt; 13 If STR &lt; 13 
+                        <option value="If STR &lt; 15 If STR &lt; 15 
+                     
+                 
+             
+
+            .sheet-grid 
+                .sheet-grid__cell.sheet-grid__cell--1-12 sheet-vert-middle sheet-checkbox-row input(class="tick" type="checkbox" name="attr_armouractive10" value="@{armourtotalAC10}" checked="checked"  
+                .sheet-grid__cell.sheet-grid__cell--1-12 sheet-vert-middle sheet-checkbox-row input(class="tick" type="checkbox" name="attr_armouractiveunarmoured10" value="@{armourtotalAC10}"  
+                .sheet-grid__cell.sheet-grid__cell--1-6 input(type="text" name="attr_amourname10  
+                .sheet-grid__cell.sheet-grid__cell--1-12 input(type="number" name="attr_armourACbase10" value="0" step="1  
+                .sheet-grid__cell.sheet-grid__cell--1-6 
+                    <select name="attr_armourtype10 
+                        <option value="0.001" selected="selected n/a 
+                        <option value="@{dexterity_mod} + 0.002 Light 
+                        <option value="(ceil((@{dexterity_mod}-1)/1e10)*2 - floor((@{dexterity_mod}-2)/1e10)*@{dexterity_mod}) + 0.003 Medium 
+                        <option value="0.004 Heavy 
+                     
+                 
+                .sheet-grid__cell.sheet-grid__cell--1-12 input(type="number" name="attr_armourmagicbonus10" value="0" step="1  
+                .sheet-grid__cell.sheet-grid__cell--1-12 input(type="number" name="attr_armourtotalAC10" value="@{armourACbase10}+floor(@{armourtype10})+@{armourmagicbonus10}" disabled> 
+                .sheet-grid__cell.sheet-grid__cell--1-8 
+                    <select name="attr_armourstealthpen10 
+                        <option value="No Penalty" selected="selected None 
+                        <option value="Disadvantage on Stealth Disadvantage 
+                     
+                 
+                .sheet-grid__cell.sheet-grid__cell--1-8 
+                    <select name="attr_armourspeedpen10 
+                        <option value="No" selected="selected No 
+                        <option value="If STR &lt; 13 If STR &lt; 13 
+                        <option value="If STR &lt; 15 If STR &lt; 15 
+                     
+                 
+             
+
+         
+
+     

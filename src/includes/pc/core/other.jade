@@ -1,0 +1,34 @@
+h1.hdg Other
+    i.sheet-pictos o
+.sheet-grid.sheet-grid--sub 
+    .sheet-grid__cell.sheet-grid__cell--1-5 Inspiration?
+    .sheet-grid__cell.sheet-grid__cell--4-5 Death Saving Throws
+.sheet-grid 
+    .sheet-grid__cell.sheet-grid__cell--1-5 
+        input.sheet-toggle(
+            type='checkbox' 
+            name='attr_inspiration' 
+            value='1'
+        )
+    .sheet-grid__cell.sheet-grid__cell--3-5 
+        .sheet-grid.sheet-grid--split 
+            .sheet-grid__cell.sheet-grid__cell--1-3 
+                .sheet-label Successes:
+            .sheet-grid__cell 
+                +tick('attr_death_save_success_1')
+            .sheet-grid__cell 
+                +tick('attr_death_save_success_2')
+            .sheet-grid__cell 
+                +tick('attr_death_save_success_3')
+        .sheet-grid.sheet-grid--split 
+            .sheet-grid__cell.sheet-grid__cell--1-3 
+                .sheet-label Failures:
+            .sheet-grid__cell 
+                +tick('attr_death_save_fail_1')
+            .sheet-grid__cell 
+                +tick('attr_death_save_fail_2')
+            .sheet-grid__cell 
+                +tick('attr_death_save_fail_3')
+
+    .sheet-grid__cell.sheet-grid__cell--1-5 
+        +roll('roll_Death_Saving_Throw', '/em makes a DEATH saving throw\n\nDEATH save :  [[1d20 + (@{global_saving_bonus}) [Active Save Bonus] ]] Death Saving Throw')

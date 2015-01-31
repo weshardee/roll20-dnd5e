@@ -1,0 +1,110 @@
+p.sheet-note The dashboard fields are auto calculated from the individual class levels/options (set in the Class section of the sheet) and your core stats. 
+
+.sheet-grid.sheet-grid--sub 
+    .sheet-grid__cell.sheet-grid__cell--2 &nbsp; 
+    .sheet-grid__cell Arcane Trickster 
+    .sheet-grid__cell Bard 
+    .sheet-grid__cell Cleric 
+    .sheet-grid__cell Druid 
+    .sheet-grid__cell Eldritch Knight 
+    .sheet-grid__cell Paladin 
+    .sheet-grid__cell Ranger 
+    .sheet-grid__cell Sorcerer 
+    .sheet-grid__cell Warlock 
+    .sheet-grid__cell Wizard 
+
+.sheet-grid.sheet-grid--split
+    .sheet-grid__cell.sheet-grid__cell--2 
+        .sheet-label Cantrips Known 
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_cantrips_known_arcane_trickster" value="( (ceil((@{rogue_level}-2)/1e10)*3) + (ceil((@{rogue_level}-9)/1e10)) )" disabled)
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_cantrips_known_bard" value="( (ceil(@{bard_level}/1e10)*2) + (ceil((@{bard_level}-3)/1e10)) + (ceil((@{bard_level}-9)/1e10)) )" disabled)
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_cantrips_known_cleric" value="( (ceil(@{cleric_level}/1e10)*3) + (ceil((@{cleric_level}-3)/1e10)) + (ceil((@{cleric_level}-9)/1e10)) )" disabled)
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_cantrips_known_druid" value="( (ceil(@{druid_level}/1e10)*2) + (ceil((@{druid_level}-3)/1e10)) + (ceil((@{druid_level}-9)/1e10)) )" disabled)
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_cantrips_known_eldritch_knight" value="( (ceil((@{fighter_level}-2)/1e10)*2) + (ceil((@{fighter_level}-9)/1e10)) )" disabled)
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_cantrips_known_paladin" value="0" disabled)
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_cantrips_known_ranger" value="0" disabled)
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_cantrips_known_sorcerer" value="( (ceil(@{sorcerer_level}/1e10)*4) + (ceil((@{sorcerer_level}-3)/1e10)) + (ceil((@{sorcerer_level}-9)/1e10)) )" disabled)
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_cantrips_known_warlock" value="( (ceil(@{warlock_level}/1e10)*2) + (ceil((@{warlock_level}-3)/1e10)) + (ceil((@{warlock_level}-9)/1e10)) )" disabled)
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_cantrips_known_wizard" value="( (ceil(@{wizard_level}/1e10)*3) + (ceil((@{wizard_level}-3)/1e10)) + (ceil((@{wizard_level}-9)/1e10)) )" disabled)
+
+.sheet-grid.sheet-grid--split 
+    .sheet-grid__cell.sheet-grid__cell--2 
+        .sheet-label Spells Known 
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_spells_known_arcane_trickster" value="( (ceil(@{rogue_level}/1e10)*3) +  (ceil((@{rogue_level}-3)/1e10)) + (ceil((@{rogue_level}-6)/1e10)) + (ceil((@{rogue_level}-7)/1e10)) + (ceil((@{rogue_level}-9)/1e10)) + (ceil((@{rogue_level}-10)/1e10)) + (ceil((@{rogue_level}-12)/1e10)) + (ceil((@{rogue_level}-13)/1e10)) + (ceil((@{rogue_level}-15)/1e10)) + (ceil((@{rogue_level}-18)/1e10)) + (ceil((@{rogue_level}-19)/1e10)) )" disabled)
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_spells_known_bard" value="( (ceil(@{bard_level}/1e10)*4) + (ceil((@{bard_level}-1)/1e10)) + (ceil((@{bard_level}-2)/1e10)) + (ceil((@{bard_level}-3)/1e10)) + (ceil((@{bard_level}-4)/1e10)) + (ceil((@{bard_level}-5)/1e10)) + (ceil((@{bard_level}-6)/1e10)) + (ceil((@{bard_level}-7)/1e10)) + (ceil((@{bard_level}-8)/1e10)) + (ceil((@{bard_level}-9)/1e10)*2) + (ceil((@{bard_level}-10)/1e10)) + (ceil((@{bard_level}-12)/1e10)) + (ceil((@{bard_level}-13)/1e10)*2) + (ceil((@{bard_level}-14)/1e10)) + (ceil((@{bard_level}-16)/1e10)) + (ceil((@{bard_level}-17)/1e10)*2) )" disabled)
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_spells_known_cleric" value="0" disabled)
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_spells_known_druid" value="0" disabled)
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_spells_known_eldritch_knight" value="( (ceil((@{fighter_level}-2)/1e10)*3) + (ceil((@{fighter_level}-3)/1e10)) + (ceil((@{fighter_level}-6)/1e10)) + (ceil((@{fighter_level}-7)/1e10)) + (ceil((@{fighter_level}-9)/1e10)) + (ceil((@{fighter_level}-10)/1e10)) + (ceil((@{fighter_level}-12)/1e10)) + (ceil((@{fighter_level}-13)/1e10)) + (ceil((@{fighter_level}-15)/1e10)) + (ceil((@{fighter_level}-18)/1e10)) + (ceil((@{fighter_level}-19)/1e10)) )" disabled)
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_spells_known_paladin" value="0" disabled)
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_spells_known_ranger" value="( (1+ceil(@{ranger_level}/2)) * (ceil((@{ranger_level}-1)/1e10)) )" disabled)
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_spells_known_sorcerer" value="( (ceil(@{sorcerer_level}/1e10)*2) + (ceil((@{sorcerer_level}-1)/1e10)) + (ceil((@{sorcerer_level}-2)/1e10)) + (ceil((@{sorcerer_level}-3)/1e10)) + (ceil((@{sorcerer_level}-4)/1e10)) + (ceil((@{sorcerer_level}-5)/1e10)) + (ceil((@{sorcerer_level}-6)/1e10)) + (ceil((@{sorcerer_level}-7)/1e10)) + (ceil((@{sorcerer_level}-8)/1e10)) + (ceil((@{sorcerer_level}-9)/1e10)) + (ceil((@{sorcerer_level}-10)/1e10)) + (ceil((@{sorcerer_level}-12)/1e10)) + (ceil((@{sorcerer_level}-14)/1e10)) + (ceil((@{sorcerer_level}-16)/1e10)) )" disabled)
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_spells_known_warlock" value="( (ceil(@{warlock_level}/1e10) + @{warlock_level}) - (ceil((@{warlock_level}-9)/1e10)) - (ceil((@{warlock_level}-11)/1e10)) - (ceil((@{warlock_level}-13)/1e10)) - (ceil((@{warlock_level}-15)/1e10)) - (ceil((@{warlock_level}-17)/1e10)) - (ceil((@{warlock_level}-19)/1e10)) )" disabled)
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_spells_known_wizard" value="0" disabled)
+ 
+.sheet-grid.sheet-grid--split 
+    .sheet-grid__cell.sheet-grid__cell--2 
+        .sheet-label Can Prepare 
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_spells_prepared_arcane_trickster" value="0" disabled)
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_spells_prepared_bard" value="0" disabled)
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_spells_prepared_cleric" value="( ((((@{cleric_level} + @{wisdom_mod}) + 1) + abs((@{cleric_level} + @{wisdom_mod}) - 1)) / 2) * (ceil(@{cleric_level}/1e10)) )" disabled)
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_spells_prepared_druid" value="( ((((@{druid_level} + @{wisdom_mod}) + 1) + abs((@{druid_level} + @{wisdom_mod}) - 1)) / 2) * (ceil(@{druid_level}/1e10)) )" disabled)
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_spells_prepared_eldritch_knight" value="0" disabled)
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_spells_prepared_paladin" value="( ((((floor(@{paladin_level}/2) + @{charisma_mod}) + 1) + abs((floor(@{paladin_level}/2) + @{charisma_mod}) - 1)) / 2) * (ceil((@{paladin_level}-1)/1e10)) )" disabled)
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_spells_prepared_ranger" value="0" disabled)
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_spells_prepared_sorcerer" value="0" disabled)
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_spells_prepared_warlock" value="0" disabled)
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_spells_prepared_wizard" value="( ((((@{wizard_level} + @{intelligence_mod}) + 1) + abs((@{wizard_level} + @{intelligence_mod}) - 1)) / 2) * (ceil(@{wizard_level}/1e10)) )" disabled)
+ 
+.sheet-grid.sheet-grid--split 
+    .sheet-grid__cell.sheet-grid__cell--2 
+        .sheet-label Save DC 
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_arcane_trickster_spell_dc" value="(@{base_spell_dc}+@{arcane_trickster_spell_bonus})" disabled)
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_bard_spell_dc" value="(@{base_spell_dc}+@{bard_spell_bonus})" disabled)
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_cleric_spell_dc" value="(@{base_spell_dc}+@{cleric_spell_bonus})" disabled)
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_druid_spell_dc" value="(@{base_spell_dc}+@{druid_spell_bonus})" disabled)
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_eldritch_knight_spell_dc" value="(@{base_spell_dc}+@{eldritch_knight_spell_bonus})" disabled)
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_paladin_spell_dc" value="(@{base_spell_dc}+@{paladin_spell_bonus})" disabled)
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_ranger_spell_dc" value="(@{base_spell_dc}+@{ranger_spell_bonus})" disabled)
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_sorcerer_spell_dc" value="(@{base_spell_dc}+@{sorcerer_spell_bonus})" disabled)
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_warlock_spell_dc" value="(@{base_spell_dc}+@{warlock_spell_bonus})" disabled)
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_wizard_spell_dc" value="(@{base_spell_dc}+@{wizard_spell_bonus})" disabled)

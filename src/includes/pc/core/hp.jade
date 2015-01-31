@@ -1,0 +1,42 @@
+h1.hdg 
+    = 'Hit Points'
+    i.sheet-pictos k
+    = 'and Speed'
+    i.sheet-pictos 1
+
+.sheet-grid.sheet-grid--split 
+    .sheet-grid__cell 
+        label.sheet-field 
+            span.sheet-field__label Current
+            input.sheet-field__field(
+                type='number' 
+                name='attr_HP' 
+                step='1'
+            ) 
+    .sheet-grid__cell 
+        label.sheet-field 
+            span.sheet-field__label Max
+            input.sheet-field__field(
+                type='number' 
+                name='attr_HP_max' 
+                min='1' 
+                step='1'
+            )
+    .sheet-grid__cell
+        label.sheet-field 
+            span.sheet-field__label Temp HP
+            input.sheet-field__field(
+                type='number' 
+                name='attr_temp_HP' 
+                value='0' 
+                min='0' 
+                step='1' 
+            )
+
+    .sheet-grid__cell 
+        label.sheet-field                                     
+            span.sheet-field__label Speed
+            input.sheet-field__field(
+                type='text' 
+                name='attr_speed' 
+            )

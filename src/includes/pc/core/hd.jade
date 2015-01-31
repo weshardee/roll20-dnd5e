@@ -1,0 +1,107 @@
+h1.hdg Hit Dice 
+    i.sheet-d6-font E
+.sheet-grid.sheet-grid--sub 
+    .sheet-grid__cell.sheet-grid__cell--3-7 Classes                             
+    .sheet-grid__cell Hit Die                             
+    .sheet-grid__cell Current                             
+    .sheet-grid__cell Max                             
+    .sheet-grid__cell &nbsp;
+
+.sheet-grid.sheet-grid--split 
+    .sheet-grid__cell.sheet-grid__cell--3-7 
+        .sheet-label Sorcerer, Wizard                            
+    .sheet-grid__cell d6
+    .sheet-grid__cell 
+        input.sheet-field(
+            type='number'         
+            name='attr_hd_d6' 
+            value='0' 
+            min='0' 
+            step='1'
+        )
+    .sheet-grid__cell 
+        input.sheet-field(
+            type='number'                                     
+            name='attr_hd_d6_max'                                     
+            value='@{sorcerer_level} + @{wizard_level}' 
+            disabled
+        ) 
+    .sheet-grid__cell
+        +roll('roll_Use_HD_d6', '/em takes a rest\n\n[[1d6 + @{constitution_mod} [Constitution Mod] ]] HP recovered from resting (1d6 hit dice used) Use')
+        
+.sheet-grid.sheet-grid--split 
+    .sheet-grid__cell.sheet-grid__cell--3-7 
+        .sheet-label Bard, Cleric, Druid, Rogue, Monk, Warlock
+    .sheet-grid__cell d8
+    .sheet-grid__cell 
+        input.sheet-field(
+            type='number'             
+            name='attr_hd_d8' 
+            value='0' 
+            min='0' 
+            step='1'
+        )
+    .sheet-grid__cell 
+        input.sheet-field(
+            type='number'         
+            name='attr_hd_d8_max' 
+            value='@{bard_level} + @{cleric_level} + @{druid_level} + @{rogue_level} + @{monk_level} + @{warlock_level}' 
+            disabled
+        ) 
+    .sheet-grid__cell 
+        button.roll(
+            type='roll'
+            name='roll_Use_HD_d8' 
+            value='/em takes a rest\n\n[[1d8 + @{constitution_mod} [Constitution Mod] ]] HP recovered from resting (1d8 hit dice used) Use'
+        )
+.sheet-grid.sheet-grid--split 
+    .sheet-grid__cell.sheet-grid__cell--3-7 
+        .sheet-label Fighter, Paladin, Ranger
+    .sheet-grid__cell d10
+    .sheet-grid__cell 
+        input.sheet-field(
+            type='number' 
+            name='attr_hd_d10' 
+            value='0' 
+            min='0' 
+            step='1'
+        )
+    .sheet-grid__cell 
+        input.sheet-field(
+            type='number'     
+            name='attr_hd_d10_max' 
+            value='@{fighter_level} + @{paladin_level} + @{ranger_level}'
+            disabled
+        ) 
+    .sheet-grid__cell 
+        button.roll(
+            type='roll'
+            name='roll_Use_HD_d10' 
+            value='/em takes a rest\n\n[[1d10 + @{constitution_mod} [Constitution Mod] ]] HP recovered from resting (1d10 hit dice used) Use'
+        )
+.sheet-grid.sheet-grid--split 
+    .sheet-grid__cell.sheet-grid__cell--3-7 
+        .sheet-label Barbarian                             
+    .sheet-grid__cell d12                             
+    .sheet-grid__cell 
+        input.sheet-field(
+            type='number'                                     
+            name='attr_hd_d12' 
+            value='0' 
+            min='0' 
+            step='1'
+        )
+    
+    .sheet-grid__cell 
+        input.sheet-field(
+            type='number'            
+            name='attr_hd_d12_max' 
+            value='@{barbarian_level}' 
+            disabled
+        ) 
+    .sheet-grid__cell 
+        button.roll(
+            type='roll'
+            name='roll_Use_HD_d12' 
+            value='/em takes a rest\n\n[[1d12 + @{constitution_mod} [Constitution Mod] ]] HP recovered from resting (1d12 hit dice used) Use'
+        )

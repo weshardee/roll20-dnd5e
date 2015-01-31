@@ -1,0 +1,16 @@
+.sheet-grid.sheet-grid--sub 
+    .sheet-grid__cell Sorcerer Specific 
+.sheet-grid.sheet-grid--sub 
+    .sheet-grid__cell &nbsp; 
+    .sheet-grid__cell Used 
+    .sheet-grid__cell Max 
+.sheet-grid.sheet-grid--split
+    .sheet-grid__cell 
+        .sheet-label Sorcery Points 
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_sorcery_points" value="0" min="0" step="1")  
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_sorcery_points_max" value="( @{sorcerer_level} * ceil((@{sorcerer_level}-1)/1e10) )" disabled)
+.sheet-grid.sheet-grid--split
+    .sheet-grid__cell 
+        p.sheet-note Recharge on a long rest (4 recharge on a short rest if lvl 20).  Used to power metamagic or convert to/from spell slots  

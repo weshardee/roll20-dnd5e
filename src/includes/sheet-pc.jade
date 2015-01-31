@@ -1,7 +1,7 @@
 .sheet-tabs
     each val, index in tabs
         input.sheet-tabs--tab(
-            class="sheet-tabs--tab__" + index
+            class="sheet-tabs--tab__#{index}"
             type="radio" 
             name="attr_tab" 
             value=index 
@@ -9,11 +9,11 @@
             checked=index === 0
         )
 
-    //- .sheet-tabs--section.sheet-tabs--section__1: include pc-core
-    //- .sheet-tabs--section.sheet-tabs--section__2: include pc-skills
-    //- .sheet-tabs--section.sheet-tabs--section__3: include pc-background
-    //- .sheet-tabs--section.sheet-tabs--section__4: include pc-class
-    .sheet-tabs--section.sheet-tabs--section__5: include pc-weapons
-    //- .sheet-tabs--section.sheet-tabs--section__6: include pc-spellbook
-    //- .sheet-tabs--section.sheet-tabs--section__7: include pc-inventory
-    //- .sheet-tabs--section.sheet-tabs--section__8: include pc-armour
+    //- .sheet-tabs--section.sheet-tabs--section__1: include pc/core/_
+    //- .sheet-tabs--section.sheet-tabs--section__2: include pc/skills/_
+    //- .sheet-tabs--section.sheet-tabs--section__3: include pc/background/_
+    //- .sheet-tabs--section.sheet-tabs--section__4: include pc/class/_
+    //- .sheet-tabs--section.sheet-tabs--section__5: include pc/weapons/_
+    //- .sheet-tabs--section.sheet-tabs--section__6: include pc/spellbook/_
+    //- .sheet-tabs--section.sheet-tabs--section__7: include pc/inventory/_
+    //- .sheet-tabs--section.sheet-tabs--section__8: include pc/armour/_

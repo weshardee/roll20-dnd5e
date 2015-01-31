@@ -1,0 +1,50 @@
+h1.hdg Core Stats
+.sheet-grid.sheet-grid--sub 
+    .sheet-grid__cell &nbsp;
+    .sheet-grid__cell Score
+    .sheet-grid__cell Mod
+    .sheet-grid__cell Save Prof?
+    .sheet-grid__cell Save Bonus
+    .sheet-grid__cell Save
+
+each ability in abilities
+    .sheet-grid.sheet-grid--split 
+        .sheet-grid__cell.sheet-grid__cell--1-6 
+            .sheet-label.sheet-label--core-stat= ability.abbr
+    
+        .sheet-grid__cell.sheet-grid__cell--1-6 
+            input.sheet-field(
+                type='number' 
+                name='attr_#{ability.name}' 
+                min='1' 
+                step='1'
+            )
+        
+        .sheet-grid__cell.sheet-grid__cell--1-6 
+            input.sheet-field.sheet-field--disabled(
+                type='number' 
+                name='attr_#{ability.name}_mod' 
+                value='(floor((@{#{ability.name}}-10)/2))' 
+                disabled
+            )
+        
+        .sheet-grid__cell.sheet-grid__cell--1-6
+            +tick(
+                'attr_' + ability.name + '_save_prof',
+                '@{PB}'
+            )
+        
+        .sheet-grid__cell.sheet-grid__cell--1-6 
+            input.sheet-field(
+                type='number' 
+                name='attr_#{ability.name}_save_mod' 
+                value='@\{#{ability.name}_mod} + @\{#{ability.name}_save_prof}' 
+                disabled
+            ) 
+        
+        .sheet-grid__cell.sheet-grid__cell--1-6 
+            button.roll(
+                type='roll'
+                name='roll_Strength_Save' 
+                value='/em attempts a saving throw\n\n#{ability.name} save:[[1d20 + @{#{ability.name}_save_mod} [Stat Mod and Proficiency] + (@{global_saving_bonus}) [Active Save Bonus] ]]'
+            )  

@@ -1,0 +1,28 @@
+.sheet-grid.sheet-grid--sub
+    .sheet-grid__cell Warlock Specific
+
+.sheet-grid.sheet-grid--sub
+    .sheet-grid__cell &nbsp;
+    .sheet-grid__cell Used
+    .sheet-grid__cell Max
+    .sheet-grid__cell Level
+
+.sheet-grid.sheet-grid--split
+    .sheet-grid__cell 
+        .sheet-label Spell Slots
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_warlock_spell_slots" value="0" min="0" step="1")
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_warlock_spell_slots_max" value="( ceil(@{warlock_level}/1e10) + (ceil((@{warlock_level}-1)/1e10)) + (ceil((@{warlock_level}-10)/1e10)) + (ceil((@{warlock_level}-16)/1e10)) )" disabled)
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_warlock_spell_slots_level" value="( ceil(@{warlock_level}/1e10) + (ceil((@{warlock_level}-2)/1e10)) + (ceil((@{warlock_level}-4)/1e10)) + (ceil((@{warlock_level}-6)/1e10)) + (ceil((@{warlock_level}-8)/1e10)) )" disabled)
+
+.sheet-grid.sheet-grid--split
+    .sheet-grid__cell 
+        p.sheet-note Recharge on a long or short rest and are all of the same level
+
+.sheet-grid.sheet-grid--split
+    .sheet-grid__cell 
+        .sheet-label Invocations Known
+    .sheet-grid__cell 
+        input.sheet-field(type="number" name="attr_warlock_invocations_known" value="( (ceil((@{warlock_level}-1)/1e10)*2) + (ceil((@{warlock_level}-4)/1e10)) + (ceil((@{warlock_level}-6)/1e10)) + (ceil((@{warlock_level}-8)/1e10)) + (ceil((@{warlock_level}-11)/1e10)) + (ceil((@{warlock_level}-14)/1e10)) + (ceil((@{warlock_level}-17)/1e10)) )" disabled)
