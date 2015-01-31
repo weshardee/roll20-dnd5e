@@ -1,0 +1,66 @@
+//- h1.hdg Coin Carried
+//-     i.sheet-pictos h  
+//- p.sheet-note Total = value of all coins converted to GP 
+//- 
+//- .sheet-grid.sheet-grid--sub 
+//-     .sheet-grid__cell CP 
+//-     .sheet-grid__cell SP 
+//-     .sheet-grid__cell EP 
+//-     .sheet-grid__cell GP 
+//-     .sheet-grid__cell PP 
+//-     .sheet-grid__cell Total 
+//-  
+//- .sheet-grid.sheet-grid--split
+//-     .sheet-grid__cell
+//-         input(
+//-             title="Copper Pieces"
+//-             type="number" 
+//-             name="attr_cp" 
+//-             value="0" 
+//-             min="0" 
+//-             step="1" 
+//-         )
+//-     .sheet-grid__cell
+//-         input(
+//-             title="Silver Pieces" 
+//-             type="number" 
+//-             name="attr_sp" 
+//-             value="0" 
+//-             min="0" 
+//-             step="1"
+//-         )
+//-     .sheet-grid__cell
+//-         input(
+//-             title="Electrum Pieces" 
+//-             type="number" 
+//-             name="attr_ep" 
+//-             value="0" 
+//-             min="0" 
+//-             step="1"
+//-         )
+//-     .sheet-grid__cell
+//-         input(
+//-             title="Gold Pieces" 
+//-             type="number" 
+//-             name="attr_gp" 
+//-             value="0" 
+//-             min="0" 
+//-             step="1"
+//-         )
+//-     .sheet-grid__cell
+//-         input(
+//-             title="Platinum Pieces" 
+//-             type="number" 
+//-             name="attr_pp" 
+//-             value="0" 
+//-             min="0" 
+//-             step="1"
+//-         )
+//-     .sheet-grid__cell
+//-         input(
+//-             title="Total (in Gold Pieces)" 
+//-             type="number" 
+//-             name="attr_money_total_gp" 
+//-             value="(@{cp} / 100) + (@{sp} / 10) + (@{ep} / 2) + @{gp} + (@{pp} * 10) " 
+//-             disabled
+//-         ) 

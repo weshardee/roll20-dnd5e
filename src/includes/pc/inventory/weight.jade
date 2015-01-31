@@ -1,0 +1,19 @@
+h1.hdg Weight <i.sheet-pictos a  
+p.sheet-note All weights in lbs. 
+
+.sheet-grid.sheet-grid--sub 
+    .sheet-grid__cell.sheet-grid__cell--1-8 label Inventory 
+    .sheet-grid__cell.sheet-grid__cell--1-8 label Coin 
+    .sheet-grid__cell.sheet-grid__cell--1-8 label Other 
+    .sheet-grid__cell.sheet-grid__cell--5-24 label Total 
+    .sheet-grid__cell.sheet-grid__cell--5-24 label Carrying Max 
+    .sheet-grid__cell.sheet-grid__cell--5-24 label Push/Drag/Lift 
+ 
+
+.sheet-grid 
+    .sheet-grid__cell.sheet-grid__cell--1-8 input(type="number" name="attr_inventory_weight" value="@{inventory_weight_calc}" disabled> 
+    .sheet-grid__cell.sheet-grid__cell--1-8 input(type="number" name="attr_coin_weight" value="((@{CP} + @{SP} + @{EP} + @{GP} + @{PP}) / 50)" disabled> 
+    .sheet-grid__cell.sheet-grid__cell--1-8 input(type="number" name="attr_other_weight" value="0" min="0" step="0.01  
+    .sheet-grid__cell.sheet-grid__cell--5-24 input(type="number" name="attr_total_weight" value="@{inventory_weight} + @{coin_weight} + @{other_weight}" disabled> 
+    .sheet-grid__cell.sheet-grid__cell--5-24 input(type="number" name="attr_total_weight_max" title="The maximum total weight your character can carry" value="@{strength}*15" disabled> 
+    .sheet-grid__cell.sheet-grid__cell--5-24 input(type="number" name="attr_max_push_drag_lift" title="This is the maximum weight you can push/drag/lift.  If the weight you are pushing/dragging/carrying exceeds your maximum carrying capacity then your speed drops to 5 feet" value="@{strength}*30" disabled> 
