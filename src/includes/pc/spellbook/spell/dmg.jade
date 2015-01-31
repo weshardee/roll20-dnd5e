@@ -1,0 +1,25 @@
+.sheet-grid.sheet-grid--split
+    .sheet-grid__cell(class= 'sheet-grid__cell--' + col.label)
+        .sheet-label damage
+    .sheet-grid__cell
+        +field('can crit?')
+            select(name="attr_spellcrittext") 
+                option(value=" (if a crit add an extra [[@{damage}]])") Yes 
+                option(value=".") No
+    .sheet-grid__cell
+        +field('damage dice')
+            input(type="text" name="attr_damage")  
+    .sheet-grid__cell 
+        +field('stat bonus')
+            +stat-bonus("attr_damagestatbonus")
+    .sheet-grid__cell
+        +field('other bonus')
+            input(type="number" name="attr_damagemiscbonus" value="0" step="1") 
+    .sheet-grid__cell.sheet-grid__cell--2
+        +field('damage type')
+            input(type="text" name="attr_damagetype")
+    .sheet-grid__cell.sheet-grid__cell--sm
+        +roll(
+            name="roll_Damage" 
+            value="For [[@{damage} [Base Spell Damage] + @{damagestatbonus} + @{damagemiscbonus} + (@{global_spell_damage_bonus}) [Active Spell Damage Bonus] + 0d0 [Bugfix 0]]] @{damagetype} damage@{spellcrittext}"
+        ) Damage  

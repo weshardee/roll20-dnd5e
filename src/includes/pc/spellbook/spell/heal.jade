@@ -1,0 +1,15 @@
+.sheet-grid.sheet-grid--split
+    .sheet-grid__cell(class= 'sheet-grid__cell--' + col.label)
+        .sheet-label heal
+
+    .sheet-grid__cell.sheet-grid__cell--2 
+        +field('heal ammount')
+            input(type="text" name="attr_spellhealamount")
+    .sheet-grid__cell
+        +field('stat bonus')
+            +stat-bonus(name="attr_healstatbonus")
+    .sheet-grid__cell.sheet-grid__cell--sm
+        +roll(
+            name="roll_Heal" 
+            value="/em uses @{spellname} to heal\n\n[[@{spellhealamount} + @{healstatbonus}]] hp healed\nAdditional effects: @{spelleffect}"
+        )

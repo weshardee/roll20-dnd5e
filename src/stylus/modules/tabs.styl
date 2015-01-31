@@ -11,15 +11,15 @@
     border 1px solid transparent // so size doesn't jump :focus
     color white
     display flex
-    flex-grow 1
+    flex 1 1 auto
     height HEIGHT !important
     width auto !important
     margin 0 !important
 
 .sheet-tabs__tab:hover
-    background-color alpha(BLUE, 0.85)
+    opacity 0.85
 
-.sheet-tabs__tab:first-of-type
+.sheet-tabs__tab:first-child
     border-bottom-left-radius RADIUS
     border-top-left-radius RADIUS
 
@@ -33,6 +33,29 @@
 .sheet-tabs__tab::after
     content attr(title)
 
+// alternate tab colors
+.sheet-tabs__tab--inner
+    border-radius: 0 !important
+    background-color LIGHT
+    font-size FONT_SIZE_SM
+    color alpha(black, 0.3)
+    border-bottom: 1px solid BORDER_COLOR
+
+.sheet-tabs__tab--inner:checked
+    background-color PALE
+    color alpha(black, 0.7)
+
+.sheet-tabs__tab--inner:first-of-type
+    border-left 1px solid BORDER_COLOR
+
+.sheet-tabs__tab--inner:last-of-type
+    border-right 1px solid BORDER_COLOR
+
+.sheet-tabs__tab--label
+    flex HIGH
+    max-width (PAD * 6)
+    color DARK
+
 // sections
 
 .sheet-tabs__section
@@ -40,15 +63,14 @@
     margin-top PAD
     width 100% // in a flex wrap area
 
+.sheet-tabs__section--hug
+    margin 0
+
 // visibility
 
-.sheet-tabs__tab--0:checked ~ .sheet-tabs__section
-    display block
-
-for num in (1...10)
+for num in (0...10)
     .sheet-tabs__tab--{num}:checked ~ .sheet-tabs__section--{num}
         display block
 
-.sheet-tabs__tab--0:checked ~ .sheet-tabs__section,
 .sheet-tabs__tab--99:checked ~ .sheet-tabs__section
     display block

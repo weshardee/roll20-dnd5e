@@ -1,5 +1,5 @@
-FIELD_LABEL_LAYER = 1
-FIELD_FIELD_LAYER = 0
+FIELD_LABEL_LAYER = HIGH + 100
+FIELD_FIELD_LAYER = HIGH
 
 FIELD_HEIGHT = 2.7rem
 
@@ -25,6 +25,10 @@ FIELD_LABEL_OVERLAP = FIELD_LABEL_HEIGHT * 0.7
 .sheet-field--blue[disabled]
     background-color BRIGHT_PALE_BLUE
 
+.sheet-field--hdg
+    font-size FONT_SIZE
+    background-color LIGHT
+
 .sheet-field__label
     bottom 0
     color FADED_GRAY
@@ -35,10 +39,20 @@ FIELD_LABEL_OVERLAP = FIELD_LABEL_HEIGHT * 0.7
     z-index FIELD_LABEL_LAYER
     height FIELD_LABEL_HEIGHT
 
-.sheet-field__field
+.sheet-field__field,
+.sheet-field > select,
+.sheet-field > input
     flex 1
     height FIELD_HEIGHT
     padding-bottom FIELD_LABEL_OVERLAP
     z-index FIELD_FIELD_LAYER
     border-radius inherit
     background-color transparent !important
+    display flex !important
+
+.sheet-field > select
+    background-position-y 14%
+
+.sheet-field__fieldWrapper
+    flex 1
+    display flex

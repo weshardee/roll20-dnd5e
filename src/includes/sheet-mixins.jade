@@ -1,0 +1,28 @@
+mixin tick(name, value)
+    input.sheet-tick(
+        type='checkbox' 
+        name=name
+        value=value || '1'
+    )&attributes(attributes)
+    
+mixin roll(name, value)
+    button.roll(
+        type='roll' 
+        name=name
+        value=value || '[[1d20]]'
+    )&attributes(attributes)
+
+mixin field(name, mod)
+    label.sheet-field()&attributes(attributes)
+        span.sheet-field__label= name
+        block
+
+mixin stat-bonus(name)
+    select(name=name)
+        option(value="0") None 
+        option(value="@{strength_mod}") STR mod 
+        option(value="@{dexterity_mod}") DEX mod 
+        option(value="@{constitution_mod}") CON mod 
+        option(value="@{intelligence_mod}") INT mod 
+        option(value="@{wisdom_mod}") WIS mod 
+        option(value="@{charisma_mod}") CHA mod 

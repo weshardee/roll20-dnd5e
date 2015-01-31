@@ -1,18 +1,5 @@
-mixin tick(name, value)
-    input.sheet-tick(
-        type='checkbox' 
-        name=name
-        value=value || '1'
-    )&attributes(attributes)
-    
-mixin roll(name, value)
-    button.roll(
-        type='roll' 
-        name=name
-        value=value || '[[1d20]]'
-    )&attributes(attributes)
-
-- var NUM_SKILL_COLUMNS = 2
+include sheet-vars
+include sheet-mixins
 
 .sheet-wrapper
     .sheet-main

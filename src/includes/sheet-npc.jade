@@ -3,14 +3,14 @@ h1.hdg NPC/Monster Sheet <i class="sheet-pictos F
 p.sheet-note This page of the character sheet is intended for use by GM/DM's only.  All the macros on this page send their output only to the GM via a private whisper/tell.  GM/DM's should be sure to make sure any data entered into larger text fields is all on one line as any line breaks will cause data after it to be sent to public chat.  GM/DM's can workaround this by adding "/w GM " just after each line break (without the quotes) to ensure the output only goes to them.  
 
 .sheet-grid 
-    .sheet-grid__cell.sheet-grid__cell--1-3 sheet-center <button type="roll" class="sheet-roll" name="roll_NPC_Core_Stats" value="/w GM Stat block for @{character_name}\n/w GM STR @{npc_strength} [[@{npc_strength_mod}]]\n/w GM DEX @{npc_dexterity} [[@{npc_dexterity_mod}]]\n/w GM CON @{npc_constitution} [[@{npc_constitution_mod}]]\n/w GM INT @{npc_intelligence} [[@{npc_intelligence_mod}]]\n/w GM WIS @{npc_wisdom} [[@{npc_wisdom_mod}]]\n/w GM CHA @{npc_charisma} [[@{npc_charisma_mod}]] NPC Core Stats  
-    .sheet-grid__cell.sheet-grid__cell--1-3 sheet-center <button type="roll" class="sheet-roll" name="roll_NPC_Traits" value="/w GM @{character_name} Traits :\n/w GM Damage Resistance : @{npc_damage_resistance}\n/w GM Damage Vulnerability : @{npc_damage_vulnerability}\n/w GM Damage Immunity : @{npc_damage_immunity}\n/w GM Condition Immunity : @{npc_condition_immunity}\n/w GM Other Traits : @{npc_traits} NPC Traits  
+    .sheet-grid__cell.sheet-grid__cell--1-3 <button type="roll" class="sheet-roll" name="roll_NPC_Core_Stats" value="/w GM Stat block for @{character_name}\n/w GM STR @{npc_strength} [[@{npc_strength_mod}]]\n/w GM DEX @{npc_dexterity} [[@{npc_dexterity_mod}]]\n/w GM CON @{npc_constitution} [[@{npc_constitution_mod}]]\n/w GM INT @{npc_intelligence} [[@{npc_intelligence_mod}]]\n/w GM WIS @{npc_wisdom} [[@{npc_wisdom_mod}]]\n/w GM CHA @{npc_charisma} [[@{npc_charisma_mod}]] NPC Core Stats  
+    .sheet-grid__cell.sheet-grid__cell--1-3 <button type="roll" class="sheet-roll" name="roll_NPC_Traits" value="/w GM @{character_name} Traits :\n/w GM Damage Resistance : @{npc_damage_resistance}\n/w GM Damage Vulnerability : @{npc_damage_vulnerability}\n/w GM Damage Immunity : @{npc_damage_immunity}\n/w GM Condition Immunity : @{npc_condition_immunity}\n/w GM Other Traits : @{npc_traits} NPC Traits  
 
     .sheet-grid__cell.sheet-grid__cell--1-3 
         .sheet-grid 
-            .sheet-grid__cell.sheet-grid__cell--1-3" title="Only enter additional bonuses to initiative here. Your Dex mod is already included in the macro button input(class="sheet-underlined sheet-center" type="number" name="attr_npc_initiative" value="0" step="1 <br) Initiative Bonus 
+            .sheet-grid__cell.sheet-grid__cell--1-3" title="Only enter additional bonuses to initiative here. Your Dex mod is already included in the macro button input(class="sheet-underlined" type="number" name="attr_npc_initiative" value="0" step="1 <br) Initiative Bonus 
             .sheet-grid__cell.sheet-grid__cell--1-3 input(class="sheet-underlined" type="number" name="attr_npc_initiative_overall" value="@{npc_dexterity_mod} + @{npc_initiative}" disabled><br) Total 
-            .sheet-grid__cell.sheet-grid__cell--1-3 sheet-center <button type="roll" class="sheet-roll" name="roll_NPC_Initiative" value="/w GM @{selected|token_name} rolls a [[1d20 + @{selected|npc_initiative_overall} [Initiative Mod] &{tracker}]] for initiative! Initiative  
+            .sheet-grid__cell.sheet-grid__cell--1-3 <button type="roll" class="sheet-roll" name="roll_NPC_Initiative" value="/w GM @{selected|token_name} rolls a [[1d20 + @{selected|npc_initiative_overall} [Initiative Mod] &{tracker}]] for initiative! Initiative  
          
      
 
@@ -24,12 +24,12 @@ p.sheet-note This page of the character sheet is intended for use by GM/DM's onl
     .sheet-grid__cell.sheet-grid__cell--1-2 
 
         .sheet-grid.sheet-grid--sub 
-            .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center label Score 
-            .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center label &nbsp; 
-            .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center label Mod 
-            .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center label Save Bonus 
-            .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center label Save Total 
-            .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center label Save 
+            .sheet-grid__cell.sheet-grid__cell--1-6 label Score 
+            .sheet-grid__cell.sheet-grid__cell--1-6 label &nbsp; 
+            .sheet-grid__cell.sheet-grid__cell--1-6 label Mod 
+            .sheet-grid__cell.sheet-grid__cell--1-6 label Save Bonus 
+            .sheet-grid__cell.sheet-grid__cell--1-6 label Save Total 
+            .sheet-grid__cell.sheet-grid__cell--1-6 label Save 
          
 
         .sheet-grid 
@@ -38,7 +38,7 @@ p.sheet-note This page of the character sheet is intended for use by GM/DM's onl
             .sheet-grid__cell.sheet-grid__cell--1-6 input(type="number" name="attr_npc_strength_mod" value="(floor((@{npc_strength}-10)/2))" disabled)  
             .sheet-grid__cell.sheet-grid__cell--1-6 input(class="sheet-center" type="number" name="attr_npc_strength_save_bonus" value ="0" step="1  
             .sheet-grid__cell.sheet-grid__cell--1-6 input(type="number" name="attr_npc_strength_save_mod" value="@{npc_strength_mod} + @{npc_strength_save_bonus}" disabled> 
-            .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center <button type="roll" class="sheet-core-save" name="roll_NPC_Strength_Save" value="/w GM STR save :[[1d20 + @{npc_strength_save_mod}]] | [[1d20 + @{npc_strength_save_mod}]] Save  
+            .sheet-grid__cell.sheet-grid__cell--1-6 <button type="roll" class="sheet-core-save" name="roll_NPC_Strength_Save" value="/w GM STR save :[[1d20 + @{npc_strength_save_mod}]] | [[1d20 + @{npc_strength_save_mod}]] Save  
          
 
         .sheet-grid 
@@ -47,7 +47,7 @@ p.sheet-note This page of the character sheet is intended for use by GM/DM's onl
             .sheet-grid__cell.sheet-grid__cell--1-6 input(type="number" name="attr_npc_dexterity_mod" value="(floor((@{npc_dexterity}-10)/2))" disabled)  
             .sheet-grid__cell.sheet-grid__cell--1-6 input(class="sheet-center" type="number" name="attr_npc_dexterity_save_bonus" value ="0" step="1  
             .sheet-grid__cell.sheet-grid__cell--1-6 input(type="number" name="attr_npc_dexterity_save_mod" value="@{npc_dexterity_mod} + @{npc_dexterity_save_bonus}" disabled> 
-            .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center <button type="roll" class="sheet-core-save" name="roll_NPC_Dexterity_Save" value="/w GM DEX save :[[1d20 + @{npc_dexterity_save_mod}]] | [[1d20 + @{npc_dexterity_save_mod}]] Save  
+            .sheet-grid__cell.sheet-grid__cell--1-6 <button type="roll" class="sheet-core-save" name="roll_NPC_Dexterity_Save" value="/w GM DEX save :[[1d20 + @{npc_dexterity_save_mod}]] | [[1d20 + @{npc_dexterity_save_mod}]] Save  
          
 
         .sheet-grid 
@@ -56,7 +56,7 @@ p.sheet-note This page of the character sheet is intended for use by GM/DM's onl
             .sheet-grid__cell.sheet-grid__cell--1-6 input(type="number" name="attr_npc_constitution_mod" value="(floor((@{npc_constitution}-10)/2))" disabled)  
             .sheet-grid__cell.sheet-grid__cell--1-6 input(class="sheet-center" type="number" name="attr_npc_constitution_save_bonus" value ="0" step="1  
             .sheet-grid__cell.sheet-grid__cell--1-6 input(type="number" name="attr_npc_constitution_save_mod" value="@{npc_constitution_mod} + @{npc_constitution_save_bonus}" disabled> 
-            .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center <button type="roll" class="sheet-core-save" name="roll_NPC_Constitution_Save" value="/w GM CON save :[[1d20 + @{npc_constitution_save_mod}]] | [[1d20 + @{npc_constitution_save_mod}]] Save  
+            .sheet-grid__cell.sheet-grid__cell--1-6 <button type="roll" class="sheet-core-save" name="roll_NPC_Constitution_Save" value="/w GM CON save :[[1d20 + @{npc_constitution_save_mod}]] | [[1d20 + @{npc_constitution_save_mod}]] Save  
          
 
         .sheet-grid 
@@ -65,7 +65,7 @@ p.sheet-note This page of the character sheet is intended for use by GM/DM's onl
             .sheet-grid__cell.sheet-grid__cell--1-6 input(type="number" name="attr_npc_intelligence_mod" value="(floor((@{npc_intelligence}-10)/2))" disabled)  
             .sheet-grid__cell.sheet-grid__cell--1-6 input(class="sheet-center" type="number" name="attr_npc_intelligence_save_bonus" value ="0" step="1  
             .sheet-grid__cell.sheet-grid__cell--1-6 input(type="number" name="attr_npc_intelligence_save_mod" value="@{npc_intelligence_mod} + @{npc_intelligence_save_bonus}" disabled> 
-            .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center <button type="roll" class="sheet-core-save" name="roll_NPC_Intelligence_Save" value="/w GM INT save :[[1d20 + @{npc_intelligence_save_mod}]] | [[1d20 + @{npc_intelligence_save_mod}]] Save  
+            .sheet-grid__cell.sheet-grid__cell--1-6 <button type="roll" class="sheet-core-save" name="roll_NPC_Intelligence_Save" value="/w GM INT save :[[1d20 + @{npc_intelligence_save_mod}]] | [[1d20 + @{npc_intelligence_save_mod}]] Save  
          
 
         .sheet-grid 
@@ -74,7 +74,7 @@ p.sheet-note This page of the character sheet is intended for use by GM/DM's onl
             .sheet-grid__cell.sheet-grid__cell--1-6 input(type="number" name="attr_npc_wisdom_mod" value="(floor((@{npc_wisdom}-10)/2))" disabled)  
             .sheet-grid__cell.sheet-grid__cell--1-6 input(class="sheet-center" type="number" name="attr_npc_wisdom_save_bonus" value ="0" step="1  
             .sheet-grid__cell.sheet-grid__cell--1-6 input(type="number" name="attr_npc_wisdom_save_mod" value="@{npc_wisdom_mod} + @{npc_wisdom_save_bonus}" disabled> 
-            .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center <button type="roll" class="sheet-core-save" name="roll_NPC_Wisdom_Save" value="/w GM WIS save :[[1d20 + @{npc_wisdom_save_mod}]] | [[1d20 + @{npc_wisdom_save_mod}]] Save  
+            .sheet-grid__cell.sheet-grid__cell--1-6 <button type="roll" class="sheet-core-save" name="roll_NPC_Wisdom_Save" value="/w GM WIS save :[[1d20 + @{npc_wisdom_save_mod}]] | [[1d20 + @{npc_wisdom_save_mod}]] Save  
          
 
         .sheet-grid sheet-padb 
@@ -83,7 +83,7 @@ p.sheet-note This page of the character sheet is intended for use by GM/DM's onl
             .sheet-grid__cell.sheet-grid__cell--1-6 input(type="number" name="attr_npc_charisma_mod" value="(floor((@{npc_charisma}-10)/2))" disabled)  
             .sheet-grid__cell.sheet-grid__cell--1-6 input(class="sheet-center" type="number" name="attr_npc_charisma_save_bonus" value ="0" step="1  
             .sheet-grid__cell.sheet-grid__cell--1-6 input(type="number" name="attr_npc_charisma_save_mod" value="@{npc_charisma_mod} + @{npc_charisma_save_bonus}" disabled> 
-            .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center <button type="roll" class="sheet-core-save" name="roll_NPC_Charisma_Save" value="/w GM CHA save :[[1d20 + @{npc_charisma_save_mod}]] | [[1d20 + @{npc_charisma_save_mod}]] Save  
+            .sheet-grid__cell.sheet-grid__cell--1-6 <button type="roll" class="sheet-core-save" name="roll_NPC_Charisma_Save" value="/w GM CHA save :[[1d20 + @{npc_charisma_save_mod}]] | [[1d20 + @{npc_charisma_save_mod}]] Save  
          
 
      
@@ -91,53 +91,53 @@ p.sheet-note This page of the character sheet is intended for use by GM/DM's onl
     .sheet-grid__cell.sheet-grid__cell--1-2 
 
         .sheet-grid.sheet-grid--sub 
-            .sheet-grid__cell.sheet-grid__cell--1-3 sheet-center label Size 
-            .sheet-grid__cell.sheet-grid__cell--1-3 sheet-center label Type/Race 
-            .sheet-grid__cell.sheet-grid__cell--1-3 sheet-center label Alignment 
+            .sheet-grid__cell.sheet-grid__cell--1-3 label Size 
+            .sheet-grid__cell.sheet-grid__cell--1-3 label Type/Race 
+            .sheet-grid__cell.sheet-grid__cell--1-3 label Alignment 
          
 
         .sheet-grid sheet-padb 
-            .sheet-grid__cell.sheet-grid__cell--1-3 sheet-center input(class="sheet-center" type="text" name="attr_npc_size  
-            .sheet-grid__cell.sheet-grid__cell--1-3 sheet-center input(class="sheet-center" type="text" name="attr_npc_type  
-            .sheet-grid__cell.sheet-grid__cell--1-3 sheet-center input(class="sheet-center" type="text" name="attr_npc_alignment  
+            .sheet-grid__cell.sheet-grid__cell--1-3 input(class="sheet-center" type="text" name="attr_npc_size  
+            .sheet-grid__cell.sheet-grid__cell--1-3 input(class="sheet-center" type="text" name="attr_npc_type  
+            .sheet-grid__cell.sheet-grid__cell--1-3 input(class="sheet-center" type="text" name="attr_npc_alignment  
          
 
         .sheet-grid.sheet-grid--sub 
-            .sheet-grid__cell.sheet-grid__cell--1-3 sheet-center label AC 
-            .sheet-grid__cell.sheet-grid__cell--2-3 sheet-center label AC note 
+            .sheet-grid__cell.sheet-grid__cell--1-3 label AC 
+            .sheet-grid__cell.sheet-grid__cell--2-3 label AC note 
          
 
         .sheet-grid sheet-padb 
-            .sheet-grid__cell.sheet-grid__cell--1-3 sheet-center input(class="sheet-center" type="number" name="attr_npc_AC" step="1" value="10  
-            .sheet-grid__cell.sheet-grid__cell--2-3 sheet-center input(class="sheet-center" type="text" name="attr_npc_AC_note  
+            .sheet-grid__cell.sheet-grid__cell--1-3 input(class="sheet-center" type="number" name="attr_npc_AC" step="1" value="10  
+            .sheet-grid__cell.sheet-grid__cell--2-3 input(class="sheet-center" type="text" name="attr_npc_AC_note  
          
 
         .sheet-grid.sheet-grid--sub 
-            .sheet-grid__cell.sheet-grid__cell--1-4 sheet-center label Current HP 
-            .sheet-grid__cell.sheet-grid__cell--1-4 sheet-center label Max HP 
-            .sheet-grid__cell.sheet-grid__cell--1-4 sheet-center label Temp HP 
-            .sheet-grid__cell.sheet-grid__cell--1-4 sheet-center label HP Hit Dice 
+            .sheet-grid__cell.sheet-grid__cell--1-4 label Current HP 
+            .sheet-grid__cell.sheet-grid__cell--1-4 label Max HP 
+            .sheet-grid__cell.sheet-grid__cell--1-4 label Temp HP 
+            .sheet-grid__cell.sheet-grid__cell--1-4 label HP Hit Dice 
          
 
         .sheet-grid sheet-padb 
-            .sheet-grid__cell.sheet-grid__cell--1-4 sheet-center input(class="sheet-center" type="number" name="attr_npc_HP" step="1" value="1  
-            .sheet-grid__cell.sheet-grid__cell--1-4 sheet-center input(class="sheet-center" type="number" name="attr_npc_HP_max" min="1" step="1" value="1  
-            .sheet-grid__cell.sheet-grid__cell--1-4 sheet-center sheet-border-left sheet-border-right input(class="sheet-center" type="number" name="attr_npc_temp_HP" value="0" min="0" step="1  
-            .sheet-grid__cell.sheet-grid__cell--1-4 sheet-center input(class="sheet-center" type="text" name="attr_npc_HP_hit_dice  
+            .sheet-grid__cell.sheet-grid__cell--1-4 input(class="sheet-center" type="number" name="attr_npc_HP" step="1" value="1  
+            .sheet-grid__cell.sheet-grid__cell--1-4 input(class="sheet-center" type="number" name="attr_npc_HP_max" min="1" step="1" value="1  
+            .sheet-grid__cell.sheet-grid__cell--1-4 sheet-border-left sheet-border-right input(class="sheet-center" type="number" name="attr_npc_temp_HP" value="0" min="0" step="1  
+            .sheet-grid__cell.sheet-grid__cell--1-4 input(class="sheet-center" type="text" name="attr_npc_HP_hit_dice  
          
 
         .sheet-grid.sheet-grid--sub 
-            .sheet-grid__cell.sheet-grid__cell--1-4 sheet-center label Speed 
-            .sheet-grid__cell.sheet-grid__cell--1-4 sheet-center label Fly 
-            .sheet-grid__cell.sheet-grid__cell--1-4 sheet-center label Climb 
-            .sheet-grid__cell.sheet-grid__cell--1-4 sheet-center label Swim 
+            .sheet-grid__cell.sheet-grid__cell--1-4 label Speed 
+            .sheet-grid__cell.sheet-grid__cell--1-4 label Fly 
+            .sheet-grid__cell.sheet-grid__cell--1-4 label Climb 
+            .sheet-grid__cell.sheet-grid__cell--1-4 label Swim 
          
 
         .sheet-grid sheet-padb 
-            .sheet-grid__cell.sheet-grid__cell--1-4 sheet-center input(class="sheet-center" type="text" name="attr_npc_speed  
-            .sheet-grid__cell.sheet-grid__cell--1-4 sheet-center input(class="sheet-center" type="text" name="attr_npc_speed_fly  
-            .sheet-grid__cell.sheet-grid__cell--1-4 sheet-center input(class="sheet-center" type="text" name="attr_npc_speed_climb  
-            .sheet-grid__cell.sheet-grid__cell--1-4 sheet-center input(class="sheet-center" type="text" name="attr_npc_speed_swim  
+            .sheet-grid__cell.sheet-grid__cell--1-4 input(class="sheet-center" type="text" name="attr_npc_speed  
+            .sheet-grid__cell.sheet-grid__cell--1-4 input(class="sheet-center" type="text" name="attr_npc_speed_fly  
+            .sheet-grid__cell.sheet-grid__cell--1-4 input(class="sheet-center" type="text" name="attr_npc_speed_climb  
+            .sheet-grid__cell.sheet-grid__cell--1-4 input(class="sheet-center" type="text" name="attr_npc_speed_swim  
          
 
      
@@ -145,17 +145,17 @@ p.sheet-note This page of the character sheet is intended for use by GM/DM's onl
     .sheet-grid__cell.sheet-grid__cell--1 
 
         .sheet-grid.sheet-grid--sub 
-            .sheet-grid__cell.sheet-grid__cell--1-4 sheet-center label Challenge 
-            .sheet-grid__cell.sheet-grid__cell--1-4 sheet-center label XP 
-            .sheet-grid__cell.sheet-grid__cell--1-4 sheet-center label Senses 
-            .sheet-grid__cell.sheet-grid__cell--1-4 sheet-center label Languages 
+            .sheet-grid__cell.sheet-grid__cell--1-4 label Challenge 
+            .sheet-grid__cell.sheet-grid__cell--1-4 label XP 
+            .sheet-grid__cell.sheet-grid__cell--1-4 label Senses 
+            .sheet-grid__cell.sheet-grid__cell--1-4 label Languages 
          
 
         .sheet-grid 
-            .sheet-grid__cell.sheet-grid__cell--1-4 sheet-center input(class="sheet-center" type="text" name="attr_npc_challenge  
-            .sheet-grid__cell.sheet-grid__cell--1-4 sheet-center input(class="sheet-center" type="text" name="attr_npc_xp  
-            .sheet-grid__cell.sheet-grid__cell--1-4 sheet-center input(class="sheet-center" type="text" name="attr_npc_senses  
-            .sheet-grid__cell.sheet-grid__cell--1-4 sheet-center input(class="sheet-center" type="text" name="attr_npc_languages  
+            .sheet-grid__cell.sheet-grid__cell--1-4 input(class="sheet-center" type="text" name="attr_npc_challenge  
+            .sheet-grid__cell.sheet-grid__cell--1-4 input(class="sheet-center" type="text" name="attr_npc_xp  
+            .sheet-grid__cell.sheet-grid__cell--1-4 input(class="sheet-center" type="text" name="attr_npc_senses  
+            .sheet-grid__cell.sheet-grid__cell--1-4 input(class="sheet-center" type="text" name="attr_npc_languages  
          
 
      
@@ -167,28 +167,28 @@ p.sheet-note This page of the character sheet is intended for use by GM/DM's onl
 h1.hdg Traits/Background 
 
 .sheet-grid.sheet-grid--sub 
-    .sheet-grid__cell.sheet-grid__cell--1-2 sheet-center label Damage Resistance 
-    .sheet-grid__cell.sheet-grid__cell--1-2 sheet-center label Damage Vulnerability 
+    .sheet-grid__cell.sheet-grid__cell--1-2 label Damage Resistance 
+    .sheet-grid__cell.sheet-grid__cell--1-2 label Damage Vulnerability 
  
 
 .sheet-grid sheet-padb 
-    .sheet-grid__cell.sheet-grid__cell--1-2 sheet-center input(class="sheet-center" type="text" name="attr_npc_damage_resistance" value="None  
-    .sheet-grid__cell.sheet-grid__cell--1-2 sheet-center input(class="sheet-center" type="text" name="attr_npc_damage_vulnerability" value="None  
+    .sheet-grid__cell.sheet-grid__cell--1-2 input(class="sheet-center" type="text" name="attr_npc_damage_resistance" value="None  
+    .sheet-grid__cell.sheet-grid__cell--1-2 input(class="sheet-center" type="text" name="attr_npc_damage_vulnerability" value="None  
  
 
 .sheet-grid.sheet-grid--sub 
-    .sheet-grid__cell.sheet-grid__cell--1-2 sheet-center label Damage Immunity 
-    .sheet-grid__cell.sheet-grid__cell--1-2 sheet-center label Condition Immunity 
+    .sheet-grid__cell.sheet-grid__cell--1-2 label Damage Immunity 
+    .sheet-grid__cell.sheet-grid__cell--1-2 label Condition Immunity 
  
 
 .sheet-grid sheet-padb 
-    .sheet-grid__cell.sheet-grid__cell--1-2 sheet-center input(class="sheet-center" type="text" name="attr_npc_damage_immunity" value="None  
-    .sheet-grid__cell.sheet-grid__cell--1-2 sheet-center input(class="sheet-center" type="text" name="attr_npc_condition_immunity" value="None  
+    .sheet-grid__cell.sheet-grid__cell--1-2 input(class="sheet-center" type="text" name="attr_npc_damage_immunity" value="None  
+    .sheet-grid__cell.sheet-grid__cell--1-2 input(class="sheet-center" type="text" name="attr_npc_condition_immunity" value="None  
 
  
 
 .sheet-grid.sheet-grid--sub 
-    .sheet-grid__cell.sheet-grid__cell--1 sheet-center label Traits 
+    .sheet-grid__cell.sheet-grid__cell--1 label Traits 
  
 
 .sheet-grid 
@@ -206,16 +206,16 @@ h1.hdg Skills
     .sheet-grid__cell.sheet-grid__cell--1-2 
 
         .sheet-grid.sheet-grid--sub 
-            .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center label &nbsp; 
+            .sheet-grid__cell.sheet-grid__cell--1-12 label &nbsp; 
             .sheet-grid__cell.sheet-grid__cell--1-2 Skill 
-            .sheet-grid__cell.sheet-grid__cell--1-8 sheet-center label Bonus 
-            .sheet-grid__cell.sheet-grid__cell--1-8 sheet-center label Total 
-            .sheet-grid__cell.sheet-grid__cell--1-8 sheet-offset-1-24 sheet-center label Pass 
+            .sheet-grid__cell.sheet-grid__cell--1-8 label Bonus 
+            .sheet-grid__cell.sheet-grid__cell--1-8 label Total 
+            .sheet-grid__cell.sheet-grid__cell--1-8 sheet-offset-1-24 label Pass 
          
 
         .sheet-grid sheet-skill-row 
             .sheet-grid__cell.sheet-grid__cell--1-12 <button class="sheet-skill-roll" type="roll" name="roll_NPC_Acrobatics_Check" value="/w GM DEX (Acrobatics) check :[[1d20 + @{npc_acrobatics}]] | [[1d20 + @{npc_acrobatics}]]   
-            .sheet-grid__cell.sheet-grid__cell--1-2 sheet-skill-name sheet-center Acrobatics (Dex) 
+            .sheet-grid__cell.sheet-grid__cell--1-2 sheet-skill-name Acrobatics (Dex) 
             .sheet-grid__cell.sheet-grid__cell--1-8 input(type="number" name="attr_npc_acrobatics_bonus" value="0" step="1")  
             .sheet-grid__cell.sheet-grid__cell--1-8 input(type="number" name="attr_npc_acrobatics" value="@{npc_dexterity_mod}+@{npc_acrobatics_bonus}" disabled> 
             .sheet-grid__cell.sheet-grid__cell--1-8 sheet-offset-1-24 input(type="number" class="sheet-passive-skill-score" name="attr_npc_passive_acrobatics" value="10 + @{npc_acrobatics}" disabled> 
@@ -223,7 +223,7 @@ h1.hdg Skills
 
         .sheet-grid sheet-skill-row 
             .sheet-grid__cell.sheet-grid__cell--1-12 <button class="sheet-skill-roll" type="roll" name="roll_NPC_AnimalHandling_Check" value="/w GM WIS (Animal Handling) check :[[1d20 + @{npc_animalhandling}]] | [[1d20 + @{npc_animalhandling}]]   
-            .sheet-grid__cell.sheet-grid__cell--1-2 sheet-skill-name sheet-center Animal Handling (Wis) 
+            .sheet-grid__cell.sheet-grid__cell--1-2 sheet-skill-name Animal Handling (Wis) 
             .sheet-grid__cell.sheet-grid__cell--1-8 input(type="number" name="attr_npc_animalhandling_bonus" value="0" step="1")  
             .sheet-grid__cell.sheet-grid__cell--1-8 input(type="number" name="attr_npc_animalhandling" value="@{npc_wisdom_mod}+@{npc_animalhandling_bonus}" disabled> 
             .sheet-grid__cell.sheet-grid__cell--1-8 sheet-offset-1-24 input(type="number" class="sheet-passive-skill-score" name="attr_npc_passive_animalhandling" value="10 + @{npc_animalhandling}" disabled> 
@@ -231,7 +231,7 @@ h1.hdg Skills
 
         .sheet-grid sheet-skill-row 
             .sheet-grid__cell.sheet-grid__cell--1-12 <button class="sheet-skill-roll" type="roll" name="roll_NPC_Arcana_Check" value="/w GM INT (Arcana) check :[[1d20 + @{npc_arcana}]] | [[1d20 + @{npc_arcana}]]   
-            .sheet-grid__cell.sheet-grid__cell--1-2 sheet-skill-name sheet-center Arcana (Int) 
+            .sheet-grid__cell.sheet-grid__cell--1-2 sheet-skill-name Arcana (Int) 
             .sheet-grid__cell.sheet-grid__cell--1-8 input(type="number" name="attr_npc_arcana_bonus" value="0" step="1")  
             .sheet-grid__cell.sheet-grid__cell--1-8 input(type="number" name="attr_npc_arcana" value="@{npc_intelligence_mod}+@{npc_arcana_bonus}" disabled> 
             .sheet-grid__cell.sheet-grid__cell--1-8 sheet-offset-1-24 input(type="number" class="sheet-passive-skill-score" name="attr_npc_passive_arcana" value="10 + @{npc_arcana}" disabled> 
@@ -239,7 +239,7 @@ h1.hdg Skills
 
         .sheet-grid sheet-skill-row 
             .sheet-grid__cell.sheet-grid__cell--1-12 <button class="sheet-skill-roll" type="roll" name="roll_NPC_Athletics_Check" value="/w GM STR (Athletics) check :[[1d20 + @{npc_athletics}]] | [[1d20 + @{npc_athletics}]]   
-            .sheet-grid__cell.sheet-grid__cell--1-2 sheet-skill-name sheet-center Athletics (Str) 
+            .sheet-grid__cell.sheet-grid__cell--1-2 sheet-skill-name Athletics (Str) 
             .sheet-grid__cell.sheet-grid__cell--1-8 input(type="number" name="attr_npc_athletics_bonus" value="0" step="1")  
             .sheet-grid__cell.sheet-grid__cell--1-8 input(type="number" name="attr_npc_athletics" value="@{npc_strength_mod}+@{npc_athletics_bonus}" disabled> 
             .sheet-grid__cell.sheet-grid__cell--1-8 sheet-offset-1-24 input(type="number" class="sheet-passive-skill-score" name="attr_npc_passive_athletics" value="10 + @{npc_athletics}" disabled> 
@@ -247,7 +247,7 @@ h1.hdg Skills
 
         .sheet-grid sheet-skill-row 
             .sheet-grid__cell.sheet-grid__cell--1-12 <button class="sheet-skill-roll" type="roll" name="roll_NPC_Deception_Check" value="/w GM CHA (Deception) check :[[1d20 + @{npc_deception}]] | [[1d20 + @{npc_deception}]]   
-            .sheet-grid__cell.sheet-grid__cell--1-2 sheet-skill-name sheet-center Deception (Cha) 
+            .sheet-grid__cell.sheet-grid__cell--1-2 sheet-skill-name Deception (Cha) 
             .sheet-grid__cell.sheet-grid__cell--1-8 input(type="number" name="attr_npc_deception_bonus" value="0" step="1")  
             .sheet-grid__cell.sheet-grid__cell--1-8 input(type="number" name="attr_npc_deception" value="@{npc_charisma_mod}+@{npc_deception_bonus}" disabled> 
             .sheet-grid__cell.sheet-grid__cell--1-8 sheet-offset-1-24 input(type="number" class="sheet-passive-skill-score" name="attr_npc_passive_deception" value="10 + @{npc_deception}" disabled> 
@@ -255,7 +255,7 @@ h1.hdg Skills
 
         .sheet-grid sheet-skill-row 
             .sheet-grid__cell.sheet-grid__cell--1-12 <button class="sheet-skill-roll" type="roll" name="roll_NPC_History_Check" value="/w GM INT (History) check :[[1d20 + @{npc_history}]] | [[1d20 + @{npc_history}]]   
-            .sheet-grid__cell.sheet-grid__cell--1-2 sheet-skill-name sheet-center History (Int) 
+            .sheet-grid__cell.sheet-grid__cell--1-2 sheet-skill-name History (Int) 
             .sheet-grid__cell.sheet-grid__cell--1-8 input(type="number" name="attr_npc_history_bonus" value="0" step="1")  
             .sheet-grid__cell.sheet-grid__cell--1-8 input(type="number" name="attr_npc_history" value="@{npc_intelligence_mod}+@{npc_history_bonus}" disabled> 
             .sheet-grid__cell.sheet-grid__cell--1-8 sheet-offset-1-24 input(type="number" class="sheet-passive-skill-score" name="attr_npc_passive_history" value="10 + @{npc_history}" disabled> 
@@ -263,7 +263,7 @@ h1.hdg Skills
 
         .sheet-grid sheet-skill-row 
             .sheet-grid__cell.sheet-grid__cell--1-12 <button class="sheet-skill-roll" type="roll" name="roll_NPC_Insight_Check" value="/w GM WIS (Insight) check :[[1d20 + @{npc_insight}]] | [[1d20 + @{npc_insight}]]   
-            .sheet-grid__cell.sheet-grid__cell--1-2 sheet-skill-name sheet-center Insight (Wis) 
+            .sheet-grid__cell.sheet-grid__cell--1-2 sheet-skill-name Insight (Wis) 
             .sheet-grid__cell.sheet-grid__cell--1-8 input(type="number" name="attr_npc_insight_bonus" value="0" step="1")  
             .sheet-grid__cell.sheet-grid__cell--1-8 input(type="number" name="attr_npc_insight" value="@{npc_wisdom_mod}+@{npc_insight_bonus}" disabled> 
             .sheet-grid__cell.sheet-grid__cell--1-8 sheet-offset-1-24 input(type="number" class="sheet-passive-skill-score" name="attr_npc_passive_insight" value="10 + @{npc_insight}" disabled> 
@@ -271,7 +271,7 @@ h1.hdg Skills
 
         .sheet-grid sheet-skill-row 
             .sheet-grid__cell.sheet-grid__cell--1-12 <button class="sheet-skill-roll" type="roll" name="roll_NPC_Intimidation_Check" value="/w GM CHA (Intimidation) check :[[1d20 + @{npc_intimidation}]] | [[1d20 + @{npc_intimidation}]]   
-            .sheet-grid__cell.sheet-grid__cell--1-2 sheet-skill-name sheet-center Intimidation (Cha) 
+            .sheet-grid__cell.sheet-grid__cell--1-2 sheet-skill-name Intimidation (Cha) 
             .sheet-grid__cell.sheet-grid__cell--1-8 input(type="number" name="attr_npc_intimidation_bonus" value="0" step="1")  
             .sheet-grid__cell.sheet-grid__cell--1-8 input(type="number" name="attr_npc_intimidation" value="@{npc_charisma_mod}+@{npc_intimidation_bonus}" disabled> 
             .sheet-grid__cell.sheet-grid__cell--1-8 sheet-offset-1-24 input(type="number" class="sheet-passive-skill-score" name="attr_npc_passive_intimidation" value="10 + @{npc_intimidation}" disabled> 
@@ -279,7 +279,7 @@ h1.hdg Skills
 
         .sheet-grid sheet-skill-row 
             .sheet-grid__cell.sheet-grid__cell--1-12 <button class="sheet-skill-roll" type="roll" name="roll_NPC_Investigation_Check" value="/w GM INT (Investigation) check :[[1d20 + @{npc_investigation}]] | [[1d20 + @{npc_investigation}]]   
-            .sheet-grid__cell.sheet-grid__cell--1-2 sheet-skill-name sheet-center Investigation (Int) 
+            .sheet-grid__cell.sheet-grid__cell--1-2 sheet-skill-name Investigation (Int) 
             .sheet-grid__cell.sheet-grid__cell--1-8 input(type="number" name="attr_npc_investigation_bonus" value="0" step="1")  
             .sheet-grid__cell.sheet-grid__cell--1-8 input(type="number" name="attr_npc_investigation" value="@{npc_intelligence_mod}+@{npc_investigation_bonus}" disabled> 
             .sheet-grid__cell.sheet-grid__cell--1-8 sheet-offset-1-24 input(type="number" class="sheet-passive-skill-score" name="attr_npc_passive_investigation" value="10 + @{npc_investigation}" disabled> 
@@ -292,16 +292,16 @@ h1.hdg Skills
     .sheet-grid__cell.sheet-grid__cell--1-2 
 
         .sheet-grid.sheet-grid--sub 
-            .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center label &nbsp; 
+            .sheet-grid__cell.sheet-grid__cell--1-12 label &nbsp; 
             .sheet-grid__cell.sheet-grid__cell--1-2 Skill 
-            .sheet-grid__cell.sheet-grid__cell--1-8 sheet-center label Bonus 
-            .sheet-grid__cell.sheet-grid__cell--1-8 sheet-center label Total 
-            .sheet-grid__cell.sheet-grid__cell--1-8 sheet-offset-1-24 sheet-center label Pass 
+            .sheet-grid__cell.sheet-grid__cell--1-8 label Bonus 
+            .sheet-grid__cell.sheet-grid__cell--1-8 label Total 
+            .sheet-grid__cell.sheet-grid__cell--1-8 sheet-offset-1-24 label Pass 
          
 
         .sheet-grid sheet-skill-row 
             .sheet-grid__cell.sheet-grid__cell--1-12 <button class="sheet-skill-roll" type="roll" name="roll_NPC_Medicine_Check" value="/w GM WIS (Medicine) check :[[1d20 + @{npc_medicine}]] | [[1d20 + @{npc_medicine}]]   
-            .sheet-grid__cell.sheet-grid__cell--1-2 sheet-skill-name sheet-center Medicine (Wis) 
+            .sheet-grid__cell.sheet-grid__cell--1-2 sheet-skill-name Medicine (Wis) 
             .sheet-grid__cell.sheet-grid__cell--1-8 input(type="number" name="attr_npc_medicine_bonus" value="0" step="1")  
             .sheet-grid__cell.sheet-grid__cell--1-8 input(type="number" name="attr_npc_medicine" value="@{npc_wisdom_mod}+@{npc_medicine_bonus}" disabled> 
             .sheet-grid__cell.sheet-grid__cell--1-8 sheet-offset-1-24 input(type="number" class="sheet-passive-skill-score" name="attr_npc_passive_medicine" value="10 + @{npc_medicine}" disabled> 
@@ -309,7 +309,7 @@ h1.hdg Skills
 
         .sheet-grid sheet-skill-row 
             .sheet-grid__cell.sheet-grid__cell--1-12 <button class="sheet-skill-roll" type="roll" name="roll_NPC_Nature_Check" value="/w GM INT (Nature) check :[[1d20 + @{npc_nature}]] | [[1d20 + @{npc_nature}]]   
-            .sheet-grid__cell.sheet-grid__cell--1-2 sheet-skill-name sheet-center Nature (Int) 
+            .sheet-grid__cell.sheet-grid__cell--1-2 sheet-skill-name Nature (Int) 
             .sheet-grid__cell.sheet-grid__cell--1-8 input(type="number" name="attr_npc_nature_bonus" value="0" step="1")  
             .sheet-grid__cell.sheet-grid__cell--1-8 input(type="number" name="attr_npc_nature" value="@{npc_intelligence_mod}+@{npc_nature_bonus}" disabled> 
             .sheet-grid__cell.sheet-grid__cell--1-8 sheet-offset-1-24 input(type="number" class="sheet-passive-skill-score" name="attr_npc_passive_nature" value="10 + @{npc_nature}" disabled> 
@@ -317,7 +317,7 @@ h1.hdg Skills
 
         .sheet-grid sheet-skill-row 
             .sheet-grid__cell.sheet-grid__cell--1-12 <button class="sheet-skill-roll" type="roll" name="roll_NPC_Perception_Check" value="/w GM WIS (Perception) check :[[1d20 + @{npc_perception}]] | [[1d20 + @{npc_perception}]]   
-            .sheet-grid__cell.sheet-grid__cell--1-2 sheet-skill-name sheet-center Perception (Wis) 
+            .sheet-grid__cell.sheet-grid__cell--1-2 sheet-skill-name Perception (Wis) 
             .sheet-grid__cell.sheet-grid__cell--1-8 input(type="number" name="attr_npc_perception_bonus" value="0" step="1")  
             .sheet-grid__cell.sheet-grid__cell--1-8 input(type="number" name="attr_npc_perception" value="@{npc_wisdom_mod}+@{npc_perception_bonus}" disabled> 
             .sheet-grid__cell.sheet-grid__cell--1-8 sheet-offset-1-24 input(type="number" class="sheet-passive-skill-score" name="attr_npc_passive_perception" value="10 + @{npc_perception}" disabled> 
@@ -325,7 +325,7 @@ h1.hdg Skills
 
         .sheet-grid sheet-skill-row 
             .sheet-grid__cell.sheet-grid__cell--1-12 <button class="sheet-skill-roll" type="roll" name="roll_NPC_Performance_Check" value="/w GM CHA (Performance) check :[[1d20 + @{npc_performance}]] | [[1d20 + @{npc_performance}]]   
-            .sheet-grid__cell.sheet-grid__cell--1-2 sheet-skill-name sheet-center Performance (Cha) 
+            .sheet-grid__cell.sheet-grid__cell--1-2 sheet-skill-name Performance (Cha) 
             .sheet-grid__cell.sheet-grid__cell--1-8 input(type="number" name="attr_npc_performance_bonus" value="0" step="1")  
             .sheet-grid__cell.sheet-grid__cell--1-8 input(type="number" name="attr_npc_performance" value="@{npc_charisma_mod}+@{npc_performance_bonus}" disabled> 
             .sheet-grid__cell.sheet-grid__cell--1-8 sheet-offset-1-24 input(type="number" class="sheet-passive-skill-score" name="attr_npc_passive_performance" value="10 + @{npc_performance}" disabled> 
@@ -333,7 +333,7 @@ h1.hdg Skills
 
         .sheet-grid sheet-skill-row 
             .sheet-grid__cell.sheet-grid__cell--1-12 <button class="sheet-skill-roll" type="roll" name="roll_NPC_Persuasion_Check" value="/w GM CHA (Persuasion) check :[[1d20 + @{npc_persuasion}]] | [[1d20 + @{npc_persuasion}]]   
-            .sheet-grid__cell.sheet-grid__cell--1-2 sheet-skill-name sheet-center Persuasion (Cha) 
+            .sheet-grid__cell.sheet-grid__cell--1-2 sheet-skill-name Persuasion (Cha) 
             .sheet-grid__cell.sheet-grid__cell--1-8 input(type="number" name="attr_npc_persuasion_bonus" value="0" step="1")  
             .sheet-grid__cell.sheet-grid__cell--1-8 input(type="number" name="attr_npc_persuasion" value="@{npc_charisma_mod}+@{npc_persuasion_bonus}" disabled> 
             .sheet-grid__cell.sheet-grid__cell--1-8 sheet-offset-1-24 input(type="number" class="sheet-passive-skill-score" name="attr_npc_passive_persuasion" value="10 + @{npc_persuasion}" disabled> 
@@ -341,7 +341,7 @@ h1.hdg Skills
 
         .sheet-grid sheet-skill-row 
             .sheet-grid__cell.sheet-grid__cell--1-12 <button class="sheet-skill-roll" type="roll" name="roll_NPC_Religion_Check" value="/w GM INT (Religion) check :[[1d20 + @{npc_religion}]] | [[1d20 + @{npc_religion}]]   
-            .sheet-grid__cell.sheet-grid__cell--1-2 sheet-skill-name sheet-center Religion (Int) 
+            .sheet-grid__cell.sheet-grid__cell--1-2 sheet-skill-name Religion (Int) 
             .sheet-grid__cell.sheet-grid__cell--1-8 input(type="number" name="attr_npc_religion_bonus" value="0" step="1")  
             .sheet-grid__cell.sheet-grid__cell--1-8 input(type="number" name="attr_npc_religion" value="@{npc_intelligence_mod}+@{npc_religion_bonus}" disabled> 
             .sheet-grid__cell.sheet-grid__cell--1-8 sheet-offset-1-24 input(type="number" class="sheet-passive-skill-score" name="attr_npc_passive_religion" value="10 + @{npc_religion}" disabled> 
@@ -349,7 +349,7 @@ h1.hdg Skills
 
         .sheet-grid sheet-skill-row 
             .sheet-grid__cell.sheet-grid__cell--1-12 <button class="sheet-skill-roll" type="roll" name="roll_NPC_SleightOfHand_Check" value="/w GM DEX (Sleight of Hand) check :[[1d20 + @{npc_sleightofhand}]] | [[1d20 + @{npc_sleightofhand}]]   
-            .sheet-grid__cell.sheet-grid__cell--1-2 sheet-skill-name sheet-center Sleight of Hand (Dex) 
+            .sheet-grid__cell.sheet-grid__cell--1-2 sheet-skill-name Sleight of Hand (Dex) 
             .sheet-grid__cell.sheet-grid__cell--1-8 input(type="number" name="attr_npc_sleightofhand_bonus" value="0" step="1")  
             .sheet-grid__cell.sheet-grid__cell--1-8 input(type="number" name="attr_npc_sleightofhand" value="@{npc_dexterity_mod}+@{npc_sleightofhand_bonus}" disabled> 
             .sheet-grid__cell.sheet-grid__cell--1-8 sheet-offset-1-24 input(type="number" class="sheet-passive-skill-score" name="attr_npc_passive_sleightofhand" value="10 + @{npc_sleightofhand}" disabled> 
@@ -357,7 +357,7 @@ h1.hdg Skills
 
         .sheet-grid sheet-skill-row 
             .sheet-grid__cell.sheet-grid__cell--1-12 <button class="sheet-skill-roll" type="roll" name="roll_NPC_Stealth_Check" value="/w GM DEX (Stealth) check :[[1d20 + @{npc_stealth}]] | [[1d20 + @{npc_stealth}]]   
-            .sheet-grid__cell.sheet-grid__cell--1-2 sheet-skill-name sheet-center Stealth (Dex) 
+            .sheet-grid__cell.sheet-grid__cell--1-2 sheet-skill-name Stealth (Dex) 
             .sheet-grid__cell.sheet-grid__cell--1-8 input(type="number" name="attr_npc_stealth_bonus" value="0" step="1")  
             .sheet-grid__cell.sheet-grid__cell--1-8 input(type="number" name="attr_npc_stealth" value="@{npc_dexterity_mod}+@{npc_stealth_bonus}" disabled> 
             .sheet-grid__cell.sheet-grid__cell--1-8 sheet-offset-1-24 input(type="number" class="sheet-passive-skill-score" name="attr_npc_passive_stealth" value="10 + @{npc_stealth}" disabled> 
@@ -365,7 +365,7 @@ h1.hdg Skills
 
         .sheet-grid sheet-skill-row 
             .sheet-grid__cell.sheet-grid__cell--1-12 <button class="sheet-skill-roll" type="roll" name="roll_NPC_Survival_Check" value="/w GM WIS (Survival) check :[[1d20 + @{npc_survival}]] | [[1d20 + @{npc_survival}]]   
-            .sheet-grid__cell.sheet-grid__cell--1-2 sheet-skill-name sheet-center Survival (Wis) 
+            .sheet-grid__cell.sheet-grid__cell--1-2 sheet-skill-name Survival (Wis) 
             .sheet-grid__cell.sheet-grid__cell--1-8 input(type="number" name="attr_npc_survival_bonus" value="0" step="1")  
             .sheet-grid__cell.sheet-grid__cell--1-8 input(type="number" name="attr_npc_survival" value="@{npc_wisdom_mod}+@{npc_survival_bonus}" disabled> 
             .sheet-grid__cell.sheet-grid__cell--1-8 sheet-offset-1-24 input(type="number" class="sheet-passive-skill-score" name="attr_npc_passive_survival" value="10 + @{npc_survival}" disabled> 
@@ -382,29 +382,29 @@ h1.hdg Skills
     .sheet-grid__cell.sheet-grid__cell--1-2 
 
         .sheet-grid.sheet-grid--sub 
-            .sheet-grid__cell.sheet-grid__cell--1-7 sheet-center label &nbsp; 
+            .sheet-grid__cell.sheet-grid__cell--1-7 label &nbsp; 
             .sheet-grid__cell.sheet-grid__cell--4-7 Unskilled check 
-            .sheet-grid__cell.sheet-grid__cell--1-7 sheet-center label Bonus 
-            .sheet-grid__cell.sheet-grid__cell--1-7 sheet-center label Total 
+            .sheet-grid__cell.sheet-grid__cell--1-7 label Bonus 
+            .sheet-grid__cell.sheet-grid__cell--1-7 label Total 
          
 
         .sheet-grid sheet-skill-row 
             .sheet-grid__cell.sheet-grid__cell--1-7 <button class="sheet-skill-roll" type="roll" name="roll_NPC_Basic_Strength_Check" value="/w GM STR (no skill) check :[[1d20 + @{npc_basic_strength_check_mod}]] | [[1d20 + @{npc_basic_strength_check_mod}]]   
-            .sheet-grid__cell.sheet-grid__cell--4-7 sheet-skill-name sheet-center (Unskilled STR check) 
+            .sheet-grid__cell.sheet-grid__cell--4-7 sheet-skill-name (Unskilled STR check) 
             .sheet-grid__cell.sheet-grid__cell--1-7 input(type="number" name="attr_npc_basic_strength_bonus" value="0" step="1")  
             .sheet-grid__cell.sheet-grid__cell--1-7 input(type="number" name="attr_npc_basic_strength_check_mod" value="@{npc_strength_mod} + @{npc_basic_strength_bonus}" disabled> 
          
 
         .sheet-grid sheet-skill-row 
             .sheet-grid__cell.sheet-grid__cell--1-7 <button class="sheet-skill-roll" type="roll" name="roll_NPC_Basic_Dexterity_Check" value="/w GM DEX (no skill) check :[[1d20 + @{npc_basic_dexterity_check_mod}]] | [[1d20 + @{npc_basic_dexterity_check_mod}]]   
-            .sheet-grid__cell.sheet-grid__cell--4-7 sheet-skill-name sheet-center (Unskilled DEX check) 
+            .sheet-grid__cell.sheet-grid__cell--4-7 sheet-skill-name (Unskilled DEX check) 
             .sheet-grid__cell.sheet-grid__cell--1-7 input(type="number" name="attr_npc_basic_dexterity_bonus" value="0" step="1")  
             .sheet-grid__cell.sheet-grid__cell--1-7 input(type="number" name="attr_npc_basic_dexterity_check_mod" value="@{npc_dexterity_mod} + @{npc_basic_dexterity_bonus}" disabled> 
          
 
         .sheet-grid sheet-skill-row 
             .sheet-grid__cell.sheet-grid__cell--1-7 <button class="sheet-skill-roll" type="roll" name="roll_NPC_Basic_Constitution_Check" value="/w GM CON (no skill) check :[[1d20 + @{npc_basic_constitution_check_mod}]] | [[1d20 + @{npc_basic_constitution_check_mod}]]   
-            .sheet-grid__cell.sheet-grid__cell--4-7 sheet-skill-name sheet-center (Unskilled CON check) 
+            .sheet-grid__cell.sheet-grid__cell--4-7 sheet-skill-name (Unskilled CON check) 
             .sheet-grid__cell.sheet-grid__cell--1-7 input(type="number" name="attr_npc_basic_constitution_bonus" value="0" step="1")  
             .sheet-grid__cell.sheet-grid__cell--1-7 input(type="number" name="attr_npc_basic_constitution_check_mod" value="@{npc_constitution_mod} + @{npc_basic_constitution_bonus}" disabled> 
          
@@ -416,29 +416,29 @@ h1.hdg Skills
     .sheet-grid__cell.sheet-grid__cell--1-2 
 
         .sheet-grid.sheet-grid--sub 
-            .sheet-grid__cell.sheet-grid__cell--1-7 sheet-center label &nbsp; 
+            .sheet-grid__cell.sheet-grid__cell--1-7 label &nbsp; 
             .sheet-grid__cell.sheet-grid__cell--4-7 Unskilled Check 
-            .sheet-grid__cell.sheet-grid__cell--1-7 sheet-center label Bonus 
-            .sheet-grid__cell.sheet-grid__cell--1-7 sheet-center label Total 
+            .sheet-grid__cell.sheet-grid__cell--1-7 label Bonus 
+            .sheet-grid__cell.sheet-grid__cell--1-7 label Total 
          
 
         .sheet-grid sheet-skill-row 
             .sheet-grid__cell.sheet-grid__cell--1-7 <button class="sheet-skill-roll" type="roll" name="roll_NPC_Basic_Wisdom_Check" value="/w GM WIS (no skill) check :[[1d20 + @{npc_basic_wisdom_check_mod}]] | [[1d20 + @{npc_basic_wisdom_check_mod}]]   
-            .sheet-grid__cell.sheet-grid__cell--4-7 sheet-skill-name sheet-center (Unskilled WIS check) 
+            .sheet-grid__cell.sheet-grid__cell--4-7 sheet-skill-name (Unskilled WIS check) 
             .sheet-grid__cell.sheet-grid__cell--1-7 input(type="number" name="attr_npc_basic_wisdom_bonus" value="0" step="1")  
             .sheet-grid__cell.sheet-grid__cell--1-7 input(type="number" name="attr_npc_basic_wisdom_check_mod" value="@{npc_wisdom_mod} + @{npc_basic_wisdom_bonus}" disabled> 
          
 
         .sheet-grid sheet-skill-row 
             .sheet-grid__cell.sheet-grid__cell--1-7 <button class="sheet-skill-roll" type="roll" name="roll_NPC_Basic_Intelligence_Check" value="/w GM INT (no skill) check :[[1d20 + @{npc_basic_intelligence_check_mod}]] | [[1d20 + @{npc_basic_intelligence_check_mod}]]   
-            .sheet-grid__cell.sheet-grid__cell--4-7 sheet-skill-name sheet-center (Unskilled INT check) 
+            .sheet-grid__cell.sheet-grid__cell--4-7 sheet-skill-name (Unskilled INT check) 
             .sheet-grid__cell.sheet-grid__cell--1-7 input(type="number" name="attr_npc_basic_intelligence_bonus" value="0" step="1")  
             .sheet-grid__cell.sheet-grid__cell--1-7 input(type="number" name="attr_npc_basic_intelligence_check_mod" value="@{npc_intelligence_mod} + @{npc_basic_intelligence_bonus}" disabled> 
          
 
         .sheet-grid sheet-skill-row 
             .sheet-grid__cell.sheet-grid__cell--1-7 <button class="sheet-skill-roll" type="roll" name="roll_NPC_Basic_Charisma_Check" value="/w GM CHA (no skill) check :[[1d20 + @{npc_basic_charisma_check_mod}]] | [[1d20 + @{npc_basic_charisma_check_mod}]]   
-            .sheet-grid__cell.sheet-grid__cell--4-7 sheet-skill-name sheet-center (Unskilled CHA check) 
+            .sheet-grid__cell.sheet-grid__cell--4-7 sheet-skill-name (Unskilled CHA check) 
             .sheet-grid__cell.sheet-grid__cell--1-7 input(type="number" name="attr_npc_basic_charisma_bonus" value="0" step="1")  
             .sheet-grid__cell.sheet-grid__cell--1-7 input(type="number" name="attr_npc_basic_charisma_check_mod" value="@{npc_charisma_mod} + @{npc_basic_charisma_bonus}" disabled> 
          
@@ -450,50 +450,50 @@ h1.hdg Actions
 p.sheet-note The multiattack field below will be displayed in the macro output of any action with the Multiattack? drop down set to Yes.  GM/DM's can use any of the macros below as token actions by creating a token ability and simply adding "%{selected|NPCActionX}" (without the quotes) to it, where X is the row number of the action you want to be available as a token action. 
 
 .sheet-grid.sheet-grid--sub 
-    .sheet-grid__cell.sheet-grid__cell--1 sheet-center label Multiattack 
+    .sheet-grid__cell.sheet-grid__cell--1 label Multiattack 
  
 
 .sheet-grid sheet-padb 
-    .sheet-grid__cell.sheet-grid__cell--1 sheet-center input(class="sheet-center" type="text" name="attr_npc_multiattack" value="None  
+    .sheet-grid__cell.sheet-grid__cell--1 input(class="sheet-center" type="text" name="attr_npc_multiattack" value="None  
  
 
 // BEGIN AUTO GENERATED NPC ACTION SECTION
 // BEGIN npc action row
 .sheet-npc-row 
     .sheet-grid 
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center label sheet-vert-bottom Row 
-        .sheet-grid__cell.sheet-grid__cell--1-2 sheet-center label sheet-vert-bottom Name 
-        .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center label sheet-vert-bottom Action Type 
-        .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center label sheet-vert-bottom Multiattack? 
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center label sheet-vert-bottom Macro 
+        .sheet-grid__cell.sheet-grid__cell--1-12 label sheet-vert-bottom Row 
+        .sheet-grid__cell.sheet-grid__cell--1-2 label sheet-vert-bottom Name 
+        .sheet-grid__cell.sheet-grid__cell--1-6 label sheet-vert-bottom Action Type 
+        .sheet-grid__cell.sheet-grid__cell--1-6 label sheet-vert-bottom Multiattack? 
+        .sheet-grid__cell.sheet-grid__cell--1-12 label sheet-vert-bottom Macro 
      
 
     .sheet-grid 
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center label 1 
-        .sheet-grid__cell.sheet-grid__cell--1-2 sheet-center input(type="text" class="sheet-center" name="attr_npc_action_name1  
+        .sheet-grid__cell.sheet-grid__cell--1-12 label 1 
+        .sheet-grid__cell.sheet-grid__cell--1-2 input(type="text" name="attr_npc_action_name1  
         .sheet-grid__cell.sheet-grid__cell--1-6 
             <select name="attr_npc_action_type1 
-                <option value="(Normal Action) " selected="selected Normal 
-                <option value="(Bonus Action)  Bonus 
-                <option value="(Reaction)  Reaction 
-                <option value="(Lair Action)  Lair 
-                <option value="(Legendary Action)  Legendary 
-                <option value="(Special Action)  Other/Special 
+                option(value="(Normal Action) " selected Normal 
+                option(value="(Bonus Action)  Bonus 
+                option(value="(Reaction)  Reaction 
+                option(value="(Lair Action)  Lair 
+                option(value="(Legendary Action)  Legendary 
+                option(value="(Special Action)  Other/Special 
              
          
-        .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center 
+        .sheet-grid__cell.sheet-grid__cell--1-6 
             <select name="attr_npc_action_multiattack1 
-                <option value="No" selected="selected No 
-                <option value="@{npc_multiattack} Yes 
+                option(value="No" selected No 
+                option(value="@{npc_multiattack} Yes 
              
          
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center <button type="roll" class="sheet-roll" name="roll_NPCAction1" value="/w GM @{character_name} uses @{npc_action_name1} : @{npc_action_type1} \n/w GM Description : @{npc_action_description1}\n/w GM Multiattack :  @{npc_action_multiattack1}\n/w GM Effect :  @{npc_action_effect1}" >Use  
+        .sheet-grid__cell.sheet-grid__cell--1-12 <button type="roll" class="sheet-roll" name="roll_NPCAction1" value="/w GM @{character_name} uses @{npc_action_name1} : @{npc_action_type1} \n/w GM Description : @{npc_action_description1}\n/w GM Multiattack :  @{npc_action_multiattack1}\n/w GM Effect :  @{npc_action_effect1}" >Use  
 
      
 
     .sheet-grid 
-        .sheet-grid__cell.sheet-grid__cell--5-12 sheet-offset-1-12 sheet-center label sheet-vert-bottom Description 
-        .sheet-grid__cell.sheet-grid__cell--5-12 sheet-center label sheet-vert-bottom Effect 
+        .sheet-grid__cell.sheet-grid__cell--5-12 sheet-offset-1-12 label sheet-vert-bottom Description 
+        .sheet-grid__cell.sheet-grid__cell--5-12 label sheet-vert-bottom Effect 
      
     .sheet-grid 
         .sheet-grid__cell.sheet-grid__cell--5-12 sheet-offset-1-12 <textarea class="sheet-medium-textarea" name="attr_npc_action_description1   
@@ -504,39 +504,39 @@ p.sheet-note The multiattack field below will be displayed in the macro output o
 // BEGIN npc action row
 .sheet-npc-row 
     .sheet-grid 
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center label sheet-vert-bottom Row 
-        .sheet-grid__cell.sheet-grid__cell--1-2 sheet-center label sheet-vert-bottom Name 
-        .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center label sheet-vert-bottom Action Type 
-        .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center label sheet-vert-bottom Multiattack? 
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center label sheet-vert-bottom Macro 
+        .sheet-grid__cell.sheet-grid__cell--1-12 label sheet-vert-bottom Row 
+        .sheet-grid__cell.sheet-grid__cell--1-2 label sheet-vert-bottom Name 
+        .sheet-grid__cell.sheet-grid__cell--1-6 label sheet-vert-bottom Action Type 
+        .sheet-grid__cell.sheet-grid__cell--1-6 label sheet-vert-bottom Multiattack? 
+        .sheet-grid__cell.sheet-grid__cell--1-12 label sheet-vert-bottom Macro 
      
 
     .sheet-grid 
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center label 2 
-        .sheet-grid__cell.sheet-grid__cell--1-2 sheet-center input(type="text" class="sheet-center" name="attr_npc_action_name2  
+        .sheet-grid__cell.sheet-grid__cell--1-12 label 2 
+        .sheet-grid__cell.sheet-grid__cell--1-2 input(type="text" name="attr_npc_action_name2  
         .sheet-grid__cell.sheet-grid__cell--1-6 
             <select name="attr_npc_action_type2 
-                <option value="(Normal Action) " selected="selected Normal 
-                <option value="(Bonus Action)  Bonus 
-                <option value="(Reaction)  Reaction 
-                <option value="(Lair Action)  Lair 
-                <option value="(Legendary Action)  Legendary 
-                <option value="(Special Action)  Other/Special 
+                option(value="(Normal Action) " selected Normal 
+                option(value="(Bonus Action)  Bonus 
+                option(value="(Reaction)  Reaction 
+                option(value="(Lair Action)  Lair 
+                option(value="(Legendary Action)  Legendary 
+                option(value="(Special Action)  Other/Special 
              
          
-        .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center 
+        .sheet-grid__cell.sheet-grid__cell--1-6 
             <select name="attr_npc_action_multiattack2 
-                <option value="No" selected="selected No 
-                <option value="@{npc_multiattack} Yes 
+                option(value="No" selected No 
+                option(value="@{npc_multiattack} Yes 
              
          
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center <button type="roll" class="sheet-roll" name="roll_NPCAction2" value="/w GM @{character_name} uses @{npc_action_name2} : @{npc_action_type2} \n/w GM Description : @{npc_action_description2}\n/w GM Multiattack :  @{npc_action_multiattack2}\n/w GM Effect :  @{npc_action_effect2}" >Use  
+        .sheet-grid__cell.sheet-grid__cell--1-12 <button type="roll" class="sheet-roll" name="roll_NPCAction2" value="/w GM @{character_name} uses @{npc_action_name2} : @{npc_action_type2} \n/w GM Description : @{npc_action_description2}\n/w GM Multiattack :  @{npc_action_multiattack2}\n/w GM Effect :  @{npc_action_effect2}" >Use  
 
      
 
     .sheet-grid 
-        .sheet-grid__cell.sheet-grid__cell--5-12 sheet-offset-1-12 sheet-center label sheet-vert-bottom Description 
-        .sheet-grid__cell.sheet-grid__cell--5-12 sheet-center label sheet-vert-bottom Effect 
+        .sheet-grid__cell.sheet-grid__cell--5-12 sheet-offset-1-12 label sheet-vert-bottom Description 
+        .sheet-grid__cell.sheet-grid__cell--5-12 label sheet-vert-bottom Effect 
      
     .sheet-grid 
         .sheet-grid__cell.sheet-grid__cell--5-12 sheet-offset-1-12 <textarea class="sheet-medium-textarea" name="attr_npc_action_description2   
@@ -547,39 +547,39 @@ p.sheet-note The multiattack field below will be displayed in the macro output o
 // BEGIN npc action row
 .sheet-npc-row 
     .sheet-grid 
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center label sheet-vert-bottom Row 
-        .sheet-grid__cell.sheet-grid__cell--1-2 sheet-center label sheet-vert-bottom Name 
-        .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center label sheet-vert-bottom Action Type 
-        .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center label sheet-vert-bottom Multiattack? 
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center label sheet-vert-bottom Macro 
+        .sheet-grid__cell.sheet-grid__cell--1-12 label sheet-vert-bottom Row 
+        .sheet-grid__cell.sheet-grid__cell--1-2 label sheet-vert-bottom Name 
+        .sheet-grid__cell.sheet-grid__cell--1-6 label sheet-vert-bottom Action Type 
+        .sheet-grid__cell.sheet-grid__cell--1-6 label sheet-vert-bottom Multiattack? 
+        .sheet-grid__cell.sheet-grid__cell--1-12 label sheet-vert-bottom Macro 
      
 
     .sheet-grid 
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center label 3 
-        .sheet-grid__cell.sheet-grid__cell--1-2 sheet-center input(type="text" class="sheet-center" name="attr_npc_action_name3  
+        .sheet-grid__cell.sheet-grid__cell--1-12 label 3 
+        .sheet-grid__cell.sheet-grid__cell--1-2 input(type="text" name="attr_npc_action_name3  
         .sheet-grid__cell.sheet-grid__cell--1-6 
             <select name="attr_npc_action_type3 
-                <option value="(Normal Action) " selected="selected Normal 
-                <option value="(Bonus Action)  Bonus 
-                <option value="(Reaction)  Reaction 
-                <option value="(Lair Action)  Lair 
-                <option value="(Legendary Action)  Legendary 
-                <option value="(Special Action)  Other/Special 
+                option(value="(Normal Action) " selected Normal 
+                option(value="(Bonus Action)  Bonus 
+                option(value="(Reaction)  Reaction 
+                option(value="(Lair Action)  Lair 
+                option(value="(Legendary Action)  Legendary 
+                option(value="(Special Action)  Other/Special 
              
          
-        .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center 
+        .sheet-grid__cell.sheet-grid__cell--1-6 
             <select name="attr_npc_action_multiattack3 
-                <option value="No" selected="selected No 
-                <option value="@{npc_multiattack} Yes 
+                option(value="No" selected No 
+                option(value="@{npc_multiattack} Yes 
              
          
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center <button type="roll" class="sheet-roll" name="roll_NPCAction3" value="/w GM @{character_name} uses @{npc_action_name3} : @{npc_action_type3} \n/w GM Description : @{npc_action_description3}\n/w GM Multiattack :  @{npc_action_multiattack3}\n/w GM Effect :  @{npc_action_effect3}" >Use  
+        .sheet-grid__cell.sheet-grid__cell--1-12 <button type="roll" class="sheet-roll" name="roll_NPCAction3" value="/w GM @{character_name} uses @{npc_action_name3} : @{npc_action_type3} \n/w GM Description : @{npc_action_description3}\n/w GM Multiattack :  @{npc_action_multiattack3}\n/w GM Effect :  @{npc_action_effect3}" >Use  
 
      
 
     .sheet-grid 
-        .sheet-grid__cell.sheet-grid__cell--5-12 sheet-offset-1-12 sheet-center label sheet-vert-bottom Description 
-        .sheet-grid__cell.sheet-grid__cell--5-12 sheet-center label sheet-vert-bottom Effect 
+        .sheet-grid__cell.sheet-grid__cell--5-12 sheet-offset-1-12 label sheet-vert-bottom Description 
+        .sheet-grid__cell.sheet-grid__cell--5-12 label sheet-vert-bottom Effect 
      
     .sheet-grid 
         .sheet-grid__cell.sheet-grid__cell--5-12 sheet-offset-1-12 <textarea class="sheet-medium-textarea" name="attr_npc_action_description3   
@@ -590,39 +590,39 @@ p.sheet-note The multiattack field below will be displayed in the macro output o
 // BEGIN npc action row
 .sheet-npc-row 
     .sheet-grid 
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center label sheet-vert-bottom Row 
-        .sheet-grid__cell.sheet-grid__cell--1-2 sheet-center label sheet-vert-bottom Name 
-        .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center label sheet-vert-bottom Action Type 
-        .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center label sheet-vert-bottom Multiattack? 
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center label sheet-vert-bottom Macro 
+        .sheet-grid__cell.sheet-grid__cell--1-12 label sheet-vert-bottom Row 
+        .sheet-grid__cell.sheet-grid__cell--1-2 label sheet-vert-bottom Name 
+        .sheet-grid__cell.sheet-grid__cell--1-6 label sheet-vert-bottom Action Type 
+        .sheet-grid__cell.sheet-grid__cell--1-6 label sheet-vert-bottom Multiattack? 
+        .sheet-grid__cell.sheet-grid__cell--1-12 label sheet-vert-bottom Macro 
      
 
     .sheet-grid 
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center label 4 
-        .sheet-grid__cell.sheet-grid__cell--1-2 sheet-center input(type="text" class="sheet-center" name="attr_npc_action_name4  
+        .sheet-grid__cell.sheet-grid__cell--1-12 label 4 
+        .sheet-grid__cell.sheet-grid__cell--1-2 input(type="text" name="attr_npc_action_name4  
         .sheet-grid__cell.sheet-grid__cell--1-6 
             <select name="attr_npc_action_type4 
-                <option value="(Normal Action) " selected="selected Normal 
-                <option value="(Bonus Action)  Bonus 
-                <option value="(Reaction)  Reaction 
-                <option value="(Lair Action)  Lair 
-                <option value="(Legendary Action)  Legendary 
-                <option value="(Special Action)  Other/Special 
+                option(value="(Normal Action) " selected Normal 
+                option(value="(Bonus Action)  Bonus 
+                option(value="(Reaction)  Reaction 
+                option(value="(Lair Action)  Lair 
+                option(value="(Legendary Action)  Legendary 
+                option(value="(Special Action)  Other/Special 
              
          
-        .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center 
+        .sheet-grid__cell.sheet-grid__cell--1-6 
             <select name="attr_npc_action_multiattack4 
-                <option value="No" selected="selected No 
-                <option value="@{npc_multiattack} Yes 
+                option(value="No" selected No 
+                option(value="@{npc_multiattack} Yes 
              
          
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center <button type="roll" class="sheet-roll" name="roll_NPCAction4" value="/w GM @{character_name} uses @{npc_action_name4} : @{npc_action_type4} \n/w GM Description : @{npc_action_description4}\n/w GM Multiattack :  @{npc_action_multiattack4}\n/w GM Effect :  @{npc_action_effect4}" >Use  
+        .sheet-grid__cell.sheet-grid__cell--1-12 <button type="roll" class="sheet-roll" name="roll_NPCAction4" value="/w GM @{character_name} uses @{npc_action_name4} : @{npc_action_type4} \n/w GM Description : @{npc_action_description4}\n/w GM Multiattack :  @{npc_action_multiattack4}\n/w GM Effect :  @{npc_action_effect4}" >Use  
 
      
 
     .sheet-grid 
-        .sheet-grid__cell.sheet-grid__cell--5-12 sheet-offset-1-12 sheet-center label sheet-vert-bottom Description 
-        .sheet-grid__cell.sheet-grid__cell--5-12 sheet-center label sheet-vert-bottom Effect 
+        .sheet-grid__cell.sheet-grid__cell--5-12 sheet-offset-1-12 label sheet-vert-bottom Description 
+        .sheet-grid__cell.sheet-grid__cell--5-12 label sheet-vert-bottom Effect 
      
     .sheet-grid 
         .sheet-grid__cell.sheet-grid__cell--5-12 sheet-offset-1-12 <textarea class="sheet-medium-textarea" name="attr_npc_action_description4   
@@ -633,39 +633,39 @@ p.sheet-note The multiattack field below will be displayed in the macro output o
 // BEGIN npc action row
 .sheet-npc-row 
     .sheet-grid 
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center label sheet-vert-bottom Row 
-        .sheet-grid__cell.sheet-grid__cell--1-2 sheet-center label sheet-vert-bottom Name 
-        .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center label sheet-vert-bottom Action Type 
-        .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center label sheet-vert-bottom Multiattack? 
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center label sheet-vert-bottom Macro 
+        .sheet-grid__cell.sheet-grid__cell--1-12 label sheet-vert-bottom Row 
+        .sheet-grid__cell.sheet-grid__cell--1-2 label sheet-vert-bottom Name 
+        .sheet-grid__cell.sheet-grid__cell--1-6 label sheet-vert-bottom Action Type 
+        .sheet-grid__cell.sheet-grid__cell--1-6 label sheet-vert-bottom Multiattack? 
+        .sheet-grid__cell.sheet-grid__cell--1-12 label sheet-vert-bottom Macro 
      
 
     .sheet-grid 
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center label 5 
-        .sheet-grid__cell.sheet-grid__cell--1-2 sheet-center input(type="text" class="sheet-center" name="attr_npc_action_name5  
+        .sheet-grid__cell.sheet-grid__cell--1-12 label 5 
+        .sheet-grid__cell.sheet-grid__cell--1-2 input(type="text" name="attr_npc_action_name5  
         .sheet-grid__cell.sheet-grid__cell--1-6 
             <select name="attr_npc_action_type5 
-                <option value="(Normal Action) " selected="selected Normal 
-                <option value="(Bonus Action)  Bonus 
-                <option value="(Reaction)  Reaction 
-                <option value="(Lair Action)  Lair 
-                <option value="(Legendary Action)  Legendary 
-                <option value="(Special Action)  Other/Special 
+                option(value="(Normal Action) " selected Normal 
+                option(value="(Bonus Action)  Bonus 
+                option(value="(Reaction)  Reaction 
+                option(value="(Lair Action)  Lair 
+                option(value="(Legendary Action)  Legendary 
+                option(value="(Special Action)  Other/Special 
              
          
-        .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center 
+        .sheet-grid__cell.sheet-grid__cell--1-6 
             <select name="attr_npc_action_multiattack5 
-                <option value="No" selected="selected No 
-                <option value="@{npc_multiattack} Yes 
+                option(value="No" selected No 
+                option(value="@{npc_multiattack} Yes 
              
          
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center <button type="roll" class="sheet-roll" name="roll_NPCAction5" value="/w GM @{character_name} uses @{npc_action_name5} : @{npc_action_type5} \n/w GM Description : @{npc_action_description5}\n/w GM Multiattack :  @{npc_action_multiattack5}\n/w GM Effect :  @{npc_action_effect5}" >Use  
+        .sheet-grid__cell.sheet-grid__cell--1-12 <button type="roll" class="sheet-roll" name="roll_NPCAction5" value="/w GM @{character_name} uses @{npc_action_name5} : @{npc_action_type5} \n/w GM Description : @{npc_action_description5}\n/w GM Multiattack :  @{npc_action_multiattack5}\n/w GM Effect :  @{npc_action_effect5}" >Use  
 
      
 
     .sheet-grid 
-        .sheet-grid__cell.sheet-grid__cell--5-12 sheet-offset-1-12 sheet-center label sheet-vert-bottom Description 
-        .sheet-grid__cell.sheet-grid__cell--5-12 sheet-center label sheet-vert-bottom Effect 
+        .sheet-grid__cell.sheet-grid__cell--5-12 sheet-offset-1-12 label sheet-vert-bottom Description 
+        .sheet-grid__cell.sheet-grid__cell--5-12 label sheet-vert-bottom Effect 
      
     .sheet-grid 
         .sheet-grid__cell.sheet-grid__cell--5-12 sheet-offset-1-12 <textarea class="sheet-medium-textarea" name="attr_npc_action_description5   
@@ -676,39 +676,39 @@ p.sheet-note The multiattack field below will be displayed in the macro output o
 // BEGIN npc action row
 .sheet-npc-row 
     .sheet-grid 
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center label sheet-vert-bottom Row 
-        .sheet-grid__cell.sheet-grid__cell--1-2 sheet-center label sheet-vert-bottom Name 
-        .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center label sheet-vert-bottom Action Type 
-        .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center label sheet-vert-bottom Multiattack? 
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center label sheet-vert-bottom Macro 
+        .sheet-grid__cell.sheet-grid__cell--1-12 label sheet-vert-bottom Row 
+        .sheet-grid__cell.sheet-grid__cell--1-2 label sheet-vert-bottom Name 
+        .sheet-grid__cell.sheet-grid__cell--1-6 label sheet-vert-bottom Action Type 
+        .sheet-grid__cell.sheet-grid__cell--1-6 label sheet-vert-bottom Multiattack? 
+        .sheet-grid__cell.sheet-grid__cell--1-12 label sheet-vert-bottom Macro 
      
 
     .sheet-grid 
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center label 6 
-        .sheet-grid__cell.sheet-grid__cell--1-2 sheet-center input(type="text" class="sheet-center" name="attr_npc_action_name6  
+        .sheet-grid__cell.sheet-grid__cell--1-12 label 6 
+        .sheet-grid__cell.sheet-grid__cell--1-2 input(type="text" name="attr_npc_action_name6  
         .sheet-grid__cell.sheet-grid__cell--1-6 
             <select name="attr_npc_action_type6 
-                <option value="(Normal Action) " selected="selected Normal 
-                <option value="(Bonus Action)  Bonus 
-                <option value="(Reaction)  Reaction 
-                <option value="(Lair Action)  Lair 
-                <option value="(Legendary Action)  Legendary 
-                <option value="(Special Action)  Other/Special 
+                option(value="(Normal Action) " selected Normal 
+                option(value="(Bonus Action)  Bonus 
+                option(value="(Reaction)  Reaction 
+                option(value="(Lair Action)  Lair 
+                option(value="(Legendary Action)  Legendary 
+                option(value="(Special Action)  Other/Special 
              
          
-        .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center 
+        .sheet-grid__cell.sheet-grid__cell--1-6 
             <select name="attr_npc_action_multiattack6 
-                <option value="No" selected="selected No 
-                <option value="@{npc_multiattack} Yes 
+                option(value="No" selected No 
+                option(value="@{npc_multiattack} Yes 
              
          
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center <button type="roll" class="sheet-roll" name="roll_NPCAction6" value="/w GM @{character_name} uses @{npc_action_name6} : @{npc_action_type6} \n/w GM Description : @{npc_action_description6}\n/w GM Multiattack :  @{npc_action_multiattack6}\n/w GM Effect :  @{npc_action_effect6}" >Use  
+        .sheet-grid__cell.sheet-grid__cell--1-12 <button type="roll" class="sheet-roll" name="roll_NPCAction6" value="/w GM @{character_name} uses @{npc_action_name6} : @{npc_action_type6} \n/w GM Description : @{npc_action_description6}\n/w GM Multiattack :  @{npc_action_multiattack6}\n/w GM Effect :  @{npc_action_effect6}" >Use  
 
      
 
     .sheet-grid 
-        .sheet-grid__cell.sheet-grid__cell--5-12 sheet-offset-1-12 sheet-center label sheet-vert-bottom Description 
-        .sheet-grid__cell.sheet-grid__cell--5-12 sheet-center label sheet-vert-bottom Effect 
+        .sheet-grid__cell.sheet-grid__cell--5-12 sheet-offset-1-12 label sheet-vert-bottom Description 
+        .sheet-grid__cell.sheet-grid__cell--5-12 label sheet-vert-bottom Effect 
      
     .sheet-grid 
         .sheet-grid__cell.sheet-grid__cell--5-12 sheet-offset-1-12 <textarea class="sheet-medium-textarea" name="attr_npc_action_description6   
@@ -719,39 +719,39 @@ p.sheet-note The multiattack field below will be displayed in the macro output o
 // BEGIN npc action row
 .sheet-npc-row 
     .sheet-grid 
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center label sheet-vert-bottom Row 
-        .sheet-grid__cell.sheet-grid__cell--1-2 sheet-center label sheet-vert-bottom Name 
-        .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center label sheet-vert-bottom Action Type 
-        .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center label sheet-vert-bottom Multiattack? 
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center label sheet-vert-bottom Macro 
+        .sheet-grid__cell.sheet-grid__cell--1-12 label sheet-vert-bottom Row 
+        .sheet-grid__cell.sheet-grid__cell--1-2 label sheet-vert-bottom Name 
+        .sheet-grid__cell.sheet-grid__cell--1-6 label sheet-vert-bottom Action Type 
+        .sheet-grid__cell.sheet-grid__cell--1-6 label sheet-vert-bottom Multiattack? 
+        .sheet-grid__cell.sheet-grid__cell--1-12 label sheet-vert-bottom Macro 
      
 
     .sheet-grid 
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center label 7 
-        .sheet-grid__cell.sheet-grid__cell--1-2 sheet-center input(type="text" class="sheet-center" name="attr_npc_action_name7  
+        .sheet-grid__cell.sheet-grid__cell--1-12 label 7 
+        .sheet-grid__cell.sheet-grid__cell--1-2 input(type="text" name="attr_npc_action_name7  
         .sheet-grid__cell.sheet-grid__cell--1-6 
             <select name="attr_npc_action_type7 
-                <option value="(Normal Action) " selected="selected Normal 
-                <option value="(Bonus Action)  Bonus 
-                <option value="(Reaction)  Reaction 
-                <option value="(Lair Action)  Lair 
-                <option value="(Legendary Action)  Legendary 
-                <option value="(Special Action)  Other/Special 
+                option(value="(Normal Action) " selected Normal 
+                option(value="(Bonus Action)  Bonus 
+                option(value="(Reaction)  Reaction 
+                option(value="(Lair Action)  Lair 
+                option(value="(Legendary Action)  Legendary 
+                option(value="(Special Action)  Other/Special 
              
          
-        .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center 
+        .sheet-grid__cell.sheet-grid__cell--1-6 
             <select name="attr_npc_action_multiattack7 
-                <option value="No" selected="selected No 
-                <option value="@{npc_multiattack} Yes 
+                option(value="No" selected No 
+                option(value="@{npc_multiattack} Yes 
              
          
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center <button type="roll" class="sheet-roll" name="roll_NPCAction7" value="/w GM @{character_name} uses @{npc_action_name7} : @{npc_action_type7} \n/w GM Description : @{npc_action_description7}\n/w GM Multiattack :  @{npc_action_multiattack7}\n/w GM Effect :  @{npc_action_effect7}" >Use  
+        .sheet-grid__cell.sheet-grid__cell--1-12 <button type="roll" class="sheet-roll" name="roll_NPCAction7" value="/w GM @{character_name} uses @{npc_action_name7} : @{npc_action_type7} \n/w GM Description : @{npc_action_description7}\n/w GM Multiattack :  @{npc_action_multiattack7}\n/w GM Effect :  @{npc_action_effect7}" >Use  
 
      
 
     .sheet-grid 
-        .sheet-grid__cell.sheet-grid__cell--5-12 sheet-offset-1-12 sheet-center label sheet-vert-bottom Description 
-        .sheet-grid__cell.sheet-grid__cell--5-12 sheet-center label sheet-vert-bottom Effect 
+        .sheet-grid__cell.sheet-grid__cell--5-12 sheet-offset-1-12 label sheet-vert-bottom Description 
+        .sheet-grid__cell.sheet-grid__cell--5-12 label sheet-vert-bottom Effect 
      
     .sheet-grid 
         .sheet-grid__cell.sheet-grid__cell--5-12 sheet-offset-1-12 <textarea class="sheet-medium-textarea" name="attr_npc_action_description7   
@@ -762,39 +762,39 @@ p.sheet-note The multiattack field below will be displayed in the macro output o
 // BEGIN npc action row
 .sheet-npc-row 
     .sheet-grid 
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center label sheet-vert-bottom Row 
-        .sheet-grid__cell.sheet-grid__cell--1-2 sheet-center label sheet-vert-bottom Name 
-        .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center label sheet-vert-bottom Action Type 
-        .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center label sheet-vert-bottom Multiattack? 
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center label sheet-vert-bottom Macro 
+        .sheet-grid__cell.sheet-grid__cell--1-12 label sheet-vert-bottom Row 
+        .sheet-grid__cell.sheet-grid__cell--1-2 label sheet-vert-bottom Name 
+        .sheet-grid__cell.sheet-grid__cell--1-6 label sheet-vert-bottom Action Type 
+        .sheet-grid__cell.sheet-grid__cell--1-6 label sheet-vert-bottom Multiattack? 
+        .sheet-grid__cell.sheet-grid__cell--1-12 label sheet-vert-bottom Macro 
      
 
     .sheet-grid 
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center label 8 
-        .sheet-grid__cell.sheet-grid__cell--1-2 sheet-center input(type="text" class="sheet-center" name="attr_npc_action_name8  
+        .sheet-grid__cell.sheet-grid__cell--1-12 label 8 
+        .sheet-grid__cell.sheet-grid__cell--1-2 input(type="text" name="attr_npc_action_name8  
         .sheet-grid__cell.sheet-grid__cell--1-6 
             <select name="attr_npc_action_type8 
-                <option value="(Normal Action) " selected="selected Normal 
-                <option value="(Bonus Action)  Bonus 
-                <option value="(Reaction)  Reaction 
-                <option value="(Lair Action)  Lair 
-                <option value="(Legendary Action)  Legendary 
-                <option value="(Special Action)  Other/Special 
+                option(value="(Normal Action) " selected Normal 
+                option(value="(Bonus Action)  Bonus 
+                option(value="(Reaction)  Reaction 
+                option(value="(Lair Action)  Lair 
+                option(value="(Legendary Action)  Legendary 
+                option(value="(Special Action)  Other/Special 
              
          
-        .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center 
+        .sheet-grid__cell.sheet-grid__cell--1-6 
             <select name="attr_npc_action_multiattack8 
-                <option value="No" selected="selected No 
-                <option value="@{npc_multiattack} Yes 
+                option(value="No" selected No 
+                option(value="@{npc_multiattack} Yes 
              
          
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center <button type="roll" class="sheet-roll" name="roll_NPCAction8" value="/w GM @{character_name} uses @{npc_action_name8} : @{npc_action_type8} \n/w GM Description : @{npc_action_description8}\n/w GM Multiattack :  @{npc_action_multiattack8}\n/w GM Effect :  @{npc_action_effect8}" >Use  
+        .sheet-grid__cell.sheet-grid__cell--1-12 <button type="roll" class="sheet-roll" name="roll_NPCAction8" value="/w GM @{character_name} uses @{npc_action_name8} : @{npc_action_type8} \n/w GM Description : @{npc_action_description8}\n/w GM Multiattack :  @{npc_action_multiattack8}\n/w GM Effect :  @{npc_action_effect8}" >Use  
 
      
 
     .sheet-grid 
-        .sheet-grid__cell.sheet-grid__cell--5-12 sheet-offset-1-12 sheet-center label sheet-vert-bottom Description 
-        .sheet-grid__cell.sheet-grid__cell--5-12 sheet-center label sheet-vert-bottom Effect 
+        .sheet-grid__cell.sheet-grid__cell--5-12 sheet-offset-1-12 label sheet-vert-bottom Description 
+        .sheet-grid__cell.sheet-grid__cell--5-12 label sheet-vert-bottom Effect 
      
     .sheet-grid 
         .sheet-grid__cell.sheet-grid__cell--5-12 sheet-offset-1-12 <textarea class="sheet-medium-textarea" name="attr_npc_action_description8   
@@ -805,39 +805,39 @@ p.sheet-note The multiattack field below will be displayed in the macro output o
 // BEGIN npc action row
 .sheet-npc-row 
     .sheet-grid 
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center label sheet-vert-bottom Row 
-        .sheet-grid__cell.sheet-grid__cell--1-2 sheet-center label sheet-vert-bottom Name 
-        .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center label sheet-vert-bottom Action Type 
-        .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center label sheet-vert-bottom Multiattack? 
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center label sheet-vert-bottom Macro 
+        .sheet-grid__cell.sheet-grid__cell--1-12 label sheet-vert-bottom Row 
+        .sheet-grid__cell.sheet-grid__cell--1-2 label sheet-vert-bottom Name 
+        .sheet-grid__cell.sheet-grid__cell--1-6 label sheet-vert-bottom Action Type 
+        .sheet-grid__cell.sheet-grid__cell--1-6 label sheet-vert-bottom Multiattack? 
+        .sheet-grid__cell.sheet-grid__cell--1-12 label sheet-vert-bottom Macro 
      
 
     .sheet-grid 
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center label 9 
-        .sheet-grid__cell.sheet-grid__cell--1-2 sheet-center input(type="text" class="sheet-center" name="attr_npc_action_name9  
+        .sheet-grid__cell.sheet-grid__cell--1-12 label 9 
+        .sheet-grid__cell.sheet-grid__cell--1-2 input(type="text" name="attr_npc_action_name9  
         .sheet-grid__cell.sheet-grid__cell--1-6 
             <select name="attr_npc_action_type9 
-                <option value="(Normal Action) " selected="selected Normal 
-                <option value="(Bonus Action)  Bonus 
-                <option value="(Reaction)  Reaction 
-                <option value="(Lair Action)  Lair 
-                <option value="(Legendary Action)  Legendary 
-                <option value="(Special Action)  Other/Special 
+                option(value="(Normal Action) " selected Normal 
+                option(value="(Bonus Action)  Bonus 
+                option(value="(Reaction)  Reaction 
+                option(value="(Lair Action)  Lair 
+                option(value="(Legendary Action)  Legendary 
+                option(value="(Special Action)  Other/Special 
              
          
-        .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center 
+        .sheet-grid__cell.sheet-grid__cell--1-6 
             <select name="attr_npc_action_multiattack9 
-                <option value="No" selected="selected No 
-                <option value="@{npc_multiattack} Yes 
+                option(value="No" selected No 
+                option(value="@{npc_multiattack} Yes 
              
          
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center <button type="roll" class="sheet-roll" name="roll_NPCAction9" value="/w GM @{character_name} uses @{npc_action_name9} : @{npc_action_type9} \n/w GM Description : @{npc_action_description9}\n/w GM Multiattack :  @{npc_action_multiattack9}\n/w GM Effect :  @{npc_action_effect9}" >Use  
+        .sheet-grid__cell.sheet-grid__cell--1-12 <button type="roll" class="sheet-roll" name="roll_NPCAction9" value="/w GM @{character_name} uses @{npc_action_name9} : @{npc_action_type9} \n/w GM Description : @{npc_action_description9}\n/w GM Multiattack :  @{npc_action_multiattack9}\n/w GM Effect :  @{npc_action_effect9}" >Use  
 
      
 
     .sheet-grid 
-        .sheet-grid__cell.sheet-grid__cell--5-12 sheet-offset-1-12 sheet-center label sheet-vert-bottom Description 
-        .sheet-grid__cell.sheet-grid__cell--5-12 sheet-center label sheet-vert-bottom Effect 
+        .sheet-grid__cell.sheet-grid__cell--5-12 sheet-offset-1-12 label sheet-vert-bottom Description 
+        .sheet-grid__cell.sheet-grid__cell--5-12 label sheet-vert-bottom Effect 
      
     .sheet-grid 
         .sheet-grid__cell.sheet-grid__cell--5-12 sheet-offset-1-12 <textarea class="sheet-medium-textarea" name="attr_npc_action_description9   
@@ -848,39 +848,39 @@ p.sheet-note The multiattack field below will be displayed in the macro output o
 // BEGIN npc action row
 .sheet-npc-row 
     .sheet-grid 
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center label sheet-vert-bottom Row 
-        .sheet-grid__cell.sheet-grid__cell--1-2 sheet-center label sheet-vert-bottom Name 
-        .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center label sheet-vert-bottom Action Type 
-        .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center label sheet-vert-bottom Multiattack? 
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center label sheet-vert-bottom Macro 
+        .sheet-grid__cell.sheet-grid__cell--1-12 label sheet-vert-bottom Row 
+        .sheet-grid__cell.sheet-grid__cell--1-2 label sheet-vert-bottom Name 
+        .sheet-grid__cell.sheet-grid__cell--1-6 label sheet-vert-bottom Action Type 
+        .sheet-grid__cell.sheet-grid__cell--1-6 label sheet-vert-bottom Multiattack? 
+        .sheet-grid__cell.sheet-grid__cell--1-12 label sheet-vert-bottom Macro 
      
 
     .sheet-grid 
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center label 10 
-        .sheet-grid__cell.sheet-grid__cell--1-2 sheet-center input(type="text" class="sheet-center" name="attr_npc_action_name10  
+        .sheet-grid__cell.sheet-grid__cell--1-12 label 10 
+        .sheet-grid__cell.sheet-grid__cell--1-2 input(type="text" name="attr_npc_action_name10  
         .sheet-grid__cell.sheet-grid__cell--1-6 
             <select name="attr_npc_action_type10 
-                <option value="(Normal Action) " selected="selected Normal 
-                <option value="(Bonus Action)  Bonus 
-                <option value="(Reaction)  Reaction 
-                <option value="(Lair Action)  Lair 
-                <option value="(Legendary Action)  Legendary 
-                <option value="(Special Action)  Other/Special 
+                option(value="(Normal Action) " selected Normal 
+                option(value="(Bonus Action)  Bonus 
+                option(value="(Reaction)  Reaction 
+                option(value="(Lair Action)  Lair 
+                option(value="(Legendary Action)  Legendary 
+                option(value="(Special Action)  Other/Special 
              
          
-        .sheet-grid__cell.sheet-grid__cell--1-6 sheet-center 
+        .sheet-grid__cell.sheet-grid__cell--1-6 
             <select name="attr_npc_action_multiattack10 
-                <option value="No" selected="selected No 
-                <option value="@{npc_multiattack} Yes 
+                option(value="No" selected No 
+                option(value="@{npc_multiattack} Yes 
              
          
-        .sheet-grid__cell.sheet-grid__cell--1-12 sheet-center <button type="roll" class="sheet-roll" name="roll_NPCAction10" value="/w GM @{character_name} uses @{npc_action_name10} : @{npc_action_type10} \n/w GM Description : @{npc_action_description10}\n/w GM Multiattack :  @{npc_action_multiattack10}\n/w GM Effect :  @{npc_action_effect10}" >Use  
+        .sheet-grid__cell.sheet-grid__cell--1-12 <button type="roll" class="sheet-roll" name="roll_NPCAction10" value="/w GM @{character_name} uses @{npc_action_name10} : @{npc_action_type10} \n/w GM Description : @{npc_action_description10}\n/w GM Multiattack :  @{npc_action_multiattack10}\n/w GM Effect :  @{npc_action_effect10}" >Use  
 
      
 
     .sheet-grid 
-        .sheet-grid__cell.sheet-grid__cell--5-12 sheet-offset-1-12 sheet-center label sheet-vert-bottom Description 
-        .sheet-grid__cell.sheet-grid__cell--5-12 sheet-center label sheet-vert-bottom Effect 
+        .sheet-grid__cell.sheet-grid__cell--5-12 sheet-offset-1-12 label sheet-vert-bottom Description 
+        .sheet-grid__cell.sheet-grid__cell--5-12 label sheet-vert-bottom Effect 
      
     .sheet-grid 
         .sheet-grid__cell.sheet-grid__cell--5-12 sheet-offset-1-12 <textarea class="sheet-medium-textarea" name="attr_npc_action_description10   
