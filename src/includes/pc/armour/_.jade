@@ -1,3 +1,14 @@
+- col = {}
+- col.worn = 'sm'
+- col.unarmored = 'sm'
+- col.name = '1'
+- col.base = 'sm'
+- col.type = 'md'
+- col.magic = 'sm'
+- col.total = 'sm'
+- col.stealth = 'md'
+- col.speed = 'mdPlus'
+
 .sheet-grid.sheet-grid--col.sheet-grid--pad
     .sheet-grid__cell
         h1.hdg Armour Class 
@@ -37,70 +48,70 @@
             .sheet-grid__cell 
 
                 .sheet-grid.sheet-grid--sub 
-                    .sheet-grid__cell.sheet-grid__cell--2 Worn? 
-                    .sheet-grid__cell.sheet-grid__cell--2 Unarmoured? 
-                    .sheet-grid__cell.sheet-grid__cell--4 Name 
-                    .sheet-grid__cell.sheet-grid__cell--2 Base AC 
-                    .sheet-grid__cell.sheet-grid__cell--4 Armour Type 
-                    .sheet-grid__cell.sheet-grid__cell--2 Magic Bonus 
-                    .sheet-grid__cell.sheet-grid__cell--2 Total AC 
-                    .sheet-grid__cell.sheet-grid__cell--3 Stealth Pen? 
-                    .sheet-grid__cell.sheet-grid__cell--3 -10ft to speed? 
+                    .sheet-grid__cell(class="sheet-grid__cell--" + col.worn) worn 
+                    .sheet-grid__cell(class="sheet-grid__cell--" + col.unarmored) unarmoured
+                    .sheet-grid__cell(class="sheet-grid__cell--" + col.name) name 
+                    .sheet-grid__cell(class="sheet-grid__cell--" + col.base) base AC 
+                    .sheet-grid__cell(class="sheet-grid__cell--" + col.type) type 
+                    .sheet-grid__cell(class="sheet-grid__cell--" + col.magic) magic bonus 
+                    .sheet-grid__cell(class="sheet-grid__cell--" + col.total) total AC 
+                    .sheet-grid__cell(class="sheet-grid__cell--" + col.stealth) stealth disadvantage? 
+                    .sheet-grid__cell(class="sheet-grid__cell--" + col.speed) -10ft to speed? 
                 
                 - var numRows = 10
                 - var i = 1
                 
                 while i <= numRows
                     .sheet-grid.sheet-grid--split 
-                        .sheet-grid__cell.sheet-grid__cell--2 
+                        .sheet-grid__cell(class="sheet-grid__cell--" + col.worn) 
                             +tick(
-                                name="attr_armouractive1" 
-                                value="@{armourtotalAC1}" 
+                                name="attr_armouractive#{i}" 
+                                value="@{armourtotalAC#{i}}" 
                                 checked
                             )
-                        .sheet-grid__cell.sheet-grid__cell--2 
+                        .sheet-grid__cell(class="sheet-grid__cell--" + col.unarmored) 
                             +tick(
-                                name="attr_armouractiveunarmoured1" 
-                                value="@{armourtotalAC1}"
+                                name="attr_armouractiveunarmoured#{i}" 
+                                value="@{armourtotalAC#{i}}"
                             )
-                        .sheet-grid__cell.sheet-grid__cell--4 
+                        .sheet-grid__cell(class="sheet-grid__cell--" + col.name) 
                             input.sheet-field(
                                 type="text" 
-                                name="attr_amourname1"
+                                name="attr_amourname#{i}"
                             )
-                        .sheet-grid__cell.sheet-grid__cell--2 
+                        .sheet-grid__cell(class="sheet-grid__cell--" + col.base) 
                             input.sheet-field(
                                 type="number"
-                                name="attr_armourACbase1" 
+                                name="attr_armourACbase#{i}" 
                                 value="0" 
                                 step="1"
                             )
-                        .sheet-grid__cell.sheet-grid__cell--4 
-                            select(name="attr_armourtype1")
+                        .sheet-grid__cell(class="sheet-grid__cell--" + col.type)
+                            select(name="attr_armourtype#{i}")
                                 option(value="0.001") n/a 
-                                option(value="@{dexterity_mod} + 0.002") Light 
-                                option(value="(ceil((@{dexterity_mod}-1)/1e10)*2 - floor((@{dexterity_mod}-2)/1e10)*@{dexterity_mod}) + 0.003") Medium 
-                                option(value="0.004") Heavy 
-                        .sheet-grid__cell.sheet-grid__cell--2 
+                                option(value="@{dexterity_mod} + 0.002") light 
+                                option(value="(ceil((@{dexterity_mod}-1)/1e10)*2 - floor((@{dexterity_mod}-2)/1e10)*@{dexterity_mod}) + 0.003") medium 
+                                option(value="0.004") heavy 
+                        .sheet-grid__cell(class="sheet-grid__cell--" + col.magic) 
                             input.sheet-field(
                                 type="number" 
-                                name="attr_armourmagicbonus1" 
+                                name="attr_armourmagicbonus#{i}" 
                                 value="0" 
                                 step="1"
                             )  
-                        .sheet-grid__cell.sheet-grid__cell--2 
+                        .sheet-grid__cell(class="sheet-grid__cell--" + col.total)
                             input.sheet-field(
                                 type="number" 
-                                name="attr_armourtotalAC1" 
-                                value="@{armourACbase1}+floor(@{armourtype1})+@{armourmagicbonus1}" 
+                                name="attr_armourtotalAC#{i}" 
+                                value="@{armourACbase#{i}}+floor(@{armourtype#{i}})+@{armourmagicbonus#{i}}" 
                                 disabled
                             ) 
-                        .sheet-grid__cell.sheet-grid__cell--3 
-                            select(name="attr_armourstealthpen1")
-                                option(value="No Penalty") None 
-                                option(value="Disadvantage on Stealth") Disadvantage 
-                        .sheet-grid__cell.sheet-grid__cell--3 
-                            select(name="attr_armourspeedpen1") 
+                        .sheet-grid__cell(class="sheet-grid__cell--" + col.stealth)
+                            select(name="attr_armourstealthpen#{i}")
+                                option(value="No Penalty") No 
+                                option(value="Disadvantage on Stealth") Yes 
+                        .sheet-grid__cell(class="sheet-grid__cell--" + col.speed)
+                            select(name="attr_armourspeedpen#{i}") 
                                 option(value="No") No 
                                 option(value="If STR &lt; 13") If STR &lt; 13 
                                 option(value="If STR &lt; 15") If STR &lt; 15 

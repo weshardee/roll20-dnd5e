@@ -72,9 +72,17 @@ grid-border()
     flex HIGH
     max-width PAD * 6
 
-.sheet-grid__cell--lg
+.sheet-grid__cell-lg
+    flex HIGH
+    max-width PAD * 9
+
+.sheet-grid__cell--xlg
     flex HIGH
     max-width PAD * 12
+
+.sheet-grid__cell--mdPlus
+    flex HIGH
+    max-width PAD * 7
 
 for grow in (1...10)
     .sheet-grid__cell--{grow}
