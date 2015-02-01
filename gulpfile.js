@@ -49,7 +49,9 @@ gulp.task('css', function() {
     .pipe(plugins.stylus({
         paths: [src + 'stylus/modules', src + 'stylus/base']
     }))
-    .pipe(plugins.autoprefixer())
+    .pipe(plugins.autoprefixer({
+        browsers: ['last 1 versions']
+    }))
     .pipe(gulp.dest(dest))
     .pipe(reload({stream:true}));
 });
