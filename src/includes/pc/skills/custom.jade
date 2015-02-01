@@ -8,32 +8,32 @@ while col <= NUM_SKILL_COLUMNS
         +custom-skills-hdg()
         while i <= col * customSkillsPerColumn
             .sheet-grid.sheet-grid--split
-                .sheet-grid__cell
+                .sheet-grid__cell.sheet-grid__cell--sm
                     +roll("roll_Custom_Skill_#{i}", '/em makes an ability check\n\n@{custom_skill_#{i}_name} check :\n[[1d20 + @{custom_skill_#{i}} [Proficiency + Stat Mod + Expertise + Misc] + (@{global_check_bonus}) [Ability Check Bonus] ]]')
-                .sheet-grid__cell.sheet-grid__cell--3-10
+                .sheet-grid__cell.sheet-grid__cell--3
                     input.sheet-field(
                         type="text" 
                         name="attr_custom_skill_#{i}_name" 
                         value="Custom #{i}"
                     )
-                .sheet-grid__cell.sheet-grid__cell--2-10
+                .sheet-grid__cell.sheet-grid__cell--2
                     select(
                         name="attr_custom_skill_#{i}_mod"
                     ) 
                         option(value="0") None
                         each ability in abilities
                             option(value="@{#{ability.name}_mod}") #{ability.abbr}
-                .sheet-grid__cell.sheet-grid__cell--2-10
+                .sheet-grid__cell.sheet-grid__cell--2
                     select(name="attr_custom_skill_1_prof_exp")
                         +skill-proficiency-options()
-                .sheet-grid__cell
+                .sheet-grid__cell.sheet-grid__cell--sm
                     input.sheet-field(
                         type="number" 
                         name="attr_custom_skill_#{i}_bonus" 
                         value="0" 
                         step="1"
                     ) 
-                .sheet-grid__cell
+                .sheet-grid__cell.sheet-grid__cell--sm
                     input.sheet-field(
                         type="number"
                         name="attr_custom_skill_#{i}" 

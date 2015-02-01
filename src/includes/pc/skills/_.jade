@@ -1,31 +1,34 @@
+- col = {}
+- col
+
 mixin skills-hdg()
     .hdg.hdg--2
         .sheet-grid.sheet-grid--sub
-            .sheet-grid__cell &nbsp;
-            .sheet-grid__cell.sheet-grid__cell--3-10 Skill
-            .sheet-grid__cell.sheet-grid__cell--3-10 Proficient
-            .sheet-grid__cell Bonus
-            .sheet-grid__cell Total
-            .sheet-grid__cell Pass
+            .sheet-grid__cell.sheet-grid__cell--sm
+            .sheet-grid__cell.sheet-grid__cell--1 Skill
+            .sheet-grid__cell.sheet-grid__cell--1 Proficient
+            .sheet-grid__cell.sheet-grid__cell--sm Bonus
+            .sheet-grid__cell.sheet-grid__cell--sm Total
+            .sheet-grid__cell.sheet-grid__cell--sm Pass
             
 mixin custom-skills-hdg()
     .hdg.hdg--2
         .sheet-grid.sheet-grid--sub
-            .sheet-grid__cell &nbsp;
-            .sheet-grid__cell.sheet-grid__cell--3-10 Skill
-            .sheet-grid__cell.sheet-grid__cell--2-10 Stat
-            .sheet-grid__cell.sheet-grid__cell--2-10 Proficient
-            .sheet-grid__cell Bonus
-            .sheet-grid__cell Total
+            .sheet-grid__cell.sheet-grid__cell--sm
+            .sheet-grid__cell.sheet-grid__cell--3 Skill
+            .sheet-grid__cell.sheet-grid__cell--2 Stat
+            .sheet-grid__cell.sheet-grid__cell--2 Proficient
+            .sheet-grid__cell.sheet-grid__cell--sm Bonus
+            .sheet-grid__cell.sheet-grid__cell--sm Total
 
 mixin other-skills-hdg()
     .hdg.hdg--2
         .sheet-grid.sheet-grid--sub
-            .sheet-grid__cell &nbsp;
-            .sheet-grid__cell.sheet-grid__cell--4-10 Other
-            .sheet-grid__cell.sheet-grid__cell--3-10 Proficient
-            .sheet-grid__cell Bonus
-            .sheet-grid__cell Total
+            .sheet-grid__cell.sheet-grid__cell--sm
+            .sheet-grid__cell.sheet-grid__cell--4 Other
+            .sheet-grid__cell.sheet-grid__cell--3 Proficient
+            .sheet-grid__cell.sheet-grid__cell--sm Bonus
+            .sheet-grid__cell.sheet-grid__cell--sm Total
 
 mixin skill-proficiency-options()
     option(value="0") No
