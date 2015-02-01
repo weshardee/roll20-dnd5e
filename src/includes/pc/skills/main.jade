@@ -15,7 +15,7 @@ each skills in skillsGroups
                     select( name="attr_#{skill.id}_prof_exp" )
                         +skill-proficiency-options()
                 .sheet-grid__cell.sheet-grid__cell--sm
-                    input(
+                    input.sheet-field(
                         type="number"
                         name="attr_#{skill.id}_bonus" 
                         value="0" 

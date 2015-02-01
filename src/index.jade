@@ -13,7 +13,10 @@ html
             href="DnD_5e.css" 
             rel="stylesheet"
         )
-        style body { margin: 0; padding: 0; } html, body {height: 100%}
+        style .ui-dialog { width: 100% } body { margin: 0; padding: 0; } html, body {height: 100%}
 
-    body    
-        include includes/sheet
+    body
+        .ui-dialog
+            .dialog.characterdialog.ui-dialog-content.ui-widget-content
+                .charsheet   
+                    include includes/sheet

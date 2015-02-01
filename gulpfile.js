@@ -33,6 +33,7 @@ gulp.task('html', function() {
     .pipe(plugins.jade({
         data: require('./data')
     }))
+    .pipe(plugins.minifyHtml())
     .pipe(gulp.dest(dest))
     .pipe(reload({stream:true}));
 });

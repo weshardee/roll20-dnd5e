@@ -84,7 +84,6 @@ input(type="hidden" name="attr_spellfriendlylevel" value=friendlyLevel )
     .sheet-tabs__tab.sheet-tabs__tab--inner.sheet-tabs__tab--label show:
     for tab, tabI in ['advanced', 'attack', 'save', 'heal', 'damage', 'effects']
         input.sheet-tabs__tab.sheet-tabs__tab--inner(
-            checked
             class="sheet-tabs__tab--" + tabI
             type="checkbox"
             name="attr_spelltype" + tab

@@ -1,0 +1,30 @@
+.repcontrol
+    display flex
+
+.itemcontrol
+    z-index (HIGH * 2)
+
+.repitem:hover .itemcontrol
+    background-color alpha(BLUE, 0.5) !important
+
+.itemcontrol > *,
+.repcontrol > *
+    background GOLD
+    height HEIGHT
+    flex 1
+    border-right 1px solid BORDER_COLOR
+    border-bottom 1px solid BORDER_COLOR
+    color white
+    border-radius 0 !important
+
+    &:hover
+        opacity 0.7
+
+    &:first-child
+        border-left 1px solid BORDER_COLOR
+
+.itemcontrol > *
+    min-width HEIGHT
+
+.repcontainer[data-groupname^=repeating_spellbook] > * + *
+    margin-top PAD

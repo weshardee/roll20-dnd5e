@@ -14,12 +14,12 @@ FIELD_LABEL_OVERLAP = FIELD_LABEL_HEIGHT * 0.7
     flex 1
     position relative
     background-color white
+    width 100% !important
 
 .sheet-field[disabled],
 .sheet-field--disabled
     background-color PALE
     cursor not-allowed
-    padding 0 // reset number padding
 
 .sheet-field--blue,
 .sheet-field--blue[disabled]
@@ -43,12 +43,18 @@ FIELD_LABEL_OVERLAP = FIELD_LABEL_HEIGHT * 0.7
 .sheet-field > select,
 .sheet-field > input
     flex 1
-    height FIELD_HEIGHT
+    height FIELD_HEIGHT !important
     padding-bottom FIELD_LABEL_OVERLAP
     z-index FIELD_FIELD_LAYER
     border-radius inherit
     background-color transparent !important
     display flex !important
+    width 100% !important
+
+.sheet-field:disabled,
+.sheet-field > :disabled
+    padding-left 0 !important // reset number padding
+
 
 .sheet-field > select
     background-position-y 14%

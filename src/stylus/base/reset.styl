@@ -1,5 +1,6 @@
 .sheet-wrapper
     height 100%
+    margin -18px -20px // offset the dialog padding
 
 .sheet-wrapper *
     -webkit-font-smoothing antialiased
@@ -20,3 +21,16 @@
     font-style initial // for <i>
     width auto // for <input>
     text-shadow none // for .sheet-label
+    outline none
+
+.sheet-wrapper label
+    padding 0 !important
+// roll20 dialog overrides
+
+.charsheet
+    padding 0 !important
+
+.characterdialog
+    padding-left 0 !important
+    padding-right 0 !important
+    display block !important

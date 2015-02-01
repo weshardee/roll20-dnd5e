@@ -3,16 +3,16 @@
 
 - var i = 0
 - var row = 1
-- var numClassesPerRow = 4
+- var numClassesPerRow = 3
 
 while i < classes.length
     .sheet-grid.sheet-grid--split
         while i < row * numClassesPerRow
             - var pcClass = classes[i]
-            .sheet-grid__cell 
+            .sheet-grid__cell
                 .sheet-label #{pcClass}
-            .sheet-grid__cell 
-                input(
+            .sheet-grid__cell.sheet-grid__cell--sm 
+                input.sheet-field(
                     type="number" 
                     name="attr_#{pcClass}_level" 
                     value="0" 

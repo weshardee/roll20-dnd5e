@@ -1,7 +1,7 @@
 p.sheet-note The dashboard fields are auto calculated from the individual class levels/options (set in the Class section of the sheet) and your core stats. 
 
 .sheet-grid.sheet-grid--sub 
-    .sheet-grid__cell.sheet-grid__cell--2 &nbsp; 
+    .sheet-grid__cell.sheet-grid__cell--md &nbsp; 
     .sheet-grid__cell Arcane Trickster 
     .sheet-grid__cell Bard 
     .sheet-grid__cell Cleric 
@@ -14,7 +14,7 @@ p.sheet-note The dashboard fields are auto calculated from the individual class 
     .sheet-grid__cell Wizard 
 
 .sheet-grid.sheet-grid--split
-    .sheet-grid__cell.sheet-grid__cell--2 
+    .sheet-grid__cell.sheet-grid__cell--md 
         .sheet-label Cantrips Known 
     .sheet-grid__cell 
         input.sheet-field(type="number" name="attr_cantrips_known_arcane_trickster" value="( (ceil((@{rogue_level}-2)/1e10)*3) + (ceil((@{rogue_level}-9)/1e10)) )" disabled)
@@ -38,7 +38,7 @@ p.sheet-note The dashboard fields are auto calculated from the individual class 
         input.sheet-field(type="number" name="attr_cantrips_known_wizard" value="( (ceil(@{wizard_level}/1e10)*3) + (ceil((@{wizard_level}-3)/1e10)) + (ceil((@{wizard_level}-9)/1e10)) )" disabled)
 
 .sheet-grid.sheet-grid--split 
-    .sheet-grid__cell.sheet-grid__cell--2 
+    .sheet-grid__cell.sheet-grid__cell--md 
         .sheet-label Spells Known 
     .sheet-grid__cell 
         input.sheet-field(type="number" name="attr_spells_known_arcane_trickster" value="( (ceil(@{rogue_level}/1e10)*3) +  (ceil((@{rogue_level}-3)/1e10)) + (ceil((@{rogue_level}-6)/1e10)) + (ceil((@{rogue_level}-7)/1e10)) + (ceil((@{rogue_level}-9)/1e10)) + (ceil((@{rogue_level}-10)/1e10)) + (ceil((@{rogue_level}-12)/1e10)) + (ceil((@{rogue_level}-13)/1e10)) + (ceil((@{rogue_level}-15)/1e10)) + (ceil((@{rogue_level}-18)/1e10)) + (ceil((@{rogue_level}-19)/1e10)) )" disabled)
@@ -62,7 +62,7 @@ p.sheet-note The dashboard fields are auto calculated from the individual class 
         input.sheet-field(type="number" name="attr_spells_known_wizard" value="0" disabled)
  
 .sheet-grid.sheet-grid--split 
-    .sheet-grid__cell.sheet-grid__cell--2 
+    .sheet-grid__cell.sheet-grid__cell--md 
         .sheet-label Can Prepare 
     .sheet-grid__cell 
         input.sheet-field(type="number" name="attr_spells_prepared_arcane_trickster" value="0" disabled)
@@ -86,7 +86,7 @@ p.sheet-note The dashboard fields are auto calculated from the individual class 
         input.sheet-field(type="number" name="attr_spells_prepared_wizard" value="( ((((@{wizard_level} + @{intelligence_mod}) + 1) + abs((@{wizard_level} + @{intelligence_mod}) - 1)) / 2) * (ceil(@{wizard_level}/1e10)) )" disabled)
  
 .sheet-grid.sheet-grid--split 
-    .sheet-grid__cell.sheet-grid__cell--2 
+    .sheet-grid__cell.sheet-grid__cell--md 
         .sheet-label Save DC 
     .sheet-grid__cell 
         input.sheet-field(type="number" name="attr_arcane_trickster_spell_dc" value="(@{base_spell_dc}+@{arcane_trickster_spell_bonus})" disabled)

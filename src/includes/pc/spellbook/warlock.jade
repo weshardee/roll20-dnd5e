@@ -2,7 +2,7 @@
     .sheet-grid__cell Warlock Specific
 
 .sheet-grid.sheet-grid--split
-    .sheet-grid__cell.sheet-grid__cell--2
+    .sheet-grid__cell.sheet-grid__cell--md
         .sheet-label Spell Slots
     .sheet-grid__cell
         +field('used')
@@ -19,7 +19,7 @@
         p.sheet-note Recharge on a long or short rest and are all of the same level
 
 .sheet-grid.sheet-grid--split
-    .sheet-grid__cell 
+    .sheet-grid__cell.sheet-grid__cell--lg
         .sheet-label Invocations Known
     .sheet-grid__cell 
         input.sheet-field(type="number" name="attr_warlock_invocations_known" value="( (ceil((@{warlock_level}-1)/1e10)*2) + (ceil((@{warlock_level}-4)/1e10)) + (ceil((@{warlock_level}-6)/1e10)) + (ceil((@{warlock_level}-8)/1e10)) + (ceil((@{warlock_level}-11)/1e10)) + (ceil((@{warlock_level}-14)/1e10)) + (ceil((@{warlock_level}-17)/1e10)) )" disabled)

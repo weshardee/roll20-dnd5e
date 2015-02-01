@@ -43,8 +43,7 @@ each ability in abilities
             ) 
         
         .sheet-grid__cell.sheet-grid__cell--sm
-            button.roll(
-                type='roll'
+            +roll(
                 name='roll_Strength_Save' 
                 value='/em attempts a saving throw\n\n#{ability.name} save:[[1d20 + @{#{ability.name}_save_mod} [Stat Mod and Proficiency] + (@{global_saving_bonus}) [Active Save Bonus] ]]'
             )  

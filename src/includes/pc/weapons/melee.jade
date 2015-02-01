@@ -39,7 +39,7 @@ while i <= numWeaponRows
                 checked
             )
         .sheet-grid__cell(class="sheet-grid__cell--#{colWidth.name}") 
-            input(
+            input.sheet-field(
                 type="text" 
                 name="attr_meleeweaponname#{i}"
             )
@@ -59,7 +59,7 @@ while i <= numWeaponRows
                 option(value="@{strength_mod}") N
                 option(value="@{finesse_mod}") Y
         .sheet-grid__cell(class="sheet-grid__cell--#{colWidth.magicBonus}")
-            input(
+            input.sheet-field(
                 title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"
                 type="number" 
                 name="attr_meleemagic#{i}" 
@@ -67,7 +67,7 @@ while i <= numWeaponRows
                 step="1"
             )
         .sheet-grid__cell(class="sheet-grid__cell--#{colWidth.toHit}") 
-            input(
+            input.sheet-field(
                 type="number" 
                 name="attr_meleetohit#{i}" 
                 value="@{meleeattackstat#{i}} + @{pbmelee#{i}} + @{meleemagic#{i}}" 
@@ -80,20 +80,20 @@ while i <= numWeaponRows
                 value="/em uses @{meleeweaponname#{i}} to attack\n\n[[1d20 + @{meleetohit#{1}} [To Hit] + (@{global_melee_attack_bonus}) [Active Melee Attack Bonus] ]] vs AC"
             ) Attack
         .sheet-grid__cell(class="sheet-grid__cell--#{colWidth.dmgDice}")
-            input.sheet-center(
+            input.sheet-field(
                 title="Only enter the base damage roll here without any bonuses from stats or other sources"
                 type="text" 
                 name="attr_meleedmg#{i}"
             )
         .sheet-grid__cell(class="sheet-grid__cell--#{colWidth.dmgBonus}") 
-            input(
+            input.sheet-field(
                 type="number" 
                 name="attr_meleedmgbonus#{i}" 
                 value="(@{meleeattackstat#{i}} * floor(@{meleeattackweilded#{i}})) + @{meleemagic#{i}}" 
                 disabled
             )
         .sheet-grid__cell(class="sheet-grid__cell--#{colWidth.dmgType}") 
-            input(
+            input.sheet-field(
                 type="text" 
                 name="attr_meleedmgtype#{i}"
             )
