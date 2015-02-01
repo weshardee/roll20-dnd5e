@@ -86,14 +86,4 @@ grid-border()
 
 for grow in (1...10)
     .sheet-grid__cell--{grow}
-        flex (grow)
-
-
-for max in (2...25) {
-    for span in (1...max) {
-        .sheet-grid__cell--{span}-{max} {
-            flex none
-            width (span / max) * 100%
-        }
-    }
-}
+        flex-grow (grow)
