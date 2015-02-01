@@ -13,7 +13,9 @@ mixin roll(name, value)
     )&attributes(attributes)
 
 mixin field(name, mod)
-    label.sheet-field()&attributes(attributes)
+    label.sheet-field(
+        class= mod ? 'sheet-field--' + mod : ''
+    )&attributes(attributes)
         span.sheet-field__label= name
         block
 
@@ -26,3 +28,20 @@ mixin stat-bonus(name)
         option(value="@{intelligence_mod}") INT mod 
         option(value="@{wisdom_mod}") WIS mod 
         option(value="@{charisma_mod}") CHA mod 
+
+mixin tab(title, name, i, multi)
+    input.sheet-tabs__tab(
+        class="sheet-tabs__tab--" + i
+        type=multi ? "checkbox" : "radio"
+        name=name
+        value="1" 
+        title=title
+        checked= title === 'all'
+    )
+
+mixin tabs(name, tabs)
+    +tab('all', name, 99)
+    
+    each tab, i in tabs
+        +tab(tab, name, i)
+        

@@ -1,8 +1,11 @@
-.sheet-grid.sheet-grid--pad
+.sheet-grid.sheet-grid--col.sheet-grid--pad
     .sheet-grid__cell
-        //- include coin
+        .sheet-grid.sheet-grid--pad
+            .sheet-grid__cell
+                include coin
+            .sheet-grid__cell
+                include weight
+    .sheet-grid__cell        
+        include loot
     .sheet-grid__cell
-        //- include weight
-        
-//- include loot
-//- include notes
+        include notes

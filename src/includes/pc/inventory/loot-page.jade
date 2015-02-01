@@ -1,0 +1,12 @@
+.sheet-tabs__section(class="sheet-tabs__section--" + pageIndex)
+    .sheet-grid.sheet-grid--sub 
+        .sheet-grid__cell.sheet-grid__cell--sm Row # 
+        .sheet-grid__cell.sheet-grid__cell--sm Carried? 
+        .sheet-grid__cell.sheet-grid__cell--sm Qty 
+        .sheet-grid__cell.sheet-grid__cell--lg Name 
+        .sheet-grid__cell.sheet-grid__cell--sm Weight 
+        .sheet-grid__cell Descripton 
+
+    while i <= (pageIndex + 1) * lootRowsPerPage
+        include loot-row
+        - i++

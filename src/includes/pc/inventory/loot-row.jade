@@ -1,0 +1,14 @@
+.sheet-grid.sheet-grid--split
+    .sheet-grid__cell.sheet-grid__cell--sm
+        .sheet-label= i
+    .sheet-grid__cell.sheet-grid__cell--sm 
+        input.sheet-tick(type="checkbox" name="attr_inventorycarried#{i}" value="@{inventoryweight#{i}}" checked)
+    .sheet-grid__cell.sheet-grid__cell--sm 
+        input(type="number" name="attr_inventoryqty#{i}" value="1" min="0" step="1")
+    .sheet-grid__cell.sheet-grid__cell--lg 
+        input(type="text" name="attr_inventoryname#{i}")
+    .sheet-grid__cell.sheet-grid__cell--sm 
+        input(type="number" name="attr_inventoryweight#{i}" value="0" step="0.01")
+    .sheet-grid__cell 
+        input(type="text" name="attr_inventorydescription#{i}")
+ 
