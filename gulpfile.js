@@ -52,6 +52,7 @@ gulp.task('css', function() {
     .pipe(plugins.autoprefixer({
         browsers: ['last 1 versions']
     }))
+    .pipe(plugins.minifyCss())
     .pipe(gulp.dest(dest))
     .pipe(reload({stream:true}));
 });
