@@ -22,5 +22,5 @@ h1.hdg Initiative
                 value='@{dexterity_mod} + @{initiative}' 
                 disabled
             ) 
-    .sheet-grid__cell 
+    .sheet-grid__cell.sheet-grid__cell--sm 
         +roll('roll_Initiative', '@{selected|token_name} rolls a [[1d20 + @{selected|initiative_overall} [Initiative Mod] &{tracker}]] for initiative! Initiative')

@@ -5,14 +5,14 @@ h1.hdg Core Stats
     .sheet-grid__cell Mod
     .sheet-grid__cell Save Prof?
     .sheet-grid__cell Save Bonus
-    .sheet-grid__cell Save
+    .sheet-grid__cell.sheet-grid__cell--sm Save
 
 each ability in abilities
     .sheet-grid.sheet-grid--split 
-        .sheet-grid__cell.sheet-grid__cell--1-6 
+        .sheet-grid__cell 
             .sheet-label.sheet-label--core-stat= ability.abbr
     
-        .sheet-grid__cell.sheet-grid__cell--1-6 
+        .sheet-grid__cell 
             input.sheet-field(
                 type='number' 
                 name='attr_#{ability.name}' 
@@ -20,7 +20,7 @@ each ability in abilities
                 step='1'
             )
         
-        .sheet-grid__cell.sheet-grid__cell--1-6 
+        .sheet-grid__cell 
             input.sheet-field.sheet-field--disabled(
                 type='number' 
                 name='attr_#{ability.name}_mod' 
@@ -28,13 +28,13 @@ each ability in abilities
                 disabled
             )
         
-        .sheet-grid__cell.sheet-grid__cell--1-6
+        .sheet-grid__cell
             +tick(
                 'attr_' + ability.name + '_save_prof',
                 '@{PB}'
             )
         
-        .sheet-grid__cell.sheet-grid__cell--1-6 
+        .sheet-grid__cell 
             input.sheet-field(
                 type='number' 
                 name='attr_#{ability.name}_save_mod' 
@@ -42,7 +42,7 @@ each ability in abilities
                 disabled
             ) 
         
-        .sheet-grid__cell.sheet-grid__cell--1-6 
+        .sheet-grid__cell.sheet-grid__cell--sm
             button.roll(
                 type='roll'
                 name='roll_Strength_Save' 

@@ -5,7 +5,7 @@ h1.hdg Hit Dice
     .sheet-grid__cell Hit Die                             
     .sheet-grid__cell Current                             
     .sheet-grid__cell Max                             
-    .sheet-grid__cell &nbsp;
+    .sheet-grid__cell.sheet-grid__cell--sm
 
 .sheet-grid.sheet-grid--split 
     .sheet-grid__cell.sheet-grid__cell--3-7 
@@ -26,8 +26,11 @@ h1.hdg Hit Dice
             value='@{sorcerer_level} + @{wizard_level}' 
             disabled
         ) 
-    .sheet-grid__cell
-        +roll('roll_Use_HD_d6', '/em takes a rest\n\n[[1d6 + @{constitution_mod} [Constitution Mod] ]] HP recovered from resting (1d6 hit dice used) Use')
+    .sheet-grid__cell.sheet-grid__cell--sm
+        +roll(
+            name='roll_Use_HD_d6'
+            value='/em takes a rest\n\n[[1d6 + @{constitution_mod} [Constitution Mod] ]] HP recovered from resting (1d6 hit dice used) Use'
+        )
         
 .sheet-grid.sheet-grid--split 
     .sheet-grid__cell.sheet-grid__cell--3-7 
@@ -48,9 +51,8 @@ h1.hdg Hit Dice
             value='@{bard_level} + @{cleric_level} + @{druid_level} + @{rogue_level} + @{monk_level} + @{warlock_level}' 
             disabled
         ) 
-    .sheet-grid__cell 
-        button.roll(
-            type='roll'
+    .sheet-grid__cell.sheet-grid__cell--sm 
+        +roll(
             name='roll_Use_HD_d8' 
             value='/em takes a rest\n\n[[1d8 + @{constitution_mod} [Constitution Mod] ]] HP recovered from resting (1d8 hit dice used) Use'
         )
@@ -73,9 +75,8 @@ h1.hdg Hit Dice
             value='@{fighter_level} + @{paladin_level} + @{ranger_level}'
             disabled
         ) 
-    .sheet-grid__cell 
-        button.roll(
-            type='roll'
+    .sheet-grid__cell.sheet-grid__cell--sm 
+        +roll(
             name='roll_Use_HD_d10' 
             value='/em takes a rest\n\n[[1d10 + @{constitution_mod} [Constitution Mod] ]] HP recovered from resting (1d10 hit dice used) Use'
         )
@@ -99,9 +100,8 @@ h1.hdg Hit Dice
             value='@{barbarian_level}' 
             disabled
         ) 
-    .sheet-grid__cell 
-        button.roll(
-            type='roll'
+    .sheet-grid__cell.sheet-grid__cell--sm 
+        +roll(
             name='roll_Use_HD_d12' 
             value='/em takes a rest\n\n[[1d12 + @{constitution_mod} [Constitution Mod] ]] HP recovered from resting (1d12 hit dice used) Use'
         )

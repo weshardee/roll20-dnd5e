@@ -32,18 +32,18 @@
         p.sheet-note Use this section to quickly create useful class macros for often used features or abilities.  For example, channel divinity options, bardic performance options, Ki point using abilities, etc...  You can also use this section for any custom macro you want that the sheet doesnt currently include. 
 
         .sheet-grid.sheet-grid--sub
-            .sheet-grid__cell.sheet-grid__cell--4-12 Name
-            .sheet-grid__cell.sheet-grid__cell--7-12 Description
-            .sheet-grid__cell.sheet-grid__cell--1-12 Macro
+            .sheet-grid__cell.sheet-grid__cell--4 Name
+            .sheet-grid__cell.sheet-grid__cell--7 Description
+            .sheet-grid__cell.sheet-grid__cell--sm Macro
 
         fieldset.repeating_classactions
 
             .sheet-grid.sheet-grid--split
-                .sheet-grid__cell.sheet-grid__cell--4-12
+                .sheet-grid__cell.sheet-grid__cell--4
                     input(type="text" name="attr_classactionname")
-                .sheet-grid__cell.sheet-grid__cell--7-12
+                .sheet-grid__cell.sheet-grid__cell--7
                     textarea(name="attr_classactiondescription")
-                .sheet-grid__cell.sheet-grid__cell--1-12 
+                .sheet-grid__cell.sheet-grid__cell--sm 
                     +roll(
                         name='roll_ClassAction' 
                         value="/em uses @{classactionname} \n\n@{classactiondescription}"
