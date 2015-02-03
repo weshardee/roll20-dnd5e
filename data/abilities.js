@@ -8,7 +8,7 @@ module.exports = [
         "abbr": "dex"
     },
     {
-        "name": "contsitution",
+        "name": "constitution",
         "abbr": "con"
     },
     {
