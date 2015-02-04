@@ -20,7 +20,7 @@ mixin skills-hdg()
                     .sheet-grid__cell.sheet-grid__cell--sm
                         +roll(
                             name='roll_#{skill.id}_check'
-                            value='/em makes an ability check\n\n#{skill.attr} (#{skill.name}) check :\n [[1d20 + @{ #{skill.name} } [Proficiency + #{skill.attr} Mod + Expertise + Misc] + (@{global_check_bonus}) [Ability Check Bonus] ]]'
+                            value='/em uses\n\n#{skill.name} (#{skill.attr}):\n [[1d20 + @{#{skill.id}} [Proficiency + #{skill.attr} Mod + Expertise + Misc] + (@{global_check_bonus}) [Ability Check Bonus] ]]'
                         )
                     .sheet-grid__cell.sheet-grid__cell--3
                         +field(skill.attr) 
@@ -40,13 +40,13 @@ mixin skills-hdg()
                         input.sheet-field(
                             type="number" 
                             name="attr_#{skill.id}" 
-                            value="@{ #{skill.id}_prof_exp} + @{ #{skill.attr}_mod} + @{ #{skill.id}_bonus}"
+                            value="@{#{skill.id}_prof_exp} + @{#{skill.attr}_mod} + @{#{skill.id}_bonus}"
                             disabled 
                         )
                     .sheet-grid__cell.sheet-grid__cell--sm
                         input.sheet-field.sheet-field--blue(
                             type="number" 
                             name="attr_passive_#{skill.id}" 
-                            value="10 + @{ #{skill.id} }" 
+                            value="10 + @{#{skill.id}}" 
                             disabled
                         )
