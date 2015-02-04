@@ -31,6 +31,10 @@ FIELD_LABEL_OVERLAP = FIELD_LABEL_HEIGHT * 1
 
 .sheet-field--label-select
 .sheet-field--select
+    > select
+        border 1px solid transparent // add space for focus border
+        padding-right (HEIGHT*0.75)
+
     &::before,
     &::after
         position absolute
