@@ -3,9 +3,9 @@ FIELD_FIELD_LAYER = HIGH
 
 FIELD_HEIGHT = 2.7rem
 
-FIELD_LABEL_HEIGHT = PAD
 FIELD_LABEL_FONT_SIZE = FONT_SIZE_SM
-FIELD_LABEL_OVERLAP = FIELD_LABEL_HEIGHT * 0.7
+FIELD_LABEL_HEIGHT = FIELD_LABEL_FONT_SIZE * 1.5
+FIELD_LABEL_OVERLAP = FIELD_LABEL_HEIGHT * 1
 
 .sheet-field
     border-radius inherit
@@ -30,18 +30,21 @@ FIELD_LABEL_OVERLAP = FIELD_LABEL_HEIGHT * 0.7
     background-color LIGHT
 
 .sheet-field__label
+    align-items center
+    background inherit
     bottom 0
     color FADED_GRAY
+    display flex
     font-size FIELD_LABEL_FONT_SIZE
+    height FIELD_LABEL_HEIGHT
     left 0
+    line-height 1 // always 1 line
+    margin 1px
     position absolute
     right 0
     z-index FIELD_LABEL_LAYER
-    height FIELD_LABEL_HEIGHT
 
-.sheet-field__field,
-.sheet-field > select,
-.sheet-field > input
+.sheet-field__label + *
     flex 1
     height FIELD_HEIGHT !important
     padding-bottom FIELD_LABEL_OVERLAP
@@ -50,6 +53,10 @@ FIELD_LABEL_OVERLAP = FIELD_LABEL_HEIGHT * 0.7
     background-color transparent !important
     display flex !important
     width 100% !important
+    border 1px solid transparent
+    align-content center
+    flex-direction column
+    padding-top 0.2rem
 
 .sheet-field:disabled,
 .sheet-field > :disabled
@@ -62,3 +69,9 @@ FIELD_LABEL_OVERLAP = FIELD_LABEL_HEIGHT * 0.7
 .sheet-field__fieldWrapper
     flex 1
     display flex
+
+.sheet-field__label + textarea:after {
+    display block
+    height FIELD_LABEL_HEIGHT
+    content " "
+}

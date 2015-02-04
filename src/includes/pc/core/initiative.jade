@@ -23,4 +23,8 @@ h1.sheet-hdg Initiative
                 disabled
             ) 
     .sheet-grid__cell.sheet-grid__cell--sm 
-        +roll('roll_Initiative', '@{selected|token_name} rolls a [[1d20 + @{selected|initiative_overall} [Initiative Mod] &{tracker}]] for initiative! Initiative')
+        +roll(
+            title= 'Roll Initiative'
+            name= 'roll_Initiative'
+            value= '@{selected|token_name} rolls a [[1d20 + @{selected|initiative_overall} [Initiative Mod] &{tracker}]] for initiative'
+        )

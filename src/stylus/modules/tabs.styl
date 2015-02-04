@@ -8,13 +8,16 @@
     -webkit-appearance none
     align-items center
     background-color BLUE
-    border 1px solid transparent // so size doesn't jump :focus
+    border 0
     color white
     display flex
     flex 1 1 auto
     height HEIGHT !important
     width auto !important
     margin 0 !important
+
+.sheet-tabs__tab:focus
+    border 0
 
 .sheet-tabs__tab:hover
     opacity 0.85
@@ -39,6 +42,9 @@
     background-color LIGHT
     font-size FONT_SIZE_SM
     color alpha(black, 0.3)
+
+.sheet-tabs__tab--inner,
+.sheet-tabs__tab--inner:focus
     border-bottom: 1px solid BORDER_COLOR
 
 .sheet-tabs__tab--inner:checked

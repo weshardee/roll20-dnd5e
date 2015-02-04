@@ -5,7 +5,7 @@ module.exports = [
     {'i': 3, 'name': 'background'},
     {'i': 4, 'name': 'class'},
     {'i': 5, 'name': 'weapons'},
-    {'i': 6, 'name': 'spellbook'},
+    {'i': 6, 'name': 'magic'},
     {'i': 7, 'name': 'armour'},
     {'i': 8, 'name': 'inventory'}
 ];

@@ -2,8 +2,9 @@
     max-width 100%
 
 .sheet-wrapper :focus
-    border 1px solid BLUE !important
-    z-index HIGH
+    border 1px solid BLUE
+    outline none !important
+    box-shadow none
 
 .sheet-wrapper input
     flex-grow 1
@@ -16,14 +17,9 @@
     cursor not-allowed
 
 .sheet-wrapper select
-    -webkit-appearance: none
-    // background-image url("data:image/png;base64,R0lGODlhDwAUAIABAAAAAP///yH5BAEAAAEALAAAAAAPABQAAAIXjI+py+0Po5wH2HsXzmw//lHiSJZmUAAAOw==")
-    background-position right (PAD/2) center
-    background-repeat no-repeat
+    -webkit-appearance none
+    padding PAD
     flex 1
-    margin 0
-    padding-left (PAD/3*2)
-    padding-right (PAD)
 
 .sheet-wrapper input[type=number]:disabled::-webkit-inner-spin-button,
 .sheet-wrapper input[type=number]:disabled::-webkit-outer-spin-button
@@ -34,7 +30,7 @@
     min-height LINE_HEIGHT * FONT_SIZE * 5
     flex 1
     text-align left
-    padding (PAD/2)
+    padding PAD
 
 .sheet-wrapper fieldset
     width 100%

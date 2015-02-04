@@ -33,4 +33,7 @@ h1.sheet-hdg Other
                 +tick('attr_death_save_fail_3')
 
     .sheet-grid__cell.sheet-grid__cell--sm
-        +roll('roll_Death_Saving_Throw', '/em makes a DEATH saving throw\n\nDEATH save :  [[1d20 + (@{global_saving_bonus}) [Active Save Bonus] ]] Death Saving Throw')
+        +roll(
+            title= 'Death Saving Throw'
+            value= '/em makes a DEATH save: \n\n [[1d20 + (@{global_saving_bonus}) [Active Save Bonus] ]]'
+        )

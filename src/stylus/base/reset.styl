@@ -1,6 +1,5 @@
 .sheet-wrapper
     height 100%
-    margin -18px -20px // offset the dialog padding
 
 .sheet-wrapper *
     -webkit-font-smoothing antialiased
@@ -14,6 +13,7 @@
     margin 0
     padding 0
     text-align center
+    border-radius 0 !important
     border 0 // for buttons and fields
     border-spacing 0
     border-collapse collapse
@@ -24,13 +24,4 @@
     outline none
 
 .sheet-wrapper label
-    padding 0 !important
-// roll20 dialog overrides
-
-.charsheet
-    padding 0 !important
-
-.characterdialog
-    padding-left 0 !important
-    padding-right 0 !important
-    display block !important
+    padding 0 !important // roll20 dialog overrides

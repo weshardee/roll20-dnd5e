@@ -2,91 +2,91 @@ module.exports = [
     {
         "id": "acrobatics",
         "name": "Acrobatics",
-        "attr": "dex"
+        "attr": "dexterity"
     },
     {
         "id": "animalhandling",
         "name": "Animal Handling",
-        "attr": "wis"
+        "attr": "wisdom"
     },
     {
         "id": "arcana",
         "name": "Arcana",
-        "attr": "int"
+        "attr": "intelligence"
     },
     {
         "id": "athletics",
         "name": "Athletics",
-        "attr": "str"
+        "attr": "strength"
     },
     {
         "id": "deception",
         "name": "Deception",
-        "attr": "cha"
+        "attr": "charisma"
     },
     {
         "id": "history",
         "name": "History",
-        "attr": "int"
+        "attr": "intelligence"
     },
     {
         "id": "insight",
         "name": "Insight",
-        "attr": "wis"
+        "attr": "wisdom"
     },
     {
         "id": "intimidation",
         "name": "Intimidation",
-        "attr": "cha"
+        "attr": "charisma"
     },
     {
         "id": "investigation",
         "name": "Investigation",
-        "attr": "int"
+        "attr": "intelligence"
     },
     {
         "id": "medicine",
         "name": "Medicine",
-        "attr": "wis"
+        "attr": "wisdom"
     },
     {
         "id": "nature",
         "name": "Nature",
-        "attr": "int"
+        "attr": "intelligence"
     },
     {
         "id": "perception",
         "name": "Perception",
-        "attr": "wis"
+        "attr": "wisdom"
     },
     {
         "id": "performance",
         "name": "Performance",
-        "attr": "cha"
+        "attr": "charisma"
     },
     {
         "id": "persuasion",
         "name": "Persuasion",
-        "attr": "cha"
+        "attr": "charisma"
     },
     {
         "id": "religion",
         "name": "Religion",
-        "attr": "int"
+        "attr": "intelligence"
     },
     {
         "id": "slightofhand",
         "name": "Slight of Hand",
-        "attr": "dex"
+        "attr": "dexterity"
     },
     {
         "id": "stealth",
         "name": "Stealth",
-        "attr": "dex"
+        "attr": "dexterity"
     },
     {
         "id": "survival",
         "name": "Survival",
-        "attr": "wis"
+        "attr": "wisdom"
     }
 ];
