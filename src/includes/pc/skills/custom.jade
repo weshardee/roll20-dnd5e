@@ -26,15 +26,17 @@ while col <= NUM_SKILL_COLUMNS
                         value="Custom #{i}"
                     )
                 .sheet-grid__cell.sheet-grid__cell--2
-                    select(
-                        name="attr_custom_skill_#{i}_mod"
-                    ) 
-                        option(value="0") None
-                        each ability in abilities
-                            option(value="@{#{ability.name}_mod}") #{ability.abbr}
+                    .sheet-field.sheet-field--select
+                        select(
+                            name="attr_custom_skill_#{i}_mod"
+                        ) 
+                            option(value="0") None
+                            each ability in abilities
+                                option(value="@{#{ability.name}_mod}") #{ability.abbr}
                 .sheet-grid__cell.sheet-grid__cell--2
-                    select(name="attr_custom_skill_1_prof_exp")
-                        +skill-proficiency-options()
+                    .sheet-field.sheet-field--select
+                        select(name="attr_custom_skill_1_prof_exp")
+                            +skill-proficiency-options()
                 .sheet-grid__cell.sheet-grid__cell--sm
                     input.sheet-field(
                         type="number" 

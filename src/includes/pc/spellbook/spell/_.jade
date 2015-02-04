@@ -12,7 +12,7 @@ input(type="hidden" name="attr_spellfriendlylevel" value=friendlyLevel )
 
 .sheet-grid.sheet-grid--split
     .sheet-grid__cell(class="sheet-grid__cell--" + col.school)
-        +field('School')
+        +field('School', 'label-select')
             select(name="attr_spellschool")
                 option(value="" selected) n/a 
                 option(value="Abjuration") Abjuration 
@@ -28,17 +28,17 @@ input(type="hidden" name="attr_spellfriendlylevel" value=friendlyLevel )
         +field('Casting Time')
             input(type="text" name="attr_spellcasttime")  
     .sheet-grid__cell(class="sheet-grid__cell--" + col.conc) 
-        +field('Concentration?')
+        +field('Concentration?', 'label-select')
             select(name="attr_spellconcentration" title="Concentration")
                 option(value="") N 
                 option(value="(Concentration)") Y 
     .sheet-grid__cell(class="sheet-grid__cell--" + col.ritual)
-        +field('Ritual?') 
+        +field('Ritual?', 'label-select') 
             select(name="attr_spellritual")
                 option(value="") N 
                 option(value="(Ritual)") Y 
     .sheet-grid__cell(class="sheet-grid__cell--" + col.prepped)
-        +field('Prepped?')
+        +field('Prepped?', 'label-select')
             select(
                 title="Always prepared means the spell is either a cantrip or one that was provided to you via a method which indicated it would never count against your prepared/known limits."
                 name="attr_spellisprepared" 
@@ -50,7 +50,7 @@ input(type="hidden" name="attr_spellfriendlylevel" value=friendlyLevel )
 
 .sheet-grid.sheet-grid--split
     .sheet-grid__cell(class="sheet-grid__cell--" + col.from) 
-        +field('From')
+        +field('From', 'label-select')
             select(
                 title="Use this field to indicate where you learned or have access to this spell from. Useful to know if multiclassing or if you gain access to spells your class would not normally have thanks to subclass bonuses"
                 name="attr_spellgainedfrom"

@@ -13,12 +13,12 @@ fieldset.repeating_classresources
         .sheet-grid__cell.sheet-grid__cell--5
             input.sheet-field(type="text" name="attr_ClassResourceName")
         .sheet-grid__cell.sheet-grid__cell--3
-            select(name="attr_ClassResourceRecharge")
-                option(value="None") None
-                option(value="Short Rest") Short Rest
-                option(value="Long rest") Long Rest
-                option(value="Other") Other
-
+            .sheet-field.sheet-field--select
+                select(name="attr_ClassResourceRecharge")
+                    option(value="None") None
+                    option(value="Short Rest") Short Rest
+                    option(value="Long rest") Long Rest
+                    option(value="Other") Other
 
         .sheet-grid__cell.sheet-grid__cell--sm
             input.sheet-field(

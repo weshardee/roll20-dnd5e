@@ -29,6 +29,27 @@ FIELD_LABEL_OVERLAP = FIELD_LABEL_HEIGHT * 1
     font-size FONT_SIZE
     background-color LIGHT
 
+.sheet-field--label-select
+.sheet-field--select
+    &::before,
+    &::after
+        position absolute
+        top calc(50% + 1px)
+        right (HEIGHT/3)
+        border (HEIGHT/8) solid transparent
+        border-top (HEIGHT/5) solid FADED_GRAY
+        border-bottom 0
+        content " "
+
+    &::before
+        transform rotate(180deg) translateY(HEIGHT/4)
+
+
+.sheet-field--label-select
+    &::before,
+    &::after
+        top (HEIGHT*0.4)
+
 .sheet-field__label
     align-items center
     background inherit

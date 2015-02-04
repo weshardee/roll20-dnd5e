@@ -44,20 +44,22 @@ while i <= numWeaponRows
                 name="attr_meleeweaponname#{i}"
             )
         .sheet-grid__cell(class="sheet-grid__cell--#{colWidth.wielded}") 
-            select(
-                name="attr_meleeattackweilded#{i}"
-                title="How is the weapon being wielded"
-            )
-                option(value="1") main hand
-                option(value="1.1") 2 handed
-                option(value="0") off hand
-                option(value="1.2") off hand (2 weap fight style)
+            .sheet-field.sheet-field--select
+                select(
+                    name="attr_meleeattackweilded#{i}"
+                    title="How is the weapon being wielded"
+                )
+                    option(value="1") main hand
+                    option(value="1.1") 2 handed
+                    option(value="0") off hand
+                    option(value="1.2") off hand (2 weap fight style)
         .sheet-grid__cell(class="sheet-grid__cell--#{colWidth.finesse}") 
-            select(
-                name="attr_meleeattackstat#{i}"
-            )
-                option(value="@{strength_mod}") N
-                option(value="@{finesse_mod}") Y
+            .sheet-field.sheet-field--select
+                select(
+                    name="attr_meleeattackstat#{i}"
+                )
+                    option(value="@{strength_mod}") N
+                    option(value="@{finesse_mod}") Y
         .sheet-grid__cell(class="sheet-grid__cell--#{colWidth.magicBonus}")
             input.sheet-field(
                 title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"

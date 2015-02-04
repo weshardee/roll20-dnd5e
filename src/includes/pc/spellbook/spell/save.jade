@@ -3,7 +3,7 @@
         .sheet-label save
 
     .sheet-grid__cell
-        +field('saving stat')
+        +field('saving stat', 'select')
             select(name="attr_savestat")
                 option(value="STR") STR 
                 option(value="DEX") DEX 
@@ -12,7 +12,7 @@
                 option(value="WIS") WIS 
                 option(value="CHA") CHA          
     .sheet-grid__cell
-        +field('Save DC')
+        +field('Save DC', 'select')
             select(
                 title="Pick the class that the save DC will be created from or set your own DC by selecting custom here and then entering the DC in the next field"
                 name="attr_spellsavedc"

@@ -8,11 +8,12 @@
         +field(ability.abbr)
             div Unskilled
     .sheet-grid__cell
-        select(
-            name= '#attr_basic_#{ability.name}_prof_exp'
-        )
-            option(value="0") No
-            option(value="floor(@{PB} / 2)") Jack of all trades
+        .sheet-field.sheet-field--select
+            select(
+                name= '#attr_basic_#{ability.name}_prof_exp'
+            )
+                option(value="0") No
+                option(value="floor(@{PB} / 2)") Jack of all trades
     .sheet-grid__cell.sheet-grid__cell--sm
         input.sheet-field(
             type="number"

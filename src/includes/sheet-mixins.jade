@@ -20,14 +20,15 @@ mixin field(name, mod)
         block
 
 mixin stat-bonus(name)
-    select(name=name)
-        option(value="0") None 
-        option(value="@{strength_mod}") STR mod 
-        option(value="@{dexterity_mod}") DEX mod 
-        option(value="@{constitution_mod}") CON mod 
-        option(value="@{intelligence_mod}") INT mod 
-        option(value="@{wisdom_mod}") WIS mod 
-        option(value="@{charisma_mod}") CHA mod 
+    .sheet-field.sheet-field--select
+        select(name=name)
+            option(value="0") None 
+            option(value="@{strength_mod}") STR mod 
+            option(value="@{dexterity_mod}") DEX mod 
+            option(value="@{constitution_mod}") CON mod 
+            option(value="@{intelligence_mod}") INT mod 
+            option(value="@{wisdom_mod}") WIS mod 
+            option(value="@{charisma_mod}") CHA mod 
 
 mixin tab(title, name, i, multi)
     input.sheet-tabs__tab(

@@ -48,13 +48,14 @@ while i <= numWeaponRows
                 name="attr_rangedweaponname#{i}"
             )
         .sheet-grid__cell(class="sheet-grid__cell--#{colWidth.type}")
-            select(
-                title="Choose either normal or thrown"
-                name="attr_rangedtype#{i}"
-            )
-                option(value="@{dexterity_mod}") normal
-                option(value="@{strength_mod}") thrown
-                option(value="@{finesse_mod}") thrown(finesse)
+            .sheet-field.sheet-field--select
+                select(
+                    title="Choose either normal or thrown"
+                    name="attr_rangedtype#{i}"
+                )
+                    option(value="@{dexterity_mod}") normal
+                    option(value="@{strength_mod}") thrown
+                    option(value="@{finesse_mod}") thrown(finesse)
         .sheet-grid__cell(class="sheet-grid__cell--#{colWidth.magicBonus}") 
             input.sheet-field(
                 title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"

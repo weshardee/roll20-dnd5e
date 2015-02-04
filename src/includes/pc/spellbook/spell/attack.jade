@@ -5,7 +5,7 @@
     .sheet-grid__cell.sheet-grid__cell--4 
         p.sheet-note Select the attack stat for the attack. This is normally your spellcasting stat from the class you gained the spell from.  
     .sheet-grid__cell 
-        +field('Attack Stat')
+        +field('Attack Stat', 'select')
             select(name="attr_attackstat")
                 option(value="0") None 
                 option(value="@{strength_mod}") STR 
