@@ -1,25 +1,32 @@
-.sheet-grid.sheet-grid--split
-        
-    .sheet-grid__cell.sheet-grid__cell--3
-        label.sheet-field
-            span.sheet-field__label Character Name
-            input.sheet-field__field(
-                type="text" 
-                name="attr_character_name"
-            )
+mixin title-field(label, modifier)
+    label.sheet-title-field(
+        class="sheet-title-field--" + modifier
+    )
+        block
+        span.sheet-title-field__bar
+        span.sheet-title-field__bubble
+        span.sheet-title-field__label(
+            class="sheet-title-field__label--" + modifier
+        ) #{label}
+
+.sheet-title
+    +title-field('name', 'name')
+        input(
+            type="text" 
+            name="attr_character_name"
+            required
+        )
+
+    +title-field('race', 'sub')
+        input(
+            type="text" 
+            name="attr_race"
+            required
+        )
             
-    .sheet-grid__cell.sheet-grid__cell--2
-        label.sheet-field
-            span.sheet-field__label Race
-            input.sheet-field__field(
-                type="text" 
-                name="attr_race"
-            )
-                
-    .sheet-grid__cell.sheet-grid__cell--2
-        label.sheet-field
-            span.sheet-field__label Class
-            input.sheet-field__field(
-                type="text"
-                name="attr_class"
-            )
+    +title-field('class', 'sub')
+        input(
+            type="text"
+            name="attr_class"
+            required
+        )
