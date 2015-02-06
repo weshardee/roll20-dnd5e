@@ -13,10 +13,10 @@ mixin roll(name, value)
     )&attributes(attributes)
 
 mixin field(name, mod)
-    label.sheet-field(
-        class= mod ? 'sheet-field--' + mod : ''
+    label.sheet-labelled(
+        class= mod ? 'sheet-labelled--' + mod : ''
     )&attributes(attributes)
-        span.sheet-field__label= name
+        span.sheet-labelled__label= name
         block
 
 mixin stat-bonus(name)

@@ -1,27 +1,69 @@
-.sheet-wrapper
+.sheet-wrapper {
+    background-color white
     height 100%
+}
 
-.sheet-wrapper *
-    -webkit-font-smoothing antialiased
-    box-shadow none
-    box-sizing border-box
-    font-family FONT
-    font-size inherit
-    font-weight normal
+.sheet-wrapper * {
+    -webkit-appearance none // all our form elements will be custom
     justify-content center
-    line-height LINE_HEIGHT
+    box-sizing border-box
+
     margin 0
     padding 0
-    text-align center
-    border-radius 0 !important
-    border 0 // for buttons and fields
-    border-spacing 0
-    border-collapse collapse
-    list-style none
-    font-style initial // for <i>
     width auto // for <input>
-    text-shadow none // for .sheet-label
-    outline none
 
-.sheet-wrapper label
+    outline none !important // for focus
+    border-radius 0 !important
+    box-shadow none
+
+    list-style none
+
+    -webkit-font-smoothing antialiased
+    line-height LINE_HEIGHT
+    font-family FONT
+    font-style initial // for <i>
+    font-size inherit
+    font-weight normal
+    text-align center
+    text-shadow none // for .sheet-label
+}
+
+.sheet-wrapper label {
     padding 0 !important // roll20 dialog overrides
+}
+
+.sheet-wrapper img
+    max-width 100%
+
+.sheet-wrapper :focus
+    box-shadow none
+
+.sheet-wrapper input
+    flex-grow 1
+
+.sheet-wrapper [type=number]
+    padding-left 12px // match width of counter on right to center the value visually
+    border 1px solid transparent // for focus override
+
+.sheet-wrapper [disabled]
+    cursor not-allowed
+
+.sheet-wrapper select
+    -webkit-appearance none
+    padding PAD (HEIGHT/3)
+    flex 1
+
+.sheet-wrapper input[type=number]:disabled::-webkit-inner-spin-button,
+.sheet-wrapper input[type=number]:disabled::-webkit-outer-spin-button
+    -webkit-appearance: none;
+    margin: 0;
+
+.sheet-wrapper textarea
+    min-height LINE_HEIGHT * FONT_SIZE * 5
+    flex 1
+    text-align left
+    padding PAD
+
+.sheet-wrapper fieldset
+    width 100%
+    min-width 0

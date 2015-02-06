@@ -1,0 +1,39 @@
+/* sheet type button */
+
+TYPE_BORDER_COLOR = alpha(white, 0.3)
+TYPE_WIDTH = (HEIGHT * 2)
+
+/**
+ * [1] override base.css
+ */
+
+.sheet-main__type {
+    display flex
+    overflow hidden
+    position absolute
+    top 0
+    right 0
+
+    margin PAD !important // [1]
+    padding 0.5em !important
+    width TYPE_WIDTH !important
+
+    border 1px solid TYPE_BORDER_COLOR
+    background-color transparent
+    border-radius RADIUS !important // [1]
+
+    align-items center
+    color alpha(white, 0.7)
+}
+
+.sheet-main__type:focus {
+    border-color TYPE_BORDER_COLOR
+}
+
+.sheet-main__type::after {
+    content "PC"
+}
+
+.sheet-main__type:checked::after {
+    content "NPC"
+}

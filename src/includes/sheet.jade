@@ -3,16 +3,15 @@ include sheet-mixins
 
 .sheet-wrapper
     .sheet-main
-        input.sheet-main--is-npc(
+        input.sheet-main__type(
             type="checkbox"
-           
             name="attr_is_npc"
             value="1"
         )
-        .sheet-main--hd 
+        .sheet-main__hd 
             include sheet-hd
-        .sheet-main--bd.sheet--bd__pc 
+        .sheet-main__bd.sheet__bd__pc 
             include sheet-pc
-        .sheet-main--bd.sheet--bd__npc
+        .sheet-main__bd.sheet__bd__npc
             //- include sheet-npc
  
