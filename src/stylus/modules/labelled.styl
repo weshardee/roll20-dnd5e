@@ -29,10 +29,13 @@ FIELD_LABEL_OVERLAP = FIELD_LABEL_HEIGHT * 1
     font-size FONT_SIZE
     background-color LIGHT
 
+.sheet-labelled > input,
+.sheet-labelled > select
+    border 1px solid transparent // add space for focus border
+
 .sheet-labelled--label-select
 .sheet-labelled--select
     > select
-        border 1px solid transparent // add space for focus border
         padding-right (HEIGHT*0.75)
 
     &::before,

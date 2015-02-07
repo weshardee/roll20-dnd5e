@@ -17,7 +17,7 @@
     overflow hidden
     z-index 1
 
-    margin auto
+    margin (PAD/2)
     height auto
     max-width MAX_WIDTH
 
@@ -26,6 +26,11 @@
     background transparent
     color white
     font-size 1.4rem
+}
+
+.sheet-title-field {
+    margin-left auto
+    margin-right @margin-left
 }
 
 .sheet-title-field > input {
@@ -100,7 +105,6 @@
 
 .sheet-title-field--sub {
     display inline-block
-    margin PAD
 
     & > input,
     .sheet-title-field__label--sub {

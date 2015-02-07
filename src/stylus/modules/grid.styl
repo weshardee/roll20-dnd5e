@@ -32,16 +32,12 @@ grid-border()
 
 // dividers between cells
 
-.sheet-grid--split > *
+.sheet-grid--split
     background-color white
     +grid-border()
+        border-left-width 1px
         border-bottom-width 1px
-
-.sheet-grid--split > :first-child::after
-    border-left-width 1px
-
-.sheet-grid--split > :last-child::after
-    border-right-width 1px
+        border-right-width 1px
 
 // alternate colors
 
