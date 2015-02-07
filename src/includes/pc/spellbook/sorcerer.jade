@@ -7,7 +7,7 @@
         +field('used')
             input(type="number" name="attr_sorcery_points" value="0" min="0" step="1")  
     .sheet-grid__cell 
-        +field('max')(class="sheet-field--disabled")
+        +field('max')(class="sheet-labelled--disabled")
             input(type="number" name="attr_sorcery_points_max" value="( @{sorcerer_level} * ceil((@{sorcerer_level}-1)/1e10) )" disabled)
 .sheet-grid.sheet-grid--split
     .sheet-grid__cell 

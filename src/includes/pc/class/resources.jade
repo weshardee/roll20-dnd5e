@@ -11,9 +11,9 @@ fieldset.repeating_classresources
 
     .sheet-grid.sheet-grid--split
         .sheet-grid__cell.sheet-grid__cell--5
-            input.sheet-field(type="text" name="attr_ClassResourceName")
+            input.sheet-labelled(type="text" name="attr_ClassResourceName")
         .sheet-grid__cell.sheet-grid__cell--3
-            .sheet-field.sheet-field--select
+            .sheet-labelled.sheet-labelled--select
                 select(name="attr_ClassResourceRecharge")
                     option(value="None") None
                     option(value="Short Rest") Short Rest
@@ -21,13 +21,13 @@ fieldset.repeating_classresources
                     option(value="Other") Other
 
         .sheet-grid__cell.sheet-grid__cell--sm
-            input.sheet-field(
+            input.sheet-labelled(
                 type="number" 
                 name="attr_ClassResourceTotal" 
                 value="1"
             )
         .sheet-grid__cell.sheet-grid__cell--sm
-            input.sheet-field(
+            input.sheet-labelled(
                 type="number" 
                 name="attr_ClassResourceTotal_max" 
                 value="1"

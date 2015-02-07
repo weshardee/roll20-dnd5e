@@ -20,7 +20,7 @@ mixin field(name, mod)
         block
 
 mixin stat-bonus(name)
-    .sheet-field.sheet-field--select
+    .sheet-labelled.sheet-labelled--select
         select(name=name)
             option(value="0") None 
             option(value="@{strength_mod}") STR mod 

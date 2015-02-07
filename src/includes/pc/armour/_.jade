@@ -75,45 +75,45 @@
                                 value="@{armourtotalAC#{i}}"
                             )
                         .sheet-grid__cell(class="sheet-grid__cell--" + col.name) 
-                            input.sheet-field(
+                            input.sheet-labelled(
                                 type="text" 
                                 name="attr_amourname#{i}"
                             )
                         .sheet-grid__cell(class="sheet-grid__cell--" + col.base) 
-                            input.sheet-field(
+                            input.sheet-labelled(
                                 type="number"
                                 name="attr_armourACbase#{i}" 
                                 value="0" 
                                 step="1"
                             )
                         .sheet-grid__cell(class="sheet-grid__cell--" + col.type)
-                            .sheet-field.sheet-field--select
+                            .sheet-labelled.sheet-labelled--select
                                 select(name="attr_armourtype#{i}")
                                     option(value="0.001") n/a 
                                     option(value="@{dexterity_mod} + 0.002") light 
                                     option(value="(ceil((@{dexterity_mod}-1)/1e10)*2 - floor((@{dexterity_mod}-2)/1e10)*@{dexterity_mod}) + 0.003") medium 
                                     option(value="0.004") heavy 
                         .sheet-grid__cell(class="sheet-grid__cell--" + col.magic) 
-                            input.sheet-field(
+                            input.sheet-labelled(
                                 type="number" 
                                 name="attr_armourmagicbonus#{i}" 
                                 value="0" 
                                 step="1"
                             )  
                         .sheet-grid__cell(class="sheet-grid__cell--" + col.total)
-                            input.sheet-field(
+                            input.sheet-labelled(
                                 type="number" 
                                 name="attr_armourtotalAC#{i}" 
                                 value="@{armourACbase#{i}}+floor(@{armourtype#{i}})+@{armourmagicbonus#{i}}" 
                                 disabled
                             ) 
                         .sheet-grid__cell(class="sheet-grid__cell--" + col.stealth)
-                            .sheet-field.sheet-field--select
+                            .sheet-labelled.sheet-labelled--select
                                 select(name="attr_armourstealthpen#{i}")
                                     option(value="No Penalty") No 
                                     option(value="Disadvantage on Stealth") Yes 
                         .sheet-grid__cell(class="sheet-grid__cell--" + col.speed)
-                            .sheet-field.sheet-field--select
+                            .sheet-labelled.sheet-labelled--select
                                 select(name="attr_armourspeedpen#{i}") 
                                     option(value="No") No 
                                     option(value="If STR &lt; 13") If STR &lt; 13 

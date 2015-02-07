@@ -37,18 +37,18 @@ while i <= numWeaponRows
                 checked
             )
         .sheet-grid__cell(class="sheet-grid__cell--#{colWidth.ammo}")
-            input.sheet-field(
+            input.sheet-labelled(
                 type="number" 
                 name="attr_rangedammo#{i}" 
                 value="1"
             )
         .sheet-grid__cell(class="sheet-grid__cell--#{colWidth.name}")
-            input.sheet-field(
+            input.sheet-labelled(
                 type="text" 
                 name="attr_rangedweaponname#{i}"
             )
         .sheet-grid__cell(class="sheet-grid__cell--#{colWidth.type}")
-            .sheet-field.sheet-field--select
+            .sheet-labelled.sheet-labelled--select
                 select(
                     title="Choose either normal or thrown"
                     name="attr_rangedtype#{i}"
@@ -57,7 +57,7 @@ while i <= numWeaponRows
                     option(value="@{strength_mod}") thrown
                     option(value="@{finesse_mod}") thrown(finesse)
         .sheet-grid__cell(class="sheet-grid__cell--#{colWidth.magicBonus}") 
-            input.sheet-field(
+            input.sheet-labelled(
                 title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"
                 type="number" 
                 name="attr_rangedmagic#{i}" 
@@ -65,7 +65,7 @@ while i <= numWeaponRows
                 step="1"
             )
         .sheet-grid__cell(class="sheet-grid__cell--#{colWidth.toHit}") 
-            input.sheet-field(
+            input.sheet-labelled(
                 type="number" 
                 name="attr_rangedtohit#{i}" 
                 value="@{rangedtype#{i}} + @{pbranged#{i}} + @{rangedmagic#{i}}" 
@@ -74,20 +74,20 @@ while i <= numWeaponRows
         .sheet-grid__cell(class="sheet-grid__cell--#{colWidth.attack}") 
             +roll(name="roll_RangedAttack#{i}" value="/em uses @{rangedweaponname#{i}} to attack\n\n[[1d20 + @{rangedtohit#{i}} [To Hit] + (@{global_ranged_attack_bonus}) [Active Ranged Attack Bonus] ]] vs AC") Attack
         .sheet-grid__cell(class="sheet-grid__cell--#{colWidth.dmgDice}") 
-            input.sheet-field(
+            input.sheet-labelled(
                 title="Only enter the base damage roll here without any bonuses from stats or other sources"
                 type="text" 
                 name="attr_rangeddmg#{i}"
             )
         .sheet-grid__cell(class="sheet-grid__cell--#{colWidth.dmgBonus}") 
-            input.sheet-field(
+            input.sheet-labelled(
                 type="number" 
                 name="attr_rangeddmgbonus#{i}" 
                 value="@{rangedtype#{i}} + @{rangedmagic#{i}}" 
                 disabled
             )
         .sheet-grid__cell(class="sheet-grid__cell--#{colWidth.dmgType}") 
-            input.sheet-field(
+            input.sheet-labelled(
                 type="text"
                 name="attr_rangeddmgtype#{i}"
             )

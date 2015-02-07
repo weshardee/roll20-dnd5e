@@ -13,7 +13,7 @@ each ability in abilities
             .sheet-label.sheet-label--core-stat= ability.abbr
     
         .sheet-grid__cell 
-            input.sheet-field(
+            input.sheet-labelled(
                 type='number' 
                 name='attr_#{ability.name}' 
                 min='1' 
@@ -21,7 +21,7 @@ each ability in abilities
             )
         
         .sheet-grid__cell 
-            input.sheet-field.sheet-field--disabled(
+            input.sheet-labelled.sheet-labelled--disabled(
                 type='number' 
                 name='attr_#{ability.name}_mod' 
                 value='(floor((@{#{ability.name}}-10)/2))' 
@@ -35,7 +35,7 @@ each ability in abilities
             )
         
         .sheet-grid__cell 
-            input.sheet-field(
+            input.sheet-labelled(
                 type='number' 
                 name='attr_#{ability.name}_save_mod' 
                 value='@\{#{ability.name}_mod} + @\{#{ability.name}_save_prof}' 

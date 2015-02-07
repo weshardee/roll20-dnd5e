@@ -8,10 +8,10 @@
         +field('used')
             input(type="number" name="attr_warlock_spell_slots" value="0" min="0" step="1")
     .sheet-grid__cell
-        +field('max')(class="sheet-field--disabled")
+        +field('max')(class="sheet-labelled--disabled")
             input(type="number" name="attr_warlock_spell_slots_max" value="( ceil(@{warlock_level}/1e10) + (ceil((@{warlock_level}-1)/1e10)) + (ceil((@{warlock_level}-10)/1e10)) + (ceil((@{warlock_level}-16)/1e10)) )" disabled)
     .sheet-grid__cell
-        +field('level')(class="sheet-field--disabled")
+        +field('level')(class="sheet-labelled--disabled")
             input(type="number" name="attr_warlock_spell_slots_level" value="( ceil(@{warlock_level}/1e10) + (ceil((@{warlock_level}-2)/1e10)) + (ceil((@{warlock_level}-4)/1e10)) + (ceil((@{warlock_level}-6)/1e10)) + (ceil((@{warlock_level}-8)/1e10)) )" disabled)
 
 .sheet-grid.sheet-grid--split
@@ -22,4 +22,4 @@
     .sheet-grid__cell.sheet-grid__cell--lg
         .sheet-label Invocations Known
     .sheet-grid__cell 
-        input.sheet-field(type="number" name="attr_warlock_invocations_known" value="( (ceil((@{warlock_level}-1)/1e10)*2) + (ceil((@{warlock_level}-4)/1e10)) + (ceil((@{warlock_level}-6)/1e10)) + (ceil((@{warlock_level}-8)/1e10)) + (ceil((@{warlock_level}-11)/1e10)) + (ceil((@{warlock_level}-14)/1e10)) + (ceil((@{warlock_level}-17)/1e10)) )" disabled)
+        input.sheet-labelled(type="number" name="attr_warlock_invocations_known" value="( (ceil((@{warlock_level}-1)/1e10)*2) + (ceil((@{warlock_level}-4)/1e10)) + (ceil((@{warlock_level}-6)/1e10)) + (ceil((@{warlock_level}-8)/1e10)) + (ceil((@{warlock_level}-11)/1e10)) + (ceil((@{warlock_level}-14)/1e10)) + (ceil((@{warlock_level}-17)/1e10)) )" disabled)

@@ -2,11 +2,11 @@ h1.sheet-hdg Initiative
     i.sheet-pictos t
 .sheet-grid.sheet-grid--split 
     .sheet-grid__cell
-        label.sheet-field(
+        label.sheet-labelled(
             title='Only enter additional bonuses to initiative here. Your Dex mod is already included in the macro button' 
         )              
-            span.sheet-field__label Bonus
-            input.sheet-field__field(
+            span.sheet-labelled__label Bonus
+            input.sheet-labelled__field(
                 type='number' 
                 name='attr_initiative' 
                 value='0' 
@@ -14,9 +14,9 @@ h1.sheet-hdg Initiative
             )
     
     .sheet-grid__cell 
-        label.sheet-field.sheet-field--disabled 
-            span.sheet-field__label Total
-            input.sheet-field__field(
+        label.sheet-labelled.sheet-labelled--disabled 
+            span.sheet-labelled__label Total
+            input.sheet-labelled__field(
                 type='number' 
                 name='attr_initiative_overall' 
                 value='@{dexterity_mod} + @{initiative}' 

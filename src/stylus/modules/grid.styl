@@ -36,7 +36,9 @@ grid-border()
     background-color white
     +grid-border()
         border-bottom-width 1px
-        border-left-width 1px
+
+.sheet-grid--split > :first-child::after
+    border-left-width 1px
 
 .sheet-grid--split > :last-child::after
     border-right-width 1px

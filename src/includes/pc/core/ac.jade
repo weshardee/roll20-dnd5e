@@ -2,18 +2,18 @@ h1.sheet-hdg Armour Class
     i.sheet-pictos-three b
 .sheet-grid.sheet-grid--split 
     .sheet-grid__cell
-        label.sheet-field.sheet-field--disabled 
-            .sheet-field__label AC (armour on)
-            input.sheet-field__field(
+        label.sheet-labelled.sheet-labelled--disabled 
+            .sheet-labelled__label AC (armour on)
+            input.sheet-labelled__field(
                 type='number' 
                 name='attr_AC' 
                 value='@{AC_calc}' 
                 disabled
             )
     .sheet-grid__cell
-        label.sheet-field.sheet-field--disabled                           
-            span.sheet-field__label AC (armour off)
-            input.sheet-field__field(
+        label.sheet-labelled.sheet-labelled--disabled                           
+            span.sheet-labelled__label AC (armour off)
+            input.sheet-labelled__field(
                 type='number' 
                 name='attr_AC_no_armour' 
                 value='@{AC_no_armour_calc}' 

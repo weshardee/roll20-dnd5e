@@ -13,7 +13,7 @@ h1.sheet-hdg Hit Dice
     .sheet-grid__cell.sheet-grid__cell--sm 
         .sheet-label d6
     .sheet-grid__cell.sheet-grid__cell--sm 
-        input.sheet-field(
+        input.sheet-labelled(
             type='number'         
             name='attr_hd_d6' 
             value='0' 
@@ -21,7 +21,7 @@ h1.sheet-hdg Hit Dice
             step='1'
         )
     .sheet-grid__cell.sheet-grid__cell--sm 
-        input.sheet-field(
+        input.sheet-labelled(
             type='number'                                     
             name='attr_hd_d6_max'                                     
             value='@{sorcerer_level} + @{wizard_level}' 
@@ -39,7 +39,7 @@ h1.sheet-hdg Hit Dice
     .sheet-grid__cell.sheet-grid__cell--sm 
         .sheet-label d8
     .sheet-grid__cell.sheet-grid__cell--sm 
-        input.sheet-field(
+        input.sheet-labelled(
             type='number'             
             name='attr_hd_d8' 
             value='0' 
@@ -47,7 +47,7 @@ h1.sheet-hdg Hit Dice
             step='1'
         )
     .sheet-grid__cell.sheet-grid__cell--sm 
-        input.sheet-field(
+        input.sheet-labelled(
             type='number'         
             name='attr_hd_d8_max' 
             value='@{bard_level} + @{cleric_level} + @{druid_level} + @{rogue_level} + @{monk_level} + @{warlock_level}' 
@@ -64,7 +64,7 @@ h1.sheet-hdg Hit Dice
     .sheet-grid__cell.sheet-grid__cell--sm 
         .sheet-label d10
     .sheet-grid__cell.sheet-grid__cell--sm 
-        input.sheet-field(
+        input.sheet-labelled(
             type='number' 
             name='attr_hd_d10' 
             value='0' 
@@ -72,7 +72,7 @@ h1.sheet-hdg Hit Dice
             step='1'
         )
     .sheet-grid__cell.sheet-grid__cell--sm 
-        input.sheet-field(
+        input.sheet-labelled(
             type='number'     
             name='attr_hd_d10_max' 
             value='@{fighter_level} + @{paladin_level} + @{ranger_level}'
@@ -89,7 +89,7 @@ h1.sheet-hdg Hit Dice
     .sheet-grid__cell.sheet-grid__cell--sm 
         .sheet-label d12                             
     .sheet-grid__cell.sheet-grid__cell--sm 
-        input.sheet-field(
+        input.sheet-labelled(
             type='number'                                     
             name='attr_hd_d12' 
             value='0' 
@@ -98,7 +98,7 @@ h1.sheet-hdg Hit Dice
         )
     
     .sheet-grid__cell.sheet-grid__cell--sm 
-        input.sheet-field(
+        input.sheet-labelled(
             type='number'            
             name='attr_hd_d12_max' 
             value='@{barbarian_level}' 
