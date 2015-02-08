@@ -1,19 +1,33 @@
-.sheet-tabs
-    each tab in tabs
-        input.sheet-tabs__tab.sheet-tabs__tab--main(
-            class="sheet-tabs__tab--#{tab.i}"
-            type="radio" 
-            name="attr_tab" 
-            value=tab.i 
-            title=tab.name
-            checked=tab.i === 99
-        )
+mixin main-tab(id)
+    input.sheet-tabs__tab.sheet-tabs__tab--main(
+        class = 'sheet-tabs__tab--' + id
+        value = id
+        title = id
+        type = 'radio'
+        name = 'attr_tab'
+    )&attributes(attributes)
 
+.sheet-tabs
+    +main-tab('core')(checked)
     .sheet-tabs__section.sheet-tabs__section--1: include pc/core/_
+    
+    +main-tab('skills')
     .sheet-tabs__section.sheet-tabs__section--2: include pc/skills/_
+    
+    +main-tab('background')
     .sheet-tabs__section.sheet-tabs__section--3: include pc/background/_
+    
+    +main-tab('class')
     .sheet-tabs__section.sheet-tabs__section--4: include pc/class/_
+    
+    +main-tab('weapons')
     .sheet-tabs__section.sheet-tabs__section--5: include pc/weapons/_
+    
+    +main-tab('magic')
     .sheet-tabs__section.sheet-tabs__section--6: include pc/spellbook/_
+    
+    +main-tab('armour')
     .sheet-tabs__section.sheet-tabs__section--7: include pc/armour/_
+    
+    +main-tab('loot')
     .sheet-tabs__section.sheet-tabs__section--8: include pc/inventory/_

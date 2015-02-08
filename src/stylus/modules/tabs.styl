@@ -15,6 +15,7 @@
     height HEIGHT !important
     width auto !important
     margin 0 !important
+    order -1 // so tabs always appear before sections
 
 .sheet-tabs__tab:focus
     border 0
@@ -36,6 +37,9 @@
 .sheet-tabs__tab::after
     content attr(title)
 
+.sheet-tabs__tab--all
+    order 0
+
 // main tabs
 
 .sheet-tabs__tab--main
@@ -47,7 +51,11 @@
     background-color BG
     color DARK
 
+.sheet-tabs__tab--main:checked + .sheet-tabs__section
+    display block
+
 // alternate tab colors
+
 .sheet-tabs__tab--inner
     border-radius: 0 !important
     background-color LIGHT
@@ -89,5 +97,7 @@ for num in (0...10)
     .sheet-tabs__tab--{num}:checked ~ .sheet-tabs__section--{num}
         display block
 
-.sheet-tabs__tab--99:checked ~ .sheet-tabs__section
+.sheet-tabs__tab--all:checked ~ .sheet-tabs__section
     display block
+
+// hidden tabs
