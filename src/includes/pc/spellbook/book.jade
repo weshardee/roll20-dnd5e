@@ -17,42 +17,43 @@
 
 - col.label = 'md'
 
-h1.sheet-hdg Spell Book 
-    i.sheet-pictos-three g  
-p.sheet-note Use this section to track spells you know, have prepared, or have in your spell book.  Spells that do not count against the limit of spells you have prepared (ie. Cleric Domain spells, Paladin Oath spells, etc...), and spells from classes which do not prepare spells (ie. Sorcerer, Warlock, etc...), should be marked as "Always" prepared 
+h1.sheet-hdg Spell Book
+    i.sheet-pictos-three g
+p.sheet-note Use this section to track spells you know, have prepared, or have in your spell book.  Spells that do not count against the limit of spells you have prepared (ie. Cleric Domain spells, Paladin Oath spells, etc...), and spells from classes which do not prepare spells (ie. Sorcerer, Warlock, etc...), should be marked as "Always" prepared
 
 .sheet-tabs
 
     input.sheet-tabs__tab(
-        type="radio" 
-        name="attr_spellpagetab" 
-        class="sheet-tabs__tab--99" 
-        value="99" 
+        type="radio"
+        name="attr_spellpagetab"
+        class="sheet-tabs__tab--99"
+        value="99"
         title="All"
         checked
-    ) 
+    )
     for i in spells.levels
         input.sheet-tabs__tab(
-            class="sheet-tabs__tab--#{i}" 
+            class="sheet-tabs__tab--#{i}"
             title= i ? "Level #{i}" : "Cantrips"
-            type="radio" 
-            name="attr_spellpagetab" 
-            value="#{i}" 
+            type="radio"
+            name="attr_spellpagetab"
+            value="#{i}"
         )
 
     for i in spells.levels
         // BEGIN new spell page
         .sheet-tabs__section(class="sheet-tabs__section--" + i)
-            .sheet-grid.sheet-grid--col.sheet-grid--pad
-                .sheet-grid__cell
+            .sheet-col
+                .sheet-col__row
                     .sheet-grid.sheet-grid--sub
                         .sheet-grid__cell= i ? "Level " + i : "Cantrips"
-                
-                // BEGIN spell row    
-                fieldset.sheet-grid__cell(
-                    class="repeating_spellbook" + (i ? 'level' + i : 'cantrip')
-                )
-                    include spell/_
-                // END spell row
-                
+
+                .sheet-col__row
+                    // BEGIN spell row    
+                    fieldset.sheet-grid__cell(
+                        class="repeating_spellbook" + (i ? 'level' + i : 'cantrip')
+                    )
+                        include spell/_
+                    // END spell row
+
         // END spell page

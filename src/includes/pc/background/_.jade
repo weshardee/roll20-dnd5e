@@ -1,128 +1,119 @@
-.sheet-grid.sheet-grid--pad.sheet-grid--col
-    .sheet-grid__cell
+.sheet-col
+    .sheet-col__row
 
-        h1.sheet-hdg Appearance, Vision, Languages and Alignment 
+        h1.sheet-hdg Appearance, Vision, Languages and Alignment
             i.sheet-pictos U
 
-        .sheet-grid.sheet-grid--split
-            .sheet-grid__cell 
-                label.sheet-labelled
-                    .sheet-labelled__label Gender
-                    input.sheet-labelled_field(
-                        type="text" 
+        .sheet-row
+            .sheet-row__cell
+                +field('Gender')
+                    input(
+                        type="text"
                         name="attr_gender"
                     )
-            .sheet-grid__cell 
-                label.sheet-labelled
-                    .sheet-labelled__label Age
-                    input.sheet-labelled_field(
-                        type="number" 
+            .sheet-row__cell
+                +field('Age')
+                    input(
+                        type="number"
                         name="attr_age"
                     )
-            .sheet-grid__cell 
-                label.sheet-labelled
-                    .sheet-labelled__label Height
-                    input.sheet-labelled_field(
-                        type="text" 
+            .sheet-row__cell
+                +field('Height')
+                    input(
+                        type="text"
                         name="attr_height"
                     )
-            .sheet-grid__cell 
-                label.sheet-labelled
-                    .sheet-labelled__label Weight
-                    input.sheet-labelled_field(
-                        type="text" 
+            .sheet-row__cell
+                +field('Weight')
+                    input(
+                        type="text"
                         name="attr_weight"
                     )
-            .sheet-grid__cell 
-                label.sheet-labelled
-                    .sheet-labelled__label Eyes
-                    input.sheet-labelled_field(
-                        type="text" 
+            .sheet-row__cell
+                +field('Eyes')
+                    input(
+                        type="text"
                         name="attr_eyes"
                     )
-            .sheet-grid__cell 
-                label.sheet-labelled
-                    .sheet-labelled__label Hair
-                    input.sheet-labelled_field(
-                        type="text" 
+            .sheet-row__cell
+                +field('Hair')
+                    input(
+                        type="text"
                         name="attr_hair"
                     )
-            .sheet-grid__cell 
-                label.sheet-labelled
-                    .sheet-labelled__label Size
-                    input.sheet-labelled__field(
-                        type="text" 
+            .sheet-row__cell
+                +field('Size')
+                    input(
+                        type="text"
                         name="attr_size"
-                    ) 
+                    )
 
-        .sheet-grid.sheet-grid--split
-            .sheet-grid__cell.sheet-grid__cell-1-6
-                label.sheet-labelled
-                    .sheet-labelled__label Vision
-                    input.sheet-labelled__field(
+        .sheet-row
+            .sheet-row__cell.sheet-row__cell-1-6
+                +field('Vision')
+                    input(
                         type="text"
                         name="attr_vision"
                     )
-            .sheet-grid__cell.sheet-grid__cell-2-3
-                label.sheet-labelled
-                    .sheet-labelled__label Known Languages
-                    input.sheet-labelled__field(
+            .sheet-row__cell.sheet-row__cell-2-3
+                +field('Known Languages')
+                    input(
                         type="text"
                         name="attr_prolanguages"
                     )
-            .sheet-grid__cell.sheet-grid__cell-1-6
-                label.sheet-labelled
-                    .sheet-labelled__label Alignment
-                    input.sheet-labelled__field(
+            .sheet-row__cell.sheet-row__cell-1-6
+                +field('Alignment')
+                    input(
                         type="text"
                         name="attr_alignment"
                     )
 
-    .sheet-grid__cell
-        h1.sheet-hdg Background, Traits, Ideals, Bonds and Flaws 
+    .sheet-col__row
+        h1.sheet-hdg Background, Traits, Ideals, Bonds and Flaws
             i.sheet-pictos g
-        .sheet-grid.sheet-grid--sub 
-            .sheet-grid__cell Background
-            .sheet-grid__cell Racial Traits
-            .sheet-grid__cell Personality Traits
 
-        .sheet-grid.sheet-grid--split
-            .sheet-grid__cell 
+        .sheet-row.sheet-row--hd
+            .sheet-row__cell Background
+            .sheet-row__cell Racial Traits
+            .sheet-row__cell Personality Traits
+
+        .sheet-row
+            .sheet-row__cell
                 textarea(name="attr_background")
-            .sheet-grid__cell 
+            .sheet-row__cell
                 textarea(name="attr_racial_traits")
-            .sheet-grid__cell 
+            .sheet-row__cell
                 textarea(name="attr_personality_traits")
 
+        .sheet-row.sheet-row--hd
+            .sheet-row__cell Ideals
+            .sheet-row__cell Bonds
+            .sheet-row__cell Flaws
 
-        .sheet-grid.sheet-grid--sub 
-            .sheet-grid__cell Ideals
-            .sheet-grid__cell Bonds
-            .sheet-grid__cell Flaws
 
-
-        .sheet-grid.sheet-grid--split
-            .sheet-grid__cell 
+        .sheet-row
+            .sheet-row__cell
                 textarea(name="attr_ideals")
-            .sheet-grid__cell 
+            .sheet-row__cell
                 textarea(name="attr_bonds")
-            .sheet-grid__cell 
+            .sheet-row__cell
                 textarea(name="attr_flaws")
 
-    .sheet-grid__cell
+    .sheet-col__row
 
-        h1.sheet-hdg Equipment Proficiencies 
+        h1.sheet-hdg Equipment Proficiencies
             i.sheet-pictos x
-        .sheet-grid.sheet-grid--sub 
-            .sheet-grid__cell Armour Proficiencies
-            .sheet-grid__cell Weapon Proficiencies
-            .sheet-grid__cell Tool Proficiencies
+
+        .sheet-row.sheet-row--hd
+            .sheet-row__cell Armour Proficiencies
+            .sheet-row__cell Weapon Proficiencies
+            .sheet-row__cell Tool Proficiencies
 
 
-        .sheet-grid.sheet-grid--split
-            .sheet-grid__cell 
+        .sheet-row
+            .sheet-row__cell
                 textarea(name="attr_pro_armour")
-            .sheet-grid__cell 
+            .sheet-row__cell
                 textarea(name="attr_pro_weapons")
-            .sheet-grid__cell 
+            .sheet-row__cell
                 textarea(name="attr_pro_tools")

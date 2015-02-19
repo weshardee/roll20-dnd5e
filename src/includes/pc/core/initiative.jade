@@ -1,28 +1,25 @@
 h1.sheet-hdg Initiative
     i.sheet-pictos t
-.sheet-grid.sheet-grid--split 
-    .sheet-grid__cell
-        label.sheet-labelled(
-            title='Only enter additional bonuses to initiative here. Your Dex mod is already included in the macro button' 
-        )              
-            span.sheet-labelled__label Bonus
-            input.sheet-labelled__field(
-                type='number' 
-                name='attr_initiative' 
-                value='0' 
+.sheet-row
+    .sheet-row__cell
+        +field('Bonus')
+            input(
+                title='Only enter additional bonuses to initiative here. Your Dex mod is already included in the macro button'
+                type='number'
+                name='attr_initiative'
+                value='0'
                 step='1'
             )
-    
-    .sheet-grid__cell 
-        label.sheet-labelled.sheet-labelled--disabled 
-            span.sheet-labelled__label Total
-            input.sheet-labelled__field(
-                type='number' 
-                name='attr_initiative_overall' 
-                value='@{dexterity_mod} + @{initiative}' 
+
+    .sheet-row__cell 
+        +field('Total')
+            input(
+                type='number'
+                name='attr_initiative_overall'
+                value='@{dexterity_mod} + @{initiative}'
                 disabled
-            ) 
-    .sheet-grid__cell.sheet-grid__cell--sm 
+            )
+    .sheet-row__cell.sheet-row__cell--sm 
         +roll(
             title= 'Roll Initiative'
             name= 'roll_Initiative'

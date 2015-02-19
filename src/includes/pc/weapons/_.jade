@@ -1,15 +1,15 @@
-// Hidden calcs to work out correct mod for finesse weapons 
+// Hidden calcs to work out correct mod for finesse weapons
 input(
     type="hidden"
-    name="attr_finesse_mod" 
-    value="(((ceil((@{strength_mod}/1e10) - (@{dexterity_mod}/1e10))) * @{strength_mod}) + ((ceil((@{dexterity_mod}/1e10) - (@{strength_mod}/1e10))) * @{dexterity_mod}) + ((1 - (ceil((@{strength_mod}/1e10) - (@{dexterity_mod}/1e10))) - (ceil((@{dexterity_mod}/1e10) - (@{strength_mod}/1e10)))) * (@{strength_mod})))" 
+    name="attr_finesse_mod"
+    value="(((ceil((@{strength_mod}/1e10) - (@{dexterity_mod}/1e10))) * @{strength_mod}) + ((ceil((@{dexterity_mod}/1e10) - (@{strength_mod}/1e10))) * @{dexterity_mod}) + ((1 - (ceil((@{strength_mod}/1e10) - (@{dexterity_mod}/1e10))) - (ceil((@{dexterity_mod}/1e10) - (@{strength_mod}/1e10)))) * (@{strength_mod})))"
     disabled
 )
 
 - var numWeaponRows = 6
 
-.sheet-grid.sheet-grid--pad.sheet-grid--col
-    .sheet-grid__cell
+.sheet-col
+    .sheet-col__row
         include melee
-    .sheet-grid__cell
+    .sheet-col__row
         include ranged

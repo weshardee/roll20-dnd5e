@@ -16,6 +16,7 @@ var glob = {
     jadePartials: src + 'includes/**/*.jade',
     templateData: src + 'data/skills.json',
     stylusPartials: src + 'stylus/**/*.styl',
+    media: src + 'images/**/*.*',
     css: src + '*.styl'
 };
 
@@ -58,11 +59,17 @@ gulp.task('css', function() {
     .pipe(reload({stream:true}));
 });
 
-gulp.task('build', ['html', 'css']);
+gulp.task('media', function() {
+    return gulp.src(glob.media)
+    .pipe(gulp.dest(dest));
+});
+
+gulp.task('build', ['html', 'css', 'media']);
 
 gulp.task('watch', ['build'], function() {
     gulp.watch([glob.jade, glob.jadePartials], ['html']);
     gulp.watch([glob.css, glob.stylusPartials], ['css']);
+    gulp.watch([glob.media], ['media']);
 });
 
 gulp.task('browser-sync', ['watch'], function() {

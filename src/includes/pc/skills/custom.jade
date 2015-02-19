@@ -1,55 +1,54 @@
 mixin custom-skills-hdg()
-    .sheet-grid.sheet-grid--sub
-        .sheet-grid__cell.sheet-grid__cell--sm
-        .sheet-grid__cell.sheet-grid__cell--3 Skill
-        .sheet-grid__cell.sheet-grid__cell--2 Stat
-        .sheet-grid__cell.sheet-grid__cell--2 Proficient
-        .sheet-grid__cell.sheet-grid__cell--sm Bonus
-        .sheet-grid__cell.sheet-grid__cell--sm Total
+    .sheet-row.sheet-row--hd
+        .sheet-row__cell.sheet-row__cell--sm
+        .sheet-row__cell.sheet-row__cell--3 Skill
+        .sheet-row__cell.sheet-row__cell--2 Stat
+        .sheet-row__cell.sheet-row__cell--2 Proficient
+        .sheet-row__cell.sheet-row__cell--sm Bonus
+        .sheet-row__cell.sheet-row__cell--sm Total
 
 - var numCustomSkills = 4
 - var customSkillsPerColumn = numCustomSkills / NUM_SKILL_COLUMNS
 - var col = 1
 - var i = 1
 
-while col <= NUM_SKILL_COLUMNS
-    .sheet-grid__cell
-        +custom-skills-hdg()
-        while i <= col * customSkillsPerColumn
-            .sheet-grid.sheet-grid--split
-                .sheet-grid__cell.sheet-grid__cell--sm
-                    +roll("roll_Custom_Skill_#{i}", '/em makes an ability check\n\n@{custom_skill_#{i}_name} check :\n[[1d20 + @{custom_skill_#{i}} [Proficiency + Stat Mod + Expertise + Misc] + (@{global_check_bonus}) [Ability Check Bonus] ]]')
-                .sheet-grid__cell.sheet-grid__cell--3
-                    input.sheet-labelled(
-                        type="text" 
-                        name="attr_custom_skill_#{i}_name" 
-                        value="Custom #{i}"
-                    )
-                .sheet-grid__cell.sheet-grid__cell--2
-                    .sheet-labelled.sheet-labelled--select
-                        select(
+.sheet-grid
+    while col <= NUM_SKILL_COLUMNS
+        .sheet-grid__cell
+            +custom-skills-hdg()
+            while i <= col * customSkillsPerColumn
+                .sheet-row
+                    .sheet-row__cell.sheet-row__cell--sm
+                        +roll("roll_Custom_Skill_#{i}", '/em makes an ability check\n\n@{custom_skill_#{i}_name} check :\n[[1d20 + @{custom_skill_#{i}} [Proficiency + Stat Mod + Expertise + Misc] + (@{global_check_bonus}) [Ability Check Bonus] ]]')
+                    .sheet-row__cell.sheet-row__cell--3
+                        input.sheet-field(
+                            type="text"
+                            name="attr_custom_skill_#{i}_name"
+                            value="Custom #{i}"
+                        )
+                    .sheet-row__cell.sheet-row__cell--2
+                        select.sheet-select(
                             name="attr_custom_skill_#{i}_mod"
-                        ) 
+                        )
                             option(value="0") None
                             each ability in abilities
                                 option(value="@{#{ability.name}_mod}") #{ability.abbr}
-                .sheet-grid__cell.sheet-grid__cell--2
-                    .sheet-labelled.sheet-labelled--select
-                        select(name="attr_custom_skill_1_prof_exp")
+                    .sheet-row__cell.sheet-row__cell--2
+                        select.sheet-select(name="attr_custom_skill_1_prof_exp")
                             +skill-proficiency-options()
-                .sheet-grid__cell.sheet-grid__cell--sm
-                    input.sheet-labelled(
-                        type="number" 
-                        name="attr_custom_skill_#{i}_bonus" 
-                        value="0" 
-                        step="1"
-                    ) 
-                .sheet-grid__cell.sheet-grid__cell--sm
-                    input.sheet-labelled(
-                        type="number"
-                        name="attr_custom_skill_#{i}" 
-                        value="@{custom_skill_#{i}_prof_exp}+@{custom_skill_#{i}_mod}+@{custom_skill_#{i}_bonus}" 
-                        disabled
-                    )
-            - i++
-    - col++
+                    .sheet-row__cell.sheet-row__cell--sm
+                        input.sheet-field(
+                            type="number"
+                            name="attr_custom_skill_#{i}_bonus"
+                            value="0"
+                            step="1"
+                        )
+                    .sheet-row__cell.sheet-row__cell--sm
+                        input.sheet-field(
+                            type="number"
+                            name="attr_custom_skill_#{i}"
+                            value="@{custom_skill_#{i}_prof_exp}+@{custom_skill_#{i}_mod}+@{custom_skill_#{i}_bonus}"
+                            disabled
+                        )
+                - i++
+        - col++

@@ -4,28 +4,25 @@ h1.sheet-hdg
     = 'and Speed'
     i.sheet-pictos 1
 
-.sheet-grid.sheet-grid--split 
-    .sheet-grid__cell 
-        label.sheet-labelled 
-            span.sheet-labelled__label Current
-            input.sheet-labelled__field(
+.sheet-row 
+    .sheet-row__cell 
+        +field('Current')
+            input.sheet-field(
                 type='number' 
                 name='attr_HP' 
                 step='1'
             ) 
-    .sheet-grid__cell 
-        label.sheet-labelled 
-            span.sheet-labelled__label Max
-            input.sheet-labelled__field(
+    .sheet-row__cell 
+        +field('Max')
+            input.sheet-field(
                 type='number' 
                 name='attr_HP_max' 
                 min='1' 
                 step='1'
             )
-    .sheet-grid__cell
-        label.sheet-labelled 
-            span.sheet-labelled__label Temp HP
-            input.sheet-labelled__field(
+    .sheet-row__cell
+        +field('Temp HP')
+            input.sheet-field(
                 type='number' 
                 name='attr_temp_HP' 
                 value='0' 
@@ -33,10 +30,9 @@ h1.sheet-hdg
                 step='1' 
             )
 
-    .sheet-grid__cell 
-        label.sheet-labelled                                     
-            span.sheet-labelled__label Speed
-            input.sheet-labelled__field(
+    .sheet-row__cell
+        +field('Speed')
+            input.sheet-field(
                 type='text' 
                 name='attr_speed' 
             )

@@ -4,23 +4,24 @@ mixin skill-proficiency-options()
     option(value="@{PB}") Yes
     option(value="(2*@{PB})") Expertise
 
-.sheet-grid.sheet-grid--pad.sheet-grid--col
+.sheet-col
     //- standard skills
-    .sheet-grid__cell
-        h1.sheet-hdg Skills 
-            i.sheet-pictos x    
-    .sheet-grid__cell
+    .sheet-col__row
+        h1.sheet-hdg Skills
+            i.sheet-pictos x
+    .sheet-col__row
         include main
 
     //- custom skills
-    .sheet-grid__cell
-        h1.sheet-hdg Custom Skills 
+    .sheet-col__row
+        h1.sheet-hdg Custom Skills
             i.sheet-pictos x
-    .sheet-grid__cell
-        .sheet-grid.sheet-grid--pad
-            include custom
+    .sheet-col__row
+        include custom
 
     //- other skill checks
-    .sheet-grid__cell
-        .sheet-grid.sheet-grid--pad
-            include other
+    .sheet-col__row
+        h1.sheet-hdg Unskilled
+            i.sheet-pictos x
+    .sheet-col__row
+        include other

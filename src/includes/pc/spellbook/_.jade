@@ -1,27 +1,26 @@
 include stats
 
-.sheet-grid.sheet-grid--col.sheet-grid--pad
-    .sheet-grid__cell 
+.sheet-col
+    .sheet-col__row
         h1.sheet-hdg Spell Dashboard and Spell Slots
             i.sheet-pictos-custom t
-    
-    .sheet-grid__cell
-        .sheet-grid.sheet-grid--pad
-            .sheet-grid__cell.sheet-grid__cell--4 
-                .sheet-grid.sheet-grid--col.sheet-grid--pad
-                    .sheet-grid__cell
-                        div
-                            include classes
-                
-                    .sheet-grid__cell
-                        .sheet-grid.sheet-grid--pad
+
+    .sheet-col__row
+        .sheet-grid
+            .sheet-grid__cell.sheet-grid__cell--4
+                .sheet-col
+                    .sheet-col__row
+                        include classes
+
+                    .sheet-col__row
+                        .sheet-grid
                             .sheet-grid__cell.sheet-grid__cell--align-top
                                 include sorcerer
                             .sheet-grid__cell.sheet-grid__cell--align-top
                                 include warlock
-                                                 
-            .sheet-grid__cell 
+
+            .sheet-grid__cell
                 include slots
 
-    .sheet-grid__cell
+    .sheet-col__row
         include book

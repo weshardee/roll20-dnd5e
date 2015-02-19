@@ -1,18 +1,18 @@
-.sheet-grid.sheet-grid--pad.sheet-grid--col
-    .sheet-grid__cell
+.sheet-col
+    .sheet-col__row
         h1.sheet-hdg Class Levels, Features, Notes and Feats
             i.sheet-pictos Y
 
-    .sheet-grid__cell
-        .sheet-grid.sheet-grid--pad
+    .sheet-col__row
+        .sheet-grid
             .sheet-grid__cell.sheet-grid__cell--7-12
                 include levels
 
             .sheet-grid__cell.sheet-grid__cell--5-12.sheet-grid__cell--align-top
                 include resources
 
-    .sheet-grid__cell
-        .sheet-grid.sheet-grid--pad
+    .sheet-col__row
+        .sheet-grid
             .sheet-grid__cell
 
                 .sheet-grid
@@ -22,29 +22,29 @@
 
 
             .sheet-grid__cell
-                .sheet-grid
-                    .sheet-grid__cell.sheet-grid__cell--1.sheet-grid--sub Other Class Abilities, Notes and Feats    
+                .sheet-row.sheet-row--hd
+                    .sheet-row__cell Other Class Abilities, Notes and Feats
                 textarea(name="attr_class_abilities_and_feats")
 
-    .sheet-grid__cell
-        h1.sheet-hdg Class Actions/Macros     
-            i.sheet-pictos l        
-        p.sheet-note Use this section to quickly create useful class macros for often used features or abilities.  For example, channel divinity options, bardic performance options, Ki point using abilities, etc...  You can also use this section for any custom macro you want that the sheet doesnt currently include. 
+    .sheet-col__row
+        h1.sheet-hdg Class Actions/Macros
+            i.sheet-pictos l
+        p.sheet-note Use this section to quickly create useful class macros for often used features or abilities.  For example, channel divinity options, bardic performance options, Ki point using abilities, etc...  You can also use this section for any custom macro you want that the sheet doesnt currently include.
 
-        .sheet-grid.sheet-grid--sub
-            .sheet-grid__cell.sheet-grid__cell--4 Name
-            .sheet-grid__cell.sheet-grid__cell--7 Description
-            .sheet-grid__cell.sheet-grid__cell--sm Macro
+        .sheet-row.sheet-row--hd
+            .sheet-row__cell.sheet-row__cell--4 Name
+            .sheet-row__cell.sheet-row__cell--7 Description
+            .sheet-row__cell.sheet-row__cell--sm Macro
 
         fieldset.repeating_classactions
 
-            .sheet-grid.sheet-grid--split
-                .sheet-grid__cell.sheet-grid__cell--4
+            .sheet-row
+                .sheet-row__cell.sheet-row__cell--4
                     input(type="text" name="attr_classactionname")
-                .sheet-grid__cell.sheet-grid__cell--7
+                .sheet-row__cell.sheet-row__cell--7
                     textarea(name="attr_classactiondescription")
-                .sheet-grid__cell.sheet-grid__cell--sm 
+                .sheet-row__cell.sheet-row__cell--sm
                     +roll(
-                        name='roll_ClassAction' 
+                        name='roll_ClassAction'
                         value="/em uses @{classactionname} \n\n@{classactiondescription}"
                     )

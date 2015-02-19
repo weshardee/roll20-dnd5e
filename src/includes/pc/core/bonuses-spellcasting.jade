@@ -1,0 +1,30 @@
+// bonuses row 3
+h2.sheet-hdg.sheet-hdg--2 Spellcasting
+
+.sheet-row
+    .sheet-row__cell
+        +field('Attack Rolls')
+            input(
+                type="number"
+                step="1"
+                name="attr_global_spell_attack_bonus"
+                value="0"
+            )
+
+    .sheet-row__cell
+        +field('Damage Rolls')
+            input(
+                type="number"
+                step="1"
+                name="attr_global_spell_damage_bonus"
+                value="0"
+            )
+
+    .sheet-row__cell
+        +field('Save DC')
+            input(
+                type="number"
+                name="attr_global_spell_dc_bonus"
+                value="0"
+                step="1"
+            )

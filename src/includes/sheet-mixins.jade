@@ -16,8 +16,8 @@ mixin field(name, mod)
     label.sheet-labelled(
         class= mod ? 'sheet-labelled--' + mod : ''
     )&attributes(attributes)
-        span.sheet-labelled__label= name
         block
+        span.sheet-labelled__label= name
 
 mixin stat-bonus(name)
     .sheet-labelled.sheet-labelled--select

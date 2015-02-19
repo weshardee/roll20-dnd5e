@@ -1,52 +1,51 @@
 mixin skills-hdg()
-    .sheet-grid.sheet-grid--sub
-        .sheet-grid__cell.sheet-grid__cell--sm
-        .sheet-grid__cell.sheet-grid__cell--1 Skill
-        .sheet-grid__cell.sheet-grid__cell--1 Proficient
-        .sheet-grid__cell.sheet-grid__cell--sm Bonus
-        .sheet-grid__cell.sheet-grid__cell--sm Total
-        .sheet-grid__cell.sheet-grid__cell--sm Pass
+    .sheet-row.sheet-row--hd
+        .sheet-row__cell.sheet-row__cell--sm
+        .sheet-row__cell.sheet-row__cell--1 Skill
+        .sheet-row__cell.sheet-row__cell--1 Proficient
+        .sheet-row__cell.sheet-row__cell--sm Bonus
+        .sheet-row__cell.sheet-row__cell--sm Total
+        .sheet-row__cell.sheet-row__cell--sm Pass
 
 - var numSkills = skills.length
 - var numSkillsInChunk = numSkills / NUM_SKILL_COLUMNS
 - var skillsGroups = [skills.slice(0, numSkillsInChunk), skills.slice(numSkillsInChunk)]
 
-.sheet-grid.sheet-grid--pad
+.sheet-grid
     each skills in skillsGroups
         .sheet-grid__cell
-            +skills-hdg        
+            +skills-hdg
             each skill in skills
-                .sheet-grid.sheet-grid--split
-                    .sheet-grid__cell.sheet-grid__cell--sm
+                .sheet-row
+                    .sheet-row__cell.sheet-row__cell--sm
                         +roll(
                             name='roll_#{skill.id}_check'
                             value='/em uses\n\n#{skill.name} (#{skill.attr}):\n [[1d20 + @{#{skill.id}} [Proficiency + #{skill.attr} Mod + Expertise + Misc] + (@{global_check_bonus}) [Ability Check Bonus] ]]'
                         )
-                    .sheet-grid__cell.sheet-grid__cell--3
-                        +field(skill.attr) 
+                    .sheet-row__cell.sheet-row__cell--3
+                        +field(skill.attr)
                             div #{skill.name}
-                    .sheet-grid__cell.sheet-grid__cell--3
-                        .sheet-labelled.sheet-labelled--select
-                            select( name="attr_#{skill.id}_prof_exp" )
-                                +skill-proficiency-options()
-                    .sheet-grid__cell.sheet-grid__cell--sm
-                        input.sheet-labelled(
+                    .sheet-row__cell.sheet-row__cell--3
+                        select.sheet-select( name="attr_#{skill.id}_prof_exp" )
+                            +skill-proficiency-options()
+                    .sheet-row__cell.sheet-row__cell--sm
+                        input.sheet-field(
                             type="number"
-                            name="attr_#{skill.id}_bonus" 
-                            value="0" 
+                            name="attr_#{skill.id}_bonus"
+                            value="0"
                             step="1"
                         )
-                    .sheet-grid__cell.sheet-grid__cell--sm
-                        input.sheet-labelled(
-                            type="number" 
-                            name="attr_#{skill.id}" 
+                    .sheet-row__cell.sheet-row__cell--sm
+                        input.sheet-field(
+                            type="number"
+                            name="attr_#{skill.id}"
                             value="@{#{skill.id}_prof_exp} + @{#{skill.attr}_mod} + @{#{skill.id}_bonus}"
-                            disabled 
+                            disabled
                         )
-                    .sheet-grid__cell.sheet-grid__cell--sm
-                        input.sheet-labelled.sheet-labelled--blue(
-                            type="number" 
-                            name="attr_passive_#{skill.id}" 
-                            value="10 + @{#{skill.id}}" 
+                    .sheet-row__cell.sheet-row__cell--sm
+                        input.sheet-field.sheet-field--alt(
+                            type="number"
+                            name="attr_passive_#{skill.id}"
+                            value="10 + @{#{skill.id}}"
                             disabled
                         )

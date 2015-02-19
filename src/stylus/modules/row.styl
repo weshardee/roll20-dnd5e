@@ -1,0 +1,83 @@
+SHEET_ROW_BASE_WIDTH = HEIGHT * 1.5
+
+row-cell-border-base()
+    &::after
+        border 0 solid BORDER_COLOR
+        position absolute
+        top 0
+        right 0
+        left 0
+        bottom 0
+        pointer-events none
+        content " "
+        {block}
+
+row-cell-border()
+    &::after
+        {block}
+
+.sheet-row
+    display flex
+    position relative // for borders
+    align-items stretch
+
+    background-color white
+    width 100%
+
+// alternate colors
+
+.sheet-row--hd
+    background-color alpha(DARK_GRAY, 0.9)
+    color white
+    font-size FONT_SIZE_SM
+
+// row items
+
+.sheet-row__cell
+    flex 1
+    position relative // for borders
+    display flex
+    flex-direction column
+    min-height HEIGHT
+    +row-cell-border-base()
+        border-bottom-width 1px
+        border-right-width 1px
+
+.sheet-row__cell:first-child
+    +row-cell-border()
+        border-left-width 1px
+
+// alignment
+
+.sheet-row__cell--center
+    justify-content center
+
+// sizes
+
+.sheet-row__cell--sm
+    flex HIGH
+    max-width SHEET_ROW_BASE_WIDTH
+
+.sheet-row__cell--md
+    flex HIGH
+    max-width SHEET_ROW_BASE_WIDTH * 2
+
+.sheet-row__cell--lg
+    flex HIGH
+    max-width SHEET_ROW_BASE_WIDTH * 3
+
+.sheet-row__cell--lgPlus
+    flex HIGH
+    max-width SHEET_ROW_BASE_WIDTH * 3.5
+
+.sheet-row__cell--xlg
+    flex HIGH
+    max-width SHEET_ROW_BASE_WIDTH * 4
+
+.sheet-row__cell--xxlg
+    flex HIGH
+    max-width SHEET_ROW_BASE_WIDTH * 5
+
+for grow in (1...10)
+    .sheet-row__cell--{grow}
+        flex-grow (grow)

@@ -26,6 +26,7 @@
     font-weight normal
     text-align center
     text-shadow none // for .sheet-label
+    transition none
 }
 
 .sheet-wrapper img
@@ -47,7 +48,7 @@
 
 .sheet-wrapper select
     -webkit-appearance none
-    padding PAD (HEIGHT/3)
+    padding 0 (HEIGHT/3)
     flex 1
 
 .sheet-wrapper input[type=number]:disabled::-webkit-inner-spin-button,
@@ -60,6 +61,10 @@
     flex 1
     text-align left
     padding PAD
+    border 1px solid transparent
+
+.sheet-wrapper textarea:focus
+    border-color BLUE
 
 .sheet-wrapper fieldset
     width 100%

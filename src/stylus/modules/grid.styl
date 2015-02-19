@@ -1,4 +1,4 @@
-GRID_PAD = PAD / 2
+GRID_PAD = PAD
 
 grid-border()
     &::after
@@ -18,36 +18,8 @@ grid-border()
     display flex
     position relative // for borders
     min-height HEIGHT
-
-.sheet-grid--col
-    display block
-
-// space between cells
-
-.sheet-grid--pad
-    margin (- PAD / 2)
-
-.sheet-grid--pad > *
-    padding (PAD / 2)
-
-// dividers between cells
-
-.sheet-grid--split
-    background-color white
-    +grid-border()
-        border-left-width 1px
-        border-bottom-width 1px
-        border-right-width 1px
-
-// alternate colors
-
-.sheet-grid--sub
-    background-color alpha(DARK_GRAY, 0.9)
-    color white
-    font-size FONT_SIZE_SM
-    min-height HEIGHT
-    +grid-border()
-        border-bottom-width 1px
+    margin-top (- GRID_PAD)
+    margin-left (- GRID_PAD)
 
 // grid items
 
@@ -56,42 +28,11 @@ grid-border()
     position relative // for borders
     display flex
     flex-direction column
-
-.sheet-grid--pad > *
     justify-content flex-start
-
-// alignment
-
-.sheet-grid__cell--center
-    justify-content center
+    padding-top GRID_PAD
+    padding-left GRID_PAD
 
 // sizes
-
-SHEET_GRID_BASE_WIDTH = HEIGHT * 1.5
-
-.sheet-grid__cell--sm
-    flex HIGH
-    max-width SHEET_GRID_BASE_WIDTH
-
-.sheet-grid__cell--md
-    flex HIGH
-    max-width SHEET_GRID_BASE_WIDTH * 2
-
-.sheet-grid__cell--lg
-    flex HIGH
-    max-width SHEET_GRID_BASE_WIDTH * 3
-
-.sheet-grid__cell--xlg
-    flex HIGH
-    max-width SHEET_GRID_BASE_WIDTH * 4
-
-.sheet-grid__cell--xxlg
-    flex HIGH
-    max-width SHEET_GRID_BASE_WIDTH * 5
-
-.sheet-grid__cell--mdPlus
-    flex HIGH
-    max-width SHEET_GRID_BASE_WIDTH * 3.5
 
 for grow in (1...10)
     .sheet-grid__cell--{grow}

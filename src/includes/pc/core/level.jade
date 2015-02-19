@@ -1,42 +1,36 @@
 h1.sheet-hdg Level and Experience
     i.sheet-pictos-three d
-.sheet-grid.sheet-grid--split 
-    .sheet-grid__cell.sheet-grid__cell--1-4
-        label.sheet-labelled.sheet-labelled--disabled(
-            title='This is automatically calculated from your individual class levels listed in the class section'
-        )                                    
-            span.sheet-labelled__label Overall Level
-            input.sheet-labelled__field(
+.sheet-row
+    .sheet-row__cell
+        +field('Overall Level')
+            input(
+                title='This is automatically calculated from your individual class levels listed in the class section'
                 type='number' 
                 name='attr_level' 
                 value='@{barbarian_level} + @{bard_level} + @{cleric_level} + @{druid_level} + @{fighter_level} + @{monk_level} + @{paladin_level} + @{ranger_level} + @{rogue_level} + @{sorcerer_level} + @{warlock_level} + @{wizard_level}' 
                 disabled
             ) 
-    .sheet-grid__cell.sheet-grid__cell--1-4
-        label.sheet-labelled.sheet-labelled--disabled(
-            title='This is a bonus for you being proficient in a given task.  This bonus automatically increases as you level up and is used automatically in various rolls'
-        )
-            span.sheet-labelled__label Prof Bonus
-            input.sheet-labelled__field(
+    .sheet-row__cell
+        +field('Prof Bonus')
+            input(
+                title='This is a bonus for you being proficient in a given task.  This bonus automatically increases as you level up and is used automatically in various rolls'
                 type='number'  
                 name='attr_PB' 
                 value='(ceil((@{level})/1e10) + ceil((@{level})/4))' 
                 disabled
             )
-    .sheet-grid__cell.sheet-grid__cell--1-4 
-        label.sheet-labelled             
-            span.sheet-labelled__label Current XP
-            input.sheet-labelled__field(
+    .sheet-row__cell 
+        +field('Current XP')
+            input(
                 type='number' 
                 name='attr_xp' 
                 min='0' 
                 step='1'
             )
     
-    .sheet-grid__cell.sheet-grid__cell--1-4 
-        label.sheet-labelled                     
-            span.sheet-labelled__label XP for next level
-            input.sheet-labelled__field(
+    .sheet-row__cell
+        +field('XP for next level')
+            input(
                 type='number' 
                 id='attr_xp_next_level' 
                 name='attr_xp_next_level' 

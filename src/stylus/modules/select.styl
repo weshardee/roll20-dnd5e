@@ -1,18 +1,5 @@
-.sheet-field
+.sheet-select
     border 1px solid transparent
-    min-height HEIGHT
-
-.sheet-field:focus
-    border-color BLUE
-
-.sheet-field:disabled
-    background-color PALE
-    padding-left 0 !important // reset number padding
-
-.sheet-field--alt:disabled
-    background-color BRIGHT_PALE_BLUE
-
-.sheet-field--select
     padding-right (HEIGHT*0.75)
 
     &::before,
@@ -27,3 +14,4 @@
 
     &::before
         transform rotate(180deg) translateY(HEIGHT/4)
+        
