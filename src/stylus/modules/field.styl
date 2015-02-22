@@ -2,6 +2,8 @@
     border 1px solid transparent
     min-height HEIGHT
     width 100% !important
+    padding 0 (HEIGHT/3)
+    flex 1
 
 .sheet-field:focus
     border-color BLUE
@@ -14,17 +16,9 @@
     background-color BRIGHT_PALE_BLUE
 
 .sheet-field--select
+    -webkit-appearance none
     padding-right (HEIGHT*0.75)
-
-    &::before,
-    &::after
-        position absolute
-        top calc(50% + 1px)
-        right (HEIGHT/3)
-        border (HEIGHT/8) solid transparent
-        border-top (HEIGHT/5) solid FADED_GRAY
-        border-bottom 0
-        content " "
-
-    &::before
-        transform rotate(180deg) translateY(HEIGHT/4)
+    background-image url("https://d30y9cdsu7xlg0.cloudfront.net/svg/ab9d52ac-5cc0-4a3e-8d41-6249d6e7b5ef.svg?Expires=1424573968&Signature=ZjnE58Ref66aPIxbh6~fml1wzrRjdCcNbvlfEpDmscKD-Vszxy9QbkJaDcw4R99NX~xv42UPtc-gCxZ5WygA-cm1XnuDzoGtI7J0NFlT-PdY48jLUhNOpPjfJd8NPA8LyACVSYm1aXZOPKAAV9n6FhKYFxqqZ5sUkDmVWWzGQ7c_&Key-Pair-Id=APKAI5ZVHAXN65CHVU2Q")
+    background-size (HEIGHT/3)
+    background-repeat no-repeat
+    background-position 'calc(100% - %s)' % (HEIGHT/4)
