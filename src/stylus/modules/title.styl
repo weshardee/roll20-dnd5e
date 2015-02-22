@@ -12,12 +12,16 @@
     }
 }
 
+.sheet-title
+    max-width MAX_WIDTH
+    margin auto
+
 .sheet-title-field {
     position relative
     overflow hidden
     z-index 1
 
-    margin (PAD/2) auto !important
+    margin 0 !important
     padding 0 !important
     height auto
     max-width MAX_WIDTH
@@ -38,7 +42,7 @@
     background-color transparent
     border 0 !important // override global focus
     height auto
-    width auto // override global
+    width 100% // override global
     color white !important // override error color
 }
 
@@ -89,21 +93,6 @@
     animation bubble 0.5s ease
 }
 
-/* size variations */
-
-.sheet-title-field--name {
-    font-size 3rem !important
-}
-
-.sheet-title-field--sub {
-    display inline-block !important
-    width auto !important
-
-    & > input,
-    .sheet-title-field__label--sub {
-        padding-top 0.8em !important
-    }
-}
 /* label */
 
 .sheet-title-field__label {
@@ -120,12 +109,5 @@
     :valid ~ & {
         transform translateY(-35%) scale(0.4)
         opacity 0.5
-    }
-}
-
-.sheet-title-field__label--sub {
-    :focus ~ &,
-    :valid ~ & {
-        transform translateY(-35%) scale(0.6)
     }
 }

@@ -10,23 +10,30 @@ mixin title-field(label, modifier)
         ) #{label}
 
 .sheet-title
-    +title-field('name', 'name')
-        input(
-            type="text" 
-            name="attr_character_name"
-            required
-        )
 
-    +title-field('race', 'sub')
-        input(
-            type="text" 
-            name="attr_race"
-            required
-        )
-            
-    +title-field('class', 'sub')
-        input(
-            type="text"
-            name="attr_class"
-            required
-        )
+    .sheet-grid
+        .sheet-grid__cell
+            +title-field('name', 'name')
+                input(
+                    type="text" 
+                    name="attr_character_name"
+                    required
+                )
+
+        .sheet-grid__cell
+            .sheet-grid
+                .sheet-grid__cell
+                    +title-field('race', 'sub')
+                        input(
+                            type="text" 
+                            name="attr_race"
+                            required
+                        )
+        
+                .sheet-grid__cell
+                    +title-field('class', 'sub')
+                        input(
+                            type="text"
+                            name="attr_class"
+                            required
+                        )

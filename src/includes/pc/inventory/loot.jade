@@ -1,13 +1,12 @@
 h1.sheet-hdg Inventory 
-    i.sheet-pictos O  
-.sheet-grid.sheet-grid--split
-    .sheet-grid__cell 
+
+.sheet-row
+    .sheet-row__cell 
         .sheet-label Weight entered in each row below is :  
-    .sheet-grid__cell.sheet-grid__cell--2
-        .sheet-labelled.sheet-labelled--select
-            select(name="attr_weight_unit_setting")
-                option(value="0") The total weight of the row (ignoring quantity) 
-                option(value="1") Weight per single item of the row (total weight of the row = quantity * weight) 
+    .sheet-row__cell.sheet-row__cell--2
+        select.sheet-field(name="attr_weight_unit_setting")
+            option(value="0") The total weight of the row (ignoring quantity) 
+            option(value="1") Weight per single item of the row (total weight of the row = quantity * weight) 
 
 .sheet-tabs
     - var lootPages = ['page 1', 'page 2', 'page 3', 'page 4']

@@ -1,12 +1,11 @@
 h1.sheet-hdg Coin Carried
-    i.sheet-pictos h  
-    
-.sheet-grid.sheet-grid--split
-    .sheet-grid__cell
+
+.sheet-row
+    .sheet-row__cell
         p.sheet-note Total = value of all coins converted to GP 
  
-.sheet-grid.sheet-grid--split
-    .sheet-grid__cell
+.sheet-row
+    .sheet-row__cell
         +field('CP')
             input(
                 title="Copper Pieces"
@@ -16,7 +15,7 @@ h1.sheet-hdg Coin Carried
                 min="0" 
                 step="1" 
             )
-    .sheet-grid__cell
+    .sheet-row__cell
         +field('SP')
             input(
                 title="Silver Pieces" 
@@ -26,7 +25,7 @@ h1.sheet-hdg Coin Carried
                 min="0" 
                 step="1"
             )
-    .sheet-grid__cell
+    .sheet-row__cell
         +field('EP')
             input(
                 title="Electrum Pieces" 
@@ -36,7 +35,7 @@ h1.sheet-hdg Coin Carried
                 min="0" 
                 step="1"
             )
-    .sheet-grid__cell
+    .sheet-row__cell
         +field('GP')
             input(
                 title="Gold Pieces" 
@@ -46,7 +45,7 @@ h1.sheet-hdg Coin Carried
                 min="0" 
                 step="1"
             )
-    .sheet-grid__cell
+    .sheet-row__cell
         +field('PP')
             input(
                 title="Platinum Pieces" 
@@ -56,7 +55,7 @@ h1.sheet-hdg Coin Carried
                 min="0" 
                 step="1"
             )
-    .sheet-grid__cell
+    .sheet-row__cell
         +field('total', 'disabled')
             input(
                 title="Total (in Gold Pieces)" 

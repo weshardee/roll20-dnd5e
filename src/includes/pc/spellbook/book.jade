@@ -18,7 +18,7 @@
 - col.label = 'md'
 
 h1.sheet-hdg Spell Book
-    i.sheet-pictos-three g
+
 p.sheet-note Use this section to track spells you know, have prepared, or have in your spell book.  Spells that do not count against the limit of spells you have prepared (ie. Cleric Domain spells, Paladin Oath spells, etc...), and spells from classes which do not prepare spells (ie. Sorcerer, Warlock, etc...), should be marked as "Always" prepared
 
 .sheet-tabs
@@ -41,19 +41,16 @@ p.sheet-note Use this section to track spells you know, have prepared, or have i
         )
 
     for i in spells.levels
-        // BEGIN new spell page
+        // spell page
         .sheet-tabs__section(class="sheet-tabs__section--" + i)
             .sheet-col
                 .sheet-col__row
-                    .sheet-grid.sheet-grid--sub
+                    .sheet-row.sheet-row--hd
                         .sheet-grid__cell= i ? "Level " + i : "Cantrips"
 
                 .sheet-col__row
-                    // BEGIN spell row    
+                    // spell row
                     fieldset.sheet-grid__cell(
                         class="repeating_spellbook" + (i ? 'level' + i : 'cantrip')
                     )
                         include spell/_
-                    // END spell row
-
-        // END spell page

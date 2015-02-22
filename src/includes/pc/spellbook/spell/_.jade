@@ -2,7 +2,7 @@
 input(type="hidden" name="attr_spellbaselevel" value="0") 
 input(type="hidden" name="attr_spellfriendlylevel" value=friendlyLevel )  
 
-.sheet-grid.sheet-grid--split      
+.sheet-row      
     .sheet-grid__cell
         +field(friendlyLevel)(class="sheet-labelled--hdg")
             input.sheet-labelled__field--hdg(
@@ -10,7 +10,7 @@ input(type="hidden" name="attr_spellfriendlylevel" value=friendlyLevel )
                 name="attr_spellname"
             )
 
-.sheet-grid.sheet-grid--split
+.sheet-row
     .sheet-grid__cell(class="sheet-grid__cell--" + col.school)
         +field('School', 'label-select')
             select(name="attr_spellschool")
@@ -48,7 +48,7 @@ input(type="hidden" name="attr_spellfriendlylevel" value=friendlyLevel )
                 option(value="1") Y 
                 option(value="0.0001" selected=!i) Always 
 
-.sheet-grid.sheet-grid--split
+.sheet-row
     .sheet-grid__cell(class="sheet-grid__cell--" + col.from) 
         +field('From', 'label-select')
             select(
