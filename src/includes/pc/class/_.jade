@@ -15,8 +15,8 @@
         .sheet-grid
             .sheet-grid__cell
 
-                .sheet-grid
-                    .sheet-grid__cell.sheet-grid__cell--1.sheet-grid--sub Class Features
+                .sheet-row.sheet-row--hd
+                    .sheet-row__cell Class Features
                 textarea(name="attr_class_features")
 
 
@@ -40,9 +40,9 @@
 
             .sheet-row
                 .sheet-row__cell.sheet-row__cell--4
-                    input(type="text" name="attr_classactionname")
+                    input.sheet-field(type="text" name="attr_classactionname")
                 .sheet-row__cell.sheet-row__cell--7
-                    textarea(name="attr_classactiondescription")
+                    textarea.sheet-field(name="attr_classactiondescription")
                 .sheet-row__cell.sheet-row__cell--sm
                     +roll(
                         name='roll_ClassAction'

@@ -14,6 +14,7 @@ FIELD_LABEL_OVERLAP = 0.3rem
     position relative
     z-index 0 // new layering context
     padding-bottom (FIELD_LABEL_HEIGHT - FIELD_LABEL_OVERLAP)
+    margin 0 !important // override app.css
 
 .sheet-labelled--disabled
     background-color PALE
@@ -31,13 +32,15 @@ FIELD_LABEL_OVERLAP = 0.3rem
     display flex
     flex-direction column // vert centering
 
-    height HEIGHT
-    max-width 100% !important
+    height HEIGHT !important // override app.css
+    width 100% !important // override app.css
+    max-width 100% !important // override app.css
 
     background-color transparent !important
     border 0 !important
 
     line-height 1
+    font-size FONT_SIZE
 
 .sheet-labelled__label
     display flex

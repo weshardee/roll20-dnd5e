@@ -17,7 +17,8 @@
     overflow hidden
     z-index 1
 
-    margin (PAD/2)
+    margin (PAD/2) auto !important
+    padding 0 !important
     height auto
     max-width MAX_WIDTH
 
@@ -25,15 +26,7 @@
     border-bottom 1px solid alpha(white, 0.2) !important
     background transparent
     color white
-    font-size 1.4rem
-}
-
-.sheet-title-field {
-    margin-left auto
-    margin-right @margin-left
-}
-
-.sheet-title-field > input {
+    font-size 1.4rem !important
 }
 
 .sheet-title-field > input,
@@ -99,16 +92,16 @@
 /* size variations */
 
 .sheet-title-field--name {
-    display block
-    font-size 3rem
+    font-size 3rem !important
 }
 
 .sheet-title-field--sub {
-    display inline-block
+    display inline-block !important
+    width auto !important
 
     & > input,
     .sheet-title-field__label--sub {
-        padding-top 0.8em
+        padding-top 0.8em !important
     }
 }
 /* label */

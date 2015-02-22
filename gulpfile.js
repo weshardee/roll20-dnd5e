@@ -34,7 +34,10 @@ gulp.task('html', function() {
     .pipe(plugins.jade({
         data: require('./data')
     }))
-    .pipe(plugins.minifyHtml())
+    // .pipe(plugins.htmltidy({
+    //     'show-body-only': true
+    // }))
+    // .pipe(plugins.minifyHtml())
     .pipe(gulp.dest(dest))
     .pipe(reload({stream:true}));
 });
