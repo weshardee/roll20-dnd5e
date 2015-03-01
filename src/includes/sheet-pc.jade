@@ -4,11 +4,11 @@ mixin main-tab(id)
         value = id
         title = id
         type = 'radio'
-        name = 'attr_tab'
+        name = 'main_tab'
     )&attributes(attributes)
 
 .sheet-tabs
-    +main-tab('core')(checked)
+    +main-tab('core')( checked = true )
     .sheet-tabs__section.sheet-tabs__section--1: include pc/core/_
     
     +main-tab('skills')
