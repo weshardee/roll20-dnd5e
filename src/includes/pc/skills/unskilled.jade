@@ -5,8 +5,8 @@
             '/em makes an ability check\n\n' + ability.abbr + ' (no skill) check :\n[[1d20 + @{basic_' + ability.name + '_check_mod} [' + ability.name + ' Mod] + (@{global_check_bonus}) [Active Check Bonus] ]]'
         )
     .sheet-row__cell
-        +field(ability.abbr)
-            div Unskilled
+        +field('unskilled')
+            div #{ability.name}
     .sheet-row__cell
         +select(
             name= '#attr_basic_#{ability.name}_prof_exp'
@@ -27,4 +27,3 @@
             value="@{#{ability.name}_mod} + @{basic_#{ability.name}_bonus} + @{basic_#{ability.name}_prof_exp}"
             disabled
         )
-    .sheet-row__cell.sheet-row__cell--sm
