@@ -41,7 +41,7 @@ mixin tab(title, name, i, multi)
     )
 
 mixin tabs(name, tabs)
-    +tab('all', name, 99)
+    +tab('all', name, 'all')
     
     each tab, i in tabs
         +tab(tab, name, i)
