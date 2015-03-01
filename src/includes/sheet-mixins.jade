@@ -50,3 +50,10 @@ mixin select()
     .sheet-select
         select()&attributes(attributes)
             block
+
+mixin hide(name)
+    input.sheet-hide(
+        type = 'checkbox'
+        name = name
+        checked = isDev
+    )
