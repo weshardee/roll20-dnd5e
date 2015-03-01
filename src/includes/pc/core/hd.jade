@@ -11,7 +11,12 @@
 
     .sheet-row
         .sheet-row__cell 
-            .sheet-label Sorcerer, Wizard                            
+            .sheet-label Sorcerer, Wizard
+                input(
+                    name = 'attr_hd_d6'
+                    value = '@{attr_hd_d6_max}'
+                )
+
         .sheet-row__cell.sheet-row__cell--sm 
             .sheet-label d6
         .sheet-row__cell.sheet-row__cell--sm 
