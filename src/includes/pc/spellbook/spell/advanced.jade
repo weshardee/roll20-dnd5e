@@ -1,0 +1,14 @@
+.sheet-row
+    .sheet-row__cell(class= 'sheet-row__cell--' + col.label)
+        .sheet-label advanced
+    .sheet-row__cell.sheet-row__cell--3
+        +field('Spell Description/Flavour')
+            textarea(name="attr_spelldescription")
+    .sheet-row__cell.sheet-row__cell--3
+        +field('Higher Spell Slot Effect')
+            textarea(name="attr_spellhighersloteffect")
+    .sheet-row__cell.sheet-row__cell--1.sheet-row__cell--sm
+        +roll(
+            name="roll_SpellInfo" 
+            value="/em looks at the details for @{spellname}\n\nName : @{spellname}\n@{spellschool} @{spellfriendlylevel}\nCast time : @{spellcasttime}\nRange : @{spellrange}\nDuration : @{spellduration}\n\n@{spellconcentration} @{spellritual}\n\nDescription : \n@{spelldescription}\n\n\nAt Higher Levels :\n@{spellhighersloteffect} Spell Card"
+        )

@@ -1,0 +1,34 @@
+h1.sheet-hdg Hit Points and Speed
+
+.sheet-row 
+    .sheet-row__cell 
+        +field('Current')
+            input.sheet-field(
+                type='number' 
+                name='attr_HP' 
+                step='1'
+            ) 
+    .sheet-row__cell 
+        +field('Max')
+            input.sheet-field(
+                type='number' 
+                name='attr_HP_max' 
+                min='1' 
+                step='1'
+            )
+    .sheet-row__cell
+        +field('Temp HP')
+            input.sheet-field(
+                type='number' 
+                name='attr_temp_HP' 
+                value='0' 
+                min='0' 
+                step='1' 
+            )
+
+    .sheet-row__cell
+        +field('Speed')
+            input.sheet-field(
+                type='text' 
+                name='attr_speed' 
+            )

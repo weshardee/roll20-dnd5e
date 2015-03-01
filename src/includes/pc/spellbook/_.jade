@@ -1,0 +1,25 @@
+include stats
+
+.sheet-col
+    .sheet-col__row
+        h1.sheet-hdg Spell Dashboard and Spell Slots
+
+    .sheet-col__row
+        .sheet-grid
+            .sheet-grid__cell.sheet-grid__cell--4
+                .sheet-col
+                    .sheet-col__row
+                        include classes
+
+                    .sheet-col__row
+                        .sheet-grid
+                            .sheet-grid__cell.sheet-grid__cell--align-top
+                                include sorcerer
+                            .sheet-grid__cell.sheet-grid__cell--align-top
+                                include warlock
+
+            .sheet-grid__cell
+                include slots
+
+    .sheet-col__row
+        include book

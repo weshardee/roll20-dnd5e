@@ -1,0 +1,106 @@
+- var colWidth = {}
+- colWidth.prof       = 'sm'
+- colWidth.name       = 3
+- colWidth.wielded    = 2
+- colWidth.finesse    = 'sm'
+- colWidth.magicBonus = 'sm'
+- colWidth.toHit      = 'sm'
+- colWidth.attack     = 'sm'
+- colWidth.dmgDice    = 'sm'
+- colWidth.dmgBonus   = 'sm'
+- colWidth.dmgType    = 2
+- colWidth.dmgRoll    = 'sm'
+
+
+h1.sheet-hdg Melee Weapons 
+
+.sheet-row.sheet-row--hd
+    .sheet-row__cell(class="sheet-row__cell--#{colWidth.prof}") Prof?
+    .sheet-row__cell(class="sheet-row__cell--#{colWidth.name}") Weapon
+    .sheet-row__cell(class="sheet-row__cell--#{colWidth.wielded}") Wielded
+    .sheet-row__cell(class="sheet-row__cell--#{colWidth.finesse}") Finesse?
+    .sheet-row__cell(class="sheet-row__cell--#{colWidth.magicBonus}") Magic Bonus
+    .sheet-row__cell(class="sheet-row__cell--#{colWidth.toHit}") To Hit
+    .sheet-row__cell(class="sheet-row__cell--#{colWidth.attack}") Attack
+    .sheet-row__cell(class="sheet-row__cell--#{colWidth.dmgDice}") Dmg Dice
+    .sheet-row__cell(class="sheet-row__cell--#{colWidth.dmgBonus}") Dmg Bonus
+    .sheet-row__cell(class="sheet-row__cell--#{colWidth.dmgType}") Dmg Type
+    .sheet-row__cell(class="sheet-row__cell--#{colWidth.dmgRoll}") Dmg
+
+- var i = 1
+while i <= numWeaponRows
+    // BEGIN melee weapon row 
+    .sheet-row
+        .sheet-row__cell(class="sheet-row__cell--#{colWidth.prof}") 
+            +tick(
+                type="checkbox" 
+                value="@{PB}" 
+                name="attr_pbmelee#{i}" 
+                checked
+            )
+        .sheet-row__cell(class="sheet-row__cell--#{colWidth.name}") 
+            input.sheet-field(
+                type="text" 
+                name="attr_meleeweaponname#{i}"
+            )
+        .sheet-row__cell(class="sheet-row__cell--#{colWidth.wielded}") 
+            +select(
+                name="attr_meleeattackweilded#{i}"
+                title="How is the weapon being wielded"
+            )
+                option(value="1") main hand
+                option(value="1.1") 2 handed
+                option(value="0") off hand
+                option(value="1.2") off hand (2 weap fight style)
+        .sheet-row__cell(class="sheet-row__cell--#{colWidth.finesse}")
+            select.sheet-field.sheet-field--select(
+                name="attr_meleeattackstat#{i}"
+            )
+                option(value="@{strength_mod}") N
+                option(value="@{finesse_mod}") Y
+        .sheet-row__cell(class="sheet-row__cell--#{colWidth.magicBonus}")
+            input.sheet-field(
+                title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"
+                type="number" 
+                name="attr_meleemagic#{i}" 
+                value="0" 
+                step="1"
+            )
+        .sheet-row__cell(class="sheet-row__cell--#{colWidth.toHit}") 
+            input.sheet-field(
+                type="number" 
+                name="attr_meleetohit#{i}" 
+                value="@{meleeattackstat#{i}} + @{pbmelee#{i}} + @{meleemagic#{i}}" 
+                disabled
+            )
+        .sheet-row__cell(class="sheet-row__cell--#{colWidth.attack}")
+            +roll(
+                type="roll" 
+                name="roll_MeleeAttack1" 
+                value="/em uses @{meleeweaponname#{i}} to attack\n\n[[1d20 + @{meleetohit#{1}} [To Hit] + (@{global_melee_attack_bonus}) [Active Melee Attack Bonus] ]] vs AC"
+            ) Attack
+        .sheet-row__cell(class="sheet-row__cell--#{colWidth.dmgDice}")
+            input.sheet-field(
+                title="Only enter the base damage roll here without any bonuses from stats or other sources"
+                type="text" 
+                name="attr_meleedmg#{i}"
+            )
+        .sheet-row__cell(class="sheet-row__cell--#{colWidth.dmgBonus}") 
+            input.sheet-field(
+                type="number" 
+                name="attr_meleedmgbonus#{i}" 
+                value="(@{meleeattackstat#{i}} * floor(@{meleeattackweilded#{i}})) + @{meleemagic#{i}}" 
+                disabled
+            )
+        .sheet-row__cell(class="sheet-row__cell--#{colWidth.dmgType}") 
+            input.sheet-field(
+                type="text" 
+                name="attr_meleedmgtype#{i}"
+            )
+        .sheet-row__cell(class="sheet-row__cell--#{colWidth.dmgRoll}")
+            +roll( 
+                name="roll_MeleeDamage1" 
+                value="\nFor [[@{meleedmg#{i}} [Base damage] + @{meleedmgbonus#{i}} [Damage Bonus] + (@{global_melee_damage_bonus}) [Active Melee Damage Bonus] + 0d0 [Bugfix 0] ]] @{meleedmgtype1} damage (if a crit add an extra [[@{meleedmg1}]])"
+            ) Damage
+        // END melee weapon row 
+        - i++

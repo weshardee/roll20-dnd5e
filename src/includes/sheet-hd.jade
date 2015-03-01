@@ -1,0 +1,39 @@
+mixin title-field(label, modifier)
+    label.sheet-title-field(
+        class="sheet-title-field--" + modifier
+    )
+        block
+        span.sheet-title-field__bar &nbsp;
+        span.sheet-title-field__bubble &nbsp;
+        span.sheet-title-field__label(
+            class="sheet-title-field__label--" + modifier
+        ) #{label}
+
+.sheet-title
+
+    .sheet-grid
+        .sheet-grid__cell
+            +title-field('name', 'name')
+                input(
+                    type="text" 
+                    name="attr_character_name"
+                    required
+                )
+
+        .sheet-grid__cell
+            .sheet-grid
+                .sheet-grid__cell
+                    +title-field('race', 'sub')
+                        input(
+                            type="text" 
+                            name="attr_race"
+                            required
+                        )
+        
+                .sheet-grid__cell
+                    +title-field('class', 'sub')
+                        input(
+                            type="text"
+                            name="attr_class"
+                            required
+                        )

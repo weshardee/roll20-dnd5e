@@ -1,0 +1,55 @@
+mixin skills-hdg()
+    .sheet-row.sheet-row--hd
+        .sheet-row__cell.sheet-row__cell--sm
+        .sheet-row__cell.sheet-row__cell--1 Skill
+        .sheet-row__cell.sheet-row__cell--1 Proficient
+        .sheet-row__cell.sheet-row__cell--sm Bonus
+        .sheet-row__cell.sheet-row__cell--sm Total
+        .sheet-row__cell.sheet-row__cell--sm Pass
+
+- var numSkills = skills.length
+- var numSkillsInChunk = numSkills / NUM_SKILL_COLUMNS
+- var skillsGroups = [skills.slice(0, numSkillsInChunk), skills.slice(numSkillsInChunk)]
+
+.sheet-grid
+    each skills in skillsGroups
+        .sheet-grid__cell
+            +skills-hdg
+            each skill in skills
+                .sheet-row
+                    .sheet-row__cell.sheet-row__cell--sm
+                        - var skillRoll = '[[ 1d20 + @{' + skill.id + '} [Proficiency + ' + skill.attr + ' Mod + Expertise + Misc] + (@{global_check_bonus}) [Ability Check Bonus] ]]'
+                        
+                        +roll(
+                            name='roll_#{skill.id}_check'
+                            value='/em uses\n\n#{skill.name} (#{skill.attr}):\n #{skillRoll} | #{skillRoll}'
+                        )
+                    .sheet-row__cell.sheet-row__cell--3
+                        +field(skill.attr)
+                            span #{skill.name}
+                    .sheet-row__cell.sheet-row__cell--3
+                        +select( 
+                            name="attr_#{skill.id}_prof_exp" 
+                        )
+                            +skill-proficiency-options()
+                    .sheet-row__cell.sheet-row__cell--sm
+                        input.sheet-field(
+                            type="number"
+                            name="attr_#{skill.id}_bonus"
+                            value="0"
+                            step="1"
+                        )
+                    .sheet-row__cell.sheet-row__cell--sm
+                        input.sheet-field(
+                            type="number"
+                            name="attr_#{skill.id}"
+                            value="@{#{skill.id}_prof_exp} + @{#{skill.attr}_mod} + @{#{skill.id}_bonus}"
+                            disabled
+                        )
+                    .sheet-row__cell.sheet-row__cell--sm
+                        input.sheet-field.sheet-field--alt(
+                            type="number"
+                            name="attr_passive_#{skill.id}"
+                            value="10 + @{#{skill.id}}"
+                            disabled
+                        )

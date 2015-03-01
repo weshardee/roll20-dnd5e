@@ -1,3 +1,5 @@
+GRID_PAD = PAD
+
 grid-border()
     &::after
         border 0 solid BORDER_COLOR
@@ -10,65 +12,28 @@ grid-border()
         pointer-events none
         {block}
 
-.grid
+.sheet-grid
     min-width 100%
     align-items stretch
     display flex
     position relative // for borders
     min-height HEIGHT
+    margin-top (- GRID_PAD)
+    margin-left (- GRID_PAD)
 
-.grid--pad
-    margin (- PAD / 2)
-    min-width calc(100% - @margin)
+// grid items
 
-.grid--col
-    flex-direction column
-
-/* grid items */
-
-.grid > *
+.sheet-grid__cell
     flex 1
     position relative // for borders
-
-.grid--pad > *
-    border-radius RADIUS
-    padding (PAD / 2)
-
-.grid--split > *
-    background-color white
-    +grid-border()
-        border-bottom-width 1px
-        border-left-width 1px
-
-.grid--split > :last-child::after
-    border-right-width 1px
-
-// alternate colors
-
-.grid--sub {
-    background-color alpha(DARK_GRAY, 0.9)
-    color white
-    font-size FONT_SIZE_SM
-    min-height HEIGHT
-}
+    display flex
+    flex-direction column
+    justify-content flex-start
+    padding-top GRID_PAD
+    padding-left GRID_PAD
 
 // sizes
 
-.grid__cell--1 {
-    flex none
-    width 100%
-}
-
-for max in (2...13) {
-    for span in (1...max) {
-        .grid__cell--{span}-{max} {
-            flex none
-            width (span / max) * 100%
-        }
-    }
-}
-
-// content alignment
-.grid__cell
-    display flex
-    flex-direction column
+for grow in (1...10)
+    .sheet-grid__cell--{grow}
+        flex-grow (grow)

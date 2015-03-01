@@ -1,49 +1,103 @@
-.sheet .tabs
+.sheet-tabs
     display flex
     flex-direction row
     flex-wrap wrap
 
 // tabs for sections
-.sheet .tabs--tab
+.sheet-tabs__tab
     -webkit-appearance none
     align-items center
     background-color BLUE
+    border 0
     color white
     display flex
-    flex-grow 1
-    height HEIGHT
+    flex 1 1 auto
+    height HEIGHT !important
     width auto !important
-    margin 0
+    margin 0 !important
+    order -1 // so tabs always appear before sections
 
-.sheet .tabs--tab:hover
-    background-color alpha(BLUE, 0.85)
+.sheet-tabs__tab:focus
+    border 0
 
-.sheet .tabs--tab:first-of-type
+.sheet-tabs__tab:hover
+    opacity 0.85
+
+.sheet-tabs__tab:first-child
     border-bottom-left-radius RADIUS
     border-top-left-radius RADIUS
 
-.sheet .tabs--tab:last-of-type
+.sheet-tabs__tab:last-of-type
     border-bottom-right-radius RADIUS
     border-top-right-radius RADIUS
 
-.sheet .tabs--tab:checked
+.sheet-tabs__tab:checked
     background-color GOLD
 
-.sheet .tabs--tab::after
+.sheet-tabs__tab::after
     content attr(title)
+
+.sheet-tabs__tab--all
+    order 0
+
+// main tabs
+
+.sheet-tabs__tab--main
+    background-color DARK
+    color white
+    opacity 1 !important
+
+.sheet-tabs__tab--main:checked
+    background-color BG
+    color DARK
+
+.sheet-tabs__tab--main:checked + .sheet-tabs__section
+    display block
+
+// alternate tab colors
+
+.sheet-tabs__tab--inner
+    border-radius: 0 !important
+    background-color LIGHT
+    font-size FONT_SIZE_SM
+    color alpha(black, 0.3)
+
+.sheet-tabs__tab--inner,
+.sheet-tabs__tab--inner:focus
+    border-bottom: 1px solid BORDER_COLOR
+
+.sheet-tabs__tab--inner:checked
+    background-color PALE
+    color alpha(black, 0.7)
+
+.sheet-tabs__tab--inner:first-of-type
+    border-left 1px solid BORDER_COLOR
+
+.sheet-tabs__tab--inner:last-of-type
+    border-right 1px solid BORDER_COLOR
+
+.sheet-tabs__tab--label
+    flex HIGH
+    max-width (HEIGHT * 2)
+    color DARK
 
 // sections
 
-.sheet .tabs--section
+.sheet-tabs__section
     display none
     margin-top PAD
     width 100% // in a flex wrap area
 
+.sheet-tabs__section--hug
+    margin 0
+
 // visibility
 
-.sheet .tabs--tab__0:checked ~ .tabs--section
+for num in (0...10)
+    .sheet-tabs__tab--{num}:checked ~ .sheet-tabs__section--{num}
+        display block
+
+.sheet-tabs__tab--all:checked ~ .sheet-tabs__section
     display block
 
-for num in (1...10)
-    .sheet .tabs--tab__{num}:checked ~ .tabs--section__{num}
-        display block
+// hidden tabs

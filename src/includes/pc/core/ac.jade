@@ -1,0 +1,20 @@
+h1.sheet-hdg Armour Class 
+
+.sheet-row 
+    .sheet-row__cell
+        +field('AC (armour)')
+            input(
+                type='number' 
+                name='attr_AC' 
+                value='@{AC_calc}' 
+                disabled
+            )
+    .sheet-row__cell
+        +field('AC (no armour)')
+            input(
+                type='number' 
+                name='attr_AC_no_armour' 
+                value='@{AC_no_armour_calc}' 
+                disabled
+            )
+            

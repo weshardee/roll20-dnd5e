@@ -1,0 +1,15 @@
+.sheet-row
+    .sheet-row__cell(class= 'sheet-row__cell--' + col.label)
+        .sheet-label heal
+
+    .sheet-row__cell.sheet-row__cell--2 
+        +field('heal ammount')
+            input(type="text" name="attr_spellhealamount")
+    .sheet-row__cell
+        +field('stat bonus')
+            +stat-bonus(name="attr_healstatbonus")
+    .sheet-row__cell.sheet-row__cell--sm
+        +roll(
+            name="roll_Heal" 
+            value="/em uses @{spellname} to heal\n\n[[@{spellhealamount} + @{healstatbonus}]] hp healed\nAdditional effects: @{spelleffect}"
+        )

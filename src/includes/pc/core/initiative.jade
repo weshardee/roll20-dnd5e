@@ -1,0 +1,27 @@
+h1.sheet-hdg Initiative
+
+.sheet-row
+    .sheet-row__cell
+        +field('Bonus')
+            input(
+                title='Only enter additional bonuses to initiative here. Your Dex mod is already included in the macro button'
+                type='number'
+                name='attr_initiative'
+                value='0'
+                step='1'
+            )
+
+    .sheet-row__cell 
+        +field('Total')
+            input(
+                type='number'
+                name='attr_initiative_overall'
+                value='@{dexterity_mod} + @{initiative}'
+                disabled
+            )
+    .sheet-row__cell.sheet-row__cell--sm 
+        +roll(
+            title= 'Roll Initiative'
+            name= 'roll_Initiative'
+            value= '@{selected|token_name} rolls a [[1d20 + @{selected|initiative_overall} [Initiative Mod] &{tracker}]] for initiative'
+        )

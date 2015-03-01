@@ -1,0 +1,52 @@
+mixin tick(name, value)
+    input.sheet-tick(
+        type='checkbox' 
+        name=name
+        value=value || '1'
+    )&attributes(attributes)
+    
+mixin roll(name, value)
+    button.sheet-roll(
+        type='roll' 
+        name=name
+        value=value || '[[1d20]]'
+    )&attributes(attributes)
+
+mixin field(name, mod)
+    label.sheet-labelled(
+        class= mod ? 'sheet-labelled--' + mod : ''
+    )&attributes(attributes)
+        block
+        span.sheet-labelled__label= name
+
+mixin stat-bonus(name)
+    .sheet-labelled.sheet-labelled--select
+        select(name=name)
+            option(value="0") None 
+            option(value="@{strength_mod}") STR mod 
+            option(value="@{dexterity_mod}") DEX mod 
+            option(value="@{constitution_mod}") CON mod 
+            option(value="@{intelligence_mod}") INT mod 
+            option(value="@{wisdom_mod}") WIS mod 
+            option(value="@{charisma_mod}") CHA mod 
+
+mixin tab(title, name, i, multi)
+    input.sheet-tabs__tab(
+        class="sheet-tabs__tab--" + i
+        type=multi ? "checkbox" : "radio"
+        name=name
+        value="1" 
+        title=title
+        checked= title === 'all'
+    )
+
+mixin tabs(name, tabs)
+    +tab('all', name, 'all')
+    
+    each tab, i in tabs
+        +tab(tab, name, i)
+    
+mixin select()
+    .sheet-select
+        select()&attributes(attributes)
+            block

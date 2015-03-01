@@ -1,0 +1,45 @@
+ARROW_PAD = (HEIGHT/4)
+ARROW_HEIGHT = (HEIGHT/3)
+ARROW_WIDTH = (HEIGHT/4)
+ARROW_OFFSET = 60%
+
+.sheet-select
+    display flex
+    flex 1
+    flex-direction column
+
+.sheet-select::before,
+.sheet-select::after
+    transform rotate(180deg)
+    position absolute
+    top 0
+    right 0
+    bottom 0
+    margin auto
+    margin-right ARROW_PAD
+    opacity 0.5
+
+    border (ARROW_WIDTH/2) solid transparent
+    border-width (ARROW_HEIGHT/2) (ARROW_WIDTH/2)
+
+    height 0
+    width 0
+
+    pointer-events none
+    content " "
+
+.sheet-select::before
+    transform translateY(ARROW_OFFSET)
+    border-top-color black
+
+.sheet-select::after
+    transform translateY(- ARROW_OFFSET)
+    border-bottom-color black
+
+.sheet-select > select
+    appearance none
+    flex 1
+    border 1px solid transparent
+    padding-right (ARROW_PAD*2 + ARROW_WIDTH)
+    padding-left (HEIGHT/4)
+    background none // needs to be transparent for labelled areas

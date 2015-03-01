@@ -1,0 +1,12 @@
+.sheet-main__bd
+    flex-direction row // for alignment of tabs
+    margin auto
+    max-width MAX_WIDTH
+
+.sheet-main__bd--pc,
+.sheet-main__bd--npc
+    display none
+
+.sheet-main__type:checked ~ .sheet-main__bd--npc,
+.sheet-main__type:not(:checked) ~ .sheet-main__bd--pc
+    display block

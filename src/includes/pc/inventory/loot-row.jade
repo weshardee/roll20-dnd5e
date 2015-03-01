@@ -1,0 +1,14 @@
+.sheet-row
+    .sheet-row__cell.sheet-row__cell--sm
+        .sheet-label= i
+    .sheet-row__cell.sheet-row__cell--sm 
+        input.sheet-tick(type="checkbox" name="attr_inventorycarried#{i}" value="@{inventoryweight#{i}}" checked)
+    .sheet-row__cell.sheet-row__cell--sm 
+        input.sheet-field(type="number" name="attr_inventoryqty#{i}" value="1" min="0" step="1")
+    .sheet-row__cell.sheet-row__cell--xlg 
+        input.sheet-field(type="text" name="attr_inventoryname#{i}")
+    .sheet-row__cell.sheet-row__cell--sm 
+        input.sheet-field(type="number" name="attr_inventoryweight#{i}" value="0" step="0.01")
+    .sheet-row__cell 
+        input.sheet-field(type="text" name="attr_inventorydescription#{i}")
+ 

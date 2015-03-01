@@ -1,0 +1,100 @@
+- var colWidth = {}
+- colWidth.prof       = 'sm'
+- colWidth.ammo       = 'sm'
+- colWidth.name       = 3
+- colWidth.type       = 2
+- colWidth.magicBonus = 'sm'
+- colWidth.toHit      = 'sm'
+- colWidth.attack     = 'sm'
+- colWidth.dmgDice    = 'sm'
+- colWidth.dmgBonus   = 'sm'
+- colWidth.dmgType    = 2
+- colWidth.dmgRoll    = 'sm'
+
+h1.sheet-hdg Ranged Weapons 
+
+.sheet-row.sheet-row--hd 
+    .sheet-row__cell(class="sheet-row__cell--#{colWidth.prof}") Prof?
+    .sheet-row__cell(class="sheet-row__cell--#{colWidth.ammo}") Ammo
+    .sheet-row__cell(class="sheet-row__cell--#{colWidth.name}") Weapon (range)
+    .sheet-row__cell(class="sheet-row__cell--#{colWidth.type}") Type
+    .sheet-row__cell(class="sheet-row__cell--#{colWidth.magicBonus}") Magic Bonus
+    .sheet-row__cell(class="sheet-row__cell--#{colWidth.toHit}") To Hit
+    .sheet-row__cell(class="sheet-row__cell--#{colWidth.attack}") Attack
+    .sheet-row__cell(class="sheet-row__cell--#{colWidth.dmgDice}") Dmg Dice
+    .sheet-row__cell(class="sheet-row__cell--#{colWidth.dmgBonus}") Dmg Bonus
+    .sheet-row__cell(class="sheet-row__cell--#{colWidth.dmgType}") Dmg Type
+    .sheet-row__cell(class="sheet-row__cell--#{colWidth.dmgRoll}") Dmg
+
+- var i = 1
+while i <= numWeaponRows
+    // BEGIN ranged weapon row 
+    .sheet-row.sheet-row--split
+        .sheet-row__cell(class="sheet-row__cell--#{colWidth.prof}") 
+            +tick(
+                value="@{PB}" 
+                name="attr_pbranged#{i}" 
+                checked
+            )
+        .sheet-row__cell(class="sheet-row__cell--#{colWidth.ammo}")
+            input.sheet-field(
+                type="number" 
+                name="attr_rangedammo#{i}" 
+                value="1"
+            )
+        .sheet-row__cell(class="sheet-row__cell--#{colWidth.name}")
+            input.sheet-field(
+                type="text" 
+                name="attr_rangedweaponname#{i}"
+            )
+        .sheet-row__cell(class="sheet-row__cell--#{colWidth.type}")
+            +select(
+                title="Choose either normal or thrown"
+                name="attr_rangedtype#{i}"
+            )
+                option(value="@{dexterity_mod}") normal
+                option(value="@{strength_mod}") thrown
+                option(value="@{finesse_mod}") thrown(finesse)
+        .sheet-row__cell(class="sheet-row__cell--#{colWidth.magicBonus}") 
+            input.sheet-field(
+                title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"
+                type="number" 
+                name="attr_rangedmagic#{i}" 
+                value="0" 
+                step="1"
+            )
+        .sheet-row__cell(class="sheet-row__cell--#{colWidth.toHit}") 
+            input.sheet-field(
+                type="number" 
+                name="attr_rangedtohit#{i}" 
+                value="@{rangedtype#{i}} + @{pbranged#{i}} + @{rangedmagic#{i}}" 
+                disabled
+            )
+        .sheet-row__cell(class="sheet-row__cell--#{colWidth.attack}") 
+            +roll(name="roll_RangedAttack#{i}" value="/em uses @{rangedweaponname#{i}} to attack\n\n[[1d20 + @{rangedtohit#{i}} [To Hit] + (@{global_ranged_attack_bonus}) [Active Ranged Attack Bonus] ]] vs AC") Attack
+        .sheet-row__cell(class="sheet-row__cell--#{colWidth.dmgDice}") 
+            input.sheet-field(
+                title="Only enter the base damage roll here without any bonuses from stats or other sources"
+                type="text" 
+                name="attr_rangeddmg#{i}"
+            )
+        .sheet-row__cell(class="sheet-row__cell--#{colWidth.dmgBonus}") 
+            input.sheet-field(
+                type="number" 
+                name="attr_rangeddmgbonus#{i}" 
+                value="@{rangedtype#{i}} + @{rangedmagic#{i}}" 
+                disabled
+            )
+        .sheet-row__cell(class="sheet-row__cell--#{colWidth.dmgType}") 
+            input.sheet-field(
+                type="text"
+                name="attr_rangeddmgtype#{i}"
+            )
+        .sheet-row__cell(class="sheet-row__cell--#{colWidth.dmgRoll}") 
+            +roll(
+                name="roll_RangedDamage#{i}" 
+                value="\nFor [[@{rangeddmg#{i}} [Base damage] + @{rangeddmgbonus#{i}} [Damage Bonus] + (@{global_ranged_damage_bonus}) [Active Ranged Damage Bonus] + 0d0 [Bugfix 0] ]] @{rangeddmgtype#{i}} damage (if a crit add an extra [[@{rangeddmg#{i}}]])"
+            ) Damage
+
+    // END ranged weapon row 
+    - i++

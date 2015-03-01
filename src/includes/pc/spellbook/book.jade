@@ -1,0 +1,56 @@
+
+- col = {}
+- col.lvl = 2
+- col.name = 8
+
+- col.school = 2
+- col.time = 1
+- col.conc = 1
+- col.ritual = 1
+- col.prepped = 1
+
+- col.from = 2
+- col.area = 1
+- col.range = 1
+- col.dur = 1
+- col.components = 1
+
+- col.label = 'md'
+
+h1.sheet-hdg Spell Book
+
+p.sheet-note Use this section to track spells you know, have prepared, or have in your spell book.  Spells that do not count against the limit of spells you have prepared (ie. Cleric Domain spells, Paladin Oath spells, etc...), and spells from classes which do not prepare spells (ie. Sorcerer, Warlock, etc...), should be marked as "Always" prepared
+
+.sheet-tabs
+
+    input.sheet-tabs__tab(
+        type="radio"
+        name="attr_spellpagetab"
+        class="sheet-tabs__tab--all"
+        value="all"
+        title="All"
+        checked
+    )
+    for i in spells.levels
+        input.sheet-tabs__tab(
+            class="sheet-tabs__tab--#{i}"
+            title= i ? "Level #{i}" : "Cantrips"
+            type="radio"
+            name="attr_spellpagetab"
+            value="#{i}"
+        )
+
+    for i in spells.levels
+        // spell page
+        .sheet-tabs__section(class="sheet-tabs__section--" + i)
+            .sheet-col
+                .sheet-col__row
+                    .sheet-row.sheet-row--hd
+                        .sheet-row__cell= i ? "Level " + i : "Cantrips"
+
+                .sheet-col__row
+                    // spell row
+                    fieldset(
+                        class="repeating_spellbook" + (i ? 'level' + i : 'cantrip')
+                    )
+                        include spell/_

@@ -1,4 +1,4 @@
-.sheet .tick
+.sheet-tick
     -webkit-appearance none
     background white
     border-width 1px
@@ -6,9 +6,11 @@
     align-items center
     flex 1 // fill grid__cell
     width 100%
-    margin 0 // reset from base.css
+    margin 0 !important// reset from base.css
+    outline none
+    border 0 !important
 
-.sheet .tick::after
+.sheet-tick::after
     -webkit-appearance none
     background #fff
     background-clip content-box
@@ -20,5 +22,9 @@
     height 1rem
     width 1rem
 
-.sheet .tick:checked::after
+.sheet-tick:checked::after
     background-color rgba(72,70,75, 0.9)
+
+.sheet-tick--good:checked::after
+    background-color GOLD
+    border-color alpha(GOLD, 0.15)

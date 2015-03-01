@@ -1,0 +1,37 @@
+doctype html
+html
+    head
+        link(
+            href='https://d3clqjduf2gvxg.cloudfront.net/assets/base.css?1421690883' 
+            rel='stylesheet' 
+        )
+        link(
+            href='https://d3clqjduf2gvxg.cloudfront.net/assets/app.css?1422050926' 
+            rel='stylesheet' 
+        )
+        link(
+            href="DnD_5e.css" 
+            rel="stylesheet"
+        )
+        style .ui-dialog { width: 100% } body { margin: 0; padding: 0; } html, body {height: 100%}
+
+    body
+        .ui-dialog(
+            style="width: calc(100% - 6px); height: 100%; overflow: auto; position: relative; display: block; background-color: white;"
+            id="containerdiv"
+        )
+            .dialog.characterdialog(
+                style="display: block; height: auto;"
+            )
+                .dialog.largedialog.characterviewer(style="display: block")
+                    ul.nav.nav-tabs
+                        li
+                            a(data-tab="bioinfo" href="javascript:void(0);") Bio &amp; Info
+                        li.active
+                            a(data-tab="charsheet" href="javascript:void(0);") Character Sheet
+                        li
+                            a(data-tab="attributesabilities" href="javascript:void(0);") Attributes &amp; Abilities
+
+                    form.sheetform
+                        .charsheet.tab-pane(style="display: block;")
+                            include includes/sheet

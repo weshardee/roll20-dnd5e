@@ -1,0 +1,30 @@
+.sheet-row.sheet-row--hd
+    .sheet-row__cell.sheet-row__cell--5 Class Resource
+    .sheet-row__cell.sheet-row__cell--3 Recharge
+    .sheet-row__cell.sheet-row__cell--sm Current
+    .sheet-row__cell.sheet-row__cell--sm Max
+
+fieldset.repeating_classresources
+
+    .sheet-row
+        .sheet-row__cell.sheet-row__cell--5
+            input.sheet-field(type="text" name="attr_ClassResourceName")
+        .sheet-row__cell.sheet-row__cell--3
+            select.sheet-field(name="attr_ClassResourceRecharge")
+                option(value="None") None
+                option(value="Short Rest") Short Rest
+                option(value="Long rest") Long Rest
+                option(value="Other") Other
+
+        .sheet-row__cell.sheet-row__cell--sm
+            input.sheet-field(
+                type="number"
+                name="attr_ClassResourceTotal"
+                value="1"
+            )
+        .sheet-row__cell.sheet-row__cell--sm
+            input.sheet-field(
+                type="number"
+                name="attr_ClassResourceTotal_max"
+                value="1"
+            )

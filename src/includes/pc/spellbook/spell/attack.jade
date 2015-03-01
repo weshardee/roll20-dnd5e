@@ -1,0 +1,21 @@
+.sheet-row 
+    .sheet-row__cell(class= 'sheet-row__cell--' + col.label)
+        .sheet-label attack
+
+    .sheet-row__cell.sheet-row__cell--4 
+        p.sheet-note Select the attack stat for the attack. This is normally your spellcasting stat from the class you gained the spell from.  
+    .sheet-row__cell 
+        +field('Attack Stat', 'select')
+            select(name="attr_attackstat")
+                option(value="0") None 
+                option(value="@{strength_mod}") STR 
+                option(value="@{dexterity_mod}") DEX 
+                option(value="@{constitution_mod}") CON 
+                option(value="@{intelligence_mod}") INT 
+                option(value="@{wisdom_mod}") WIS 
+                option(value="@{charisma_mod}") CHA 
+    .sheet-row__cell.sheet-row__cell--sm 
+        +roll(
+            name="roll_Attack" 
+            value="/em uses @{spellname} to attack \n\n[[1d20 + @{attackstat} [Attack stat mod] + @{PB} [Proficiency Bonus] + (@{global_spell_attack_bonus}) [Active Spell Attack Bonus] ]] | [[1d20 + @{attackstat} [Attack stat mod] + @{PB} [Proficiency Bonus] + (@{global_spell_attack_bonus}) [Active Spell Attack Bonus] ]] vs AC Attack"
+        )

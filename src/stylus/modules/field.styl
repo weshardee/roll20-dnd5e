@@ -1,43 +1,19 @@
-FIELD_LABEL_LAYER = 1
-FIELD_FIELD_LAYER = 0
-
-FIELD_HEIGHT = 2.7rem
-
-FIELD_LABEL_HEIGHT = PAD
-FIELD_LABEL_FONT_SIZE = FONT_SIZE_SM
-FIELD_LABEL_OVERLAP = FIELD_LABEL_HEIGHT * 0.7
-
-.field
-    border-radius inherit
-    display flex
-    flex-direction column
+.sheet-field
+    border 1px solid transparent
+    min-height HEIGHT
+    width 100% !important
+    padding 0 (HEIGHT/3)
     flex 1
-    position relative
-    background-color white
 
-.field[disabled],
-.field--disabled
+.sheet-field:focus
+    border-color BLUE
+
+.sheet-field:disabled
     background-color PALE
-    cursor not-allowed
+    padding-left 0 !important // reset number padding
 
-.field--blue,
-.field--blue[disabled]
+.sheet-field--alt:disabled
     background-color BRIGHT_PALE_BLUE
 
-.field__label
-    bottom 0
-    color FADED_GRAY
-    font-size FIELD_LABEL_FONT_SIZE
-    left 0
-    position absolute
-    right 0
-    z-index FIELD_LABEL_LAYER
-    height FIELD_LABEL_HEIGHT
-
-.field__field
-    flex 1
-    height FIELD_HEIGHT
-    padding-bottom FIELD_LABEL_OVERLAP
-    z-index FIELD_FIELD_LAYER
-    border-radius inherit
-    background-color transparent !important
+.sheet-field[type=number]
+    padding-right 0

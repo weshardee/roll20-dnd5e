@@ -1,20 +1,70 @@
-.sheet * {
-    -webkit-font-smoothing antialiased
-    box-shadow none
-    box-sizing border-box
-    font-family FONT
-    font-size inherit
-    font-weight normal
+.sheet-wrapper {
+    background-color BG
+    height 100%
+    position relative
+    margin -30px // offset .charsheet
+    margin-top -29px // offset tabnav margin-bottom
+    margin-bottom -25px // offset .charsheet
+}
+
+.sheet-wrapper * {
+    -webkit-appearance none // all our form elements will be custom
     justify-content center
-    line-height LINE_HEIGHT
+    box-sizing border-box
+
     margin 0
     padding 0
-    text-align center
-    border 0 // for buttons and fields
-    border-spacing 0
-    border-collapse collapse
-    list-style none
-    font-style initial // for <i>
     width auto // for <input>
-    text-shadow none // for .label
+
+    outline none !important // for focus
+    border-radius 0 !important
+    box-shadow none
+
+    list-style none
+
+    -webkit-font-smoothing antialiased
+    line-height LINE_HEIGHT
+    font-family FONT
+    font-style initial // for <i>
+    font-size inherit
+    font-weight normal
+    text-align center
+    text-shadow none // for .sheet-label
+    transition none
 }
+
+.sheet-wrapper img
+    max-width 100%
+
+.sheet-wrapper :focus
+    box-shadow none !important
+    outline none !important
+
+.sheet-wrapper input
+    flex-grow 1
+
+.sheet-wrapper [type=number]
+    padding-left 12px // match width of counter on right to center the value visually
+    border 1px solid transparent // for focus override
+
+.sheet-wrapper [disabled]
+    cursor not-allowed
+
+.sheet-wrapper input[type=number]:disabled::-webkit-inner-spin-button,
+.sheet-wrapper input[type=number]:disabled::-webkit-outer-spin-button
+    -webkit-appearance: none;
+    margin: 0;
+
+.sheet-wrapper textarea
+    min-height LINE_HEIGHT * FONT_SIZE * 5
+    flex 1
+    text-align left
+    padding PAD
+    border 1px solid transparent
+
+.sheet-wrapper textarea:focus
+    border-color BLUE
+
+.sheet-wrapper fieldset
+    width 100%
+    min-width 0

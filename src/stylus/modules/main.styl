@@ -1,0 +1,30 @@
+.sheet-main {
+    color DARK_GRAY
+    font-size FONT_SIZE
+    overflow auto
+    max-height 100%
+    margin auto
+}
+
+.sheet-main::after {
+    display block
+    height PAD
+    content " "
+}
+
+.sheet-main__hd {
+    transition background-color 0.7s
+    background-color BLUE
+    padding HEIGHT
+    padding-bottom (HEIGHT / 2)
+    border-bottom HEIGHT solid DARK
+    margin-bottom (- HEIGHT)
+    color white
+}
+
+:checked ~ .sheet-main__hd {
+    background-color GOLD
+}
+
+@import 'main__type'
+@import 'main__bd'

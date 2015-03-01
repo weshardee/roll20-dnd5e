@@ -1,0 +1,42 @@
+.sheet-row
+    .sheet-row__cell(class= 'sheet-row__cell--' + col.label)
+        .sheet-label save
+
+    .sheet-row__cell
+        +field('saving stat', 'select')
+            select(name="attr_savestat")
+                option(value="STR") STR 
+                option(value="DEX") DEX 
+                option(value="CON") CON 
+                option(value="INT") INT 
+                option(value="WIS") WIS 
+                option(value="CHA") CHA          
+    .sheet-row__cell
+        +field('Save DC', 'select')
+            select(
+                title="Pick the class that the save DC will be created from or set your own DC by selecting custom here and then entering the DC in the next field"
+                name="attr_spellsavedc"
+            )
+                option(value="0") Choose... 
+                option(value="@{arcane_trickster_spell_dc}") Arcane Trickster DC 
+                option(value="@{bard_spell_dc}") Bard DC 
+                option(value="@{cleric_spell_dc}") Cleric DC 
+                option(value="@{druid_spell_dc}") Druid DC 
+                option(value="@{eldritch_knight_spell_dc}") Eldritch Knight DC 
+                option(value="@{paladin_spell_dc}") Paladin DC 
+                option(value="@{ranger_spell_dc}") Ranger DC 
+                option(value="@{sorcerer_spell_dc}") Sorcerer DC 
+                option(value="@{warlock_spell_dc}") Warlock DC 
+                option(value="@{wizard_spell_dc}") Wizard DC 
+                option(value="0") Custom DC 
+    .sheet-row__cell
+        +field('custom DC') 
+            input(type="number" name="attr_customsavedc" value="0" min="0" step="1" title="Unless you have selected Custom in the previous field this should always be 0")
+    .sheet-row__cell.sheet-row__cell--2
+        +field('on a successful save')
+            input(type="text" name="attr_savesuccess")
+    .sheet-row__cell.sheet-row__cell--sm 
+        +roll(
+            name="roll_Save" 
+            value="/em uses @{spellname} to attack\n\nDC [[@{spellsavedc} + @{customsavedc}]] @{savestat} saving throw\nOn a successful save :\n@{savesuccess}"
+        ) Attack

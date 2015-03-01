@@ -1,0 +1,35 @@
+.sheet-col
+    .sheet-col__row
+        // top section
+        .sheet-grid
+
+            .sheet-grid__cell
+                include abilities
+
+            .sheet-grid__cell
+                .sheet-col
+                    .sheet-col__row
+                        include hp
+                    .sheet-col__row
+                        .sheet-grid
+                            .sheet-grid__cell
+                                include initiative
+                            .sheet-grid__cell
+                                include ac
+
+                    .sheet-col__row
+                        include level
+
+    .sheet-col__row
+        // bottom section
+        .sheet-grid
+            .sheet-grid__cell.sheet-grid__cell--5
+                include bonuses
+            .sheet-grid__cell.sheet-grid__cell--7
+                .sheet-col
+                    .sheet-col__row
+                        div
+                            include hd
+                    .sheet-col__row
+                        div
+                            include other

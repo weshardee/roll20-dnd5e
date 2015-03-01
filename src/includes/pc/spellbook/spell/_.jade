@@ -1,0 +1,106 @@
+- friendlyLevel = i ? 'Level ' + i : 'Cantrip' 
+input(type="hidden" name="attr_spellbaselevel" value="0") 
+input(type="hidden" name="attr_spellfriendlylevel" value=friendlyLevel )  
+
+.sheet-row      
+    .sheet-row__cell
+        +field(friendlyLevel)(class="sheet-labelled--hdg")
+            input.sheet-labelled__field--hdg(
+                type="text" 
+                name="attr_spellname"
+            )
+
+.sheet-row
+    .sheet-row__cell(class="sheet-row__cell--" + col.school)
+        +field('School', 'label-select')
+            +select(name="attr_spellschool")
+                option(value="" selected) n/a 
+                option(value="Abjuration") Abjuration 
+                option(value="Conjuration") Conjuration 
+                option(value="Divination") Divination 
+                option(value="Enchantment") Enchantment 
+                option(value="Evocation") Evocation 
+                option(value="Illusion") Illusion 
+                option(value="Necromancy") Necromancy 
+                option(value="Transmutation") Transmutation 
+            
+    .sheet-row__cell(class="sheet-row__cell--" + col.time) 
+        +field('Casting Time')
+            input(type="text" name="attr_spellcasttime")  
+    .sheet-row__cell(class="sheet-row__cell--" + col.conc) 
+        +field('Concentration?', 'label-select')
+            +select(name="attr_spellconcentration" title="Concentration")
+                option(value="") N 
+                option(value="(Concentration)") Y 
+    .sheet-row__cell(class="sheet-row__cell--" + col.ritual)
+        +field('Ritual?', 'label-select') 
+            +select(name="attr_spellritual")
+                option(value="") N 
+                option(value="(Ritual)") Y 
+    .sheet-row__cell(class="sheet-row__cell--" + col.prepped)
+        +field('Prepped?', i ? '': 'disabled')
+            +select(
+                title="Always prepared means the spell is either a cantrip or one that was provided to you via a method which indicated it would never count against your prepared/known limits."
+                name="attr_spellisprepared" 
+                disabled= !i
+            )
+                option(value="0") N 
+                option(value="1") Y 
+                option(value="0.0001" selected=!i) Always 
+
+.sheet-row
+    .sheet-row__cell(class="sheet-row__cell--" + col.from) 
+        +field('From', 'label-select')
+            +select(
+                title="Use this field to indicate where you learned or have access to this spell from. Useful to know if multiclassing or if you gain access to spells your class would not normally have thanks to subclass bonuses"
+                name="attr_spellgainedfrom"
+            )
+                option Not Set
+                option Arcane Trickster 
+                option Bard 
+                option Cleric 
+                option Druid 
+                option Eldritch Knight 
+                option Paladin 
+                option Ranger 
+                option Sorcerer 
+                option Warlock 
+                option Wizard 
+                option Other 
+    .sheet-row__cell(class="sheet-row__cell--" + col.area)
+        +field('Target/AoE')
+            input(type="text" name="attr_spelltarget")
+    .sheet-row__cell(class="sheet-row__cell--" + col.range)
+        +field('range')
+            input(type="text" name="attr_spellrange")
+    .sheet-row__cell(class="sheet-row__cell--" + col.dur)
+        +field('duration')
+            input(type="text" name="attr_spellduration")
+    .sheet-row__cell(class="sheet-row__cell--" + col.components)
+        +field('components')
+            input(type="text" name="attr_spellcomponents")
+ 
+.sheet-tabs
+    .sheet-tabs__tab.sheet-tabs__tab--inner.sheet-tabs__tab--label show:
+    for tab, tabI in ['advanced', 'attack', 'save', 'heal', 'damage', 'effects']
+        input.sheet-tabs__tab.sheet-tabs__tab--inner(
+            class="sheet-tabs__tab--" + tabI
+            type="checkbox"
+            name="attr_spelltype" + tab
+            value="1"
+            title=tab
+        )     
+    
+    .sheet-tabs__section.sheet-tabs__section--hug.sheet-tabs__section--0
+        include advanced 
+    .sheet-tabs__section.sheet-tabs__section--hug.sheet-tabs__section--1
+        include attack
+    .sheet-tabs__section.sheet-tabs__section--hug.sheet-tabs__section--2
+        include save
+    .sheet-tabs__section.sheet-tabs__section--hug.sheet-tabs__section--3
+        include heal
+    .sheet-tabs__section.sheet-tabs__section--hug.sheet-tabs__section--4
+        include dmg
+    .sheet-tabs__section.sheet-tabs__section--hug.sheet-tabs__section--5
+        include effects
+    
