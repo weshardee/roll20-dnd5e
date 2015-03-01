@@ -1,8 +1,9 @@
 .sheet-row
     .sheet-row__cell.sheet-row__cell--sm
+        - var roll = '[[1d20 + @{basic_' + ability.name + '_check_mod} [' + ability.name + ' Mod] + (@{global_check_bonus}) [Active Check Bonus] ]]'
         +roll(
-            'roll_basic_' + ability.name + '_check',
-            '/em makes an ability check\n\n' + ability.abbr + ' (no skill) check :\n[[1d20 + @{basic_' + ability.name + '_check_mod} [' + ability.name + ' Mod] + (@{global_check_bonus}) [Active Check Bonus] ]]'
+            name = 'roll_basic_' + ability.name + '_check',
+            value = '/em makes an ability check\n\n' + ability.abbr + ' (no skill) check :\n #{roll} | #{roll}'
         )
     .sheet-row__cell
         +field('unskilled')
