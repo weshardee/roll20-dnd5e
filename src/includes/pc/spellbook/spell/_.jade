@@ -38,8 +38,8 @@ input(type="hidden" name="attr_spellfriendlylevel" value=friendlyLevel )
                 option(value="") N 
                 option(value="(Ritual)") Y 
     .sheet-row__cell(class="sheet-row__cell--" + col.prepped)
-        +field('Prepped?', 'label-select')
             select(
+        +field('Prepped?', i ? '': 'disabled')
                 title="Always prepared means the spell is either a cantrip or one that was provided to you via a method which indicated it would never count against your prepared/known limits."
                 name="attr_spellisprepared" 
                 disabled= !i
