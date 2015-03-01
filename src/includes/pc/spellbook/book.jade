@@ -43,14 +43,11 @@
     for i in spells.levels
         // spell page
         .sheet-tabs__section(class="sheet-tabs__section--" + i)
-            .sheet-col
-                //- .sheet-col__row
-                    //- .sheet-hdg= i ? "Level " + i : "Cantrips"
+            //- .sheet-hdg= i ? "Level " + i : "Cantrips"
 
-                .sheet-col__row
-                    // spell row
-                    fieldset(
-                        class="repeating_spellbook" + (i ? 'level' + i : 'cantrip')
-                    )
-                        .sheet-card
-                            include spell/_
+            // spell row
+            fieldset(
+                class="repeating_spellbook" + (i ? 'level' + i : 'cantrip')
+            )
+                .sheet-card
+                    include spell/_
