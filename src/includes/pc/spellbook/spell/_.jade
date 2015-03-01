@@ -3,7 +3,7 @@ input(type="hidden" name="attr_spellbaselevel" value="0")
 input(type="hidden" name="attr_spellfriendlylevel" value=friendlyLevel )  
 
 .sheet-row      
-    .sheet-grid__cell
+    .sheet-row__cell
         +field(friendlyLevel)(class="sheet-labelled--hdg")
             input.sheet-labelled__field--hdg(
                 type="text" 
@@ -11,7 +11,7 @@ input(type="hidden" name="attr_spellfriendlylevel" value=friendlyLevel )
             )
 
 .sheet-row
-    .sheet-grid__cell(class="sheet-grid__cell--" + col.school)
+    .sheet-row__cell(class="sheet-row__cell--" + col.school)
         +field('School', 'label-select')
             select(name="attr_spellschool")
                 option(value="" selected) n/a 
@@ -24,20 +24,20 @@ input(type="hidden" name="attr_spellfriendlylevel" value=friendlyLevel )
                 option(value="Necromancy") Necromancy 
                 option(value="Transmutation") Transmutation 
             
-    .sheet-grid__cell(class="sheet-grid__cell--" + col.time) 
+    .sheet-row__cell(class="sheet-row__cell--" + col.time) 
         +field('Casting Time')
             input(type="text" name="attr_spellcasttime")  
-    .sheet-grid__cell(class="sheet-grid__cell--" + col.conc) 
+    .sheet-row__cell(class="sheet-row__cell--" + col.conc) 
         +field('Concentration?', 'label-select')
             select(name="attr_spellconcentration" title="Concentration")
                 option(value="") N 
                 option(value="(Concentration)") Y 
-    .sheet-grid__cell(class="sheet-grid__cell--" + col.ritual)
+    .sheet-row__cell(class="sheet-row__cell--" + col.ritual)
         +field('Ritual?', 'label-select') 
             select(name="attr_spellritual")
                 option(value="") N 
                 option(value="(Ritual)") Y 
-    .sheet-grid__cell(class="sheet-grid__cell--" + col.prepped)
+    .sheet-row__cell(class="sheet-row__cell--" + col.prepped)
         +field('Prepped?', 'label-select')
             select(
                 title="Always prepared means the spell is either a cantrip or one that was provided to you via a method which indicated it would never count against your prepared/known limits."
@@ -49,7 +49,7 @@ input(type="hidden" name="attr_spellfriendlylevel" value=friendlyLevel )
                 option(value="0.0001" selected=!i) Always 
 
 .sheet-row
-    .sheet-grid__cell(class="sheet-grid__cell--" + col.from) 
+    .sheet-row__cell(class="sheet-row__cell--" + col.from) 
         +field('From', 'label-select')
             select(
                 title="Use this field to indicate where you learned or have access to this spell from. Useful to know if multiclassing or if you gain access to spells your class would not normally have thanks to subclass bonuses"
@@ -67,16 +67,16 @@ input(type="hidden" name="attr_spellfriendlylevel" value=friendlyLevel )
                 option Warlock 
                 option Wizard 
                 option Other 
-    .sheet-grid__cell(class="sheet-grid__cell--" + col.area)
+    .sheet-row__cell(class="sheet-row__cell--" + col.area)
         +field('Target/AoE')
             input(type="text" name="attr_spelltarget")
-    .sheet-grid__cell(class="sheet-grid__cell--" + col.range)
+    .sheet-row__cell(class="sheet-row__cell--" + col.range)
         +field('range')
             input(type="text" name="attr_spellrange")
-    .sheet-grid__cell(class="sheet-grid__cell--" + col.dur)
+    .sheet-row__cell(class="sheet-row__cell--" + col.dur)
         +field('duration')
             input(type="text" name="attr_spellduration")
-    .sheet-grid__cell(class="sheet-grid__cell--" + col.components)
+    .sheet-row__cell(class="sheet-row__cell--" + col.components)
         +field('components')
             input(type="text" name="attr_spellcomponents")
  

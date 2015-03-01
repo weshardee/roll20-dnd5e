@@ -1,11 +1,11 @@
 .sheet-row
-    .sheet-grid__cell(class= 'sheet-grid__cell--' + col.label)
+    .sheet-row__cell(class= 'sheet-row__cell--' + col.label)
         .sheet-label effects
 
-    .sheet-grid__cell.sheet-grid__cell--5
+    .sheet-row__cell.sheet-row__cell--5
         +field('Effects')
             textarea(name="attr_spelleffect") None
-    .sheet-grid__cell.sheet-grid__cell--sm 
+    .sheet-row__cell.sheet-row__cell--sm 
         +roll(
             name="roll_SpellEffect" 
             value="/em uses @{spellname}\n\n@{spelleffect} Effect"

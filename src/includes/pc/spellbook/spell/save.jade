@@ -1,8 +1,8 @@
 .sheet-row
-    .sheet-grid__cell(class= 'sheet-grid__cell--' + col.label)
+    .sheet-row__cell(class= 'sheet-row__cell--' + col.label)
         .sheet-label save
 
-    .sheet-grid__cell
+    .sheet-row__cell
         +field('saving stat', 'select')
             select(name="attr_savestat")
                 option(value="STR") STR 
@@ -11,7 +11,7 @@
                 option(value="INT") INT 
                 option(value="WIS") WIS 
                 option(value="CHA") CHA          
-    .sheet-grid__cell
+    .sheet-row__cell
         +field('Save DC', 'select')
             select(
                 title="Pick the class that the save DC will be created from or set your own DC by selecting custom here and then entering the DC in the next field"
@@ -29,13 +29,13 @@
                 option(value="@{warlock_spell_dc}") Warlock DC 
                 option(value="@{wizard_spell_dc}") Wizard DC 
                 option(value="0") Custom DC 
-    .sheet-grid__cell
+    .sheet-row__cell
         +field('custom DC') 
             input(type="number" name="attr_customsavedc" value="0" min="0" step="1" title="Unless you have selected Custom in the previous field this should always be 0")
-    .sheet-grid__cell.sheet-grid__cell--2
+    .sheet-row__cell.sheet-row__cell--2
         +field('on a successful save')
             input(type="text" name="attr_savesuccess")
-    .sheet-grid__cell.sheet-grid__cell--sm 
+    .sheet-row__cell.sheet-row__cell--sm 
         +roll(
             name="roll_Save" 
             value="/em uses @{spellname} to attack\n\nDC [[@{spellsavedc} + @{customsavedc}]] @{savestat} saving throw\nOn a successful save :\n@{savesuccess}"
