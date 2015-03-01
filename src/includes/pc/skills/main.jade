@@ -18,9 +18,11 @@ mixin skills-hdg()
             each skill in skills
                 .sheet-row
                     .sheet-row__cell.sheet-row__cell--sm
+                        - var skillRoll = '[[ 1d20 + @{' + skill.id + '} [Proficiency + ' + skill.attr + ' Mod + Expertise + Misc] + (@{global_check_bonus}) [Ability Check Bonus] ]]'
+                        
                         +roll(
                             name='roll_#{skill.id}_check'
-                            value='/em uses\n\n#{skill.name} (#{skill.attr}):\n [[1d20 + @{#{skill.id}} [Proficiency + #{skill.attr} Mod + Expertise + Misc] + (@{global_check_bonus}) [Ability Check Bonus] ]]'
+                            value='/em uses\n\n#{skill.name} (#{skill.attr}):\n #{skillRoll} | #{skillRoll}'
                         )
                     .sheet-row__cell.sheet-row__cell--3
                         +field(skill.attr)
