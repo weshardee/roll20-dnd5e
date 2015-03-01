@@ -10,7 +10,7 @@
             div #{ability.name}
     .sheet-row__cell
         +select(
-            name= '#attr_basic_#{ability.name}_prof_exp'
+            name= 'attr_basic_#{ability.name}_prof_exp'
         )
             option(value="0") No
             option(value="floor(@{PB} / 2)") Jack of all trades

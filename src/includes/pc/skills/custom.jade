@@ -39,7 +39,7 @@ mixin custom-skills-hdg()
                                 option(value="@{#{ability.name}_mod}") #{ability.abbr}
                     .sheet-row__cell.sheet-row__cell--2
                         +select(
-                            name="attr_custom_skill_1_prof_exp"
+                            name="attr_custom_skill_#{i}_prof_exp"
                         )
                             +skill-proficiency-options()
                     .sheet-row__cell.sheet-row__cell--sm
