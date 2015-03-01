@@ -44,7 +44,9 @@ each ability in abilities
             )
 
         .sheet-row__cell.sheet-row__cell--sm
+            - var savingThrowFormula = '[[ 1d20 + @{' + ability.name + '_save_mod} [Stat Mod and Proficiency] + (@{global_saving_bonus}) [Active Save Bonus] ]]'
+            
             +roll(
                 name='roll_Strength_Save'
-                value='/em attempts a saving throw\n\n#{ability.name} save:[[1d20 + @{#{ability.name}_save_mod} [Stat Mod and Proficiency] + (@{global_saving_bonus}) [Active Save Bonus] ]]'
+                value='/em attempts a saving throw\n\n#{ability.name} save: #{savingThrowFormula} | #{savingThrowFormula}'
             )
