@@ -31,14 +31,16 @@ mixin custom-skills-hdg()
                             value="Custom #{i}"
                         )
                     .sheet-row__cell.sheet-row__cell--2
-                        select.sheet-select(
+                        +select(
                             name="attr_custom_skill_#{i}_mod"
                         )
                             option(value="0") None
                             each ability in abilities
                                 option(value="@{#{ability.name}_mod}") #{ability.abbr}
                     .sheet-row__cell.sheet-row__cell--2
-                        select.sheet-select(name="attr_custom_skill_1_prof_exp")
+                        +select(
+                            name="attr_custom_skill_1_prof_exp"
+                        )
                             +skill-proficiency-options()
                     .sheet-row__cell.sheet-row__cell--sm
                         input.sheet-field(

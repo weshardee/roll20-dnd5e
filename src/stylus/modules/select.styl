@@ -1,4 +1,43 @@
+ARROW_PAD = (HEIGHT/4)
+ARROW_HEIGHT = (HEIGHT/3)
+ARROW_WIDTH = (HEIGHT/4)
+ARROW_OFFSET = 60%
+
 .sheet-select
+    display flex
+    flex 1
+    flex-direction column
+
+.sheet-select::before,
+.sheet-select::after
+    transform rotate(180deg)
+    position absolute
+    top 0
+    right 0
+    bottom 0
+    margin auto
+    margin-right ARROW_PAD
+    opacity 0.5
+
+    border (ARROW_WIDTH/2) solid transparent
+    border-width (ARROW_HEIGHT/2) (ARROW_WIDTH/2)
+
+    height 0
+    width 0
+
+    pointer-events none
+    content " "
+
+.sheet-select::before
+    transform translateY(ARROW_OFFSET)
+    border-top-color black
+
+.sheet-select::after
+    transform translateY(- ARROW_OFFSET)
+    border-bottom-color black
+
+.sheet-select > select
+    flex 1
     border 1px solid transparent
-    padding-right (HEIGHT*0.75)
-    background-image url("https://d30y9cdsu7xlg0.cloudfront.net/icon_uploads/53d5dd51-a802-47dc-91ab-ac7fa8fe2197.svg?Expires=1424573579&Signature=Oy8CVTIm5F4yxRFLu-1VJdk-mURbxttBIv4Wq3pG7djn~nO03UdzeSQR1BpcqIm-E8NM95PVWHtxhFLnGeIa9TRLx9pJW6qixabTugwztCcIvj8IfxjfMXO9ag05SgqOrI2GBQTRmBXc9-FeXZ6W7NR1wWRQoyqPQmsILuw6dQ4_&Key-Pair-Id=APKAI5ZVHAXN65CHVU2Q")
+    padding-right (ARROW_PAD*2 + ARROW_WIDTH)
+    // background-image url("https://d30y9cdsu7xlg0.cloudfront.net/icon_uploads/53d5dd51-a802-47dc-91ab-ac7fa8fe2197.svg?Expires=1424573579&Signature=Oy8CVTIm5F4yxRFLu-1VJdk-mURbxttBIv4Wq3pG7djn~nO03UdzeSQR1BpcqIm-E8NM95PVWHtxhFLnGeIa9TRLx9pJW6qixabTugwztCcIvj8IfxjfMXO9ag05SgqOrI2GBQTRmBXc9-FeXZ6W7NR1wWRQoyqPQmsILuw6dQ4_&Key-Pair-Id=APKAI5ZVHAXN65CHVU2Q")

@@ -47,5 +47,6 @@ mixin tabs(name, tabs)
         +tab(tab, name, i)
     
 mixin select()
-    select.sheet-field.sheet-field--select()&attributes(attributes)
-        block
+    .sheet-select
+        select()&attributes(attributes)
+            block
