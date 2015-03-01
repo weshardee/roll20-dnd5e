@@ -1,24 +1,12 @@
-.sheet-col
+.sheet-card
+    h1.sheet-hdg Bonuses/Penalties
+    p.sheet-note Use this to apply bonuses (or penalties) to all rolls of the specified type rolled using the sheet's macros.
 
-    .sheet-col__row
-        // bonuses row 1
-        h1.sheet-hdg Bonuses/Penalties
+    .sheet-row
+        .sheet-row__cell
+            include bonuses-melee
+        .sheet-row__cell
+            include bonuses-ranged
 
-        p.sheet-note Use this to apply bonuses (or penalties) to all rolls of the specified type rolled using the sheet's macros.
-
-
-    .sheet-col__row
-        // bonuses row 2
-        .sheet-grid
-
-            .sheet-grid__cell
-                include bonuses-melee
-
-            .sheet-grid__cell
-                include bonuses-ranged
-
-    .sheet-col__row
-        include bonuses-spellcasting
-
-    .sheet-col__row
-        include bonuses-skills
+    include bonuses-spellcasting
+    include bonuses-skills

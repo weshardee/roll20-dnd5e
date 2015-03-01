@@ -11,9 +11,9 @@ mixin other-skills-hdg()
 - var i = 0
 - var col = 1
 
-.sheet-grid
+.sheet-row
     while col <= NUM_SKILL_COLUMNS
-        .sheet-grid__cell
+        .sheet-row__cell
             +other-skills-hdg()
             while i < numAbilitiesPerColumn * col
                 - var ability = abilities[i]

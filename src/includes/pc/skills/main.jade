@@ -11,9 +11,9 @@ mixin skills-hdg()
 - var numSkillsInChunk = numSkills / NUM_SKILL_COLUMNS
 - var skillsGroups = [skills.slice(0, numSkillsInChunk), skills.slice(numSkillsInChunk)]
 
-.sheet-grid
+.sheet-row
     each skills in skillsGroups
-        .sheet-grid__cell
+        .sheet-row__cell
             +skills-hdg
             each skill in skills
                 .sheet-row
