@@ -46,11 +46,11 @@ p.sheet-note Use this section to track spells you know, have prepared, or have i
             .sheet-col
                 .sheet-col__row
                     .sheet-row.sheet-row--hd
-                        .sheet-grid__cell= i ? "Level " + i : "Cantrips"
+                        .sheet-row__cell= i ? "Level " + i : "Cantrips"
 
                 .sheet-col__row
                     // spell row
-                    fieldset.sheet-grid__cell(
+                    fieldset(
                         class="repeating_spellbook" + (i ? 'level' + i : 'cantrip')
                     )
                         include spell/_
