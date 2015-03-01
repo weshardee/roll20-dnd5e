@@ -12,9 +12,9 @@ mixin custom-skills-hdg()
 - var col = 1
 - var i = 1
 
-.sheet-grid
+.sheet-row
     while col <= NUM_SKILL_COLUMNS
-        .sheet-grid__cell
+        .sheet-row__cell
             +custom-skills-hdg()
             while i <= col * customSkillsPerColumn
                 .sheet-row
