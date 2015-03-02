@@ -2,9 +2,9 @@
 .sheet-card
     .sheet-hdg Class Levels
 
-    - var i = 0
-    while i < classes.length
-        ol.blocks.blocks--hug
+    ol.sheet-blocks.sheet-blocks--hug.sheet-blocks--3up
+        - var i = 0
+        while i < classes.length
             - var pcClass = classes[i]
             
             li
@@ -26,5 +26,4 @@
                             min="0"
                             step="1"
                         )
-                    - i++
-        - row++
+            - i++
