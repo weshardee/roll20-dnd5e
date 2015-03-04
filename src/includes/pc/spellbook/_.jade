@@ -7,15 +7,15 @@ include stats
             include classes
 
         .sheet-grid
-            +hide('attr_is_sorcerer')
             .sheet-grid__cell
-                .sheet-card
-                    include sorcerer
+                +cloak('attr_is_sorcerer')
+                    .sheet-card
+                        include sorcerer
                     
-            +hide('attr_is_warlock')
             .sheet-grid__cell
-                .sheet-card
-                    include warlock
+                +cloak('attr_is_warlock')
+                    .sheet-card
+                        include warlock
 
     .sheet-grid__cell
         .sheet-card

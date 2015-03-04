@@ -15,15 +15,14 @@
                             name = "attr_is_#{pcClass}"
                             title = pcClass
                         )
-                        
-                    +hide('attr_is_' + pcClass)
-
-                    .sheet-row__cell.sheet-row__cell--sm
-                        input.sheet-field(
-                            type="number"
-                            name="attr_#{pcClass}_level"
-                            value="0"
-                            min="0"
-                            step="1"
-                        )
+                    
+                    +cloak('attr_is_' + pcClass)
+                        .sheet-row__cell.sheet-row__cell--sm
+                            input.sheet-field(
+                                type="number"
+                                name="attr_#{pcClass}_level"
+                                value="0"
+                                min="0"
+                                step="1"
+                            )
             - i++

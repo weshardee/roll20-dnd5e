@@ -51,9 +51,13 @@ mixin select()
         select()&attributes(attributes)
             block
 
-mixin hide(name)
-    input.sheet-hide(
-        type = 'checkbox'
-        name = name
-        checked = isDev
-    )
+mixin cloak(...names)
+    .sheet-cloak
+        each name in names
+            input(
+                type = 'checkbox'
+                name = name
+                checked = isDev
+            )
+        .sheet-cloak__cloaked
+            block
