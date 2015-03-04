@@ -37,7 +37,7 @@
                     value='/em takes a rest\n\n[[1d6 + @{constitution_mod} [Constitution Mod] ]] HP recovered from resting (1d6 hit dice used)'
                 )
         
-    +cloak('@{bard_level}, @{cleric_level}, @{druid_level}, @{rogue_level}, @{monk_level}, @{warlock_level}')
+    +cloak('@{is_bard}, @{is_cleric}, @{is_druid}, @{is_rogue}, @{is_monk}, @{is_warlock}')
         .sheet-row 
             .sheet-row__cell 
                 .sheet-label Bard, Cleric, Druid, Rogue, Monk, Warlock
@@ -64,7 +64,7 @@
                     value='/em takes a rest\n\n[[1d8 + @{constitution_mod} [Constitution Mod] ]] HP recovered from resting (1d8 hit dice used)'
                 )
     
-    +cloak('@{fighter_level}, @{paladin_level}, @{ranger_level}')
+    +cloak('@{is_fighter}, @{is_paladin}, @{is_ranger}')
         .sheet-row
             .sheet-row__cell 
                 .sheet-label Fighter, Paladin, Ranger
@@ -91,7 +91,7 @@
                     value='/em takes a rest\n\n[[1d10 + @{constitution_mod} [Constitution Mod] ]] HP recovered from resting (1d10 hit dice used)'
                 )
     
-    +cloak('@{barbarian_level}')
+    +cloak('@{is_barbarian}')
         .sheet-row
             .sheet-row__cell 
                 .sheet-label Barbarian                             
