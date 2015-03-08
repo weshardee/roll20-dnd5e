@@ -1,19 +1,19 @@
 .sheet-toggle
     -webkit-appearance none
     display flex
-    flex 1
-    color white
-    cursor pointer
-    position relative
     z-index 0
-    font-size 13px
+    cursor pointer
+
+    flex 1
     text-align center
     align-items center
-    background #eaffef
-    color #666
-    z-index HIGH
+
+    background LIGHT
     margin 0  !important// override base.css
     border 0
+
+    color alpha(black, 0.4)
+    font-size 13px
 
 .sheet-toggle:checked
     background #E0A32A
@@ -24,3 +24,20 @@
 
 .sheet-toggle:checked::before
     content "Yes"
+
+.sheet-toggle--inspiration
+    width 100% !important
+    height (HEIGHT*2) !important
+
+.sheet-toggle--title::before
+    content attr(title) !important
+
+.sheet-toggle--hide-next
+    flex-grow 2 !important
+
+.sheet-toggle--hide-next:not(:checked) + *
+    display none
+
+.sheet-toggle-wrapper
+    display flex
+    flex 1
