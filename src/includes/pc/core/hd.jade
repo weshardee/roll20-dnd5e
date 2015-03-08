@@ -9,7 +9,7 @@
         .sheet-row__cell.sheet-row__cell--sm Max                             
         .sheet-row__cell.sheet-row__cell--sm
     
-    +cloak('@{is_sorcerer}', '@{is_wizard}')
+    +cloak('is_sorcerer', 'is_wizard')
         .sheet-row
             .sheet-row__cell 
                 .sheet-label Sorcerer, Wizard
@@ -37,7 +37,7 @@
                     value='/em takes a rest\n\n[[1d6 + @{constitution_mod} [Constitution Mod] ]] HP recovered from resting (1d6 hit dice used)'
                 )
         
-    +cloak('@{is_bard}, @{is_cleric}, @{is_druid}, @{is_rogue}, @{is_monk}, @{is_warlock}')
+    +cloak('is_bard', 'is_cleric', 'is_druid', 'is_rogue', 'is_monk', 'is_warlock')
         .sheet-row 
             .sheet-row__cell 
                 .sheet-label Bard, Cleric, Druid, Rogue, Monk, Warlock
@@ -64,7 +64,7 @@
                     value='/em takes a rest\n\n[[1d8 + @{constitution_mod} [Constitution Mod] ]] HP recovered from resting (1d8 hit dice used)'
                 )
     
-    +cloak('@{is_fighter}, @{is_paladin}, @{is_ranger}')
+    +cloak('is_fighter', 'is_paladin', 'is_ranger')
         .sheet-row
             .sheet-row__cell 
                 .sheet-label Fighter, Paladin, Ranger
@@ -91,7 +91,7 @@
                     value='/em takes a rest\n\n[[1d10 + @{constitution_mod} [Constitution Mod] ]] HP recovered from resting (1d10 hit dice used)'
                 )
     
-    +cloak('@{is_barbarian}')
+    +cloak('is_barbarian')
         .sheet-row
             .sheet-row__cell 
                 .sheet-label Barbarian                             

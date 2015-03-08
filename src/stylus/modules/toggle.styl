@@ -31,3 +31,13 @@
 
 .sheet-toggle--title::before
     content attr(title) !important
+
+.sheet-toggle--hide-next
+    flex-grow 2 !important
+
+.sheet-toggle--hide-next:not(:checked) + *
+    display none
+
+.sheet-toggle-wrapper
+    display flex
+    flex 1

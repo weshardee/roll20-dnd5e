@@ -56,7 +56,7 @@ mixin cloak(...names)
         each name in names
             input(
                 type = 'checkbox'
-                name = name
+                name = 'attr_' + name
                 checked = isDev
             )
         .sheet-cloak__cloaked

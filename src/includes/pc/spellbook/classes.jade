@@ -6,7 +6,7 @@
     .sheet-row__cell Can Prepare 
     .sheet-row__cell Save DC
 
-+cloak('@{is_rogue}')    
++cloak('is_rogue')    
     .sheet-row
         .sheet-row__cell: .sheet-label Arcane Trickster 
         .sheet-row__cell: input.sheet-field(type="number" name="attr_cantrips_known_arcane_trickster" value="( (ceil((@{rogue_level}-2)/1e10)*3) + (ceil((@{rogue_level}-9)/1e10)) )" disabled)
@@ -14,7 +14,7 @@
         .sheet-row__cell: input.sheet-field(type="number" name="attr_spells_prepared_arcane_trickster" value="0" disabled)
         .sheet-row__cell: input.sheet-field(type="number" name="attr_arcane_trickster_spell_dc" value="(@{base_spell_dc}+@{arcane_trickster_spell_bonus})" disabled)
 
-+cloak('@{is_bard}')    
++cloak('is_bard')    
     .sheet-row
         .sheet-row__cell: .sheet-label Bard 
         .sheet-row__cell: input.sheet-field(type="number" name="attr_cantrips_known_bard" value="( (ceil(@{bard_level}/1e10)*2) + (ceil((@{bard_level}-3)/1e10)) + (ceil((@{bard_level}-9)/1e10)) )" disabled)
@@ -22,7 +22,7 @@
         .sheet-row__cell: input.sheet-field(type="number" name="attr_spells_prepared_bard" value="0" disabled)
         .sheet-row__cell: input.sheet-field(type="number" name="attr_bard_spell_dc" value="(@{base_spell_dc}+@{bard_spell_bonus})" disabled)
 
-+cloak('@{is_cleric}')    
++cloak('is_cleric')    
     .sheet-row
         .sheet-row__cell: .sheet-label Cleric 
         .sheet-row__cell: input.sheet-field(type="number" name="attr_cantrips_known_cleric" value="( (ceil(@{cleric_level}/1e10)*3) + (ceil((@{cleric_level}-3)/1e10)) + (ceil((@{cleric_level}-9)/1e10)) )" disabled)
@@ -31,7 +31,7 @@
         .sheet-row__cell: input.sheet-field(type="number" name="attr_cleric_spell_dc" value="(@{base_spell_dc}+@{cleric_spell_bonus})" disabled)
 
 
-+cloak('@{is_druid}')    
++cloak('is_druid')    
     .sheet-row
         .sheet-row__cell: .sheet-label Druid 
         .sheet-row__cell: input.sheet-field(type="number" name="attr_cantrips_known_druid" value="( (ceil(@{druid_level}/1e10)*2) + (ceil((@{druid_level}-3)/1e10)) + (ceil((@{druid_level}-9)/1e10)) )" disabled)
@@ -39,7 +39,7 @@
         .sheet-row__cell: input.sheet-field(type="number" name="attr_spells_prepared_druid" value="( ((((@{druid_level} + @{wisdom_mod}) + 1) + abs((@{druid_level} + @{wisdom_mod}) - 1)) / 2) * (ceil(@{druid_level}/1e10)) )" disabled)
         .sheet-row__cell: input.sheet-field(type="number" name="attr_druid_spell_dc" value="(@{base_spell_dc}+@{druid_spell_bonus})" disabled)
 
-+cloak('@{is_fighter}')    
++cloak('is_fighter')    
     .sheet-row
         .sheet-row__cell: .sheet-label Eldritch Knight 
         .sheet-row__cell: input.sheet-field(type="number" name="attr_cantrips_known_eldritch_knight" value="( (ceil((@{fighter_level}-2)/1e10)*2) + (ceil((@{fighter_level}-9)/1e10)) )" disabled)
@@ -47,7 +47,7 @@
         .sheet-row__cell: input.sheet-field(type="number" name="attr_spells_prepared_eldritch_knight" value="0" disabled)
         .sheet-row__cell: input.sheet-field(type="number" name="attr_eldritch_knight_spell_dc" value="(@{base_spell_dc}+@{eldritch_knight_spell_bonus})" disabled)
 
-+cloak('@{is_paladin}')    
++cloak('is_paladin')    
     .sheet-row
         .sheet-row__cell: .sheet-label Paladin 
         .sheet-row__cell: input.sheet-field(type="number" name="attr_cantrips_known_paladin" value="0" disabled)
@@ -55,7 +55,7 @@
         .sheet-row__cell: input.sheet-field(type="number" name="attr_spells_prepared_paladin" value="( ((((floor(@{paladin_level}/2) + @{charisma_mod}) + 1) + abs((floor(@{paladin_level}/2) + @{charisma_mod}) - 1)) / 2) * (ceil((@{paladin_level}-1)/1e10)) )" disabled)
         .sheet-row__cell: input.sheet-field(type="number" name="attr_paladin_spell_dc" value="(@{base_spell_dc}+@{paladin_spell_bonus})" disabled)
 
-+cloak('@{is_ranger}')    
++cloak('is_ranger')    
     .sheet-row
         .sheet-row__cell: .sheet-label Ranger 
         .sheet-row__cell: input.sheet-field(type="number" name="attr_cantrips_known_ranger" value="0" disabled)
@@ -63,7 +63,7 @@
         .sheet-row__cell: input.sheet-field(type="number" name="attr_spells_prepared_ranger" value="0" disabled)
         .sheet-row__cell: input.sheet-field(type="number" name="attr_ranger_spell_dc" value="(@{base_spell_dc}+@{ranger_spell_bonus})" disabled)
 
-+cloak('@{is_sorcerer}')    
++cloak('is_sorcerer')    
     .sheet-row
         .sheet-row__cell: .sheet-label Sorcerer 
         .sheet-row__cell: input.sheet-field(type="number" name="attr_cantrips_known_sorcerer" value="( (ceil(@{sorcerer_level}/1e10)*4) + (ceil((@{sorcerer_level}-3)/1e10)) + (ceil((@{sorcerer_level}-9)/1e10)) )" disabled)
@@ -71,7 +71,7 @@
         .sheet-row__cell: input.sheet-field(type="number" name="attr_spells_prepared_sorcerer" value="0" disabled)
         .sheet-row__cell: input.sheet-field(type="number" name="attr_sorcerer_spell_dc" value="(@{base_spell_dc}+@{sorcerer_spell_bonus})" disabled)
 
-+cloak('@{is_warlock}')    
++cloak('is_warlock')    
     .sheet-row
         .sheet-row__cell: .sheet-label Warlock 
         .sheet-row__cell: input.sheet-field(type="number" name="attr_cantrips_known_warlock" value="( (ceil(@{warlock_level}/1e10)*2) + (ceil((@{warlock_level}-3)/1e10)) + (ceil((@{warlock_level}-9)/1e10)) )" disabled)
@@ -79,7 +79,7 @@
         .sheet-row__cell: input.sheet-field(type="number" name="attr_spells_prepared_warlock" value="0" disabled)
         .sheet-row__cell: input.sheet-field(type="number" name="attr_warlock_spell_dc" value="(@{base_spell_dc}+@{warlock_spell_bonus})" disabled)
 
-+cloak('@{is_wizard}')    
++cloak('is_wizard')    
     .sheet-row
         .sheet-row__cell: .sheet-label Wizard 
         .sheet-row__cell: input.sheet-field(type="number" name="attr_cantrips_known_wizard" value="( (ceil(@{wizard_level}/1e10)*3) + (ceil((@{wizard_level}-3)/1e10)) + (ceil((@{wizard_level}-9)/1e10)) )" disabled)
