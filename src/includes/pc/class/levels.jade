@@ -2,23 +2,26 @@
 .sheet-card
     .sheet-hdg Class Levels
 
-    - var i = 0
-    - var row = 1
-    - var numClassesPerRow = 3
-
-    while i < classes.length
-        .sheet-row
-            while i < row * numClassesPerRow
-                - var pcClass = classes[i]
-                .sheet-row__cell
-                    .sheet-label #{pcClass}
-                .sheet-row__cell.sheet-row__cell--sm
-                    input.sheet-field(
-                        type="number"
-                        name="attr_#{pcClass}_level"
-                        value="0"
-                        min="0"
-                        step="1"
-                    )
-                - i++
-        - row++
+    ol.sheet-blocks.sheet-blocks--hug.sheet-blocks--3up
+        - var i = 0
+        while i < classes.length
+            - var pcClass = classes[i]
+            
+            li
+                .sheet-row
+                    .sheet-row__cell
+                        .sheet-toggle-wrapper
+                            input.sheet-toggle.sheet-toggle--title.sheet-toggle--hide-next(
+                                type = "checkbox"
+                                name = "attr_is_#{pcClass}"
+                                title = pcClass
+                            )
+                        
+                            input.sheet-field(
+                                type="number"
+                                name="attr_#{pcClass}_level"
+                                value="0"
+                                min="0"
+                                step="1"
+                            )
+            - i++

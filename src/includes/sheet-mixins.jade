@@ -50,3 +50,14 @@ mixin select()
     .sheet-select
         select()&attributes(attributes)
             block
+
+mixin cloak(...names)
+    .sheet-cloak
+        each name in names
+            input(
+                type = 'checkbox'
+                name = 'attr_' + name
+                checked = isDev
+            )
+        .sheet-cloak__cloaked
+            block
