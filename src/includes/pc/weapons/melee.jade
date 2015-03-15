@@ -74,10 +74,11 @@ while i <= numWeaponRows
                 disabled
             )
         .sheet-row__cell(class="sheet-row__cell--#{colWidth.attack}")
+            - var meleeAttackRoll = '[[1d20 + @{meleetohit' + i + '} [To Hit] + (@{global_melee_attack_bonus}) [Active Melee Attack Bonus] ]]';
             +roll(
                 type="roll" 
                 name="roll_MeleeAttack1" 
-                value="/em uses @{meleeweaponname#{i}} to attack\n\n[[1d20 + @{meleetohit#{1}} [To Hit] + (@{global_melee_attack_bonus}) [Active Melee Attack Bonus] ]] vs AC"
+                value="/em uses @{meleeweaponname#{i}} to attack\n\n#{meleeAttackRoll} | #{meleeAttackRoll} vs AC"
             ) Attack
         .sheet-row__cell(class="sheet-row__cell--#{colWidth.dmgDice}")
             input.sheet-field(

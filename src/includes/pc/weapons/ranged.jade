@@ -71,7 +71,8 @@ while i <= numWeaponRows
                 disabled
             )
         .sheet-row__cell(class="sheet-row__cell--#{colWidth.attack}") 
-            +roll(name="roll_RangedAttack#{i}" value="/em uses @{rangedweaponname#{i}} to attack\n\n[[1d20 + @{rangedtohit#{i}} [To Hit] + (@{global_ranged_attack_bonus}) [Active Ranged Attack Bonus] ]] vs AC") Attack
+            - var rangedAttackRoll = '[[1d20 + @{rangedtohit' + i + '} [To Hit] + (@{global_ranged_attack_bonus}) [Active Ranged Attack Bonus] ]]'
+            +roll(name="roll_RangedAttack#{i}" value="/em uses @{rangedweaponname#{i}} to attack\n\n#{rangedAttackRoll} | #{rangedAttackRoll} vs AC") Attack
         .sheet-row__cell(class="sheet-row__cell--#{colWidth.dmgDice}") 
             input.sheet-field(
                 title="Only enter the base damage roll here without any bonuses from stats or other sources"
@@ -90,7 +91,7 @@ while i <= numWeaponRows
                 type="text"
                 name="attr_rangeddmgtype#{i}"
             )
-        .sheet-row__cell(class="sheet-row__cell--#{colWidth.dmgRoll}") 
+        .sheet-row__cell(class="sheet-row__cell--#{colWidth.dmgRoll}")
             +roll(
                 name="roll_RangedDamage#{i}" 
                 value="\nFor [[@{rangeddmg#{i}} [Base damage] + @{rangeddmgbonus#{i}} [Damage Bonus] + (@{global_ranged_damage_bonus}) [Active Ranged Damage Bonus] + 0d0 [Bugfix 0] ]] @{rangeddmgtype#{i}} damage (if a crit add an extra [[@{rangeddmg#{i}}]])"
